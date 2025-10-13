@@ -2,7 +2,7 @@ const About = () => {
   const team = [
     {
       role: 'Dirección & Desarrollo',
-      name: 'Julián S.',
+      name: 'Equipo de desarrollo',
       description: 'Supervisión integral y arquitectura web.'
     },
     {
@@ -29,15 +29,12 @@ const About = () => {
           <h2 className="text-5xl font-extrabold font-display mb-8 text-primary-dark">
             Sobre nosotros
           </h2>
-          <div className="max-w-4xl text-lg text-slate-800 leading-relaxed space-y-5">
+          <div className="max-w-4xl text-lg text-slate-800 leading-relaxed space-y-5 font-body">
             <p>
               Somos <strong className="text-primary-dark font-semibold">.js agency</strong>, un estudio digital que combina diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.
             </p>
             <p>
               Trabajamos en equipo, con procesos claros y foco en el detalle, para que cada proyecto sea sólido hoy y escalable mañana.
-            </p>
-            <p>
-              Bajo la dirección de <strong className="text-primary-dark font-semibold">Julián Santanatoglia</strong>, coordinamos desarrollo web, branding, automatizaciones y producción audiovisual con drone. Preferimos hablar simple, cumplir plazos y construir relaciones a largo plazo.
             </p>
             <p className="text-accent-cyan font-semibold text-xl mt-2">
               Si buscás alguien de confianza para llevar tu marca al siguiente nivel, hablemos.
@@ -52,15 +49,16 @@ const About = () => {
             {team.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-slate-50 p-8 rounded-xl border border-slate-200 transition-all hover:border-accent-cyan hover:-translate-y-0.5 hover:shadow-lg"
+                className="bg-slate-50 p-8 rounded-xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2">
+                <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2 font-body">
                   {member.role}
                 </div>
-                <div className="text-xl font-bold text-primary-dark mb-3">
+                <div className="text-xl font-bold text-primary-dark mb-3 font-display">
                   {member.name}
                 </div>
-                <div className="text-sm text-slate-600 leading-relaxed">
+                <div className="text-sm text-slate-600 leading-relaxed font-body">
                   {member.description}
                 </div>
               </div>

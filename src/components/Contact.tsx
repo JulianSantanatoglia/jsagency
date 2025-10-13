@@ -1,46 +1,46 @@
 const Contact = () => {
   return (
-    <section id="contacto" className="py-24 px-8 bg-gradient-to-br from-primary-dark to-slate-800 text-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div className="flex flex-col gap-6">
-          <h2 className="text-5xl font-extrabold font-display text-white mb-2">
+    <section id="contacto" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-primary-dark to-slate-800 text-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="flex flex-col gap-4 md:gap-6 animate-fade-in-left">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display text-white mb-2">
             Hablemos de tu proyecto
           </h2>
-          <p className="text-xl text-white/80 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed font-body">
             Contanos tu objetivo en 2–3 líneas y te proponemos el mejor camino.
           </p>
-          <p className="text-base text-accent-cyan font-semibold">
+          <p className="text-sm md:text-base text-accent-cyan font-semibold font-body">
             Respuesta en 24–48h.
           </p>
           <a 
             href="mailto:hola@jsagency.com" 
-            className="inline-block w-fit px-8 py-4 mt-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl transition-all hover:bg-cyan-500 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40"
+            className="inline-block w-fit px-6 md:px-8 py-3 md:py-4 mt-4 bg-accent-cyan text-white font-semibold text-base md:text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
           >
-            Escribinos →
+            Escribenos →
           </a>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6 md:gap-10 animate-fade-in-right mt-8 md:mt-0">
           <div className="pb-8 border-b border-white/10">
-            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2">
+            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2 font-body">
               Email
             </div>
-            <div className="text-xl font-semibold text-white">
+            <div className="text-xl font-semibold text-white font-display">
               hola@jsagency.com
             </div>
           </div>
           <div className="pb-8 border-b border-white/10">
-            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2">
+            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2 font-body">
               Ubicación
             </div>
-            <div className="text-xl font-semibold text-white">
-              Argentina
+            <div className="text-xl font-semibold text-white font-display">
+              Almeria, España
             </div>
           </div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2">
+            <div className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-2 font-body">
               Horario
             </div>
-            <div className="text-xl font-semibold text-white">
+            <div className="text-xl font-semibold text-white font-display">
               Lun–Vie 9:00–18:00 ART
             </div>
           </div>

@@ -28,13 +28,13 @@ const Process = () => {
   ];
 
   return (
-    <section id="proceso" className="py-24 px-8 bg-gradient-to-b from-white to-slate-50">
+    <section id="proceso" className="py-24 px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold font-display mb-6 text-primary-dark">
             Proceso de trabajo
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-600 leading-relaxed font-body">
             Descubrimiento → Diseño → Desarrollo → Lanzamiento → Acompañamiento.<br />
             Sin sorpresas, con entregas claras y medibles.
           </p>
@@ -43,7 +43,8 @@ const Process = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="flex gap-8 items-start bg-white p-8 rounded-2xl border border-slate-200 transition-all hover:border-accent-cyan hover:shadow-lg"
+              className="flex gap-8 items-start bg-white p-8 rounded-2xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-5xl font-extrabold font-display text-accent-cyan opacity-30 min-w-[80px]">
                 {step.number}
@@ -52,14 +53,14 @@ const Process = () => {
                 <h3 className="text-2xl font-bold font-display mb-2 text-primary-dark">
                   {step.title}
                 </h3>
-                <p className="text-base text-slate-600 leading-relaxed">
+                <p className="text-base text-slate-600 leading-relaxed font-body">
                   {step.description}
                 </p>
               </div>
             </div>
           ))}
         </div>
-        <div className="text-center p-6 bg-gradient-to-r from-accent-cyan to-accent-emerald rounded-xl text-white font-medium">
+        <div className="text-center p-6 bg-gradient-to-r from-accent-cyan to-accent-emerald rounded-xl text-white font-medium font-body">
           <p>Cada proyecto pasa por revisión creativa y técnica para asegurar calidad y consistencia.</p>
         </div>
       </div>
