@@ -1,3 +1,5 @@
+import { Globe, Palette, Bot, Camera } from 'lucide-react';
+
 const Services = () => {
   const services = [
     {
@@ -7,7 +9,7 @@ const Services = () => {
         'Rápidas, seguras, administrables y pensadas para convertir.',
         'SEO técnico base y buenas prácticas de performance.'
       ],
-      icon: '🌐'
+      icon: Globe
     },
     {
       title: 'Diseño & Branding',
@@ -16,7 +18,7 @@ const Services = () => {
         'Logo, paleta de colores, tipografías y guía de estilo.',
         'Diseño de materiales gráficos y experiencia de usuario.'
       ],
-      icon: '🎨'
+      icon: Palette
     },
     {
       title: 'Automatizaciones IA',
@@ -25,7 +27,7 @@ const Services = () => {
         'Chatbots conversacionales y asistentes virtuales.',
         'Automatización de procesos y integración de herramientas.'
       ],
-      icon: '🤖'
+      icon: Bot
     },
     {
       title: 'Fotografía y Video aéreo',
@@ -34,7 +36,7 @@ const Services = () => {
         'Contenido visual que eleva tu presencia digital y tus campañas.',
         'Operación certificada A1/A3 y registro de operador.'
       ],
-      icon: '🚁'
+      icon: Camera
     }
   ];
 
@@ -56,7 +58,9 @@ const Services = () => {
               className="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl md:text-5xl mb-4 md:mb-6">{service.icon}</div>
+              <div className="mb-4 md:mb-6">
+                <service.icon size={48} className="text-accent-cyan mx-auto" />
+              </div>
               <h3 className="text-xl md:text-2xl font-bold font-display mb-3 md:mb-4 text-primary-dark">
                 {service.title}
               </h3>

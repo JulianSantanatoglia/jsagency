@@ -31,13 +31,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonios" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
+    <section id="testimonios" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 text-primary-dark dark:text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 text-primary-dark">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-base md:text-lg text-slate-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-body px-4">
+          <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
             La satisfacción de nuestros clientes es nuestra mejor carta de presentación. Cada proyecto es una oportunidad de crear algo extraordinario.
           </p>
         </div>
