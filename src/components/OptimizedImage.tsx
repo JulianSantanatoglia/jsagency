@@ -1,0 +1,43 @@
+import { useState } from 'react';
+
+interface OptimizedImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  loading?: 'lazy' | 'eager';
+  onError?: () => void;
+  fallback?: string;
+}
+
+const OptimizedImage = ({ 
+  src, 
+  alt, 
+  className = '', 
+  loading = 'lazy',
+  onError,
+  fallback = '/images/placeholder.svg'
+}: OptimizedImageProps) => {
+  const [imageSrc, setImageSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  const handleError = () => {
+    if (!hasError && imageSrc !== fallback) {
+      setHasError(true);
+      setImageSrc(fallback);
+      onError?.();
+    }
+  };
+
+  return (
+    <img
+      src={imageSrc}
+      alt={alt}
+      className={className}
+      loading={loading}
+      onError={handleError}
+      onLoad={() => setHasError(false)}
+    />
+  );
+};
+
+export default OptimizedImage;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import OptimizedImage from './OptimizedImage';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
@@ -85,10 +86,11 @@ const ClientSlider = () => {
                   <div className="grid md:grid-cols-2 gap-0 min-h-[400px] md:min-h-[500px]">
                     {/* Image */}
                     <div className="relative overflow-hidden">
-                      <img 
+                      <OptimizedImage 
                         src={client.image} 
                         alt={`${client.name} - ${client.category}`}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>

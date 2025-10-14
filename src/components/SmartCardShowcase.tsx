@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import OptimizedImage from './OptimizedImage';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();
@@ -141,10 +142,11 @@ const SmartCardShowcase = () => {
             <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
               {/* Image Container */}
               <div className="relative h-80 md:h-96 overflow-hidden">
-                <img 
+                <OptimizedImage 
                   src={steps[currentStep].image} 
                   alt={steps[currentStep].title}
                   className="w-full h-full object-cover transition-transform duration-300"
+                  loading="eager"
                 />
                 
                 {/* Navigation Arrows */}
