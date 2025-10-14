@@ -59,7 +59,44 @@ const translations = {
         description: 'Para marcas, inmuebles, turismo y eventos.',
         feature1: 'Contenido visual que eleva tu presencia digital y tus campañas.',
         feature2: 'Operación certificada A1/A3 y registro de operador.',
+        link: 'Fly by .js agency',
       },
+    },
+    
+    // Clients Section
+    clients: {
+      title: 'Ya confiaron en nosotros',
+      subtitle: 'Empresas que han elegido nuestras soluciones digitales para hacer crecer su negocio.',
+      trusted: 'Cliente satisfecho',
+      previous: 'Cliente anterior',
+      next: 'Siguiente cliente',
+      goToSlide: 'Ir al cliente {slide}',
+      stats: {
+        projects: 'Proyectos',
+        satisfaction: 'Satisfacción',
+        response: 'Respuesta',
+        coverage: 'Cobertura'
+      },
+      mushroom: {
+        category: 'Plataforma Empresarial',
+        description: 'Sistema completo de gestión y reservas para empresa de alquiler de equipos de sonido profesional.'
+      },
+      cafeteria: {
+        category: 'Restaurante',
+        description: 'Carta digital inteligente con divisor de cuentas para mejorar la experiencia gastronómica.'
+      },
+      jewelry: {
+        category: 'Joyería',
+        description: 'E-commerce elegante y sofisticado para mostrar colecciones de joyería de alta calidad.'
+      },
+      delivery: {
+        category: 'App Delivery',
+        description: 'Aplicación móvil completa para servicio de delivery con gestión de pedidos en tiempo real.'
+      },
+      cooking: {
+        category: 'Educación',
+        description: 'Plataforma educativa para escuela de cocina con cursos online y gestión de estudiantes.'
+      }
     },
     
     // Portfolio Section
@@ -110,29 +147,29 @@ const translations = {
       title: 'Lo que dicen nuestros clientes',
       subtitle: 'La satisfacción de nuestros clientes es nuestra mejor carta de presentación.',
       testimonials: {
-        sofia: {
-          name: 'Sofia Martínez',
-          company: 'Dueña de bar',
-          role: 'Propietaria',
-          content: 'Smart card digitalizó mi negocio y lo hizo crecer. La carta digital es intuitiva, elegante y ha mejorado significativamente el servicio. Los comensales pueden dividir la cuenta con facilidad y pagar por lo que consumieron'
-        },
         maximiliano: {
           name: 'Maximiliano Peretti',
           company: 'CEO Mushroom MDP',
           role: 'Fundador',
           content: 'La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.'
         },
-        ana: {
-          name: 'Ana Martín',
-          company: 'DesignStudio',
-          role: 'Directora Creativa',
-          content: 'La calidad del código y la atención al detalle de .js agency es impresionante. Nuestro proyecto se entregó a tiempo y superó todas nuestras expectativas.'
+        cafeteria: {
+          name: 'Sofia Martínez',
+          company: 'La Cafetería',
+          role: 'Propietaria',
+          content: 'Smart card digitalizó mi negocio y lo hizo crecer. La carta digital es intuitiva, elegante y ha mejorado significativamente el servicio. Los comensales pueden dividir la cuenta con facilidad y pagar por lo que consumieron.'
         },
-        david: {
-          name: 'David López',
-          company: 'InnovateLab',
-          role: 'CTO',
-          content: 'Como desarrollador, aprecio mucho el nivel técnico de .js agency. Su arquitectura escalable y código limpio nos facilitó mucho el mantenimiento.'
+        jewelry: {
+          name: 'María Díaz',
+          company: 'Joyería Díaz',
+          role: 'Directora',
+          content: 'El e-commerce que desarrollaron para nuestra joyería es elegante y sofisticado. Ha aumentado nuestras ventas online significativamente y nuestros clientes aman la experiencia de compra.'
+        },
+        delivery: {
+          name: 'Carlos Ruiz',
+          company: 'App Delivery',
+          role: 'CEO',
+          content: 'La aplicación móvil que crearon para nuestro servicio de delivery es increíble. La gestión de pedidos en tiempo real y la interfaz intuitiva han revolucionado nuestro negocio.'
         }
       }
     },
@@ -205,6 +242,66 @@ const translations = {
           description: 'Fotografía y video aéreo para marcas.'
         }
       }
+    },
+    
+    // Smart Card Showcase Section
+    smartcard: {
+      badge: 'Nuestro último proyecto',
+      title: '¿Tienes un bar o restaurante?',
+      subtitle: 'Smart Card no solo brinda una carta digital con QR, sino que ahora las personas pueden dividir fácilmente su cuenta por lo que consumió cada uno. Con el divisor inteligente, cada comensal paga solo por lo que realmente consumió.',
+      problem: {
+        title: 'El problema de dividir cuentas',
+        description: 'Ya no es necesario que todos paguen por igual. Con nuestro divisor inteligente, cada persona paga solo por lo que consumió, evitando que salga perdiendo quien come o bebe muy poco.'
+      },
+      features: {
+        qr: {
+          title: 'Carta Digital con QR',
+          description: 'Acceso instantáneo al menú desde cualquier dispositivo móvil.'
+        },
+        divider: {
+          title: 'Divisor Inteligente',
+          description: 'Selecciona comensales, asigna nombres y cada uno marca lo que consumió.'
+        },
+        payment: {
+          title: 'Pago Individual',
+          description: 'Cada persona paga solo por lo que realmente consumió.'
+        },
+        mobile: {
+          title: 'Totalmente Móvil',
+          description: 'Funciona perfectamente en cualquier smartphone o tablet.'
+        }
+      },
+      steps: {
+        step1: {
+          title: 'Escanear el QR',
+          description: 'Los comensales escanean el código QR de la mesa para acceder al menú digital.'
+        },
+        step2: {
+          title: 'Seleccionar comensales',
+          description: 'Elige cuántas personas van a comer y asigna un nombre a cada comensal.'
+        },
+        step3: {
+          title: 'Revisar compartidos',
+          description: 'Identifica qué platos o bebidas se van a compartir entre los comensales.'
+        },
+        step4: {
+          title: 'Marcar consumo',
+          description: 'Cada persona marca individualmente lo que consumió o compartió.'
+        },
+        step5: {
+          title: 'Verificar pedido',
+          description: 'Revisa el resumen completo antes de confirmar el pedido final.'
+        },
+        step6: {
+          title: 'Dividir cuenta',
+          description: 'Smart Card calcula automáticamente cuánto debe pagar cada comensal.'
+        }
+      },
+      cta: 'Ver Carta Digital',
+      consult: 'Consultar Proyecto',
+      previousStep: 'Paso anterior',
+      nextStep: 'Siguiente paso',
+      goToStep: 'Ir al paso {step}'
     },
     
     // Contact Section
@@ -309,7 +406,44 @@ const translations = {
         description: 'For brands, real estate, tourism and events.',
         feature1: 'Visual content that elevates your digital presence and campaigns.',
         feature2: 'A1/A3 certified operation and operator registration.',
+        link: 'Fly by .js agency',
       },
+    },
+    
+    // Clients Section
+    clients: {
+      title: 'They already trusted us',
+      subtitle: 'Companies that have chosen our digital solutions to grow their business.',
+      trusted: 'Satisfied client',
+      previous: 'Previous client',
+      next: 'Next client',
+      goToSlide: 'Go to client {slide}',
+      stats: {
+        projects: 'Projects',
+        satisfaction: 'Satisfaction',
+        response: 'Response',
+        coverage: 'Coverage'
+      },
+      mushroom: {
+        category: 'Enterprise Platform',
+        description: 'Complete management and booking system for professional sound equipment rental company.'
+      },
+      cafeteria: {
+        category: 'Restaurant',
+        description: 'Intelligent digital menu with bill divider to improve the gastronomic experience.'
+      },
+      jewelry: {
+        category: 'Jewelry',
+        description: 'Elegant and sophisticated e-commerce to showcase high-quality jewelry collections.'
+      },
+      delivery: {
+        category: 'Delivery App',
+        description: 'Complete mobile application for delivery service with real-time order management.'
+      },
+      cooking: {
+        category: 'Education',
+        description: 'Educational platform for cooking school with online courses and student management.'
+      }
     },
     
     // Portfolio Section
@@ -360,29 +494,29 @@ const translations = {
       title: 'What our clients say',
       subtitle: 'Our clients\' satisfaction is our best business card.',
       testimonials: {
-        sofia: {
-          name: 'Sofia Martínez',
-          company: 'Bar owner',
-          role: 'Owner',
-          content: 'Smart card digitized my business and made it grow. The digital menu is intuitive, elegant and has significantly improved service. Diners can easily split the bill and pay for what they consumed'
-        },
         maximiliano: {
           name: 'Maximiliano Peretti',
           company: 'CEO Mushroom MDP',
           role: 'Founder',
           content: 'The platform developed by .js agency allowed us to completely professionalize our equipment rental business. The online booking system and inventory management has been a total change.'
         },
-        ana: {
-          name: 'Ana Martín',
-          company: 'DesignStudio',
-          role: 'Creative Director',
-          content: 'The code quality and attention to detail of .js agency is impressive. Our project was delivered on time and exceeded all our expectations.'
+        cafeteria: {
+          name: 'Sofia Martínez',
+          company: 'La Cafetería',
+          role: 'Owner',
+          content: 'Smart card digitized my business and made it grow. The digital menu is intuitive, elegant and has significantly improved service. Diners can easily split the bill and pay for what they consumed.'
         },
-        david: {
-          name: 'David López',
-          company: 'InnovateLab',
-          role: 'CTO',
-          content: 'As a developer, I really appreciate the technical level of .js agency. Their scalable architecture and clean code made maintenance much easier for us.'
+        jewelry: {
+          name: 'María Díaz',
+          company: 'Joyería Díaz',
+          role: 'Director',
+          content: 'The e-commerce they developed for our jewelry store is elegant and sophisticated. It has significantly increased our online sales and our customers love the shopping experience.'
+        },
+        delivery: {
+          name: 'Carlos Ruiz',
+          company: 'App Delivery',
+          role: 'CEO',
+          content: 'The mobile application they created for our delivery service is incredible. Real-time order management and intuitive interface have revolutionized our business.'
         }
       }
     },
@@ -455,6 +589,66 @@ const translations = {
           description: 'Aerial photography and video for brands.'
         }
       }
+    },
+    
+    // Smart Card Showcase Section
+    smartcard: {
+      badge: 'Our latest project',
+      title: 'Do you have a bar or restaurant?',
+      subtitle: 'Smart Card not only provides a digital menu with QR, but now people can easily split their bill by what each person consumed. With the smart divider, each diner pays only for what they actually consumed.',
+      problem: {
+        title: 'The bill splitting problem',
+        description: 'No need for everyone to pay equally anymore. With our smart divider, each person pays only for what they consumed, preventing those who eat or drink little from losing out.'
+      },
+      features: {
+        qr: {
+          title: 'Digital Menu with QR',
+          description: 'Instant access to the menu from any mobile device.'
+        },
+        divider: {
+          title: 'Smart Divider',
+          description: 'Select diners, assign names and each person marks what they consumed.'
+        },
+        payment: {
+          title: 'Individual Payment',
+          description: 'Each person pays only for what they actually consumed.'
+        },
+        mobile: {
+          title: 'Fully Mobile',
+          description: 'Works perfectly on any smartphone or tablet.'
+        }
+      },
+      steps: {
+        step1: {
+          title: 'Scan the QR',
+          description: 'Diners scan the table QR code to access the digital menu.'
+        },
+        step2: {
+          title: 'Select diners',
+          description: 'Choose how many people are eating and assign a name to each diner.'
+        },
+        step3: {
+          title: 'Review shared items',
+          description: 'Identify which dishes or drinks will be shared among diners.'
+        },
+        step4: {
+          title: 'Mark consumption',
+          description: 'Each person individually marks what they consumed or shared.'
+        },
+        step5: {
+          title: 'Verify order',
+          description: 'Review the complete summary before confirming the final order.'
+        },
+        step6: {
+          title: 'Split bill',
+          description: 'Smart Card automatically calculates how much each diner should pay.'
+        }
+      },
+      cta: 'View Digital Menu',
+      consult: 'Consult Project',
+      previousStep: 'Previous step',
+      nextStep: 'Next step',
+      goToStep: 'Go to step {step}'
     },
     
     // Contact Section

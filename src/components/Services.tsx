@@ -87,6 +87,19 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              {index === 3 && (
+                <div className="mt-4 pt-4 border-t border-slate-200">
+                  <a 
+                    href="https://jsgliafly.netlify.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent-cyan hover:text-cyan-600 font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 py-1"
+                  >
+                    <Camera size={16} />
+                    {t('services.aerial.link')}
+                  </a>
+                </div>
+              )}
             </article>
           ))}
         </div>

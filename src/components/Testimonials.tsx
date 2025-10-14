@@ -4,13 +4,6 @@ const Testimonials = () => {
   const { t } = useLanguage();
   const testimonials = [
     {
-      name: t('testimonials.testimonials.sofia.name'),
-      company: t('testimonials.testimonials.sofia.company'),
-      role: t('testimonials.testimonials.sofia.role'),
-      content: t('testimonials.testimonials.sofia.content'),
-      rating: 5
-    },
-    {
       name: t('testimonials.testimonials.maximiliano.name'),
       company: t('testimonials.testimonials.maximiliano.company'),
       role: t('testimonials.testimonials.maximiliano.role'),
@@ -18,17 +11,24 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      name: t('testimonials.testimonials.ana.name'),
-      company: t('testimonials.testimonials.ana.company'),
-      role: t('testimonials.testimonials.ana.role'),
-      content: t('testimonials.testimonials.ana.content'),
+      name: t('testimonials.testimonials.cafeteria.name'),
+      company: t('testimonials.testimonials.cafeteria.company'),
+      role: t('testimonials.testimonials.cafeteria.role'),
+      content: t('testimonials.testimonials.cafeteria.content'),
       rating: 5
     },
     {
-      name: t('testimonials.testimonials.david.name'),
-      company: t('testimonials.testimonials.david.company'),
-      role: t('testimonials.testimonials.david.role'),
-      content: t('testimonials.testimonials.david.content'),
+      name: t('testimonials.testimonials.jewelry.name'),
+      company: t('testimonials.testimonials.jewelry.company'),
+      role: t('testimonials.testimonials.jewelry.role'),
+      content: t('testimonials.testimonials.jewelry.content'),
+      rating: 5
+    },
+    {
+      name: t('testimonials.testimonials.delivery.name'),
+      company: t('testimonials.testimonials.delivery.company'),
+      role: t('testimonials.testimonials.delivery.role'),
+      content: t('testimonials.testimonials.delivery.content'),
       rating: 5
     }
   ];

@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { LanguageProvider } from './contexts/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import SmartCardShowcase from './components/SmartCardShowcase'
 import Services from './components/Services'
-import Portfolio from './components/Portfolio'
+import ClientSlider from './components/ClientSlider'
 import Testimonials from './components/Testimonials'
 import Process from './components/Process'
 import About from './components/About'
@@ -68,11 +69,12 @@ function App() {
     <LanguageProvider>
       <div className="app">
         <Header />
-        <main id="main-content" role="main">
-          <Hero />
-          <Services />
-          <Portfolio />
-          <Testimonials />
+                <main id="main-content" role="main">
+                  <Hero />
+                  <SmartCardShowcase />
+                  <Services />
+                  <ClientSlider />
+                  <Testimonials />
           <Process />
           <About />
           <Contact />
