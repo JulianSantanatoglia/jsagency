@@ -1,31 +1,34 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Testimonials = () => {
+  const { t } = useLanguage();
   const testimonials = [
     {
-      name: "Sofia Martínez",
-      company: "Bar de Tapas",
-      role: "Propietaria",
-      content: "Smart Card revolucionó la experiencia de nuestros clientes. La carta digital es intuitiva, elegante y ha mejorado significativamente el servicio. Los comensales pueden explorar nuestros platos de manera interactiva.",
+      name: t('testimonials.testimonials.sofia.name'),
+      company: t('testimonials.testimonials.sofia.company'),
+      role: t('testimonials.testimonials.sofia.role'),
+      content: t('testimonials.testimonials.sofia.content'),
       rating: 5
     },
     {
-      name: "Diego Fernández",
-      company: "Mushroom MDP",
-      role: "Fundador",
-      content: "La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.",
+      name: t('testimonials.testimonials.maximiliano.name'),
+      company: t('testimonials.testimonials.maximiliano.company'),
+      role: t('testimonials.testimonials.maximiliano.role'),
+      content: t('testimonials.testimonials.maximiliano.content'),
       rating: 5
     },
     {
-      name: "Ana Martín",
-      company: "DesignStudio",
-      role: "Directora Creativa",
-      content: "La calidad del código y la atención al detalle de .js agency es impresionante. Nuestro proyecto se entregó a tiempo y superó todas nuestras expectativas.",
+      name: t('testimonials.testimonials.ana.name'),
+      company: t('testimonials.testimonials.ana.company'),
+      role: t('testimonials.testimonials.ana.role'),
+      content: t('testimonials.testimonials.ana.content'),
       rating: 5
     },
     {
-      name: "David López",
-      company: "InnovateLab",
-      role: "CTO",
-      content: "Como desarrollador, aprecio mucho el nivel técnico de .js agency. Su arquitectura escalable y código limpio nos facilitó mucho el mantenimiento.",
+      name: t('testimonials.testimonials.david.name'),
+      company: t('testimonials.testimonials.david.company'),
+      role: t('testimonials.testimonials.david.role'),
+      content: t('testimonials.testimonials.david.content'),
       rating: 5
     }
   ];
@@ -35,10 +38,10 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 text-primary-dark">
-            Lo que dicen nuestros clientes
+            {t('testimonials.title')}
           </h2>
           <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación. Cada proyecto es una oportunidad de crear algo extraordinario.
+            {t('testimonials.subtitle')}
           </p>
         </div>
         

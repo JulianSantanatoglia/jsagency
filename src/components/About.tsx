@@ -1,24 +1,27 @@
+import { useLanguage } from '../contexts/LanguageContext';
+
 const About = () => {
+  const { t } = useLanguage();
   const team = [
     {
-      role: 'Dirección & Desarrollo',
-      name: 'Equipo de desarrollo',
-      description: 'Supervisión integral y arquitectura web.'
+      role: t('about.team.development.role'),
+      name: t('about.team.development.name'),
+      description: t('about.team.development.description')
     },
     {
-      role: 'Diseño & Branding',
-      name: 'Equipo creativo',
-      description: 'Identidad visual, UI y dirección de arte.'
+      role: t('about.team.design.role'),
+      name: t('about.team.design.name'),
+      description: t('about.team.design.description')
     },
     {
-      role: 'Estrategia & Automatización',
-      name: 'Especialistas',
-      description: 'Flujos con IA e integraciones.'
+      role: t('about.team.strategy.role'),
+      name: t('about.team.strategy.name'),
+      description: t('about.team.strategy.description')
     },
     {
-      role: 'Producción (.js Aerials)',
-      name: 'Equipo audiovisual',
-      description: 'Fotografía y video aéreo para marcas.'
+      role: t('about.team.aerial.role'),
+      name: t('about.team.aerial.name'),
+      description: t('about.team.aerial.description')
     }
   ];
 
@@ -27,23 +30,25 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <h2 className="text-5xl font-extrabold font-display mb-8 text-primary-dark">
-            Sobre nosotros
+            {t('about.title')}
           </h2>
           <div className="max-w-4xl text-lg text-slate-800 leading-relaxed space-y-5 font-body">
             <p>
-              Somos <strong className="text-primary-dark font-semibold">.js agency</strong>, un estudio digital que combina diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.
+              {t('about.content.paragraph1').replace('.js agency', '').trim()}
+              <strong className="text-primary-dark font-semibold">.js agency</strong>
+              {t('about.content.paragraph1').split('.js agency')[1]}
             </p>
             <p>
-              Trabajamos en equipo, con procesos claros y foco en el detalle, para que cada proyecto sea sólido hoy y escalable mañana.
+              {t('about.content.paragraph2')}
             </p>
             <p className="text-accent-cyan font-semibold text-xl mt-2">
-              Si buscás alguien de confianza para llevar tu marca al siguiente nivel, hablemos.
+              {t('about.content.paragraph3')}
             </p>
           </div>
         </div>
         <div className="pt-12 border-t border-slate-200">
           <h3 className="text-3xl font-bold font-display mb-10 text-primary-dark">
-            Nuestro equipo
+            {t('about.content.teamTitle')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
@@ -64,6 +69,19 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+        
+        {/* CTA Section */}
+        <div className="text-center mt-16 pt-12 border-t border-slate-200">
+          <p className="text-xl text-slate-600 mb-6 font-body">
+            {t('about.content.cta')}
+          </p>
+          <a 
+            href="#contacto" 
+            className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
+          >
+            {t('about.content.ctaButton')}
+          </a>
         </div>
       </div>
     </section>

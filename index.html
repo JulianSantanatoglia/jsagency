@@ -1,14 +1,145 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" id="html-root">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Soluciones digitales con otra perspectiva. Desarrollo web, branding y contenido aéreo.">
-    <title>.js agency — Soluciones digitales con otra perspectiva</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Agencia de desarrollo web, diseño y branding en Almería. Especialistas en React, automatizaciones con IA y fotografía aérea. Soluciones digitales profesionales.">
+    <meta name="keywords" content="desarrollo web, diseño web, branding, React, JavaScript, Almería, España, agencia digital, automatización IA, fotografía aérea">
+    <meta name="author" content=".js agency">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="ES-AL">
+    <meta name="geo.placename" content="Almería">
+    <meta name="geo.position" content="36.8381;-2.4597">
+    <meta name="ICBM" content="36.8381, -2.4597">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jsagency.com/">
+    <meta property="og:title" content=".js agency — Soluciones digitales con otra perspectiva">
+    <meta property="og:description" content="Agencia de desarrollo web, diseño y branding en Almería. Especialistas en React, automatizaciones con IA y fotografía aérea.">
+    <meta property="og:image" content="https://jsagency.com/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content=".js agency">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jsagency.com/">
+    <meta property="twitter:title" content=".js agency — Soluciones digitales con otra perspectiva">
+    <meta property="twitter:description" content="Agencia de desarrollo web, diseño y branding en Almería. Especialistas en React, automatizaciones con IA y fotografía aérea.">
+    <meta property="twitter:image" content="https://jsagency.com/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jsagency.com/">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#22D3EE">
+    <meta name="msapplication-TileColor" content="#22D3EE">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content=".js agency">
+    
+    <!-- Microsoft Meta Tags -->
+    <meta name="msapplication-TileImage" content="/icon-192.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <title>.js agency — Soluciones digitales con otra perspectiva | Desarrollo Web Almería</title>
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": ".js agency",
+      "url": "https://jsagency.com",
+      "logo": "https://jsagency.com/logo.png",
+      "description": "Agencia de desarrollo web, diseño y branding en Almería. Especialistas en React, automatizaciones con IA y fotografía aérea.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Almería",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34-XXX-XXX-XXX",
+        "contactType": "customer service",
+        "email": "hola@jsagency.com",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/jsagency",
+        "https://twitter.com/jsagency"
+      ],
+      "foundingDate": "2024",
+      "numberOfEmployees": "2-10",
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Spain"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Digitales",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desarrollo Web",
+              "description": "Desarrollo de sitios web, aplicaciones y tiendas online con React y tecnologías modernas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño y Branding",
+              "description": "Identidad visual completa, diseño de marca y experiencia de usuario"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatizaciones IA",
+              "description": "Chatbots, asistentes virtuales y automatización de procesos con inteligencia artificial"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fotografía Aérea",
+              "description": "Servicios de fotografía y video aéreo para marcas, inmuebles y eventos"
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
