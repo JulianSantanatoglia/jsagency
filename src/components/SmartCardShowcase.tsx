@@ -173,7 +173,7 @@ const SmartCardShowcase = () => {
                       className={`w-2 h-2 rounded-full transition-colors ${
                         index === currentStep ? 'bg-accent-cyan' : 'bg-white/50'
                       }`}
-                      aria-label={t('smartcard.goToStep', { step: index + 1 })}
+                      aria-label={t('smartcard.goToStep').replace('{step}', (index + 1).toString())}
                     />
                   ))}
                 </div>

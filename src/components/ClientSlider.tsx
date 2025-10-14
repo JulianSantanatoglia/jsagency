@@ -141,7 +141,7 @@ const ClientSlider = () => {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentSlide ? 'bg-accent-cyan' : 'bg-white/50'
                 }`}
-                aria-label={t('clients.goToSlide', { slide: index + 1 })}
+                aria-label={t('clients.goToSlide').replace('{slide}', (index + 1).toString())}
               />
             ))}
           </div>

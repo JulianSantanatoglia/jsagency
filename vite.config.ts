@@ -7,12 +7,6 @@ export default defineConfig({
   build: {
     // Optimize build for production
     minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
     // Generate source maps for production debugging
     sourcemap: false,
     // Optimize chunk splitting
