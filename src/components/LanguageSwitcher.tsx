@@ -17,25 +17,13 @@ const LanguageSwitcher = () => {
       {language === 'es' ? (
         // Bandera de Estados Unidos cuando está en español
         <div className="flex items-center gap-1">
-          <div className="w-6 h-4 rounded-sm overflow-hidden border border-gray-200 shadow-sm">
-            <div className="w-full h-full bg-gradient-to-b from-red-500 via-white to-blue-600 relative">
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-red-500"></div>
-              <div className="absolute top-1/2 left-0 w-full h-1/2 bg-white"></div>
-              <div className="absolute top-0 left-0 w-1/3 h-full bg-blue-600"></div>
-            </div>
-          </div>
+          <span className="fi fi-us text-xl"></span>
           <span className="text-xs font-medium text-slate-600">EN</span>
         </div>
       ) : (
         // Bandera de España cuando está en inglés
         <div className="flex items-center gap-1">
-          <div className="w-6 h-4 rounded-sm overflow-hidden border border-gray-200 shadow-sm">
-            <div className="w-full h-full bg-gradient-to-b from-red-500 via-yellow-500 to-red-500 relative">
-              <div className="absolute top-0 left-0 w-full h-1/3 bg-red-500"></div>
-              <div className="absolute top-1/3 left-0 w-full h-1/3 bg-yellow-500"></div>
-              <div className="absolute top-2/3 left-0 w-full h-1/3 bg-red-500"></div>
-            </div>
-          </div>
+          <span className="fi fi-es text-xl"></span>
           <span className="text-xs font-medium text-slate-600">ES</span>
         </div>
       )}
