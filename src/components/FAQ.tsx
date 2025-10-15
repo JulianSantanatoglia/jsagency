@@ -93,7 +93,7 @@ const FAQ = () => {
                   openItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-5">
+                <div className="px-6 pt-4 pb-5">
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-body">
                     {item.answer}
                   </p>

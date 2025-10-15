@@ -16,15 +16,6 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           icons: ['lucide-react'],
         },
-        // Ensure images are copied correctly
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
-            return `images/[name]-[hash][extname]`;
-          }
-          return `assets/[name]-[hash][extname]`;
-        },
       },
     },
     // Set chunk size warning limit
