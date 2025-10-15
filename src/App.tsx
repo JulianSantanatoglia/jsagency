@@ -12,6 +12,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LegalPages from './components/LegalPages'
 import CookieBanner from './components/CookieBanner'
+import FloatingButtons from './components/FloatingButtons'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'legal'>('home')
@@ -60,6 +61,7 @@ function App() {
       <LanguageProvider>
         <div className="app">
           <LegalPages />
+          <FloatingButtons />
         </div>
       </LanguageProvider>
     )
@@ -81,6 +83,7 @@ function App() {
         </main>
         <Footer />
         <CookieBanner />
+        <FloatingButtons />
       </div>
     </LanguageProvider>
   )
