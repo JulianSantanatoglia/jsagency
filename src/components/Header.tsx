@@ -52,6 +52,12 @@ const Header = () => {
           >
             {t('nav.about')}
           </a>
+          <a 
+            href="#faq" 
+            className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 py-1"
+          >
+            {t('nav.faq')}
+          </a>
           <LanguageSwitcher />
           <a 
             href="#contacto" 
@@ -110,6 +116,13 @@ const Header = () => {
               onClick={closeMenu}
             >
               {t('nav.about')}
+            </a>
+            <a 
+              href="#faq" 
+              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              onClick={closeMenu}
+            >
+              {t('nav.faq')}
             </a>
             <div className="flex justify-center py-2">
               <LanguageSwitcher />

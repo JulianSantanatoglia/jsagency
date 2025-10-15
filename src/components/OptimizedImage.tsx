@@ -21,11 +21,17 @@ const OptimizedImage = ({
   const [hasError, setHasError] = useState(false);
 
   const handleError = () => {
+    console.warn(`Failed to load image: ${imageSrc}`);
     if (!hasError && imageSrc !== fallback) {
       setHasError(true);
       setImageSrc(fallback);
       onError?.();
     }
+  };
+
+  const handleLoad = () => {
+    setHasError(false);
+    console.log(`Successfully loaded image: ${imageSrc}`);
   };
 
   return (
@@ -35,7 +41,10 @@ const OptimizedImage = ({
       className={className}
       loading={loading}
       onError={handleError}
-      onLoad={() => setHasError(false)}
+      onLoad={handleLoad}
+      // Add debugging attributes
+      data-original-src={src}
+      data-has-error={hasError}
     />
   );
 };

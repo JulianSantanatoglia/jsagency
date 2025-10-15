@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:netlify": "tsc -b && vite build && npm run copy-images",
+    "copy-images": "cp -r public/images dist/images",
     "lint": "eslint .",
     "preview": "vite preview"
   },

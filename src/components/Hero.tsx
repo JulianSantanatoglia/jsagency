@@ -1,4 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import ServiceCards from './ServiceCards';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -47,8 +48,10 @@ const Hero = () => {
               <span className="font-medium" role="listitem">{t('hero.feature3')}</span>
             </div>
           </div>
-          <div className="relative h-[300px] md:h-[500px] lg:flex items-center justify-center hidden animate-fade-in-right" aria-hidden="true">
-            <div className="w-full h-full bg-gradient-to-br from-accent-cyan to-accent-emerald rounded-3xl opacity-10 animate-pulse"></div>
+          <div className="relative h-[300px] md:h-[500px] lg:flex items-center justify-center hidden animate-fade-in-right">
+            <div className="w-full h-full max-w-md">
+              <ServiceCards />
+            </div>
           </div>
         </div>
       </section>

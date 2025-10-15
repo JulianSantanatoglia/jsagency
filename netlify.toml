@@ -1,6 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "dist"
+  
+# Ensure images are copied correctly
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
 
 [[redirects]]
   from = "/*"

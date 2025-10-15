@@ -19,6 +19,7 @@ const translations = {
       services: 'Servicios',
       portfolio: 'Portfolio',
       about: 'Nosotros',
+      faq: 'FAQ',
       contact: 'Contacto',
     },
     
@@ -30,6 +31,24 @@ const translations = {
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
       feature3: 'Entregas a tiempo',
+      services: {
+        webdev: {
+          title: 'Desarrollo Web',
+          description: 'Landing pages, webs corporativas y tiendas online'
+        },
+        design: {
+          title: 'Diseño & Branding',
+          description: 'Identidad visual completa y diseño profesional'
+        },
+        ai: {
+          title: 'Automatizaciones IA',
+          description: 'Agentes inteligentes y flujos automatizados'
+        },
+        aerial: {
+          title: 'Contenido Aéreo',
+          description: 'Fotografía y video aéreo para marcas'
+        }
+      }
     },
     
     // Services Section
@@ -213,7 +232,7 @@ const translations = {
       subtitle: 'Somos un equipo multidisciplinario especializado en soluciones digitales integrales.',
       description: 'En .js agency combinamos experiencia técnica, creatividad y estrategia para crear proyectos que realmente funcionan. Nuestro enfoque se basa en entender las necesidades específicas de cada cliente y desarrollar soluciones a medida.',
       content: {
-        paragraph1: 'Somos .js agency, un estudio digital que combina diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.',
+        paragraph1: 'Somos un estudio digital que combina diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.',
         paragraph2: 'Trabajamos en equipo, con procesos claros y foco en el detalle, para que cada proyecto sea sólido hoy y escalable mañana.',
         paragraph3: 'Si buscás alguien de confianza para llevar tu marca al siguiente nivel, hablemos.',
         teamTitle: 'Nuestro equipo',
@@ -344,6 +363,42 @@ const translations = {
       accept: 'Aceptar',
     },
     
+    // FAQ Section
+    faq: {
+      title: 'Preguntas Frecuentes',
+      subtitle: 'Encontrá respuestas a las consultas más comunes sobre nuestros servicios y procesos.',
+      question1: '¿Cuánto tiempo toma desarrollar un proyecto web?',
+      answer1: 'El tiempo de desarrollo varía según la complejidad del proyecto. Una landing page simple puede tomar 2-3 semanas, mientras que una aplicación web completa puede requerir 2-4 meses. Te proporcionamos un cronograma detallado en la propuesta inicial.',
+      question2: '¿Qué incluye el servicio de desarrollo web?',
+      answer2: 'Nuestro servicio incluye diseño responsive, desarrollo frontend y backend, integración de sistemas, SEO técnico base, optimización de performance, y capacitación para el manejo del sitio. También ofrecemos soporte post-lanzamiento.',
+      question3: '¿Trabajan con presupuestos ajustados?',
+      answer3: 'Sí, adaptamos nuestros servicios a diferentes presupuestos. Ofrecemos soluciones escalables que pueden crecer con tu negocio. Siempre buscamos la mejor relación calidad-precio para cada proyecto.',
+      question4: '¿Qué tecnologías utilizan?',
+      answer4: 'Trabajamos con tecnologías modernas como React, Node.js, TypeScript, y bases de datos como PostgreSQL y MongoDB. También utilizamos herramientas de IA para automatizaciones y optimizaciones.',
+      question5: '¿Ofrecen mantenimiento después del lanzamiento?',
+      answer5: 'Sí, ofrecemos planes de mantenimiento que incluyen actualizaciones de seguridad, backups, monitoreo, y soporte técnico. También podemos agregar nuevas funcionalidades según las necesidades de tu negocio.',
+      question6: '¿Cómo es el proceso de trabajo?',
+      answer6: 'Nuestro proceso incluye: 1) Descubrimiento y brief, 2) Diseño y arquitectura, 3) Desarrollo, 4) Testing y lanzamiento, 5) Acompañamiento post-lanzamiento. Mantenemos comunicación constante y entregas regulares.',
+      cta: '¿No encontraste la respuesta que buscabas?',
+      ctaButton: 'Consultar Proyecto →'
+    },
+    
+    // Newsletter Section
+    newsletter: {
+      title: 'Mantente al día',
+      subtitle: 'Recibí tips, novedades y ofertas exclusivas sobre desarrollo web y tecnología.',
+      emailLabel: 'Dirección de email',
+      emailPlaceholder: 'tu@email.com',
+      subscribe: 'Suscribirse',
+      subscribing: 'Suscribiendo...',
+      successTitle: '¡Gracias por suscribirte!',
+      successMessage: 'Te enviaremos contenido valioso sobre desarrollo web y tecnología.',
+      privacy: 'Respetamos tu privacidad. No compartimos tu email con terceros.',
+      errorEmpty: 'Por favor, ingresá tu email',
+      errorInvalid: 'Por favor, ingresá un email válido',
+      errorSubmit: 'Hubo un error. Intentá nuevamente.'
+    },
+    
     // Accessibility
     a11y: {
       skipToContent: 'Saltar al contenido principal',
@@ -366,6 +421,7 @@ const translations = {
       services: 'Services',
       portfolio: 'Portfolio',
       about: 'About',
+      faq: 'FAQ',
       contact: 'Contact',
     },
     
@@ -377,6 +433,24 @@ const translations = {
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
       feature3: 'On-time delivery',
+      services: {
+        webdev: {
+          title: 'Web Development',
+          description: 'Landing pages, corporate websites and online stores'
+        },
+        design: {
+          title: 'Design & Branding',
+          description: 'Complete visual identity and professional design'
+        },
+        ai: {
+          title: 'AI Automation',
+          description: 'Intelligent agents and automated workflows'
+        },
+        aerial: {
+          title: 'Aerial Content',
+          description: 'Aerial photography and video for brands'
+        }
+      }
     },
     
     // Services Section
@@ -689,6 +763,42 @@ const translations = {
       moreInfo: 'More information',
       reject: 'Reject',
       accept: 'Accept',
+    },
+    
+    // FAQ Section
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Find answers to the most common questions about our services and processes.',
+      question1: 'How long does it take to develop a web project?',
+      answer1: 'Development time varies depending on project complexity. A simple landing page can take 2-3 weeks, while a complete web application may require 2-4 months. We provide a detailed timeline in the initial proposal.',
+      question2: 'What does the web development service include?',
+      answer2: 'Our service includes responsive design, frontend and backend development, system integration, basic technical SEO, performance optimization, and training for site management. We also offer post-launch support.',
+      question3: 'Do you work with tight budgets?',
+      answer3: 'Yes, we adapt our services to different budgets. We offer scalable solutions that can grow with your business. We always seek the best quality-price ratio for each project.',
+      question4: 'What technologies do you use?',
+      answer4: 'We work with modern technologies like React, Node.js, TypeScript, and databases like PostgreSQL and MongoDB. We also use AI tools for automation and optimization.',
+      question5: 'Do you offer maintenance after launch?',
+      answer5: 'Yes, we offer maintenance plans that include security updates, backups, monitoring, and technical support. We can also add new features according to your business needs.',
+      question6: 'How is the work process?',
+      answer6: 'Our process includes: 1) Discovery and brief, 2) Design and architecture, 3) Development, 4) Testing and launch, 5) Post-launch support. We maintain constant communication and regular deliveries.',
+      cta: 'Didn\'t find the answer you were looking for?',
+      ctaButton: 'Consult Project →'
+    },
+    
+    // Newsletter Section
+    newsletter: {
+      title: 'Stay updated',
+      subtitle: 'Receive tips, news and exclusive offers about web development and technology.',
+      emailLabel: 'Email address',
+      emailPlaceholder: 'your@email.com',
+      subscribe: 'Subscribe',
+      subscribing: 'Subscribing...',
+      successTitle: 'Thank you for subscribing!',
+      successMessage: 'We\'ll send you valuable content about web development and technology.',
+      privacy: 'We respect your privacy. We don\'t share your email with third parties.',
+      errorEmpty: 'Please enter your email',
+      errorInvalid: 'Please enter a valid email',
+      errorSubmit: 'There was an error. Please try again.'
     },
     
     // Accessibility

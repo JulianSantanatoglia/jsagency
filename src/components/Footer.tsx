@@ -1,11 +1,14 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import Newsletter from './Newsletter';
 
 const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-primary-dark text-white py-12 px-8" role="contentinfo">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <Newsletter />
+      <footer className="bg-primary-dark text-white py-12 px-8" role="contentinfo">
+        <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 mb-12">
           <div className="flex flex-col gap-4">
             <div className="flex items-baseline gap-2 font-display">
@@ -112,6 +115,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

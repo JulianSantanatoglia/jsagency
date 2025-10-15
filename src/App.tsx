@@ -8,6 +8,7 @@ import ClientSlider from './components/ClientSlider'
 import Testimonials from './components/Testimonials'
 import Process from './components/Process'
 import About from './components/About'
+import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LegalPages from './components/LegalPages'
@@ -71,14 +72,15 @@ function App() {
     <LanguageProvider>
       <div className="app">
         <Header />
-                <main id="main-content" role="main">
-                  <Hero />
-                  <SmartCardShowcase />
-                  <Services />
-                  <ClientSlider />
-                  <Testimonials />
+        <main id="main-content" role="main">
+          <Hero />
+          <SmartCardShowcase />
+          <Services />
+          <ClientSlider />
+          <Testimonials />
           <Process />
           <About />
+          <FAQ />
           <Contact />
         </main>
         <Footer />
