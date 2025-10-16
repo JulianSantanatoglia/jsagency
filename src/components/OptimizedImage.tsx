@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import placeholder from '/images/placeholder.svg';
+import placeholder from '../../public/images/placeholder.svg';
 
 interface OptimizedImageProps {
   src: string;

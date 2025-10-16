@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-import mushroom from '/images/proyectos/1mushroommdp.png';
-import joyeria from '/images/proyectos/3joyeriadiaz.png';
-import automatizaciones from '/images/proyectos/make.png';
-import inmobiliaria from '/images/proyectos/inmobiliaria.jpg';
+import mushroom from '../../public/images/proyectos/1mushroommdp.png';
+import joyeria from '../../public/images/proyectos/3joyeriadiaz.png';
+import automatizaciones from '../../public/images/proyectos/make.png';
+import inmobiliaria from '../../public/images/proyectos/inmobiliaria.jpg';
 
 const ClientSlider = () => {
   const { t } = useLanguage();

@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-import paso1 from '/images/paso1.png';
-import paso2 from '/images/paso2.png';
-import paso3 from '/images/paso3.png';
-import paso4 from '/images/paso4.png';
-import paso5 from '/images/paso5.png';
-import paso6 from '/images/paso6.png';
+import paso1 from '../../public/images/paso1.png';
+import paso2 from '../../public/images/paso2.png';
+import paso3 from '../../public/images/paso3.png';
+import paso4 from '../../public/images/paso4.png';
+import paso5 from '../../public/images/paso5.png';
+import paso6 from '../../public/images/paso6.png';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();
