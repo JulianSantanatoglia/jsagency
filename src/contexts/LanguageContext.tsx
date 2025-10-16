@@ -100,21 +100,17 @@ const translations = {
         category: 'Plataforma Empresarial',
         description: 'Sistema completo de gestión y reservas para empresa de alquiler de equipos de sonido profesional.'
       },
-      cafeteria: {
-        category: 'Restaurante',
-        description: 'Carta digital inteligente con divisor de cuentas para mejorar la experiencia gastronómica.'
-      },
       jewelry: {
         category: 'Joyería',
         description: 'E-commerce elegante y sofisticado para mostrar colecciones de joyería de alta calidad.'
       },
-      delivery: {
-        category: 'App Delivery',
-        description: 'Aplicación móvil completa para servicio de delivery con gestión de pedidos en tiempo real.'
+      automation: {
+        category: 'Automatizaciones IA',
+        description: 'Sistemas inteligentes y flujos automatizados para optimizar procesos empresariales con inteligencia artificial.'
       },
-      cooking: {
-        category: 'Educación',
-        description: 'Plataforma educativa para escuela de cocina con cursos online y gestión de estudiantes.'
+      aerial: {
+        category: 'Fotografía Aérea',
+        description: 'Servicios de fotografía y video aéreo profesional para inmobiliarias y proyectos arquitectónicos.'
       }
     },
     
@@ -168,27 +164,9 @@ const translations = {
       testimonials: {
         maximiliano: {
           name: 'Maximiliano Peretti',
-          company: 'CEO Mushroom MDP',
-          role: 'Fundador',
-          content: 'La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.'
-        },
-        cafeteria: {
-          name: 'Sofia Martínez',
-          company: 'La Cafetería',
-          role: 'Propietaria',
-          content: 'Smart card digitalizó mi negocio y lo hizo crecer. La carta digital es intuitiva, elegante y ha mejorado significativamente el servicio. Los comensales pueden dividir la cuenta con facilidad y pagar por lo que consumieron.'
-        },
-        jewelry: {
-          name: 'María Díaz',
-          company: 'Joyería Díaz',
-          role: 'Directora',
-          content: 'El e-commerce que desarrollaron para nuestra joyería es elegante y sofisticado. Ha aumentado nuestras ventas online significativamente y nuestros clientes aman la experiencia de compra.'
-        },
-        delivery: {
-          name: 'Carlos Ruiz',
-          company: 'App Delivery',
+          company: 'Mushroom MDP',
           role: 'CEO',
-          content: 'La aplicación móvil que crearon para nuestro servicio de delivery es increíble. La gestión de pedidos en tiempo real y la interfaz intuitiva han revolucionado nuestro negocio.'
+          content: 'La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.'
         }
       }
     },
@@ -196,32 +174,78 @@ const translations = {
     // Process Section
     process: {
       title: 'Nuestro proceso de trabajo',
-      subtitle: 'Un enfoque estructurado que garantiza resultados de calidad y entregas a tiempo.',
-      steps: {
-        discovery: {
-          number: '01',
-          title: 'Descubrimiento',
-          description: 'Brief rápido y objetivos claros.'
-        },
-        design: {
-          number: '02',
-          title: 'Diseño & Arquitectura',
-          description: 'Wireframes, look & feel y estructura técnica.'
-        },
-        development: {
-          number: '03',
-          title: 'Desarrollo',
-          description: 'Código limpio, integraciones y contenido.'
-        },
-        launch: {
-          number: '04',
-          title: 'Lanzamiento',
-          description: 'Pruebas, SEO técnico base y publicación.'
-        },
-        support: {
-          number: '05',
-          title: 'Acompañamiento',
-          description: 'Soporte y evolución continua.'
+      subtitle: 'Cada servicio tiene su metodología específica para garantizar resultados óptimos.',
+      cta: '¿Listo para comenzar tu proyecto?',
+      ctaButton: 'Consultar Proyecto',
+      webdev: {
+        title: 'Desarrollo Web',
+        steps: {
+          discovery: {
+            title: 'Descubrimiento',
+            description: 'Análisis de requerimientos, objetivos del negocio y definición del alcance del proyecto.'
+          },
+          design: {
+            title: 'Diseño & Arquitectura',
+            description: 'Wireframes, diseño visual, experiencia de usuario y arquitectura técnica del sistema.'
+          },
+          development: {
+            title: 'Desarrollo',
+            description: 'Programación, integraciones, base de datos y funcionalidades específicas del proyecto.'
+          },
+          testing: {
+            title: 'Testing & QA',
+            description: 'Pruebas de funcionalidad, rendimiento, seguridad y compatibilidad entre dispositivos.'
+          },
+          launch: {
+            title: 'Lanzamiento',
+            description: 'Deploy en servidor, configuración de dominio, SEO básico y capacitación del cliente.'
+          }
+        }
+      },
+      automation: {
+        title: 'Automatizaciones IA',
+        steps: {
+          analysis: {
+            title: 'Análisis de Procesos',
+            description: 'Identificación de tareas repetitivas y oportunidades de automatización en tu negocio.'
+          },
+          planning: {
+            title: 'Planificación',
+            description: 'Diseño de flujos de trabajo, selección de herramientas IA y definición de integraciones.'
+          },
+          integration: {
+            title: 'Implementación',
+            description: 'Configuración de sistemas, desarrollo de scripts y conexión con plataformas existentes.'
+          },
+          training: {
+            title: 'Capacitación',
+            description: 'Entrenamiento del equipo, documentación de procesos y transferencia de conocimientos.'
+          },
+          optimization: {
+            title: 'Optimización',
+            description: 'Monitoreo de resultados, ajustes de parámetros y mejora continua de los procesos.'
+          }
+        }
+      },
+      aerial: {
+        title: 'Fotografía Aérea',
+        steps: {
+          planning: {
+            title: 'Planificación',
+            description: 'Análisis del sitio, permisos necesarios, condiciones climáticas y plan de vuelo.'
+          },
+          shooting: {
+            title: 'Rodaje Aéreo',
+            description: 'Captura de imágenes y video con drones profesionales, múltiples ángulos y resoluciones.'
+          },
+          editing: {
+            title: 'Post-Producción',
+            description: 'Edición de video, corrección de color, estabilización y creación de contenido final.'
+          },
+          delivery: {
+            title: 'Entrega',
+            description: 'Archivos en diferentes formatos, plataformas de entrega y derechos de uso clarificados.'
+          }
         }
       }
     },
@@ -502,21 +526,17 @@ const translations = {
         category: 'Enterprise Platform',
         description: 'Complete management and booking system for professional sound equipment rental company.'
       },
-      cafeteria: {
-        category: 'Restaurant',
-        description: 'Intelligent digital menu with bill divider to improve the gastronomic experience.'
-      },
       jewelry: {
         category: 'Jewelry',
         description: 'Elegant and sophisticated e-commerce to showcase high-quality jewelry collections.'
       },
-      delivery: {
-        category: 'Delivery App',
-        description: 'Complete mobile application for delivery service with real-time order management.'
+      automation: {
+        category: 'AI Automations',
+        description: 'Intelligent systems and automated workflows to optimize business processes with artificial intelligence.'
       },
-      cooking: {
-        category: 'Education',
-        description: 'Educational platform for cooking school with online courses and student management.'
+      aerial: {
+        category: 'Aerial Photography',
+        description: 'Professional aerial photography and video services for real estate and architectural projects.'
       }
     },
     
@@ -598,32 +618,78 @@ const translations = {
     // Process Section
     process: {
       title: 'Our work process',
-      subtitle: 'A structured approach that guarantees quality results and on-time deliveries.',
-      steps: {
-        discovery: {
-          number: '01',
-          title: 'Discovery',
-          description: 'Quick brief and clear objectives.'
-        },
-        design: {
-          number: '02',
-          title: 'Design & Architecture',
-          description: 'Wireframes, look & feel and technical structure.'
-        },
-        development: {
-          number: '03',
-          title: 'Development',
-          description: 'Clean code, integrations and content.'
-        },
-        launch: {
-          number: '04',
-          title: 'Launch',
-          description: 'Testing, basic technical SEO and publication.'
-        },
-        support: {
-          number: '05',
-          title: 'Support',
-          description: 'Support and continuous evolution.'
+      subtitle: 'Each service has its specific methodology to ensure optimal results.',
+      cta: 'Ready to start your project?',
+      ctaButton: 'Consult Project',
+      webdev: {
+        title: 'Web Development',
+        steps: {
+          discovery: {
+            title: 'Discovery',
+            description: 'Requirements analysis, business objectives and project scope definition.'
+          },
+          design: {
+            title: 'Design & Architecture',
+            description: 'Wireframes, visual design, user experience and system technical architecture.'
+          },
+          development: {
+            title: 'Development',
+            description: 'Programming, integrations, database and project-specific functionalities.'
+          },
+          testing: {
+            title: 'Testing & QA',
+            description: 'Functionality, performance, security testing and device compatibility.'
+          },
+          launch: {
+            title: 'Launch',
+            description: 'Server deployment, domain configuration, basic SEO and client training.'
+          }
+        }
+      },
+      automation: {
+        title: 'AI Automations',
+        steps: {
+          analysis: {
+            title: 'Process Analysis',
+            description: 'Identification of repetitive tasks and automation opportunities in your business.'
+          },
+          planning: {
+            title: 'Planning',
+            description: 'Workflow design, AI tools selection and integration definition.'
+          },
+          integration: {
+            title: 'Implementation',
+            description: 'System configuration, script development and connection with existing platforms.'
+          },
+          training: {
+            title: 'Training',
+            description: 'Team training, process documentation and knowledge transfer.'
+          },
+          optimization: {
+            title: 'Optimization',
+            description: 'Results monitoring, parameter adjustments and continuous process improvement.'
+          }
+        }
+      },
+      aerial: {
+        title: 'Aerial Photography',
+        steps: {
+          planning: {
+            title: 'Planning',
+            description: 'Site analysis, necessary permits, weather conditions and flight plan.'
+          },
+          shooting: {
+            title: 'Aerial Shooting',
+            description: 'Image and video capture with professional drones, multiple angles and resolutions.'
+          },
+          editing: {
+            title: 'Post-Production',
+            description: 'Video editing, color correction, stabilization and final content creation.'
+          },
+          delivery: {
+            title: 'Delivery',
+            description: 'Files in different formats, delivery platforms and clarified usage rights.'
+          }
         }
       }
     },
@@ -634,7 +700,7 @@ const translations = {
       subtitle: 'We are a multidisciplinary team specialized in comprehensive digital solutions.',
       description: 'At .js agency we combine technical experience, creativity and strategy to create projects that really work. Our approach is based on understanding the specific needs of each client and developing tailored solutions.',
       content: {
-        paragraph1: 'We are .js agency, a digital studio that combines design, technology and strategy to create honest, modern and functional solutions.',
+        paragraph1: 'We are a digital studio that combines design, technology and strategy to create honest, modern and functional solutions.',
         paragraph2: 'We work as a team, with clear processes and focus on detail, so that each project is solid today and scalable tomorrow.',
         paragraph3: 'If you\'re looking for someone you can trust to take your brand to the next level, let\'s talk.',
         teamTitle: 'Our team',

@@ -34,9 +34,7 @@ const About = () => {
           </h2>
           <div className="max-w-4xl text-lg text-slate-800 leading-relaxed space-y-5 font-body">
             <p>
-              {t('about.content.paragraph1').replace('.js agency', '').trim()}
-              <strong className="text-primary-dark font-semibold">.js agency</strong>
-              {t('about.content.paragraph1').split('.js agency')[1]}
+              {t('about.content.paragraph1')}
             </p>
             <p>
               {t('about.content.paragraph2')}

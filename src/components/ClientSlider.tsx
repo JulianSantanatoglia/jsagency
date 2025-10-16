@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
+import { images } from '../assets/images';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
@@ -10,33 +11,27 @@ const ClientSlider = () => {
   const clients = [
     {
       name: 'Mushroom MDP',
-      image: '/images/proyectos/1mushroommdp.png',
+      image: images.projects.mushroom,
       category: t('clients.mushroom.category'),
       description: t('clients.mushroom.description')
     },
     {
-      name: 'La Cafetería',
-      image: '/images/proyectos/2lacafeteria.png',
-      category: t('clients.cafeteria.category'),
-      description: t('clients.cafeteria.description')
-    },
-    {
       name: 'Joyería Díaz',
-      image: '/images/proyectos/3joyeriadiaz.png',
+      image: images.projects.joyeria,
       category: t('clients.jewelry.category'),
       description: t('clients.jewelry.description')
     },
     {
-      name: 'App Delivery',
-      image: '/images/proyectos/4appdelivery.png',
-      category: t('clients.delivery.category'),
-      description: t('clients.delivery.description')
+      name: 'Automatizaciones IA',
+      image: images.projects.automatizaciones,
+      category: t('clients.automation.category'),
+      description: t('clients.automation.description')
     },
     {
-      name: 'Escuela de Cocina',
-      image: '/images/proyectos/5escueladecocina.png',
-      category: t('clients.cooking.category'),
-      description: t('clients.cooking.description')
+      name: 'Fotografía Aérea',
+      image: images.projects.inmobiliaria,
+      category: t('clients.aerial.category'),
+      description: t('clients.aerial.description')
     }
   ];
 
