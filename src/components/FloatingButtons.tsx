@@ -44,13 +44,13 @@ const FloatingButtons = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300"
+        className="group relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300"
         aria-label={language === 'es' ? 'Contactar por WhatsApp' : 'Contact via WhatsApp'}
         title={language === 'es' ? 'Contactar por WhatsApp' : 'Contact via WhatsApp'}
       >
-        <MessageCircle className="w-6 h-6" />
-        {/* Pulse animation */}
-        <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20"></div>
+        <MessageCircle className="w-6 h-6 relative z-10" />
+        {/* Pulse animation only on hover */}
+        <div className="absolute inset-0 bg-green-500 rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
       </a>
 
       {/* Scroll to Top Button */}

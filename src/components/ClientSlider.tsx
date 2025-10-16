@@ -10,7 +10,7 @@ const ClientSlider = () => {
 
   const clients = [
     {
-      name: 'Mushroom MDP',
+      name: 'Mushroom mdp',
       image: images.projects.mushroom,
       category: t('clients.mushroom.category'),
       description: t('clients.mushroom.description')

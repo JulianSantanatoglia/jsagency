@@ -34,19 +34,19 @@ const translations = {
       services: {
         webdev: {
           title: 'Desarrollo Web',
-          description: 'Landing pages, webs corporativas y tiendas online'
+          description: '• Landing pages de alta conversión\n• Sitios web corporativos\n• E-commerce y tiendas online\n• Aplicaciones web personalizadas'
         },
         design: {
           title: 'Diseño & Branding',
-          description: 'Identidad visual completa y diseño profesional'
+          description: '• Identidad visual corporativa\n• Diseño de logos y marca\n• Sistemas de diseño UX/UI\n• Materiales gráficos digitales'
         },
         ai: {
           title: 'Automatizaciones IA',
-          description: 'Agentes inteligentes y flujos automatizados'
+          description: '• Chatbots conversacionales\n• Agentes de atención al cliente\n• Automatización de procesos\n• Integración de herramientas IA'
         },
         aerial: {
           title: 'Contenido Aéreo',
-          description: 'Fotografía y video aéreo para marcas'
+          description: '• Fotografía aérea inmobiliaria\n• Videos corporativos con drones\n• Mapeo y medición de terrenos\n• Contenido publicitario aéreo'
         }
       }
     },
@@ -130,7 +130,7 @@ const translations = {
           description: 'Carta digital inteligente con divisor para comensales, diseñada específicamente para establecimientos gastronómicos. Interfaz intuitiva y moderna que mejora la experiencia del cliente.'
         },
         mushroom: {
-          title: 'Mushroom MDP',
+          title: 'Mushroom mdp',
           category: 'Plataforma Empresarial',
           description: 'Plataforma completa para empresa de alquiler de equipos de sonido profesional y cabinas para DJ. Sistema de gestión de inventario y reservas online para eventos musicales.'
         },
@@ -164,7 +164,7 @@ const translations = {
       testimonials: {
         maximiliano: {
           name: 'Maximiliano Peretti',
-          company: 'Mushroom MDP',
+          company: 'Mushroom mdp',
           role: 'CEO',
           content: 'La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.'
         }
@@ -256,9 +256,9 @@ const translations = {
       subtitle: 'Somos un equipo multidisciplinario especializado en soluciones digitales integrales.',
       description: 'En .js agency combinamos experiencia técnica, creatividad y estrategia para crear proyectos que realmente funcionan. Nuestro enfoque se basa en entender las necesidades específicas de cada cliente y desarrollar soluciones a medida.',
       content: {
-        paragraph1: 'Somos un estudio digital que combina diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.',
+        paragraph1: 'Somos un estudio digital en Almería que integra diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.',
         paragraph2: 'Trabajamos en equipo, con procesos claros y foco en el detalle, para que cada proyecto sea sólido hoy y escalable mañana.',
-        paragraph3: 'Si buscás alguien de confianza para llevar tu marca al siguiente nivel, hablemos.',
+        paragraph3: '¿Buscás un equipo de confianza para impulsar tu marca? Conversemos.',
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',
         ctaButton: 'Hablemos de tu proyecto →'
@@ -460,19 +460,19 @@ const translations = {
       services: {
         webdev: {
           title: 'Web Development',
-          description: 'Landing pages, corporate websites and online stores'
+          description: '• High-converting landing pages\n• Corporate websites\n• E-commerce and online stores\n• Custom web applications'
         },
         design: {
           title: 'Design & Branding',
-          description: 'Complete visual identity and professional design'
+          description: '• Corporate visual identity\n• Logo and brand design\n• UX/UI design systems\n• Digital graphic materials'
         },
         ai: {
           title: 'AI Automation',
-          description: 'Intelligent agents and automated workflows'
+          description: '• Conversational chatbots\n• Customer service agents\n• Process automation\n• AI tools integration'
         },
         aerial: {
           title: 'Aerial Content',
-          description: 'Aerial photography and video for brands'
+          description: '• Real estate aerial photography\n• Corporate drone videos\n• Land mapping and measurement\n• Aerial advertising content'
         }
       }
     },
@@ -556,7 +556,7 @@ const translations = {
           description: 'Intelligent digital menu with divider for diners, specifically designed for gastronomic establishments. Intuitive and modern interface that improves customer experience.'
         },
         mushroom: {
-          title: 'Mushroom MDP',
+          title: 'Mushroom mdp',
           category: 'Enterprise Platform',
           description: 'Complete platform for professional sound equipment rental company and DJ booths. Online inventory management and booking system for musical events.'
         },
@@ -590,7 +590,7 @@ const translations = {
       testimonials: {
         maximiliano: {
           name: 'Maximiliano Peretti',
-          company: 'CEO Mushroom MDP',
+          company: 'CEO Mushroom mdp',
           role: 'Founder',
           content: 'The platform developed by .js agency allowed us to completely professionalize our equipment rental business. The online booking system and inventory management has been a total change.'
         },
@@ -700,9 +700,9 @@ const translations = {
       subtitle: 'We are a multidisciplinary team specialized in comprehensive digital solutions.',
       description: 'At .js agency we combine technical experience, creativity and strategy to create projects that really work. Our approach is based on understanding the specific needs of each client and developing tailored solutions.',
       content: {
-        paragraph1: 'We are a digital studio that combines design, technology and strategy to create honest, modern and functional solutions.',
+        paragraph1: 'We are a digital studio from Almería that integrates design, technology and strategy to create honest, modern and functional solutions.',
         paragraph2: 'We work as a team, with clear processes and focus on detail, so that each project is solid today and scalable tomorrow.',
-        paragraph3: 'If you\'re looking for someone you can trust to take your brand to the next level, let\'s talk.',
+        paragraph3: 'Looking for a trusted team to boost your brand? Let\'s talk.',
         teamTitle: 'Our team',
         cta: 'Want to be the next satisfied client?',
         ctaButton: 'Let\'s talk about your project →'

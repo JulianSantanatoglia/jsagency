@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const ServiceCards = () => {
   const { t } = useLanguage();
@@ -74,7 +74,7 @@ const ServiceCards = () => {
   };
 
   return (
-    <div className="space-y-1.5 md:space-y-2 h-full flex flex-col">
+    <div className="h-full flex flex-col justify-center">
       {services.map((service, index) => {
         const isExpanded = expandedCard === service.key;
         
@@ -82,10 +82,10 @@ const ServiceCards = () => {
           <div
             key={service.key}
             className={`relative transition-all duration-300 ease-in-out ${
-              isExpanded ? 'flex-grow' : ''
+              index > 0 ? 'mt-2 md:mt-2.5' : ''
             }`}
             style={{
-              animationDelay: `${index * 50}ms`
+              animationDelay: `${index * 40}ms`
             }}
           >
             {/* Card */}
@@ -133,18 +133,22 @@ const ServiceCards = () => {
                   id={`service-${service.key}-content`}
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     isExpanded 
-                      ? 'max-h-48 md:max-h-56 opacity-100 mt-3 md:mt-4 transform translate-y-0' 
-                      : 'max-h-0 opacity-0 transform -translate-y-2'
+                      ? 'max-h-24 md:max-h-28 opacity-100 mt-0.5 transform translate-y-0' 
+                      : 'max-h-0 opacity-0 transform -translate-y-1'
                   }`}
                 >
-                  <div className={`border-t ${service.borderColor} pt-3 md:pt-4 space-y-2`}>
-                    <p className={`text-xs md:text-sm leading-relaxed ${service.textColor} font-medium transition-all duration-300`}>
-                      {t(`hero.services.${service.key}.description`)}
-                    </p>
+                  <div className={`border-t ${service.borderColor} pt-3 space-y-0`}>
+                    <div className={`text-xs md:text-sm leading-tight ${service.textColor} font-medium transition-all duration-300`}>
+                      {t(`hero.services.${service.key}.description`).split('\n').map((line, index) => (
+                        <div key={index} className="mb-1.5">
+                          {line}
+                        </div>
+                      ))}
+                    </div>
                     
                     {/* Accent line with animation */}
                     <div className={`h-0.5 w-0 bg-gradient-to-r ${service.gradient} rounded-full transition-all duration-500 ease-out ${
-                      isExpanded ? 'w-8 md:w-12' : 'w-0'
+                      isExpanded ? 'w-2 md:w-3' : 'w-0'
                     }`}></div>
                   </div>
                 </div>
