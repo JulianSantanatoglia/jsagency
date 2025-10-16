@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-import { images } from '../assets/images';
+import mushroom from '/images/proyectos/1mushroommdp.png';
+import joyeria from '/images/proyectos/3joyeriadiaz.png';
+import automatizaciones from '/images/proyectos/make.png';
+import inmobiliaria from '/images/proyectos/inmobiliaria.jpg';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
@@ -11,25 +14,25 @@ const ClientSlider = () => {
   const clients = [
     {
       name: 'Mushroom mdp',
-      image: images.projects.mushroom,
+      image: mushroom,
       category: t('clients.mushroom.category'),
       description: t('clients.mushroom.description')
     },
     {
       name: 'Joyería Díaz',
-      image: images.projects.joyeria,
+      image: joyeria,
       category: t('clients.jewelry.category'),
       description: t('clients.jewelry.description')
     },
     {
       name: 'Automatizaciones IA',
-      image: images.projects.automatizaciones,
+      image: automatizaciones,
       category: t('clients.automation.category'),
       description: t('clients.automation.description')
     },
     {
       name: 'Fotografía Aérea',
-      image: images.projects.inmobiliaria,
+      image: inmobiliaria,
       category: t('clients.aerial.category'),
       description: t('clients.aerial.description')
     }

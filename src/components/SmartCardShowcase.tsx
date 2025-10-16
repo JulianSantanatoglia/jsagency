@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-import { images } from '../assets/images';
+import paso1 from '/images/paso1.png';
+import paso2 from '/images/paso2.png';
+import paso3 from '/images/paso3.png';
+import paso4 from '/images/paso4.png';
+import paso5 from '/images/paso5.png';
+import paso6 from '/images/paso6.png';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();
@@ -10,32 +15,32 @@ const SmartCardShowcase = () => {
 
   const steps = [
     {
-      image: images.steps.paso1,
+      image: paso1,
       title: t('smartcard.steps.step1.title'),
       description: t('smartcard.steps.step1.description')
     },
     {
-      image: images.steps.paso2,
+      image: paso2,
       title: t('smartcard.steps.step2.title'),
       description: t('smartcard.steps.step2.description')
     },
     {
-      image: images.steps.paso3,
+      image: paso3,
       title: t('smartcard.steps.step3.title'),
       description: t('smartcard.steps.step3.description')
     },
     {
-      image: images.steps.paso4,
+      image: paso4,
       title: t('smartcard.steps.step4.title'),
       description: t('smartcard.steps.step4.description')
     },
     {
-      image: images.steps.paso5,
+      image: paso5,
       title: t('smartcard.steps.step5.title'),
       description: t('smartcard.steps.step5.description')
     },
     {
-      image: images.steps.paso6,
+      image: paso6,
       title: t('smartcard.steps.step6.title'),
       description: t('smartcard.steps.step6.description')
     }

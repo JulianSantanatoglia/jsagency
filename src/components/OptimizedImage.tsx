@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { images } from '../assets/images';
+import placeholder from '/images/placeholder.svg';
 
 interface OptimizedImageProps {
   src: string;
@@ -16,7 +16,7 @@ const OptimizedImage = ({
   className = '', 
   loading = 'lazy',
   onError,
-  fallback = images.placeholder
+  fallback = placeholder
 }: OptimizedImageProps) => {
   const [imageSrc, setImageSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
