@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import placeholder from '../../public/images/placeholder.svg';
+// Using static path for public assets
+const placeholder = '/images/placeholder.svg';
 
 interface OptimizedImageProps {
   src: string;

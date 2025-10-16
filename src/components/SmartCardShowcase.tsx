@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-import paso1 from '../../public/images/paso1.png';
-import paso2 from '../../public/images/paso2.png';
-import paso3 from '../../public/images/paso3.png';
-import paso4 from '../../public/images/paso4.png';
-import paso5 from '../../public/images/paso5.png';
-import paso6 from '../../public/images/paso6.png';
+// Using static paths for public assets
+const paso1 = '/images/paso1.png';
+const paso2 = '/images/paso2.png';
+const paso3 = '/images/paso3.png';
+const paso4 = '/images/paso4.png';
+const paso5 = '/images/paso5.png';
+const paso6 = '/images/paso6.png';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();
