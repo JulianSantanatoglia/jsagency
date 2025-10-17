@@ -30,9 +30,10 @@ const Hero = () => {
                 {t('hero.title')}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-body">
-              {t('hero.subtitle')}
-            </p>
+            <p 
+              className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-body"
+              dangerouslySetInnerHTML={{ __html: t('hero.subtitle') }}
+            />
             <a 
               href="#contacto" 
               className="inline-block px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-accent-cyan to-cyan-500 text-white font-bold text-lg md:text-xl rounded-xl hover:from-cyan-500 hover:to-cyan-600 hover:-translate-y-1 transition-all shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"

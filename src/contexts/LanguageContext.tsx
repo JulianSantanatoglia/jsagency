@@ -26,7 +26,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Soluciones digitales con otra perspectiva.',
-      subtitle: 'En .js agency combinamos diseño, tecnología y estrategia para crear webs y sistemas que funcionan de verdad.',
+      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> combinamos diseño, tecnología y estrategia para crear webs y sistemas que funcionan de verdad.',
       cta: 'Consultar Proyecto',
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
@@ -451,7 +451,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Digital solutions with a different perspective.',
-      subtitle: 'At .js agency we combine design, technology and strategy to create websites and systems that actually work.',
+      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we combine design, technology and strategy to create websites and systems that actually work.',
       cta: 'Consult Project',
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
