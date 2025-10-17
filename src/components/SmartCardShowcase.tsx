@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import OptimizedImage from './OptimizedImage';
 // Using static paths for public assets
-const paso1 = 'images/paso1.png';
-const paso2 = 'images/paso2.png';
-const paso3 = 'images/paso3.png';
-const paso4 = 'images/paso4.png';
-const paso5 = 'images/paso5.png';
-const paso6 = 'images/paso6.png';
+const paso1 = '/images/paso1.png';
+const paso2 = '/images/paso2.png';
+const paso3 = '/images/paso3.png';
+const paso4 = '/images/paso4.png';
+const paso5 = '/images/paso5.png';
+const paso6 = '/images/paso6.png';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();
@@ -153,16 +152,16 @@ const SmartCardShowcase = () => {
                   className="flex h-full transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentStep * 100}%)` }}
                 >
-                  {steps.map((step, index) => (
-                    <div key={index} className="w-full h-full flex-shrink-0">
-                      <OptimizedImage 
-                        src={step.image} 
-                        alt={step.title}
-                        className="w-full h-full object-contain"
-                        loading="eager"
-                      />
-                    </div>
-                  ))}
+                   {steps.map((step, index) => (
+                     <div key={index} className="w-full h-full flex-shrink-0">
+                       <img 
+                         src={step.image} 
+                         alt={step.title}
+                         className="w-full h-full object-contain"
+                         loading="eager"
+                       />
+                     </div>
+                   ))}
                 </div>
                 
                 {/* Navigation Arrows */}

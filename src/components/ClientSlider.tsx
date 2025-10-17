@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import OptimizedImage from './OptimizedImage';
 // Using static paths for public assets
-const mushroom = 'images/proyectos/1mushroommdp.png';
-const joyeria = 'images/proyectos/3joyeriadiaz.png';
-const automatizaciones = 'images/proyectos/make.png';
-const inmobiliaria = 'images/proyectos/inmobiliaria.jpg';
+const mushroom = '/images/proyectos/1mushroommdp.png';
+const joyeria = '/images/proyectos/3joyeriadiaz.png';
+const automatizaciones = '/images/proyectos/make.png';
+const inmobiliaria = '/images/proyectos/inmobiliaria.jpg';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
@@ -85,7 +84,7 @@ const ClientSlider = () => {
                   <div className="grid md:grid-cols-2 gap-0 min-h-[400px] md:min-h-[500px]">
                     {/* Image */}
                     <div className="relative overflow-hidden">
-                      <OptimizedImage 
+                      <img 
                         src={client.image} 
                         alt={`${client.name} - ${client.category}`}
                         className="w-full h-full object-cover"
