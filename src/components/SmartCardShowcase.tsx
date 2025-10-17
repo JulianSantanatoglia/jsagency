@@ -94,7 +94,7 @@ const SmartCardShowcase = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="order-2 lg:order-1">
             <div className="mb-8">
@@ -145,7 +145,7 @@ const SmartCardShowcase = () => {
 
           {/* Slider */}
           <div className="order-1 lg:order-2">
-            <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden h-[500px] md:h-[550px] flex flex-col">
+            <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] flex flex-col">
               {/* Image Container */}
               <div className="relative flex-1 overflow-hidden">
                 <div 
@@ -167,18 +167,18 @@ const SmartCardShowcase = () => {
                 {/* Navigation Arrows */}
                 <button 
                   onClick={prevStep}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
                   aria-label={t('smartcard.previousStep')}
                 >
-                  <ChevronLeft size={20} className="text-slate-700 transition-transform duration-300" />
+                  <ChevronLeft size={16} className="text-slate-700 transition-transform duration-300 sm:w-5 sm:h-5" />
                 </button>
                 
                 <button 
                   onClick={nextStep}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
                   aria-label={t('smartcard.nextStep')}
                 >
-                  <ChevronRight size={20} className="text-slate-700 transition-transform duration-300" />
+                  <ChevronRight size={16} className="text-slate-700 transition-transform duration-300 sm:w-5 sm:h-5" />
                 </button>
 
                 {/* Step Indicator */}
@@ -196,17 +196,17 @@ const SmartCardShowcase = () => {
                 </div>
               </div>
 
-              {/* Step Info - Altura fija para mantener consistencia */}
-              <div className="p-6 h-[140px] flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-8 bg-accent-cyan text-white rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300">
+              {/* Step Info - Altura responsive para mantener consistencia */}
+              <div className="p-4 sm:p-6 h-[120px] sm:h-[140px] flex flex-col justify-center">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-accent-cyan text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm transition-all duration-300">
                     {currentStep + 1}
                   </span>
-                  <h4 className="text-lg font-bold text-primary-dark font-display transition-all duration-300">
+                  <h4 className="text-base sm:text-lg font-bold text-primary-dark font-display transition-all duration-300">
                     {steps[currentStep].title}
                   </h4>
                 </div>
-                <p className="text-slate-600 leading-relaxed font-body line-clamp-2 transition-all duration-300">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-body line-clamp-2 transition-all duration-300">
                   {steps[currentStep].description}
                 </p>
               </div>
