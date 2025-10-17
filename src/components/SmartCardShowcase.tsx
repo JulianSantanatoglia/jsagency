@@ -78,7 +78,7 @@ const SmartCardShowcase = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-accent-cyan/5 to-accent-emerald/5">
+    <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-accent-cyan/5 to-accent-emerald/5 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -144,7 +144,7 @@ const SmartCardShowcase = () => {
           </div>
 
           {/* Slider */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 overflow-x-hidden">
             <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] flex flex-col">
               {/* Image Container */}
               <div className="relative flex-1 overflow-hidden">

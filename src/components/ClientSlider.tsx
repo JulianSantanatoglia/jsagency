@@ -61,7 +61,7 @@ const ClientSlider = () => {
   };
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -74,7 +74,7 @@ const ClientSlider = () => {
         </div>
 
         {/* Slider */}
-        <div className="relative">
+        <div className="relative overflow-x-hidden">
           <div className="overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-200">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
