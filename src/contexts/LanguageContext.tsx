@@ -84,7 +84,7 @@ const translations = {
     
     // Clients Section
     clients: {
-      title: 'Ya confiaron en nosotros',
+      title: 'Casos de éxito',
       subtitle: 'Empresas que han elegido nuestras soluciones digitales para hacer crecer su negocio.',
       trusted: 'Cliente satisfecho',
       previous: 'Cliente anterior',
@@ -355,8 +355,7 @@ const translations = {
       cta: 'Escribenos →',
       email: 'Email',
       location: 'Ubicación',
-      schedule: 'Horario',
-      scheduleValue: 'Lun–Vie 9:00–18:00',
+      socialMedia: 'Redes Sociales',
       locationValue: 'Almeria, España',
     },
     
@@ -799,8 +798,7 @@ const translations = {
       cta: 'Write us →',
       email: 'Email',
       location: 'Location',
-      schedule: 'Schedule',
-      scheduleValue: 'Mon–Fri 9:00–18:00',
+      socialMedia: 'Social Media',
       locationValue: 'Almeria, Spain',
     },
     

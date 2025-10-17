@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // Using static path for public assets
 const placeholder = '/images/placeholder.svg';
 
@@ -21,6 +21,12 @@ const OptimizedImage = ({
 }: OptimizedImageProps) => {
   const [imageSrc, setImageSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
+
+  // Update imageSrc when src prop changes
+  useEffect(() => {
+    setImageSrc(src);
+    setHasError(false);
+  }, [src]);
 
   const handleError = () => {
     console.warn(`Failed to load image: ${imageSrc}`);

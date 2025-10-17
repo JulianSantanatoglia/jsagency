@@ -146,13 +146,13 @@ const SmartCardShowcase = () => {
 
           {/* Slider */}
           <div className="order-1 lg:order-2">
-            <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden h-[500px] md:h-[550px] flex flex-col">
               {/* Image Container */}
-              <div className="relative h-80 md:h-96 overflow-hidden">
+              <div className="relative flex-1 overflow-hidden">
                 <OptimizedImage 
                   src={steps[currentStep].image} 
                   alt={steps[currentStep].title}
-                  className="w-full h-full object-cover transition-transform duration-300"
+                  className="w-full h-full object-contain transition-transform duration-300"
                   loading="eager"
                 />
                 
@@ -188,8 +188,8 @@ const SmartCardShowcase = () => {
                 </div>
               </div>
 
-              {/* Step Info */}
-              <div className="p-6">
+              {/* Step Info - Altura fija para mantener consistencia */}
+              <div className="p-6 h-[140px] flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="w-8 h-8 bg-accent-cyan text-white rounded-full flex items-center justify-center font-bold text-sm">
                     {currentStep + 1}
@@ -198,7 +198,7 @@ const SmartCardShowcase = () => {
                     {steps[currentStep].title}
                   </h4>
                 </div>
-                <p className="text-slate-600 leading-relaxed font-body">
+                <p className="text-slate-600 leading-relaxed font-body line-clamp-2">
                   {steps[currentStep].description}
                 </p>
               </div>
