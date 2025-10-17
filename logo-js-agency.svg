@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="32" viewBox="0 0 200 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Definición de la fuente Outfit -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;900&display=swap');
+      
+      .js-text {
+        font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        fill: #0F172A;
+        letter-spacing: 0;
+      }
+      
+      .agency-text {
+        font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        fill: #22D3EE;
+        letter-spacing: 0;
+      }
+      
+      /* Versión footer (más grande) */
+      .js-text-footer {
+        font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 30px;
+        font-weight: 900;
+        fill: #FFFFFF;
+        letter-spacing: 0;
+      }
+      
+      .agency-text-footer {
+        font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        fill: #22D3EE;
+        letter-spacing: 0;
+      }
+    </style>
+  </defs>
+  
+  <!-- Versión Header (principal) -->
+  <g id="header-version">
+    <text x="0" y="24" class="js-text">.js</text>
+    <text x="48" y="24" class="agency-text">agency</text>
+  </g>
+  
+  <!-- Versión Footer (más grande) - comentada por defecto -->
+  <!-- 
+  <g id="footer-version">
+    <text x="0" y="30" class="js-text-footer">.js</text>
+    <text x="60" y="30" class="agency-text-footer">agency</text>
+  </g>
+  -->
+</svg>

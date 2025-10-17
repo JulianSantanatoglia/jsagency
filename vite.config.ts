@@ -22,6 +22,8 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     // Copy public assets
     copyPublicDir: true,
+    // Ensure assets are properly copied
+    assetsDir: 'assets',
   },
   // Optimize dependencies
   optimizeDeps: {
@@ -37,4 +39,6 @@ export default defineConfig({
     port: 4173,
     open: true,
   },
+  // Ensure public assets are served correctly
+  publicDir: 'public',
 })

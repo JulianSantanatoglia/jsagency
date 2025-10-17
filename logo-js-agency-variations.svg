@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;900&display=swap');
+      
+      /* Versión original */
+      .js-original { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; fill: #0F172A; }
+      .agency-original { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 600; fill: #22D3EE; }
+      
+      /* Versión invertida */
+      .js-inverted { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; fill: #FFFFFF; }
+      .agency-inverted { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 600; fill: #22D3EE; }
+      
+      /* Versión monocromática */
+      .js-mono { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; fill: #000000; }
+      .agency-mono { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 600; fill: #000000; }
+      
+      /* Versión grande */
+      .js-large { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 900; fill: #0F172A; }
+      .agency-large { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 600; fill: #22D3EE; }
+      
+      /* Versión pequeña */
+      .js-small { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; fill: #0F172A; }
+      .agency-small { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 600; fill: #22D3EE; }
+    </style>
+  </defs>
+  
+  <!-- Versión Original -->
+  <g id="original">
+    <text x="0" y="24" class="js-original">.js</text>
+    <text x="48" y="24" class="agency-original">agency</text>
+  </g>
+  
+  <!-- Versión Invertida (fondo oscuro) -->
+  <g id="inverted" transform="translate(0, 30)">
+    <text x="0" y="24" class="js-inverted">.js</text>
+    <text x="48" y="24" class="agency-inverted">agency</text>
+  </g>
+  
+  <!-- Versión Monocromática -->
+  <g id="monochrome" transform="translate(0, 60)">
+    <text x="0" y="24" class="js-mono">.js</text>
+    <text x="48" y="24" class="agency-mono">agency</text>
+  </g>
+  
+  <!-- Versión Grande -->
+  <g id="large" transform="translate(200, 0)">
+    <text x="0" y="36" class="js-large">.js</text>
+    <text x="72" y="36" class="agency-large">agency</text>
+  </g>
+  
+  <!-- Versión Pequeña -->
+  <g id="small" transform="translate(200, 50)">
+    <text x="0" y="18" class="js-small">.js</text>
+    <text x="36" y="18" class="agency-small">agency</text>
+  </g>
+</svg>
