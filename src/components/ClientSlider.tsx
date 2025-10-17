@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 // Using static paths for public assets
-// Import images using Vite's asset handling
-import mushroom from '/images/proyectos/1mushroommdp.png';
-import joyeria from '/images/proyectos/3joyeriadiaz.png';
-import automatizaciones from '/images/proyectos/make.png';
-import inmobiliaria from '/images/proyectos/inmobiliaria.jpg';
+// Using static paths for public assets
+const mushroom = '/images/proyectos/1mushroommdp.png';
+const joyeria = '/images/proyectos/3joyeriadiaz.png';
+const automatizaciones = '/images/proyectos/make.png';
+const inmobiliaria = '/images/proyectos/inmobiliaria.jpg';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
