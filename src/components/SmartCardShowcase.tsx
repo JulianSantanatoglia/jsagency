@@ -149,28 +149,37 @@ const SmartCardShowcase = () => {
             <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden h-[500px] md:h-[550px] flex flex-col">
               {/* Image Container */}
               <div className="relative flex-1 overflow-hidden">
-                <OptimizedImage 
-                  src={steps[currentStep].image} 
-                  alt={steps[currentStep].title}
-                  className="w-full h-full object-contain transition-transform duration-300"
-                  loading="eager"
-                />
+                <div 
+                  className="flex h-full transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentStep * 100}%)` }}
+                >
+                  {steps.map((step, index) => (
+                    <div key={index} className="w-full h-full flex-shrink-0">
+                      <OptimizedImage 
+                        src={step.image} 
+                        alt={step.title}
+                        className="w-full h-full object-contain"
+                        loading="eager"
+                      />
+                    </div>
+                  ))}
+                </div>
                 
                 {/* Navigation Arrows */}
                 <button 
                   onClick={prevStep}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
                   aria-label={t('smartcard.previousStep')}
                 >
-                  <ChevronLeft size={20} className="text-slate-700" />
+                  <ChevronLeft size={20} className="text-slate-700 transition-transform duration-300" />
                 </button>
                 
                 <button 
                   onClick={nextStep}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
                   aria-label={t('smartcard.nextStep')}
                 >
-                  <ChevronRight size={20} className="text-slate-700" />
+                  <ChevronRight size={20} className="text-slate-700 transition-transform duration-300" />
                 </button>
 
                 {/* Step Indicator */}
@@ -179,8 +188,8 @@ const SmartCardShowcase = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentStep(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentStep ? 'bg-accent-cyan' : 'bg-white/50'
+                      className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
+                        index === currentStep ? 'bg-accent-cyan scale-125' : 'bg-white/50 hover:bg-white/70'
                       }`}
                       aria-label={t('smartcard.goToStep').replace('{step}', (index + 1).toString())}
                     />
@@ -191,14 +200,14 @@ const SmartCardShowcase = () => {
               {/* Step Info - Altura fija para mantener consistencia */}
               <div className="p-6 h-[140px] flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-8 h-8 bg-accent-cyan text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <span className="w-8 h-8 bg-accent-cyan text-white rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300">
                     {currentStep + 1}
                   </span>
-                  <h4 className="text-lg font-bold text-primary-dark font-display">
+                  <h4 className="text-lg font-bold text-primary-dark font-display transition-all duration-300">
                     {steps[currentStep].title}
                   </h4>
                 </div>
-                <p className="text-slate-600 leading-relaxed font-body line-clamp-2">
+                <p className="text-slate-600 leading-relaxed font-body line-clamp-2 transition-all duration-300">
                   {steps[currentStep].description}
                 </p>
               </div>
