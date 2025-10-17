@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-// Using static paths for public assets
-const paso1 = '/images/paso1.png';
-const paso2 = '/images/paso2.png';
-const paso3 = '/images/paso3.png';
-const paso4 = '/images/paso4.png';
-const paso5 = '/images/paso5.png';
-const paso6 = '/images/paso6.png';
+// Import images using Vite's asset handling
+import paso1 from '/images/paso1.png';
+import paso2 from '/images/paso2.png';
+import paso3 from '/images/paso3.png';
+import paso4 from '/images/paso4.png';
+import paso5 from '/images/paso5.png';
+import paso6 from '/images/paso6.png';
 
 const SmartCardShowcase = () => {
   const { t } = useLanguage();

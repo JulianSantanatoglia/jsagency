@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-// Using static path for public assets
-const placeholder = '/images/placeholder.svg';
+// Import placeholder image using Vite's asset handling
+import placeholder from '/images/placeholder.svg';
 
 interface OptimizedImageProps {
   src: string;
