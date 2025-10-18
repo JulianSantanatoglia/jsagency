@@ -5,9 +5,8 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# SPA redirect - but exclude static assets
+# SPA redirect
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false

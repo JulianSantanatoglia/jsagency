@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 // Using static path for public assets
 const placeholder = '/images/placeholder.svg';
 
@@ -43,12 +42,9 @@ const OptimizedImage = ({
     console.log(`Successfully loaded image: ${imageSrc}`);
   };
 
-  // Ensure path starts with /
-  const normalizedSrc = imageSrc.startsWith('/') ? imageSrc : `/${imageSrc}`;
-
   return (
     <img
-      src={normalizedSrc}
+      src={imageSrc}
       alt={alt}
       className={className}
       loading={loading}
