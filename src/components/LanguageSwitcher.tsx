@@ -17,14 +17,14 @@ const LanguageSwitcher = () => {
       {language === 'es' ? (
         // Bandera de Estados Unidos cuando está en español
         <img 
-          src="/uk.png?v=1" 
+          src="/uk.png" 
           alt="English" 
           className="w-6 h-4 object-cover rounded-sm"
         />
       ) : (
         // Bandera de España cuando está en inglés
         <img 
-          src="/spa.png?v=1" 
+          src="/spa.png" 
           alt="Español" 
           className="w-6 h-4 object-cover rounded-sm"
         />
