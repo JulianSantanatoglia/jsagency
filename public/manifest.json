@@ -1,0 +1,22 @@
+{
+  "name": ".js agency - Soluciones digitales con otra perspectiva",
+  "short_name": ".js agency",
+  "description": "Agencia de desarrollo web, diseño y branding en Almería. Especialistas en React, automatizaciones con IA y fotografía aérea.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22D3EE",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
