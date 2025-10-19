@@ -16,16 +16,18 @@ const LanguageSwitcher = () => {
     >
       {language === 'es' ? (
         // Bandera de Estados Unidos cuando está en español
-        <div className="flex items-center gap-1">
-          <span className="text-xl">🇺🇸</span>
-          <span className="text-xs font-medium text-slate-600">EN</span>
-        </div>
+        <img 
+          src="/uk.png" 
+          alt="English" 
+          className="w-6 h-4 object-cover rounded-sm"
+        />
       ) : (
         // Bandera de España cuando está en inglés
-        <div className="flex items-center gap-1">
-          <span className="text-xl">🇪🇸</span>
-          <span className="text-xs font-medium text-slate-600">ES</span>
-        </div>
+        <img 
+          src="/spa.png" 
+          alt="Español" 
+          className="w-6 h-4 object-cover rounded-sm"
+        />
       )}
     </button>
   );
