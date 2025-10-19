@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import OptimizedImage from './OptimizedImage';
-// Using static paths for public assets
-// Using static paths for public assets
-const mushroom = '/images/proyectos/1mushroommdp.png';
-const joyeria = '/images/proyectos/3joyeriadiaz.png';
-const automatizaciones = '/images/proyectos/make.png';
-const inmobiliaria = '/images/proyectos/inmobiliaria.jpg';
+// Import images directly from assets
+import mushroom from '../assets/images/1mushroommdp.png';
+import joyeria from '../assets/images/3joyeriadiaz.png';
+import automatizaciones from '../assets/images/make.png';
+import inmobiliaria from '../assets/images/inmobiliaria.jpg';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
