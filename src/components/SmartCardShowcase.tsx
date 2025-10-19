@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Users, QrCode, CreditCard, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import OptimizedImage from './OptimizedImage';
 // Using static paths for public assets
 const paso1 = '/images/paso1.png';
 const paso2 = '/images/paso2.png';
@@ -154,7 +155,7 @@ const SmartCardShowcase = () => {
                 >
                    {steps.map((step, index) => (
                      <div key={index} className="w-full h-full flex-shrink-0">
-                       <img 
+                       <OptimizedImage 
                          src={step.image} 
                          alt={step.title}
                          className="w-full h-full object-contain"
