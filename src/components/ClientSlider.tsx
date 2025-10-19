@@ -3,10 +3,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 // Using static paths for public assets
 // Using static paths for public assets
-const mushroom = '/images/proyectos/1mushroommdp.png';
-const joyeria = '/images/proyectos/3joyeriadiaz.png';
-const automatizaciones = '/images/proyectos/make.png';
-const inmobiliaria = '/images/proyectos/inmobiliaria.jpg';
+const mushroom = '/images/proyectos/1mushroommdp.png?v=1';
+const joyeria = '/images/proyectos/3joyeriadiaz.png?v=1';
+const automatizaciones = '/images/proyectos/make.png?v=1';
+const inmobiliaria = '/images/proyectos/inmobiliaria.jpg?v=1';
 
 const ClientSlider = () => {
   const { t } = useLanguage();
