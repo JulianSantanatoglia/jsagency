@@ -29,7 +29,6 @@ const OptimizedImage = ({
   }, [src]);
 
   const handleError = () => {
-    console.warn(`Failed to load image: ${imageSrc}`);
     if (!hasError && imageSrc !== fallback) {
       setHasError(true);
       setImageSrc(fallback);
@@ -39,7 +38,6 @@ const OptimizedImage = ({
 
   const handleLoad = () => {
     setHasError(false);
-    console.log(`Successfully loaded image: ${imageSrc}`);
   };
 
   return (
