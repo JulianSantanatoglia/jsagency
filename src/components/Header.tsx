@@ -70,27 +70,52 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden p-2 rounded-lg text-slate-900 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+          className="lg:hidden p-2 rounded-lg text-slate-900 hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
           aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
         >
-          {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+          <div className="relative w-6 h-6">
+            <Menu 
+              size={24} 
+              aria-hidden="true" 
+              className={`absolute inset-0 transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-0 rotate-180 scale-0' : 'opacity-100 rotate-0 scale-100'
+              }`}
+            />
+            <X 
+              size={24} 
+              aria-hidden="true" 
+              className={`absolute inset-0 transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-180 scale-0'
+              }`}
+            />
+          </div>
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div 
-          id="mobile-menu"
-          className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg"
-          role="navigation"
-          aria-label={t('a11y.mobileNavigation')}
-        >
-          <nav className="flex flex-col p-4 space-y-4">
+      <div 
+        id="mobile-menu"
+        className={`lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xl transition-all duration-300 ease-out overflow-hidden ${
+          isMenuOpen 
+            ? 'opacity-100 translate-y-0 max-h-96' 
+            : 'opacity-0 -translate-y-4 max-h-0 pointer-events-none'
+        }`}
+        role="navigation"
+        aria-label={t('a11y.mobileNavigation')}
+      >
+        <nav className={`flex flex-col p-4 space-y-4 transition-all duration-300 ${
+          isMenuOpen ? 'delay-100' : 'delay-0'
+        }`}>
             <a 
               href="#home" 
-              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '150ms' : '0ms'
+              }}
               onClick={closeMenu}
               aria-current="page"
             >
@@ -98,45 +123,75 @@ const Header = () => {
             </a>
             <a 
               href="#servicios" 
-              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '200ms' : '0ms'
+              }}
               onClick={closeMenu}
             >
               {t('nav.services')}
             </a>
             <a 
               href="#portfolio" 
-              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '250ms' : '0ms'
+              }}
               onClick={closeMenu}
             >
               {t('nav.portfolio')}
             </a>
             <a 
               href="#nosotros" 
-              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '300ms' : '0ms'
+              }}
               onClick={closeMenu}
             >
               {t('nav.about')}
             </a>
             <a 
               href="#faq" 
-              className="text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2"
+              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '350ms' : '0ms'
+              }}
               onClick={closeMenu}
             >
               {t('nav.faq')}
             </a>
-            <div className="flex justify-center py-2">
+            <div className={`flex justify-center py-2 transition-all duration-300 transform ${
+              isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+            }`}
+            style={{
+              transitionDelay: isMenuOpen ? '400ms' : '0ms'
+            }}
+            >
               <LanguageSwitcher />
             </div>
             <a 
               href="#contacto" 
-              className="px-6 py-2.5 bg-accent-cyan text-white rounded-xl font-semibold text-sm uppercase tracking-wide hover:bg-cyan-500 transition-colors text-center focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"
+              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-xl font-semibold text-sm uppercase tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '450ms' : '0ms'
+              }}
               onClick={closeMenu}
             >
               {t('nav.contact')}
             </a>
-          </nav>
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   );
 };
