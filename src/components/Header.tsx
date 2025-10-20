@@ -99,18 +99,18 @@ const Header = () => {
         id="mobile-menu"
         className={`lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xl transition-all duration-300 ease-out overflow-hidden ${
           isMenuOpen 
-            ? 'opacity-100 translate-y-0 max-h-96' 
+            ? 'opacity-100 translate-y-0 max-h-screen' 
             : 'opacity-0 -translate-y-4 max-h-0 pointer-events-none'
         }`}
         role="navigation"
         aria-label={t('a11y.mobileNavigation')}
       >
-        <nav className={`flex flex-col p-4 space-y-4 transition-all duration-300 ${
+        <nav className={`flex flex-col p-4 pb-6 space-y-4 transition-all duration-300 ${
           isMenuOpen ? 'delay-100' : 'delay-0'
         }`}>
             <a 
               href="#home" 
-              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+              className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
               style={{
@@ -123,7 +123,7 @@ const Header = () => {
             </a>
             <a 
               href="#servicios" 
-              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+              className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
               style={{
@@ -135,7 +135,7 @@ const Header = () => {
             </a>
             <a 
               href="#portfolio" 
-              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+              className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
               style={{
@@ -147,7 +147,7 @@ const Header = () => {
             </a>
             <a 
               href="#nosotros" 
-              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+              className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
               style={{
@@ -159,7 +159,7 @@ const Header = () => {
             </a>
             <a 
               href="#faq" 
-              className={`text-sm font-medium text-slate-900 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
+              className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
               style={{
@@ -180,7 +180,7 @@ const Header = () => {
             </div>
             <a 
               href="#contacto" 
-              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-xl font-semibold text-sm uppercase tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 transform ${
+              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-xl font-bold text-base uppercase tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
               }`}
               style={{
