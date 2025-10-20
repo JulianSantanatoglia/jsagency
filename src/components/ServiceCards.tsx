@@ -74,7 +74,7 @@ const ServiceCards = () => {
   };
 
   return (
-    <div className="h-full flex flex-col justify-center">
+    <div className="flex flex-col">
       {services.map((service, index) => {
         const isExpanded = expandedCard === service.key;
         
@@ -82,7 +82,7 @@ const ServiceCards = () => {
           <div
             key={service.key}
             className={`relative transition-all duration-300 ease-in-out ${
-              index > 0 ? 'mt-2 md:mt-2.5' : ''
+              index > 0 ? 'mt-1 md:mt-2.5' : ''
             }`}
             style={{
               animationDelay: `${index * 40}ms`
@@ -99,19 +99,19 @@ const ServiceCards = () => {
               aria-expanded={isExpanded}
               aria-controls={`service-${service.key}-content`}
             >
-              <div className="p-3 md:p-4">
+              <div className="p-4 md:p-4">
                 {/* Header with icon, title and chevron */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2.5 md:space-x-3">
                     {/* Icon */}
-                    <div className={`flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-r ${service.gradient} flex items-center justify-center text-white shadow-sm transition-all duration-300 ${
+                    <div className={`flex-shrink-0 w-8 h-8 md:w-8 md:h-8 rounded-lg bg-gradient-to-r ${service.gradient} flex items-center justify-center text-white shadow-sm transition-all duration-300 ${
                       isExpanded ? 'scale-110 shadow-md' : 'group-hover:scale-105'
                     }`}>
                       {service.icon}
                     </div>
                     
                     {/* Title */}
-                    <h3 className={`font-semibold text-xs md:text-sm lg:text-base transition-all duration-300 ${
+                    <h3 className={`font-semibold text-sm md:text-sm lg:text-base transition-all duration-300 ${
                       isExpanded ? `${service.textColor} transform translate-x-0` : 'text-gray-700 group-hover:text-gray-900'
                     }`}>
                       {t(`hero.services.${service.key}.title`)}

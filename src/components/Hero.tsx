@@ -49,7 +49,7 @@ const Hero = () => {
               <span className="font-medium" role="listitem">{t('hero.feature3')}</span>
             </div>
           </div>
-          <div className="relative h-[400px] md:h-[500px] lg:flex items-center justify-center animate-fade-in-right">
+          <div className="relative lg:flex items-center justify-center animate-fade-in-right">
             <div className="w-full h-full max-w-md">
               <ServiceCards />
             </div>
