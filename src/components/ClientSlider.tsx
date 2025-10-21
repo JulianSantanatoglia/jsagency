@@ -119,7 +119,7 @@ const ClientSlider = () => {
           {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+            className="absolute left-4 top-[35%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
             aria-label={t('clients.previous')}
           >
             <ChevronLeft size={24} className="text-slate-700" />
@@ -127,7 +127,7 @@ const ClientSlider = () => {
           
           <button 
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+            className="absolute right-4 top-[35%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
             aria-label={t('clients.next')}
           >
             <ChevronRight size={24} className="text-slate-700" />
@@ -140,7 +140,7 @@ const ClientSlider = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-accent-cyan' : 'bg-white/50'
+                  index === currentSlide ? 'bg-accent-cyan' : 'bg-gray-300'
                 }`}
                 aria-label={t('clients.goToSlide').replace('{slide}', (index + 1).toString())}
               />

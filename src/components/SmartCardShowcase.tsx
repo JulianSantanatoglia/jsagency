@@ -189,7 +189,7 @@ const SmartCardShowcase = () => {
                       key={index}
                       onClick={() => setCurrentStep(index)}
                       className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
-                        index === currentStep ? 'bg-accent-cyan scale-125' : 'bg-white/50 hover:bg-white/70'
+                        index === currentStep ? 'bg-accent-cyan scale-125' : 'bg-gray-300 hover:bg-gray-400'
                       }`}
                       aria-label={t('smartcard.goToStep').replace('{step}', (index + 1).toString())}
                     />
