@@ -84,33 +84,28 @@ const translations = {
     
     // Clients Section
     clients: {
-      title: 'Casos de éxito',
+      title: 'Quien confió en nosotros',
       subtitle: 'Empresas que han elegido nuestras soluciones digitales para hacer crecer su negocio.',
-      trusted: 'Cliente satisfecho',
-      previous: 'Cliente anterior',
-      next: 'Siguiente cliente',
-      goToSlide: 'Ir al cliente {slide}',
-      stats: {
-        projects: 'Proyectos',
-        satisfaction: 'Satisfacción',
-        response: 'Respuesta',
-        coverage: 'Cobertura'
-      },
+      viewProject: 'Ver proyecto',
       mushroom: {
         category: 'Plataforma Empresarial',
-        description: 'Sistema completo de gestión y reservas para empresa de alquiler de equipos de sonido profesional.'
+        description: 'Sistema completo de gestión y reservas para empresa de alquiler de equipos de sonido profesional.',
+        link: 'https://mushroommdp.com'
       },
       jewelry: {
         category: 'Joyería',
-        description: 'E-commerce elegante y sofisticado para mostrar colecciones de joyería de alta calidad.'
+        description: 'E-commerce elegante y sofisticado para mostrar colecciones de joyería de alta calidad.',
+        link: '#'
       },
       automation: {
         category: 'Automatizaciones IA',
-        description: 'Sistemas inteligentes y flujos automatizados para optimizar procesos empresariales con inteligencia artificial.'
+        description: 'Sistemas inteligentes y flujos automatizados para optimizar procesos empresariales con inteligencia artificial.',
+        link: '#'
       },
       aerial: {
         category: 'Fotografía Aérea',
-        description: 'Servicios de fotografía y video aéreo profesional para inmobiliarias y proyectos arquitectónicos.'
+        description: 'Servicios de fotografía y video aéreo profesional para inmobiliarias y proyectos arquitectónicos.',
+        link: 'https://jsgliafly.netlify.app/'
       }
     },
     
@@ -380,7 +375,7 @@ const translations = {
     // Cookie Banner
     cookies: {
       title: 'Uso de Cookies',
-      message: 'Utilizamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta nuestro uso de cookies.',
+      message: 'Utilizamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta nuestro uso de cookies. ',
       moreInfo: 'Más información',
       reject: 'Rechazar',
       accept: 'Aceptar',
@@ -509,33 +504,28 @@ const translations = {
     
     // Clients Section
     clients: {
-      title: 'They already trusted us',
+      title: 'Who trusted us',
       subtitle: 'Companies that have chosen our digital solutions to grow their business.',
-      trusted: 'Satisfied client',
-      previous: 'Previous client',
-      next: 'Next client',
-      goToSlide: 'Go to client {slide}',
-      stats: {
-        projects: 'Projects',
-        satisfaction: 'Satisfaction',
-        response: 'Response',
-        coverage: 'Coverage'
-      },
+      viewProject: 'View project',
       mushroom: {
         category: 'Enterprise Platform',
-        description: 'Complete management and booking system for professional sound equipment rental company.'
+        description: 'Complete management and booking system for professional sound equipment rental company.',
+        link: 'https://mushroommdp.com'
       },
       jewelry: {
         category: 'Jewelry',
-        description: 'Elegant and sophisticated e-commerce to showcase high-quality jewelry collections.'
+        description: 'Elegant and sophisticated e-commerce to showcase high-quality jewelry collections.',
+        link: '#'
       },
       automation: {
         category: 'AI Automations',
-        description: 'Intelligent systems and automated workflows to optimize business processes with artificial intelligence.'
+        description: 'Intelligent systems and automated workflows to optimize business processes with artificial intelligence.',
+        link: '#'
       },
       aerial: {
         category: 'Aerial Photography',
-        description: 'Professional aerial photography and video services for real estate and architectural projects.'
+        description: 'Professional aerial photography and video services for real estate and architectural projects.',
+        link: 'https://jsgliafly.netlify.app/'
       }
     },
     

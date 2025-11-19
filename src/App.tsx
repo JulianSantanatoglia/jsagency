@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import SmartCardShowcase from './components/SmartCardShowcase'
 import Services from './components/Services'
-import ClientSlider from './components/ClientSlider'
+import TrustedClients from './components/TrustedClients'
 import Testimonials from './components/Testimonials'
 import Process from './components/Process'
 import About from './components/About'
@@ -76,7 +76,7 @@ function App() {
           <Hero />
           <SmartCardShowcase />
           <Services />
-          <ClientSlider />
+          <TrustedClients />
           <Testimonials />
           <Process />
           <About />
