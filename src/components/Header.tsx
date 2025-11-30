@@ -36,17 +36,17 @@ const Header = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
           <a 
+            href="#smartcard" 
+            className="relative text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+          >
+            {t('nav.latestProject')}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+          </a>
+          <a 
             href="#servicios" 
             className="relative text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
           >
             {t('nav.services')}
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-          </a>
-          <a 
-            href="#portfolio" 
-            className="relative text-sm font-medium text-slate-900 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-          >
-            {t('nav.portfolio')}
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
           <a 
@@ -127,7 +127,7 @@ const Header = () => {
               {t('nav.home')}
             </a>
             <a 
-              href="#servicios" 
+              href="#smartcard" 
               className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
@@ -136,10 +136,10 @@ const Header = () => {
               }}
               onClick={closeMenu}
             >
-              {t('nav.services')}
+              {t('nav.latestProject')}
             </a>
             <a 
-              href="#portfolio" 
+              href="#servicios" 
               className={`text-base font-semibold text-slate-800 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
@@ -148,7 +148,7 @@ const Header = () => {
               }}
               onClick={closeMenu}
             >
-              {t('nav.portfolio')}
+              {t('nav.services')}
             </a>
             <a 
               href="#nosotros" 

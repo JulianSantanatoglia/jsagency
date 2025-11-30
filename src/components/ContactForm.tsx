@@ -55,11 +55,9 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
 
   const serviceOptions = [
     { value: 'web-development', label: 'Desarrollo Web' },
-    { value: 'design', label: 'Diseño' },
-    { value: 'branding', label: 'Branding' },
-    { value: 'seo', label: 'SEO' },
+    { value: 'virtual-tours', label: 'Recorridos virtuales' },
     { value: 'automation', label: 'Automatización' },
-    { value: 'photography', label: 'Fotografía' }
+    { value: 'aerial-content', label: 'Contenido Aéreo' }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -131,7 +129,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
   };
 
   return (
-    <div className={`bg-white rounded-2xl shadow-xl p-8 md:p-12 ${className}`}>
+    <div className={`bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 ${className}`}>
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-bold text-primary-dark mb-4 font-display">
           Envíanos un mensaje

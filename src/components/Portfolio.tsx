@@ -1,4 +1,4 @@
-import { Smartphone, Music, Paintbrush, BarChart3, Monitor, Palette } from 'lucide-react';
+import { Smartphone, Music, Paintbrush, BarChart3, Monitor, Video } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {
@@ -53,15 +53,15 @@ const Portfolio = () => {
       title: t('portfolio.projects.brandIdentity.title'),
       category: t('portfolio.projects.brandIdentity.category'),
       description: t('portfolio.projects.brandIdentity.description'),
-      icon: Palette,
-      technologies: ["Figma", "Adobe CC", "Brand Guidelines"],
+      icon: Video,
+      technologies: ["Insta360 X5", "360° Tour", "Web Integration"],
       link: "#",
       featured: false
     }
   ];
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-8 bg-white">
+    <section id="portfolio" className="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 text-primary-dark">

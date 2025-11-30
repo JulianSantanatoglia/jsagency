@@ -59,7 +59,7 @@ const TrustedClients = () => {
           {clients.map((client, index) => (
             <article
               key={index}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover-lift hover:border-accent-cyan hover:shadow-xl hover:shadow-accent-cyan/10 transition-all duration-300 animate-fade-in-up group"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden hover-lift hover:border-accent-cyan hover:shadow-xl hover:shadow-accent-cyan/10 transition-all duration-300 animate-fade-in-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}

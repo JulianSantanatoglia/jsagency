@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Monitor, Zap, Camera } from 'lucide-react';
+import { Monitor, Zap, Camera, Video } from 'lucide-react';
 
 const Process = () => {
   const { t } = useLanguage();
@@ -45,6 +45,75 @@ const Process = () => {
       ]
     },
     {
+      id: 'design',
+      title: t('process.design.title'),
+      icon: Video,
+      color: 'purple',
+      gradient: 'from-purple-500 to-purple-600',
+      bgColor: 'bg-purple-50',
+      borderColor: 'border-purple-200',
+      textColor: 'text-purple-600',
+      steps: [
+        {
+          number: '01',
+          title: t('process.design.steps.consultation.title'),
+          description: t('process.design.steps.consultation.description')
+        },
+        {
+          number: '02',
+          title: t('process.design.steps.capture.title'),
+          description: t('process.design.steps.capture.description')
+        },
+        {
+          number: '03',
+          title: t('process.design.steps.processing.title'),
+          description: t('process.design.steps.processing.description')
+        },
+        {
+          number: '04',
+          title: t('process.design.steps.integration.title'),
+          description: t('process.design.steps.integration.description')
+        },
+        {
+          number: '05',
+          title: t('process.design.steps.delivery.title'),
+          description: t('process.design.steps.delivery.description')
+        }
+      ]
+    },
+    {
+      id: 'aerial',
+      title: t('process.aerial.title'),
+      icon: Camera,
+      color: 'orange',
+      gradient: 'from-orange-500 to-orange-600',
+      bgColor: 'bg-orange-50',
+      borderColor: 'border-orange-200',
+      textColor: 'text-orange-600',
+      steps: [
+        {
+          number: '01',
+          title: t('process.aerial.steps.planning.title'),
+          description: t('process.aerial.steps.planning.description')
+        },
+        {
+          number: '02',
+          title: t('process.aerial.steps.shooting.title'),
+          description: t('process.aerial.steps.shooting.description')
+        },
+        {
+          number: '03',
+          title: t('process.aerial.steps.editing.title'),
+          description: t('process.aerial.steps.editing.description')
+        },
+        {
+          number: '04',
+          title: t('process.aerial.steps.delivery.title'),
+          description: t('process.aerial.steps.delivery.description')
+        }
+      ]
+    },
+    {
       id: 'automation',
       title: t('process.automation.title'),
       icon: Zap,
@@ -80,45 +149,13 @@ const Process = () => {
           description: t('process.automation.steps.optimization.description')
         }
       ]
-    },
-    {
-      id: 'aerial',
-      title: t('process.aerial.title'),
-      icon: Camera,
-      color: 'orange',
-      gradient: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200',
-      textColor: 'text-orange-600',
-      steps: [
-        {
-          number: '01',
-          title: t('process.aerial.steps.planning.title'),
-          description: t('process.aerial.steps.planning.description')
-        },
-        {
-          number: '02',
-          title: t('process.aerial.steps.shooting.title'),
-          description: t('process.aerial.steps.shooting.description')
-        },
-        {
-          number: '03',
-          title: t('process.aerial.steps.editing.title'),
-          description: t('process.aerial.steps.editing.description')
-        },
-        {
-          number: '04',
-          title: t('process.aerial.steps.delivery.title'),
-          description: t('process.aerial.steps.delivery.description')
-        }
-      ]
     }
   ];
 
   const activeProcessData = processes.find(p => p.id === activeProcess);
 
   return (
-    <section id="proceso" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section id="proceso" className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-slate-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 md:mb-6 text-primary-dark">
@@ -142,7 +179,7 @@ const Process = () => {
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                   isActive
                     ? `${process.bgColor} ${process.borderColor} border-2 ${process.textColor} shadow-md`
-                    : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300'
+                    : 'bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-600 hover:bg-white hover:border-gray-300'
                 }`}
               >
                 <IconComponent size={20} />
@@ -158,7 +195,7 @@ const Process = () => {
             {activeProcessData.steps.map((step, index) => (
               <div 
                 key={index} 
-                className={`flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 items-center sm:items-start bg-white p-6 md:p-8 rounded-2xl border-2 ${activeProcessData.borderColor} hover-lift hover:shadow-lg transition-all duration-300 animate-fade-in-up`}
+                className={`flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 items-center sm:items-start bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border-2 ${activeProcessData.borderColor} hover-lift hover:shadow-lg transition-all duration-300 animate-fade-in-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`text-3xl md:text-4xl font-extrabold font-display ${activeProcessData.textColor} opacity-30 flex-shrink-0`}>

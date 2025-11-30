@@ -12,7 +12,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonios" className="py-16 md:py-20 px-4 md:px-8 bg-white">
+    <section id="testimonios" className="py-16 md:py-20 px-4 md:px-8 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 text-primary-dark">

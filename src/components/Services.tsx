@@ -1,5 +1,6 @@
-import { Globe, Palette, Bot, Camera } from 'lucide-react';
+import { Globe, Video, Bot, Camera } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import OptimizedImage from './OptimizedImage';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -12,7 +13,8 @@ const Services = () => {
         t('services.webdev.feature1'),
         t('services.webdev.feature2')
       ],
-      icon: Globe
+      icon: Globe,
+      image: '/images/proyectos/mushroommdp.jpg'
     },
     {
       title: t('services.design.title'),
@@ -21,16 +23,8 @@ const Services = () => {
         t('services.design.feature1'),
         t('services.design.feature2')
       ],
-      icon: Palette
-    },
-    {
-      title: t('services.ai.title'),
-      description: t('services.ai.description'),
-      features: [
-        t('services.ai.feature1'),
-        t('services.ai.feature2')
-      ],
-      icon: Bot
+      icon: Video,
+      image: '/images/proyectos/360.jpg'
     },
     {
       title: t('services.aerial.title'),
@@ -39,14 +33,25 @@ const Services = () => {
         t('services.aerial.feature1'),
         t('services.aerial.feature2')
       ],
-      icon: Camera
+      icon: Camera,
+      image: '/images/proyectos/inmobiliaria.jpg'
+    },
+    {
+      title: t('services.ai.title'),
+      description: t('services.ai.description'),
+      features: [
+        t('services.ai.feature1'),
+        t('services.ai.feature2')
+      ],
+      icon: Bot,
+      image: '/images/proyectos/automatizacion.jpg'
     }
   ];
 
   return (
     <section 
       id="servicios" 
-      className="py-16 md:py-24 px-4 md:px-8 bg-white"
+      className="py-16 md:py-24 px-4 md:px-8 bg-gray-50"
       aria-labelledby="services-title"
     >
       <div className="max-w-7xl mx-auto">
@@ -65,14 +70,29 @@ const Services = () => {
           {services.map((service, index) => (
             <article 
               key={index} 
-              className="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up focus-within:ring-2 focus-within:ring-accent-cyan focus-within:ring-offset-2"
+              className="bg-slate-50 rounded-2xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up focus-within:ring-2 focus-within:ring-accent-cyan focus-within:ring-offset-2 overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
               role="listitem"
               tabIndex={0}
             >
-              <div className="mb-4 md:mb-6">
-                <service.icon size={48} className="text-accent-cyan mx-auto" aria-hidden="true" />
+              {/* Image */}
+              <div className="relative h-48 md:h-56 overflow-hidden bg-slate-100">
+                <OptimizedImage 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg">
+                    <service.icon size={32} className="text-accent-cyan" aria-hidden="true" />
+                  </div>
+                </div>
               </div>
+              
+              {/* Content */}
+              <div className="p-6 md:p-10">
               <h3 className="text-xl md:text-2xl font-bold font-display mb-3 md:mb-4 text-primary-dark">
                 {service.title}
               </h3>
@@ -87,7 +107,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              {index === 3 && (
+              {index === 2 && (
                 <div className="mt-4 pt-4 border-t border-slate-200">
                   <a 
                     href="https://jsgliafly.netlify.app/" 
@@ -100,6 +120,7 @@ const Services = () => {
                   </a>
                 </div>
               )}
+              </div>
             </article>
           ))}
         </div>

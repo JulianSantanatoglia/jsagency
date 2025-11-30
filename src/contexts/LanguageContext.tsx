@@ -16,8 +16,8 @@ const translations = {
     // Navigation
     nav: {
       home: 'Home',
+      latestProject: 'Destacado',
       services: 'Servicios',
-      portfolio: 'Portfolio',
       about: 'Nosotros',
       faq: 'FAQ',
       contact: 'Contacto',
@@ -26,7 +26,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Soluciones digitales con otra perspectiva.',
-      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> combinamos diseño, tecnología y estrategia para crear webs y sistemas que funcionan de verdad.',
+      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> ofrecemos <strong>desarrollo web</strong>, <strong>recorridos virtuales 360°</strong>, <strong>contenido aéreo con drones</strong> y <strong>automatizaciones con IA</strong>. Cuatro servicios integrados para hacer crecer tu negocio.',
       cta: 'Consultar Proyecto',
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
@@ -37,8 +37,8 @@ const translations = {
           description: '• Landing pages de alta conversión\n• Sitios web corporativos\n• E-commerce y tiendas online\n• Aplicaciones web personalizadas'
         },
         design: {
-          title: 'Diseño & Branding',
-          description: '• Identidad visual corporativa\n• Diseño de logos y marca\n• Sistemas de diseño UX/UI\n• Materiales gráficos digitales'
+          title: 'Recorridos virtuales',
+          description: '• Recorridos 360° para inmobiliarias\n• Tours virtuales para hoteles y hostelería\n• Experiencias inmersivas con Insta360 X5\n• Integración en webs y plataformas'
         },
         ai: {
           title: 'Automatizaciones IA',
@@ -54,7 +54,7 @@ const translations = {
     // Services Section
     services: {
       title: 'Servicios',
-      subtitle: 'Desarrollo web, diseño y branding, automatizaciones con IA y contenido aéreo. Cuatro líneas de trabajo integradas para que tu marca se vea mejor, funcione mejor y venda mejor.',
+      subtitle: 'Desarrollo web, recorridos virtuales, contenido aéreo y automatizaciones con IA. Cuatro líneas de trabajo integradas para que tu marca se vea mejor, funcione mejor y venda mejor.',
       webdev: {
         title: 'Desarrollo Web',
         description: 'Landing pages, webs corporativas y tiendas online.',
@@ -62,10 +62,10 @@ const translations = {
         feature2: 'SEO técnico base y buenas prácticas de performance.',
       },
       design: {
-        title: 'Diseño & Branding',
-        description: 'Identidad visual completa y diseño profesional.',
-        feature1: 'Logo, paleta de colores, tipografías y guía de estilo.',
-        feature2: 'Diseño de materiales gráficos y experiencia de usuario.',
+        title: 'Recorridos virtuales',
+        description: 'Tours virtuales 360° con tecnología Insta360 X5.',
+        feature1: 'Recorridos inmersivos para inmobiliarias, hoteles y hostelería.',
+        feature2: 'Integración en webs y plataformas para aumentar conversiones.',
       },
       ai: {
         title: 'Automatizaciones IA',
@@ -145,9 +145,9 @@ const translations = {
           description: 'Aplicación móvil para restaurante con menú digital, reservas online y sistema de pedidos.'
         },
         brandIdentity: {
-          title: 'BrandIdentity Package',
-          category: 'Branding',
-          description: 'Identidad visual completa incluyendo logo, colores, tipografías y guía de estilo corporativa.'
+          title: 'Tour Virtual Inmobiliaria',
+          category: 'Recorridos Virtuales',
+          description: 'Recorrido virtual 360° para inmobiliaria con integración web y experiencia inmersiva para potenciales compradores.'
         }
       }
     },
@@ -222,6 +222,31 @@ const translations = {
           }
         }
       },
+      design: {
+        title: 'Recorridos virtuales',
+        steps: {
+          consultation: {
+            title: 'Consulta y Planificación',
+            description: 'Análisis de necesidades, espacios a capturar y definición de objetivos del tour virtual.'
+          },
+          capture: {
+            title: 'Captura 360°',
+            description: 'Fotografía y video 360° con Insta360 X5 en todos los espacios relevantes del inmueble o establecimiento.'
+          },
+          processing: {
+            title: 'Procesamiento y Edición',
+            description: 'Stitching de imágenes 360°, corrección de color, optimización y creación de puntos de navegación.'
+          },
+          integration: {
+            title: 'Integración Web',
+            description: 'Integración del tour virtual en tu sitio web o plataforma, con navegación intuitiva y responsive.'
+          },
+          delivery: {
+            title: 'Entrega y Capacitación',
+            description: 'Entrega del tour completo, documentación de uso y capacitación para actualizaciones futuras.'
+          }
+        }
+      },
       aerial: {
         title: 'Fotografía Aérea',
         steps: {
@@ -265,9 +290,9 @@ const translations = {
           description: 'Supervisión integral y arquitectura web.'
         },
         design: {
-          role: 'Diseño & Branding',
-          name: 'Equipo creativo',
-          description: 'Identidad visual, UI y dirección de arte.'
+          role: 'Recorridos virtuales',
+          name: 'Equipo de producción 360°',
+          description: 'Tours virtuales inmersivos con Insta360 X5.'
         },
         strategy: {
           role: 'Estrategia & Automatización',
@@ -385,18 +410,90 @@ const translations = {
     faq: {
       title: 'Preguntas Frecuentes',
       subtitle: 'Encontrá respuestas a las consultas más comunes sobre nuestros servicios y procesos.',
-      question1: '¿Cuánto tiempo toma desarrollar un proyecto web?',
-      answer1: 'El tiempo de desarrollo varía según la complejidad del proyecto. Una landing page simple puede tomar 2-3 semanas, mientras que una aplicación web completa puede requerir 2-4 meses. Te proporcionamos un cronograma detallado en la propuesta inicial.',
-      question2: '¿Qué incluye el servicio de desarrollo web?',
-      answer2: 'Nuestro servicio incluye diseño responsive, desarrollo frontend y backend, integración de sistemas, SEO técnico base, optimización de performance, y capacitación para el manejo del sitio. También ofrecemos soporte post-lanzamiento.',
-      question3: '¿Trabajan con presupuestos ajustados?',
-      answer3: 'Sí, adaptamos nuestros servicios a diferentes presupuestos. Ofrecemos soluciones escalables que pueden crecer con tu negocio. Siempre buscamos la mejor relación calidad-precio para cada proyecto.',
-      question4: '¿Qué tecnologías utilizan?',
-      answer4: 'Trabajamos con tecnologías modernas como React, Node.js, TypeScript, y bases de datos como PostgreSQL y MongoDB. También utilizamos herramientas de IA para automatizaciones y optimizaciones.',
-      question5: '¿Ofrecen mantenimiento después del lanzamiento?',
-      answer5: 'Sí, ofrecemos planes de mantenimiento que incluyen actualizaciones de seguridad, backups, monitoreo, y soporte técnico. También podemos agregar nuevas funcionalidades según las necesidades de tu negocio.',
-      question6: '¿Cómo es el proceso de trabajo?',
-      answer6: 'Nuestro proceso incluye: 1) Descubrimiento y brief, 2) Diseño y arquitectura, 3) Desarrollo, 4) Testing y lanzamiento, 5) Acompañamiento post-lanzamiento. Mantenemos comunicación constante y entregas regulares.',
+      webdev: {
+        title: 'Desarrollo Web',
+        questions: [
+          {
+            question: '¿Cuánto tiempo toma desarrollar un proyecto web?',
+            answer: 'El tiempo de desarrollo varía según la complejidad del proyecto. Una landing page simple puede tomar 2-3 semanas, mientras que una aplicación web completa puede requerir 2-4 meses. Te proporcionamos un cronograma detallado en la propuesta inicial.'
+          },
+          {
+            question: '¿Qué incluye el servicio de desarrollo web?',
+            answer: 'Nuestro servicio incluye diseño responsive, desarrollo frontend y backend, integración de sistemas, SEO técnico base, optimización de performance, y capacitación para el manejo del sitio. También ofrecemos soporte post-lanzamiento.'
+          },
+          {
+            question: '¿Qué tecnologías utilizan?',
+            answer: 'Trabajamos con tecnologías modernas como React, Node.js, TypeScript, y bases de datos como PostgreSQL y MongoDB. También utilizamos herramientas de IA para automatizaciones y optimizaciones.'
+          },
+          {
+            question: '¿Ofrecen mantenimiento después del lanzamiento?',
+            answer: 'Sí, ofrecemos planes de mantenimiento que incluyen actualizaciones de seguridad, backups, monitoreo, y soporte técnico. También podemos agregar nuevas funcionalidades según las necesidades de tu negocio.'
+          }
+        ]
+      },
+      design: {
+        title: 'Recorridos virtuales',
+        questions: [
+          {
+            question: '¿Qué incluye un recorrido virtual 360°?',
+            answer: 'Incluye la captura de imágenes 360° con Insta360 X5 en todos los espacios relevantes, procesamiento y stitching de las imágenes, corrección de color, creación de puntos de navegación, y la integración completa en tu sitio web o plataforma.'
+          },
+          {
+            question: '¿Cuánto tiempo toma crear un recorrido virtual?',
+            answer: 'El tiempo depende del tamaño del espacio. Para una propiedad pequeña (2-3 habitaciones) puede tomar 1-2 semanas. Para hoteles o establecimientos grandes puede requerir 3-4 semanas incluyendo captura, procesamiento e integración.'
+          },
+          {
+            question: '¿Puedo actualizar el recorrido virtual después?',
+            answer: 'Sí, ofrecemos actualizaciones del recorrido virtual. Puedes agregar nuevos espacios o modificar los existentes. Te proporcionamos capacitación para que puedas hacer actualizaciones básicas o podemos hacerlas por ti.'
+          },
+          {
+            question: '¿Funciona en dispositivos móviles?',
+            answer: 'Sí, nuestros recorridos virtuales son completamente responsive y funcionan perfectamente en smartphones, tablets y computadoras. La experiencia es inmersiva en todos los dispositivos.'
+          }
+        ]
+      },
+      aerial: {
+        title: 'Contenido Aéreo',
+        questions: [
+          {
+            question: '¿Qué servicios de drones ofrecen?',
+            answer: 'Ofrecemos fotografía aérea inmobiliaria, videos corporativos con drones, mapeo y medición de terrenos, y contenido publicitario aéreo. Todos nuestros operadores están certificados A1/A3 y registrados.'
+          },
+          {
+            question: '¿Cuánto tiempo toma la entrega del contenido aéreo?',
+            answer: 'Después de la captura, el contenido aéreo típicamente se entrega en 5-7 días hábiles. Esto incluye edición, corrección de color, estabilización y entrega en los formatos solicitados.'
+          },
+          {
+            question: '¿Necesitan permisos especiales para volar?',
+            answer: 'Sí, gestionamos todos los permisos necesarios antes de cada vuelo. Nuestros operadores están certificados y cumplen con toda la normativa vigente. Te informamos sobre cualquier restricción antes de la sesión.'
+          },
+          {
+            question: '¿Qué formatos de entrega ofrecen?',
+            answer: 'Entregamos el contenido en diferentes formatos según tus necesidades: imágenes en alta resolución (RAW y JPG), videos en 4K, formatos optimizados para web, y archivos listos para impresión o redes sociales.'
+          }
+        ]
+      },
+      ai: {
+        title: 'Automatizaciones IA',
+        questions: [
+          {
+            question: '¿Qué tipo de automatizaciones con IA pueden crear?',
+            answer: 'Creamos chatbots conversacionales, agentes de atención al cliente, automatización de procesos empresariales, integración de herramientas IA, y sistemas inteligentes que optimizan flujos de trabajo repetitivos.'
+          },
+          {
+            question: '¿Cuánto tiempo toma implementar una automatización?',
+            answer: 'Depende de la complejidad. Un chatbot básico puede estar funcionando en 2-3 semanas, mientras que sistemas de automatización complejos pueden requerir 1-2 meses. Te proporcionamos un cronograma detallado en la propuesta.'
+          },
+          {
+            question: '¿Necesito conocimientos técnicos para usar las automatizaciones?',
+            answer: 'No, diseñamos las automatizaciones para que sean fáciles de usar. Te proporcionamos capacitación completa y documentación. Además, ofrecemos soporte continuo para cualquier duda o actualización.'
+          },
+          {
+            question: '¿Pueden integrarse con mis sistemas existentes?',
+            answer: 'Sí, nuestras automatizaciones se integran con la mayoría de sistemas empresariales populares (CRM, ERP, plataformas de e-commerce, etc.). Analizamos tus sistemas actuales y diseñamos la integración más adecuada.'
+          }
+        ]
+      },
       cta: '¿No encontraste la respuesta que buscabas?',
       ctaButton: 'Consultar Proyecto →'
     },
@@ -436,8 +533,8 @@ const translations = {
     // Navigation
     nav: {
       home: 'Home',
+      latestProject: 'Featured',
       services: 'Services',
-      portfolio: 'Portfolio',
       about: 'About',
       faq: 'FAQ',
       contact: 'Contact',
@@ -446,7 +543,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Digital solutions with a different perspective.',
-      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we combine design, technology and strategy to create websites and systems that actually work.',
+      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we offer <strong>web development</strong>, <strong>360° virtual tours</strong>, <strong>aerial content with drones</strong> and <strong>AI automation</strong>. Four integrated services to grow your business.',
       cta: 'Consult Project',
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
@@ -457,8 +554,8 @@ const translations = {
           description: '• High-converting landing pages\n• Corporate websites\n• E-commerce and online stores\n• Custom web applications'
         },
         design: {
-          title: 'Design & Branding',
-          description: '• Corporate visual identity\n• Logo and brand design\n• UX/UI design systems\n• Digital graphic materials'
+          title: 'Virtual Tours',
+          description: '• 360° tours for real estate\n• Virtual tours for hotels and hospitality\n• Immersive experiences with Insta360 X5\n• Web and platform integration'
         },
         ai: {
           title: 'AI Automation',
@@ -474,7 +571,7 @@ const translations = {
     // Services Section
     services: {
       title: 'Services',
-      subtitle: 'Web development, design and branding, AI automation and aerial content. Four integrated lines of work to make your brand look better, work better and sell better.',
+      subtitle: 'Web development, virtual tours, aerial content and AI automation. Four integrated lines of work to make your brand look better, work better and sell better.',
       webdev: {
         title: 'Web Development',
         description: 'Landing pages, corporate websites and online stores.',
@@ -482,10 +579,10 @@ const translations = {
         feature2: 'Basic technical SEO and performance best practices.',
       },
       design: {
-        title: 'Design & Branding',
-        description: 'Complete visual identity and professional design.',
-        feature1: 'Logo, color palette, typography and style guide.',
-        feature2: 'Graphic materials design and user experience.',
+        title: 'Virtual Tours',
+        description: '360° virtual tours with Insta360 X5 technology.',
+        feature1: 'Immersive tours for real estate, hotels and hospitality.',
+        feature2: 'Web and platform integration to increase conversions.',
       },
       ai: {
         title: 'AI Automation',
@@ -565,9 +662,9 @@ const translations = {
           description: 'Mobile application for restaurant with digital menu, online reservations and ordering system.'
         },
         brandIdentity: {
-          title: 'BrandIdentity Package',
-          category: 'Branding',
-          description: 'Complete visual identity including logo, colors, typography and corporate style guide.'
+          title: 'Real Estate Virtual Tour',
+          category: 'Virtual Tours',
+          description: '360° virtual tour for real estate with web integration and immersive experience for potential buyers.'
         }
       }
     },
@@ -660,6 +757,31 @@ const translations = {
           }
         }
       },
+      design: {
+        title: 'Virtual Tours',
+        steps: {
+          consultation: {
+            title: 'Consultation and Planning',
+            description: 'Needs analysis, spaces to capture and definition of virtual tour objectives.'
+          },
+          capture: {
+            title: '360° Capture',
+            description: '360° photography and video with Insta360 X5 in all relevant spaces of the property or establishment.'
+          },
+          processing: {
+            title: 'Processing and Editing',
+            description: '360° image stitching, color correction, optimization and creation of navigation points.'
+          },
+          integration: {
+            title: 'Web Integration',
+            description: 'Integration of the virtual tour into your website or platform, with intuitive and responsive navigation.'
+          },
+          delivery: {
+            title: 'Delivery and Training',
+            description: 'Delivery of the complete tour, usage documentation and training for future updates.'
+          }
+        }
+      },
       aerial: {
         title: 'Aerial Photography',
         steps: {
@@ -703,9 +825,9 @@ const translations = {
           description: 'Comprehensive supervision and web architecture.'
         },
         design: {
-          role: 'Design & Branding',
-          name: 'Creative team',
-          description: 'Visual identity, UI and art direction.'
+          role: 'Virtual Tours',
+          name: '360° Production team',
+          description: 'Immersive virtual tours with Insta360 X5.'
         },
         strategy: {
           role: 'Strategy & Automation',
@@ -823,18 +945,90 @@ const translations = {
     faq: {
       title: 'Frequently Asked Questions',
       subtitle: 'Find answers to the most common questions about our services and processes.',
-      question1: 'How long does it take to develop a web project?',
-      answer1: 'Development time varies depending on project complexity. A simple landing page can take 2-3 weeks, while a complete web application may require 2-4 months. We provide a detailed timeline in the initial proposal.',
-      question2: 'What does the web development service include?',
-      answer2: 'Our service includes responsive design, frontend and backend development, system integration, basic technical SEO, performance optimization, and training for site management. We also offer post-launch support.',
-      question3: 'Do you work with tight budgets?',
-      answer3: 'Yes, we adapt our services to different budgets. We offer scalable solutions that can grow with your business. We always seek the best quality-price ratio for each project.',
-      question4: 'What technologies do you use?',
-      answer4: 'We work with modern technologies like React, Node.js, TypeScript, and databases like PostgreSQL and MongoDB. We also use AI tools for automation and optimization.',
-      question5: 'Do you offer maintenance after launch?',
-      answer5: 'Yes, we offer maintenance plans that include security updates, backups, monitoring, and technical support. We can also add new features according to your business needs.',
-      question6: 'How is the work process?',
-      answer6: 'Our process includes: 1) Discovery and brief, 2) Design and architecture, 3) Development, 4) Testing and launch, 5) Post-launch support. We maintain constant communication and regular deliveries.',
+      webdev: {
+        title: 'Web Development',
+        questions: [
+          {
+            question: 'How long does it take to develop a web project?',
+            answer: 'Development time varies depending on project complexity. A simple landing page can take 2-3 weeks, while a complete web application may require 2-4 months. We provide a detailed timeline in the initial proposal.'
+          },
+          {
+            question: 'What does the web development service include?',
+            answer: 'Our service includes responsive design, frontend and backend development, system integration, basic technical SEO, performance optimization, and training for site management. We also offer post-launch support.'
+          },
+          {
+            question: 'What technologies do you use?',
+            answer: 'We work with modern technologies like React, Node.js, TypeScript, and databases like PostgreSQL and MongoDB. We also use AI tools for automation and optimization.'
+          },
+          {
+            question: 'Do you offer maintenance after launch?',
+            answer: 'Yes, we offer maintenance plans that include security updates, backups, monitoring, and technical support. We can also add new features according to your business needs.'
+          }
+        ]
+      },
+      design: {
+        title: 'Virtual Tours',
+        questions: [
+          {
+            question: 'What does a 360° virtual tour include?',
+            answer: 'It includes 360° image capture with Insta360 X5 in all relevant spaces, image processing and stitching, color correction, navigation point creation, and complete integration into your website or platform.'
+          },
+          {
+            question: 'How long does it take to create a virtual tour?',
+            answer: 'Time depends on the size of the space. For a small property (2-3 rooms) it can take 1-2 weeks. For hotels or large establishments it may require 3-4 weeks including capture, processing and integration.'
+          },
+          {
+            question: 'Can I update the virtual tour later?',
+            answer: 'Yes, we offer virtual tour updates. You can add new spaces or modify existing ones. We provide training so you can make basic updates or we can do them for you.'
+          },
+          {
+            question: 'Does it work on mobile devices?',
+            answer: 'Yes, our virtual tours are completely responsive and work perfectly on smartphones, tablets and computers. The experience is immersive on all devices.'
+          }
+        ]
+      },
+      aerial: {
+        title: 'Aerial Content',
+        questions: [
+          {
+            question: 'What drone services do you offer?',
+            answer: 'We offer real estate aerial photography, corporate drone videos, land mapping and measurement, and aerial advertising content. All our operators are A1/A3 certified and registered.'
+          },
+          {
+            question: 'How long does it take to deliver aerial content?',
+            answer: 'After capture, aerial content is typically delivered in 5-7 business days. This includes editing, color correction, stabilization and delivery in requested formats.'
+          },
+          {
+            question: 'Do you need special permits to fly?',
+            answer: 'Yes, we manage all necessary permits before each flight. Our operators are certified and comply with all current regulations. We inform you of any restrictions before the session.'
+          },
+          {
+            question: 'What delivery formats do you offer?',
+            answer: 'We deliver content in different formats according to your needs: high-resolution images (RAW and JPG), 4K videos, web-optimized formats, and files ready for print or social media.'
+          }
+        ]
+      },
+      ai: {
+        title: 'AI Automation',
+        questions: [
+          {
+            question: 'What type of AI automations can you create?',
+            answer: 'We create conversational chatbots, customer service agents, business process automation, AI tool integration, and intelligent systems that optimize repetitive workflows.'
+          },
+          {
+            question: 'How long does it take to implement an automation?',
+            answer: 'Depends on complexity. A basic chatbot can be running in 2-3 weeks, while complex automation systems may require 1-2 months. We provide a detailed timeline in the proposal.'
+          },
+          {
+            question: 'Do I need technical knowledge to use automations?',
+            answer: 'No, we design automations to be easy to use. We provide complete training and documentation. We also offer ongoing support for any questions or updates.'
+          },
+          {
+            question: 'Can they integrate with my existing systems?',
+            answer: 'Yes, our automations integrate with most popular business systems (CRM, ERP, e-commerce platforms, etc.). We analyze your current systems and design the most suitable integration.'
+          }
+        ]
+      },
       cta: 'Didn\'t find the answer you were looking for?',
       ctaButton: 'Consult Project →'
     },

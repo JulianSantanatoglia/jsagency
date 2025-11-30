@@ -16,7 +16,7 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white pt-20 overflow-hidden"
+        className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 pt-20 overflow-hidden"
         role="banner"
         aria-labelledby="hero-title"
       >
