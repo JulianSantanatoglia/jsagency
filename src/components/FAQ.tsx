@@ -152,11 +152,11 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 px-4 md:px-8 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 font-display">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 font-display tracking-tight">
             {t('faq.title')}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-body">
+          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-body font-light">
             {t('faq.subtitle')}
           </p>
         </div>

@@ -29,10 +29,13 @@ const About = () => {
     <section id="nosotros" className="py-24 px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <h2 className="text-5xl font-extrabold font-display mb-8 text-primary-dark">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-10 text-primary-dark tracking-tight">
             {t('about.title')}
           </h2>
-          <div className="max-w-4xl text-lg text-slate-800 leading-relaxed space-y-5 font-body">
+          <p className="text-lg md:text-xl text-slate-500 mb-8 max-w-3xl font-body font-light">
+            {t('about.subtitle')}
+          </p>
+          <div className="max-w-4xl text-lg md:text-xl text-slate-600 leading-relaxed space-y-6 font-body">
             <p>
               {t('about.content.paragraph1')}
             </p>

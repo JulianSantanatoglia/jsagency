@@ -15,19 +15,19 @@ const translations = {
   es: {
     // Navigation
     nav: {
-      home: 'Home',
+      home: 'Inicio',
       latestProject: 'Destacado',
-      services: 'Servicios',
-      about: 'Nosotros',
-      faq: 'FAQ',
-      contact: 'Contacto',
+      services: 'Lo que hacemos',
+      about: 'Quiénes somos',
+      faq: 'Dudas',
+      contact: 'Hablemos',
     },
     
     // Hero Section
-    hero: {
+      hero: {
       title: 'Soluciones digitales con otra perspectiva.',
       subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> creamos <strong>soluciones digitales</strong>, <strong>recorridos virtuales 360°</strong>, <strong>contenido aéreo con drones</strong> y <strong>automatizaciones con IA</strong>. Cuatro servicios integrados que transforman tu negocio.',
-      cta: 'Consultar Proyecto',
+      cta: 'Hablemos de tu proyecto',
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
       feature3: 'Entregas a tiempo',
@@ -53,8 +53,8 @@ const translations = {
     
     // Services Section
     services: {
-      title: 'Servicios',
-      subtitle: 'Desarrollo web, recorridos virtuales, contenido aéreo y automatizaciones con IA. Cuatro líneas de trabajo integradas para que tu marca se vea mejor, funcione mejor y venda mejor.',
+      title: 'Lo que hacemos',
+      subtitle: 'Cuatro formas de hacer crecer tu negocio. Soluciones digitales, recorridos virtuales, contenido aéreo y automatizaciones con IA. Todo integrado, todo conectado.',
       webdev: {
         title: 'Desarrollo Web',
         description: 'Landing pages, webs corporativas y tiendas online.',
@@ -111,8 +111,8 @@ const translations = {
     
     // Portfolio Section
     portfolio: {
-      title: 'Portfolio de Proyectos',
-      subtitle: 'Cada proyecto es una historia única. Desde landing pages hasta aplicaciones completas, aquí podés ver el alcance de nuestro trabajo.',
+      title: 'Proyectos',
+      subtitle: 'Algunos de los proyectos que hemos construido. Cada uno con su historia, cada uno con su propósito.',
       featured: 'Proyectos Destacados',
       all: 'Todos los Proyectos',
       cta: 'Empezá tu proyecto →',
@@ -154,8 +154,8 @@ const translations = {
     
     // Testimonials Section
     testimonials: {
-      title: 'Lo que dicen nuestros clientes',
-      subtitle: 'La satisfacción de nuestros clientes es nuestra mejor carta de presentación.',
+      title: 'Lo que dicen',
+      subtitle: 'Palabras de quienes ya trabajaron con nosotros.',
       testimonials: {
         maximiliano: {
           name: 'Maximiliano Peretti',
@@ -168,10 +168,10 @@ const translations = {
     
     // Process Section
     process: {
-      title: 'Nuestro proceso de trabajo',
-      subtitle: 'Cada servicio tiene su metodología específica para garantizar resultados óptimos.',
-      cta: '¿Listo para comenzar tu proyecto?',
-      ctaButton: 'Consultar Proyecto',
+      title: 'Cómo trabajamos',
+      subtitle: 'Procesos claros, sin sorpresas. Cada servicio tiene su metodología, pero todos comparten algo: transparencia total.',
+      cta: '¿Listo para empezar?',
+      ctaButton: 'Hablemos →',
       webdev: {
         title: 'Desarrollo Web',
         steps: {
@@ -272,13 +272,13 @@ const translations = {
     
     // About Section
     about: {
-      title: 'Sobre nosotros',
-      subtitle: 'Somos un equipo multidisciplinario especializado en soluciones digitales integrales.',
-      description: 'En .js agency combinamos experiencia técnica, creatividad y estrategia para crear proyectos que realmente funcionan. Nuestro enfoque se basa en entender las necesidades específicas de cada cliente y desarrollar soluciones a medida.',
+      title: 'Quiénes somos',
+      subtitle: 'Un equipo que piensa diferente y construye mejor.',
+      description: 'Somos un estudio digital en Almería. Combinamos código, creatividad y estrategia para crear proyectos que realmente funcionan. Sin humo, sin promesas vacías. Solo resultados.',
       content: {
-        paragraph1: 'Somos un estudio digital en Almería que integra diseño, tecnología y estrategia para crear soluciones honestas, modernas y funcionales.',
-        paragraph2: 'Trabajamos en equipo, con procesos claros y foco en el detalle, para que cada proyecto sea sólido hoy y escalable mañana.',
-        paragraph3: '¿Buscás un equipo de confianza para impulsar tu marca? Conversemos.',
+        paragraph1: 'Creamos soluciones digitales que funcionan. Sin complicaciones, sin jerga técnica innecesaria. Solo código limpio, diseño pensado y resultados medibles.',
+        paragraph2: 'Trabajamos con procesos claros y comunicación directa. Cada proyecto es único, pero todos comparten algo: están pensados para durar y crecer contigo.',
+        paragraph3: '¿Tienes un proyecto en mente? Hablemos.',
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',
         ctaButton: 'Hablemos de tu proyecto →'
@@ -369,10 +369,10 @@ const translations = {
     
     // Contact Section
     contact: {
-      title: 'Hablemos de tu proyecto',
-      subtitle: 'Contanos tu objetivo en 2–3 líneas y te proponemos el mejor camino.',
-      response: 'Respuesta en 24–48h.',
-      cta: 'Escribenos →',
+      title: 'Hablemos',
+      subtitle: 'Cuéntanos tu idea en pocas palabras. Te respondemos rápido y claro.',
+      response: 'Te respondemos en 24–48h.',
+      cta: 'Enviar mensaje →',
       email: 'Email',
       location: 'Ubicación',
       socialMedia: 'Redes Sociales',
@@ -408,8 +408,8 @@ const translations = {
     
     // FAQ Section
     faq: {
-      title: 'Preguntas Frecuentes',
-      subtitle: 'Encontrá respuestas a las consultas más comunes sobre nuestros servicios y procesos.',
+      title: 'Dudas frecuentes',
+      subtitle: 'Las respuestas que buscas, sin rodeos.',
       webdev: {
         title: 'Desarrollo Web',
         questions: [
@@ -494,8 +494,8 @@ const translations = {
           }
         ]
       },
-      cta: '¿No encontraste la respuesta que buscabas?',
-      ctaButton: 'Consultar Proyecto →'
+      cta: '¿Sigue sin quedar claro?',
+      ctaButton: 'Hablemos →'
     },
     
     // Newsletter Section
@@ -534,17 +534,17 @@ const translations = {
     nav: {
       home: 'Home',
       latestProject: 'Featured',
-      services: 'Services',
-      about: 'About',
-      faq: 'FAQ',
-      contact: 'Contact',
+      services: 'What we do',
+      about: 'Who we are',
+      faq: 'Questions',
+      contact: 'Let\'s talk',
     },
     
     // Hero Section
     hero: {
       title: 'Digital solutions with a different perspective.',
       subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we create <strong>digital solutions</strong>, <strong>360° virtual tours</strong>, <strong>aerial content with drones</strong> and <strong>AI automation</strong>. Four integrated services that transform your business.',
-      cta: 'Consult Project',
+      cta: 'Let\'s talk about your project',
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
       feature3: 'On-time delivery',
@@ -570,8 +570,8 @@ const translations = {
     
     // Services Section
     services: {
-      title: 'Services',
-      subtitle: 'Web development, virtual tours, aerial content and AI automation. Four integrated lines of work to make your brand look better, work better and sell better.',
+      title: 'What we do',
+      subtitle: 'Four ways to grow your business. Digital solutions, virtual tours, aerial content and AI automation. All integrated, all connected.',
       webdev: {
         title: 'Web Development',
         description: 'Landing pages, corporate websites and online stores.',
@@ -628,8 +628,8 @@ const translations = {
     
     // Portfolio Section
     portfolio: {
-      title: 'Project Portfolio',
-      subtitle: 'Each project is a unique story. From landing pages to complete applications, here you can see the scope of our work.',
+      title: 'Projects',
+      subtitle: 'Some of the projects we\'ve built. Each with its story, each with its purpose.',
       featured: 'Featured Projects',
       all: 'All Projects',
       cta: 'Start your project →',
@@ -671,8 +671,8 @@ const translations = {
     
     // Testimonials Section
     testimonials: {
-      title: 'What our clients say',
-      subtitle: 'Our clients\' satisfaction is our best business card.',
+      title: 'What they say',
+      subtitle: 'Words from those who\'ve already worked with us.',
       testimonials: {
         maximiliano: {
           name: 'Maximiliano Peretti',
@@ -703,10 +703,10 @@ const translations = {
     
     // Process Section
     process: {
-      title: 'Our work process',
-      subtitle: 'Each service has its specific methodology to ensure optimal results.',
-      cta: 'Ready to start your project?',
-      ctaButton: 'Consult Project',
+      title: 'How we work',
+      subtitle: 'Clear processes, no surprises. Each service has its methodology, but they all share something: total transparency.',
+      cta: 'Ready to start?',
+      ctaButton: 'Let\'s talk →',
       webdev: {
         title: 'Web Development',
         steps: {
@@ -807,13 +807,13 @@ const translations = {
     
     // About Section
     about: {
-      title: 'About us',
-      subtitle: 'We are a multidisciplinary team specialized in comprehensive digital solutions.',
-      description: 'At .js agency we combine technical experience, creativity and strategy to create projects that really work. Our approach is based on understanding the specific needs of each client and developing tailored solutions.',
+      title: 'Who we are',
+      subtitle: 'A team that thinks differently and builds better.',
+      description: 'We\'re a digital studio in Almería. We combine code, creativity and strategy to create projects that actually work. No fluff, no empty promises. Just results.',
       content: {
-        paragraph1: 'We are a digital studio from Almería that integrates design, technology and strategy to create honest, modern and functional solutions.',
-        paragraph2: 'We work as a team, with clear processes and focus on detail, so that each project is solid today and scalable tomorrow.',
-        paragraph3: 'Looking for a trusted team to boost your brand? Let\'s talk.',
+        paragraph1: 'We create digital solutions that work. No complications, no unnecessary technical jargon. Just clean code, thoughtful design and measurable results.',
+        paragraph2: 'We work with clear processes and direct communication. Every project is unique, but they all share something: they\'re built to last and grow with you.',
+        paragraph3: 'Got a project in mind? Let\'s talk.',
         teamTitle: 'Our team',
         cta: 'Want to be the next satisfied client?',
         ctaButton: 'Let\'s talk about your project →'
@@ -904,10 +904,10 @@ const translations = {
     
     // Contact Section
     contact: {
-      title: 'Let\'s talk about your project',
-      subtitle: 'Tell us your objective in 2–3 lines and we\'ll propose the best path.',
-      response: 'Response in 24–48h.',
-      cta: 'Write us →',
+      title: 'Let\'s talk',
+      subtitle: 'Tell us your idea in a few words. We\'ll respond quickly and clearly.',
+      response: 'We respond in 24–48h.',
+      cta: 'Send message →',
       email: 'Email',
       location: 'Location',
       socialMedia: 'Social Media',
@@ -943,8 +943,8 @@ const translations = {
     
     // FAQ Section
     faq: {
-      title: 'Frequently Asked Questions',
-      subtitle: 'Find answers to the most common questions about our services and processes.',
+      title: 'Frequently asked questions',
+      subtitle: 'The answers you\'re looking for, straight to the point.',
       webdev: {
         title: 'Web Development',
         questions: [
@@ -1029,8 +1029,8 @@ const translations = {
           }
         ]
       },
-      cta: 'Didn\'t find the answer you were looking for?',
-      ctaButton: 'Consult Project →'
+      cta: 'Still not clear?',
+      ctaButton: 'Let\'s talk →'
     },
     
     // Newsletter Section

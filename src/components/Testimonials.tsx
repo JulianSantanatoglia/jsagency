@@ -14,11 +14,11 @@ const Testimonials = () => {
   return (
     <section id="testimonios" className="py-16 md:py-20 px-4 md:px-8 bg-gray-50">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display mb-4 text-primary-dark">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark tracking-tight">
             {t('testimonials.title')}
           </h2>
-          <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-body">
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-body font-light">
             {t('testimonials.subtitle')}
           </p>
         </div>

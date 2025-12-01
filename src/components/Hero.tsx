@@ -24,19 +24,19 @@ const Hero = () => {
           <div className="z-10 animate-fade-in-left">
             <h1 
               id="hero-title"
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display mb-6 leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 leading-[1.1] tracking-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-accent-cyan bg-clip-text text-transparent">
                 {t('hero.title')}
               </span>
             </h1>
             <p 
-              className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-body"
+              className="text-xl md:text-2xl text-slate-500 mb-12 leading-relaxed max-w-2xl font-body font-light"
               dangerouslySetInnerHTML={{ __html: t('hero.subtitle') }}
             />
             <a 
               href="#contacto" 
-              className="inline-block px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-accent-cyan to-cyan-500 text-white font-bold text-lg md:text-xl rounded-xl hover:from-cyan-500 hover:to-cyan-600 hover:-translate-y-1 transition-all shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"
+              className="inline-block px-10 md:px-12 py-5 md:py-6 bg-gradient-to-r from-accent-cyan to-cyan-500 text-white font-semibold text-lg md:text-xl rounded-2xl hover:from-cyan-500 hover:to-cyan-600 hover:-translate-y-1 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2"
               aria-label={t('a11y.contactCTA')}
             >
               {t('hero.cta')}

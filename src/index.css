@@ -4,12 +4,12 @@
 /* @import 'flag-icons/css/flag-icons.min.css'; */
 
 @theme {
-  /* Paleta de colores de .js Agency */
-  --color-primary: #2563EB;
-  --color-secondary: #7C3AED;
-  --color-primary-dark: #0F172A;
-  --color-accent-cyan: #22D3EE;
-  --color-accent-emerald: #10B981;
+  /* Paleta de colores moderna 2026 - .js Agency */
+  --color-primary: #1E40AF;
+  --color-secondary: #6D28D9;
+  --color-primary-dark: #0A0E27;
+  --color-accent-cyan: #06B6D4;
+  --color-accent-emerald: #059669;
   --color-background-light: #F8FAFC;
   --color-background-dark: #0F172A;
   --color-text-primary: #0F172A;

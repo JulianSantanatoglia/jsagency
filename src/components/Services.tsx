@@ -55,14 +55,14 @@ const Services = () => {
       aria-labelledby="services-title"
     >
       <div className="max-w-7xl mx-auto">
-        <header className="text-center mb-12 md:mb-16">
+        <header className="text-center mb-16 md:mb-20">
           <h2 
             id="services-title"
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display mb-4 text-primary-dark"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark tracking-tight"
           >
             {t('services.title')}
           </h2>
-          <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-body px-4 font-light">
             {t('services.subtitle')}
           </p>
         </header>
@@ -70,39 +70,39 @@ const Services = () => {
           {services.map((service, index) => (
             <article 
               key={index} 
-              className="bg-slate-50 rounded-2xl border border-slate-200 hover-lift hover:border-accent-cyan hover:shadow-accent-cyan/10 animate-fade-in-up focus-within:ring-2 focus-within:ring-accent-cyan focus-within:ring-offset-2 overflow-hidden"
+              className="bg-white rounded-3xl border border-slate-100 hover-lift hover:border-accent-cyan/30 hover:shadow-xl hover:shadow-accent-cyan/5 animate-fade-in-up focus-within:ring-2 focus-within:ring-accent-cyan focus-within:ring-offset-2 overflow-hidden transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
               role="listitem"
               tabIndex={0}
             >
               {/* Image */}
-              <div className="relative h-48 md:h-56 overflow-hidden bg-slate-100">
+              <div className="relative h-52 md:h-64 overflow-hidden bg-slate-100">
                 <OptimizedImage 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg">
-                    <service.icon size={32} className="text-accent-cyan" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent"></div>
+                <div className="absolute top-5 right-5">
+                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-xl">
+                    <service.icon size={28} className="text-accent-cyan" aria-hidden="true" />
                   </div>
                 </div>
               </div>
               
               {/* Content */}
-              <div className="p-6 md:p-10">
-              <h3 className="text-xl md:text-2xl font-bold font-display mb-3 md:mb-4 text-primary-dark">
+              <div className="p-8 md:p-10">
+              <h3 className="text-2xl md:text-3xl font-bold font-display mb-4 text-primary-dark tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-base text-slate-800 mb-4 md:mb-6 font-medium font-body">
+              <p className="text-base md:text-lg text-slate-600 mb-6 font-light font-body leading-relaxed">
                 {service.description}
               </p>
-              <ul className="flex flex-col gap-2 md:gap-3" role="list" aria-label={t('a11y.serviceFeatures').replace('{service}', service.title)}>
+              <ul className="flex flex-col gap-3 md:gap-4" role="list" aria-label={t('a11y.serviceFeatures').replace('{service}', service.title)}>
                 {service.features.map((feature, i) => (
-                  <li key={i} className="text-xs md:text-sm text-slate-600 pl-5 md:pl-6 relative leading-relaxed font-body" role="listitem">
-                    <span className="absolute left-0 text-accent-cyan font-bold" aria-hidden="true">✓</span>
+                  <li key={i} className="text-sm md:text-base text-slate-500 pl-6 relative leading-relaxed font-body font-light" role="listitem">
+                    <span className="absolute left-0 top-0.5 text-accent-cyan font-semibold text-lg" aria-hidden="true">•</span>
                     {feature}
                   </li>
                 ))}
