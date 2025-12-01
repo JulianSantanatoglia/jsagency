@@ -14,14 +14,14 @@ const About = () => {
       description: t('about.team.design.description')
     },
     {
-      role: t('about.team.strategy.role'),
-      name: t('about.team.strategy.name'),
-      description: t('about.team.strategy.description')
-    },
-    {
       role: t('about.team.aerial.role'),
       name: t('about.team.aerial.name'),
       description: t('about.team.aerial.description')
+    },
+    {
+      role: t('about.team.strategy.role'),
+      name: t('about.team.strategy.name'),
+      description: t('about.team.strategy.description')
     }
   ];
 

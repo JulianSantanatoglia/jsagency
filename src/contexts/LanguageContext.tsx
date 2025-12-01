@@ -26,7 +26,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Soluciones digitales con otra perspectiva.',
-      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> ofrecemos <strong>desarrollo web</strong>, <strong>recorridos virtuales 360°</strong>, <strong>contenido aéreo con drones</strong> y <strong>automatizaciones con IA</strong>. Cuatro servicios integrados para hacer crecer tu negocio.',
+      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> creamos <strong>soluciones digitales</strong>, <strong>recorridos virtuales 360°</strong>, <strong>contenido aéreo con drones</strong> y <strong>automatizaciones con IA</strong>. Cuatro servicios integrados que transforman tu negocio.',
       cta: 'Consultar Proyecto',
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
@@ -300,7 +300,7 @@ const translations = {
           description: 'Flujos con IA e integraciones.'
         },
         aerial: {
-          role: 'Producción (.js Aerials)',
+          role: 'Fly by .js agency',
           name: 'Equipo audiovisual',
           description: 'Fotografía y video aéreo para marcas.'
         }
@@ -543,7 +543,7 @@ const translations = {
     // Hero Section
     hero: {
       title: 'Digital solutions with a different perspective.',
-      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we offer <strong>web development</strong>, <strong>360° virtual tours</strong>, <strong>aerial content with drones</strong> and <strong>AI automation</strong>. Four integrated services to grow your business.',
+      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we create <strong>digital solutions</strong>, <strong>360° virtual tours</strong>, <strong>aerial content with drones</strong> and <strong>AI automation</strong>. Four integrated services that transform your business.',
       cta: 'Consult Project',
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
@@ -835,7 +835,7 @@ const translations = {
           description: 'AI flows and integrations.'
         },
         aerial: {
-          role: 'Production (.js Aerials)',
+          role: 'Fly by .js agency',
           name: 'Audiovisual team',
           description: 'Aerial photography and video for brands.'
         }

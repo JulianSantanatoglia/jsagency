@@ -37,10 +37,10 @@ const Footer = () => {
                 </li>
                 <li role="listitem">
                   <a 
-                    href="#portfolio" 
+                    href="#smartcard" 
                     className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
                   >
-                    {t('nav.portfolio')}
+                    {t('nav.latestProject')}
                   </a>
                 </li>
                 <li role="listitem">
