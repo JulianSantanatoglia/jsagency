@@ -54,7 +54,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
   ];
 
   const serviceOptions = [
-    { value: 'web-development', label: 'Desarrollo Web' },
+    { value: 'web-development', label: 'Creación de Páginas Web' },
     { value: 'virtual-tours', label: 'Recorridos virtuales' },
     { value: 'automation', label: 'Automatización' },
     { value: 'aerial-content', label: 'Contenido Aéreo' }

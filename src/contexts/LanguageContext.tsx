@@ -33,7 +33,7 @@ const translations = {
       feature3: 'Entregas a tiempo',
       services: {
         webdev: {
-          title: 'Desarrollo Web',
+          title: 'Creación de Páginas Web',
           description: '• Landing pages de alta conversión\n• Sitios web corporativos\n• E-commerce y tiendas online\n• Aplicaciones web personalizadas'
         },
         design: {
@@ -56,7 +56,7 @@ const translations = {
       title: 'Lo que hacemos',
       subtitle: 'Cuatro formas de hacer crecer tu negocio. Soluciones digitales, recorridos virtuales, contenido aéreo y automatizaciones con IA. Todo integrado, todo conectado.',
       webdev: {
-        title: 'Desarrollo Web',
+        title: 'Creación de Páginas Web',
         description: 'Landing pages, webs corporativas y tiendas online.',
         feature1: 'Rápidas, seguras, administrables y pensadas para convertir.',
         feature2: 'SEO técnico base y buenas prácticas de performance.',
@@ -120,7 +120,7 @@ const translations = {
       like: '¿Te gusta lo que ves? Trabajemos juntos en tu próximo proyecto.',
       projects: {
         smartCard: {
-          title: 'Smart Card by .js agency',
+          title: 'Divly by .js agency',
           category: 'Aplicación Web',
           description: 'Carta digital inteligente con divisor para comensales, diseñada específicamente para establecimientos gastronómicos. Interfaz intuitiva y moderna que mejora la experiencia del cliente.'
         },
@@ -173,7 +173,7 @@ const translations = {
       cta: '¿Listo para empezar?',
       ctaButton: 'Hablemos →',
       webdev: {
-        title: 'Desarrollo Web',
+        title: 'Creación de Páginas Web',
         steps: {
           discovery: {
             title: 'Descubrimiento',
@@ -307,11 +307,11 @@ const translations = {
       }
     },
     
-    // Smart Card Showcase Section
+    // Divly Showcase Section
     smartcard: {
       badge: 'Nuestro último proyecto',
       title: '¿Tienes un bar o restaurante?',
-      subtitle: 'Smart Card no solo brinda una carta digital con QR, sino que ahora las personas pueden dividir fácilmente su cuenta por lo que consumió cada uno. Con el divisor inteligente, cada comensal paga solo por lo que realmente consumió.',
+      subtitle: 'Divly no solo brinda una carta digital con QR, sino que ahora las personas pueden dividir fácilmente su cuenta por lo que consumió cada uno. Con el divisor inteligente, cada comensal paga solo por lo que realmente consumió.',
       problem: {
         title: 'El problema de dividir cuentas',
         description: 'Ya no es necesario que todos paguen por igual. Con nuestro divisor inteligente, cada persona paga solo por lo que consumió, evitando que salga perdiendo quien come o bebe muy poco.'
@@ -357,7 +357,7 @@ const translations = {
         },
         step6: {
           title: 'Dividir cuenta',
-          description: 'Smart Card calcula automáticamente cuánto debe pagar cada comensal.'
+          description: 'Divly calcula automáticamente cuánto debe pagar cada comensal.'
         }
       },
       cta: 'Ver Carta Digital',
@@ -411,14 +411,14 @@ const translations = {
       title: 'Dudas frecuentes',
       subtitle: 'Las respuestas que buscas, sin rodeos.',
       webdev: {
-        title: 'Desarrollo Web',
+        title: 'Creación de Páginas Web',
         questions: [
           {
             question: '¿Cuánto tiempo toma desarrollar un proyecto web?',
             answer: 'El tiempo de desarrollo varía según la complejidad del proyecto. Una landing page simple puede tomar 2-3 semanas, mientras que una aplicación web completa puede requerir 2-4 meses. Te proporcionamos un cronograma detallado en la propuesta inicial.'
           },
           {
-            question: '¿Qué incluye el servicio de desarrollo web?',
+            question: '¿Qué incluye el servicio de creación de páginas web?',
             answer: 'Nuestro servicio incluye diseño responsive, desarrollo frontend y backend, integración de sistemas, SEO técnico base, optimización de performance, y capacitación para el manejo del sitio. También ofrecemos soporte post-lanzamiento.'
           },
           {
@@ -501,13 +501,13 @@ const translations = {
     // Newsletter Section
     newsletter: {
       title: 'Mantente al día',
-      subtitle: 'Recibí tips, novedades y ofertas exclusivas sobre desarrollo web y tecnología.',
+      subtitle: 'Recibí tips, novedades y ofertas exclusivas sobre creación de páginas web y tecnología.',
       emailLabel: 'Dirección de email',
       emailPlaceholder: 'tu@email.com',
       subscribe: 'Suscribirse',
       subscribing: 'Suscribiendo...',
       successTitle: '¡Gracias por suscribirte!',
-      successMessage: 'Te enviaremos contenido valioso sobre desarrollo web y tecnología.',
+      successMessage: 'Te enviaremos contenido valioso sobre creación de páginas web y tecnología.',
       privacy: 'Respetamos tu privacidad. No compartimos tu email con terceros.',
       errorEmpty: 'Por favor, ingresá tu email',
       errorInvalid: 'Por favor, ingresá un email válido',
@@ -637,7 +637,7 @@ const translations = {
       like: 'Do you like what you see? Let\'s work together on your next project.',
       projects: {
         smartCard: {
-          title: 'Smart Card by .js agency',
+          title: 'Divly by .js agency',
           category: 'Web Application',
           description: 'Intelligent digital menu with divider for diners, specifically designed for gastronomic establishments. Intuitive and modern interface that improves customer experience.'
         },
@@ -684,7 +684,7 @@ const translations = {
           name: 'Sofia Martínez',
           company: 'La Cafetería',
           role: 'Owner',
-          content: 'Smart card digitized my business and made it grow. The digital menu is intuitive, elegant and has significantly improved service. Diners can easily split the bill and pay for what they consumed.'
+          content: 'Divly digitized my business and made it grow. The digital menu is intuitive, elegant and has significantly improved service. Diners can easily split the bill and pay for what they consumed.'
         },
         jewelry: {
           name: 'María Díaz',
@@ -842,11 +842,11 @@ const translations = {
       }
     },
     
-    // Smart Card Showcase Section
+    // Divly Showcase Section
     smartcard: {
       badge: 'Our latest project',
       title: 'Do you have a bar or restaurant?',
-      subtitle: 'Smart Card not only provides a digital menu with QR, but now people can easily split their bill by what each person consumed. With the smart divider, each diner pays only for what they actually consumed.',
+      subtitle: 'Divly not only provides a digital menu with QR, but now people can easily split their bill by what each person consumed. With the smart divider, each diner pays only for what they actually consumed.',
       problem: {
         title: 'The bill splitting problem',
         description: 'No need for everyone to pay equally anymore. With our smart divider, each person pays only for what they consumed, preventing those who eat or drink little from losing out.'
@@ -892,7 +892,7 @@ const translations = {
         },
         step6: {
           title: 'Split bill',
-          description: 'Smart Card automatically calculates how much each diner should pay.'
+          description: 'Divly automatically calculates how much each diner should pay.'
         }
       },
       cta: 'View Digital Menu',
