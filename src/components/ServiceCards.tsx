@@ -23,36 +23,6 @@ const ServiceCards = () => {
       hoverBg: 'hover:bg-blue-50'
     },
     {
-      key: 'design',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      color: 'purple',
-      gradient: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50/80',
-      borderColor: 'border-purple-200',
-      textColor: 'text-purple-700',
-      shadowColor: 'shadow-purple-100/50',
-      hoverBg: 'hover:bg-purple-50'
-    },
-    {
-      key: 'aerial',
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      color: 'orange',
-      gradient: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50/80',
-      borderColor: 'border-orange-200',
-      textColor: 'text-orange-700',
-      shadowColor: 'shadow-orange-100/50',
-      hoverBg: 'hover:bg-orange-50'
-    },
-    {
       key: 'ai',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

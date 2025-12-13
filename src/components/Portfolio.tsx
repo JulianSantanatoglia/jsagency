@@ -49,15 +49,6 @@ const Portfolio = () => {
       link: "#",
       featured: false
     },
-    {
-      title: t('portfolio.projects.brandIdentity.title'),
-      category: t('portfolio.projects.brandIdentity.category'),
-      description: t('portfolio.projects.brandIdentity.description'),
-      icon: Video,
-      technologies: ["Insta360 X5", "360° Tour", "Web Integration"],
-      link: "#",
-      featured: false
-    }
   ];
 
   return (

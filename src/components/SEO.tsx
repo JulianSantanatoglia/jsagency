@@ -14,9 +14,9 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = ".js agency — Soluciones digitales con otra perspectiva",
-  description = "Agencia de desarrollo web, recorridos virtuales, automatizaciones con IA y contenido aéreo en Almería. Especialistas en React, tours 360° con Insta360 X5 y fotografía aérea. Soluciones digitales profesionales.",
-  keywords = "desarrollo web, recorridos virtuales, tours 360, Insta360, React, JavaScript, Almería, España, agencia digital, automatización IA, fotografía aérea, inmobiliarias, hoteles",
+  title = ".js agency — Diseño Web y Automatizaciones con IA",
+  description = "Agencia de desarrollo web y automatizaciones con IA en Almería. Especialistas en React, diseño UI moderno, performance, SEO técnico e integraciones. Soluciones digitales profesionales.",
+  keywords = "desarrollo web, diseño web, React, JavaScript, Almería, España, agencia digital, automatización IA, landing pages, webs corporativas, SEO técnico, Core Web Vitals",
   image = "https://jsagency.com/og-image.jpg",
   url = "https://jsagency.com",
   type = "website",

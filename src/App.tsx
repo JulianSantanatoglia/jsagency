@@ -1,91 +1,67 @@
-import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import { DarkModeProvider } from './contexts/DarkModeContext'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import SmartCardShowcase from './components/SmartCardShowcase'
-import Services from './components/Services'
-import Testimonials from './components/Testimonials'
-import Process from './components/Process'
-import About from './components/About'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
-import LegalPages from './components/LegalPages'
 import CookieBanner from './components/CookieBanner'
 import FloatingButtons from './components/FloatingButtons'
+import LegalPages from './components/LegalPages'
+import SEO from './components/SEO'
+import Home from './pages/Home'
+import Fhoto from './pages/Fhoto'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'legal'>('home')
-
-  useEffect(() => {
-    // Cargar preferencia de modo oscuro desde localStorage
-    const darkMode = localStorage.getItem('darkMode')
-    if (darkMode === 'true') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
-    // Handle legal page routing
-    const handleRoute = () => {
-      if (window.location.pathname === '/legal') {
-        setCurrentPage('legal')
-      } else {
-        setCurrentPage('home')
-      }
-    }
-
-    handleRoute()
-    window.addEventListener('popstate', handleRoute)
-    
-    return () => window.removeEventListener('popstate', handleRoute)
-  }, [])
-
-  // Handle navigation to legal pages
-  useEffect(() => {
-    const handleClick = (e: Event) => {
-      const target = e.target as HTMLElement
-      if (target.closest('a[href="/legal"]')) {
-        e.preventDefault()
-        setCurrentPage('legal')
-        window.history.pushState({}, '', '/legal')
-      }
-    }
-
-    document.addEventListener('click', handleClick)
-    return () => document.removeEventListener('click', handleClick)
-  }, [])
-
-  if (currentPage === 'legal') {
-    return (
-      <LanguageProvider>
-        <div className="app">
-          <LegalPages />
-          <FloatingButtons />
-        </div>
-      </LanguageProvider>
-    )
-  }
-
   return (
-    <LanguageProvider>
-      <div className="app">
-        <Header />
-        <main id="main-content" role="main">
-          <Hero />
-          <SmartCardShowcase />
-          <Services />
-          <Testimonials />
-          <Process />
-          <About />
-          <FAQ />
-          <Contact />
-        </main>
-        <Footer />
-        <CookieBanner />
-        <FloatingButtons />
-      </div>
+    <DarkModeProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+        <div className="app">
+          <Routes>
+            <Route path="/legal" element={
+              <>
+                <LegalPages />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/proyectos/fhoto" element={
+              <>
+                <SEO 
+                  title="Fhoto — Recorridos 360 y Contenido Aéreo | .js agency"
+                  description="Recorridos virtuales 360° y contenido aéreo profesional para inmobiliarias, hostelería y negocios. Captura con Insta360 X5, fotografía y video con drones certificados. Soluciones visuales premium."
+                  keywords="recorridos 360, tours virtuales, Insta360, contenido aéreo, drones, fotografía aérea, inmobiliarias, hoteles, Almería"
+                  url="https://jsagency.com/proyectos/fhoto"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <Fhoto />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="*" element={
+              <>
+                <SEO 
+                  title=".js agency — Diseño Web y Automatizaciones con IA"
+                  description="Agencia de desarrollo web y automatizaciones con IA en Almería. Especialistas en React, diseño UI moderno, performance, SEO técnico e integraciones. Soluciones digitales profesionales."
+                  keywords="desarrollo web, diseño web, React, JavaScript, Almería, España, agencia digital, automatización IA, landing pages, webs corporativas, SEO técnico, Core Web Vitals"
+                  url="https://jsagency.com"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <Home />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </LanguageProvider>
+    </DarkModeProvider>
   )
 }
 

@@ -19,14 +19,16 @@ const translations = {
       latestProject: 'Destacado',
       services: 'Lo que hacemos',
       about: 'Quiénes somos',
+      process: 'Procesos',
       faq: 'Dudas',
+      projects: 'Nuestros proyectos',
       contact: 'Hablemos',
     },
     
     // Hero Section
       hero: {
       title: 'Soluciones digitales con otra perspectiva.',
-      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> creamos <strong>soluciones digitales</strong>, <strong>recorridos virtuales 360°</strong>, <strong>contenido aéreo con drones</strong> y <strong>automatizaciones con IA</strong>. Cuatro servicios integrados que transforman tu negocio.',
+      subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> creamos <strong>páginas web</strong> y <strong>automatizaciones con IA</strong>. Soluciones digitales que transforman tu negocio.',
       cta: 'Hablemos de tu proyecto',
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
@@ -54,7 +56,8 @@ const translations = {
     // Services Section
     services: {
       title: 'Lo que hacemos',
-      subtitle: 'Cuatro formas de hacer crecer tu negocio. Soluciones digitales, recorridos virtuales, contenido aéreo y automatizaciones con IA. Todo integrado, todo conectado.',
+      titleHighlight: 'hacemos',
+      subtitle: 'Dos formas de hacer crecer tu negocio. Diseño y desarrollo web, y automatizaciones con IA. Todo integrado, todo conectado.',
       webdev: {
         title: 'Creación de Páginas Web',
         description: 'Landing pages, webs corporativas y tiendas online.',
@@ -155,6 +158,7 @@ const translations = {
     // Testimonials Section
     testimonials: {
       title: 'Lo que dicen',
+      titleHighlight: 'dicen',
       subtitle: 'Palabras de quienes ya trabajaron con nosotros.',
       testimonials: {
         maximiliano: {
@@ -162,6 +166,18 @@ const translations = {
           company: 'Mushroom mdp',
           role: 'CEO',
           content: 'La plataforma desarrollada por .js agency nos permitió profesionalizar completamente nuestro negocio de alquiler de equipos. El sistema de reservas online y gestión de inventario ha sido un cambio total.'
+        },
+        micaela: {
+          name: 'Micaela Díaz',
+          company: 'Fotografía Profesional',
+          role: 'Fotógrafa',
+          content: 'El portfolio que .js agency creó para mi trabajo fotográfico superó todas mis expectativas. No solo es visualmente impactante, sino que las visitas a mi sitio aumentaron significativamente. El diseño elegante y la optimización SEO han hecho que más clientes me encuentren.'
+        },
+        alejandro: {
+          name: 'Alejandro Santanatoglia',
+          company: 'Estudio de Arquitectura',
+          role: 'Arquitecto',
+          content: 'La landing page que desarrollaron para mi estudio de arquitectura es perfecta. Captura la esencia de nuestro trabajo y ha generado un aumento notable en las consultas de clientes potenciales. El diseño minimalista y profesional refleja exactamente lo que buscábamos.'
         }
       }
     },
@@ -169,6 +185,7 @@ const translations = {
     // Process Section
     process: {
       title: 'Cómo trabajamos',
+      titleHighlight: 'trabajamos',
       subtitle: 'Procesos claros, sin sorpresas. Cada servicio tiene su metodología, pero todos comparten algo: transparencia total.',
       cta: '¿Listo para empezar?',
       ctaButton: 'Hablemos →',
@@ -273,11 +290,12 @@ const translations = {
     // About Section
     about: {
       title: 'Quiénes somos',
+      titleHighlight: 'somos',
       subtitle: 'Un equipo que piensa diferente y construye mejor.',
       description: 'Somos un estudio digital en Almería. Combinamos código, creatividad y estrategia para crear proyectos que realmente funcionan. Sin humo, sin promesas vacías. Solo resultados.',
       content: {
-        paragraph1: 'Creamos soluciones digitales que funcionan. Sin complicaciones, sin jerga técnica innecesaria. Solo código limpio, diseño pensado y resultados medibles.',
-        paragraph2: 'Trabajamos con procesos claros y comunicación directa. Cada proyecto es único, pero todos comparten algo: están pensados para durar y crecer contigo.',
+        paragraph1: 'Somos una startup creativa en Almería que ayuda a negocios a digitalizarse con soluciones simples y efectivas.',
+        paragraph2: 'Desarrollamos webs modernas, automatizaciones con IA y contenido visual (drone y 360) para potenciar tu presencia digital y convertirla en resultados. Trabajamos con procesos claros, comunicación directa y foco en la calidad: diseño con intención, código limpio y una base preparada para crecer contigo.',
         paragraph3: '¿Tienes un proyecto en mente? Hablemos.',
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',
@@ -377,6 +395,19 @@ const translations = {
       location: 'Ubicación',
       socialMedia: 'Redes Sociales',
       locationValue: 'Almeria, España',
+      formTitle: 'Envíanos un mensaje',
+      formName: 'Nombre y apellido',
+      formNamePlaceholder: 'Tu nombre completo',
+      formEmail: 'Email',
+      formEmailPlaceholder: 'tu@email.com',
+      formPhone: 'Teléfono',
+      formPhonePlaceholder: '+34 123 456 789',
+      formMessage: 'Mensaje',
+      formMessagePlaceholder: 'Cuéntanos sobre tu proyecto...',
+      formSubmit: 'Enviar mensaje',
+      formSubmitting: 'Enviando...',
+      formSuccess: '¡Mensaje enviado correctamente! Te contactaremos pronto.',
+      formError: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
     },
     
     // Footer
@@ -409,6 +440,7 @@ const translations = {
     // FAQ Section
     faq: {
       title: 'Dudas frecuentes',
+      titleHighlight: 'frecuentes',
       subtitle: 'Las respuestas que buscas, sin rodeos.',
       webdev: {
         title: 'Creación de Páginas Web',
@@ -536,14 +568,16 @@ const translations = {
       latestProject: 'Featured',
       services: 'What we do',
       about: 'Who we are',
+      process: 'Process',
       faq: 'Questions',
+      projects: 'Our projects',
       contact: 'Let\'s talk',
     },
     
     // Hero Section
     hero: {
       title: 'Digital solutions with a different perspective.',
-      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we create <strong>digital solutions</strong>, <strong>360° virtual tours</strong>, <strong>aerial content with drones</strong> and <strong>AI automation</strong>. Four integrated services that transform your business.',
+      subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we create <strong>web pages</strong> and <strong>AI automation</strong>. Digital solutions that transform your business.',
       cta: 'Let\'s talk about your project',
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
@@ -571,7 +605,8 @@ const translations = {
     // Services Section
     services: {
       title: 'What we do',
-      subtitle: 'Four ways to grow your business. Digital solutions, virtual tours, aerial content and AI automation. All integrated, all connected.',
+      titleHighlight: 'do',
+      subtitle: 'Two ways to grow your business. Web design and development, and AI automation. All integrated, all connected.',
       webdev: {
         title: 'Web Development',
         description: 'Landing pages, corporate websites and online stores.',
@@ -672,6 +707,7 @@ const translations = {
     // Testimonials Section
     testimonials: {
       title: 'What they say',
+      titleHighlight: 'say',
       subtitle: 'Words from those who\'ve already worked with us.',
       testimonials: {
         maximiliano: {
@@ -680,23 +716,17 @@ const translations = {
           role: 'Founder',
           content: 'The platform developed by .js agency allowed us to completely professionalize our equipment rental business. The online booking system and inventory management has been a total change.'
         },
-        cafeteria: {
-          name: 'Sofia Martínez',
-          company: 'La Cafetería',
-          role: 'Owner',
-          content: 'Divly digitized my business and made it grow. The digital menu is intuitive, elegant and has significantly improved service. Diners can easily split the bill and pay for what they consumed.'
+        micaela: {
+          name: 'Micaela Díaz',
+          company: 'Professional Photography',
+          role: 'Photographer',
+          content: 'The portfolio that .js agency created for my photography work exceeded all my expectations. Not only is it visually stunning, but visits to my site increased significantly. The elegant design and SEO optimization have helped more clients find me.'
         },
-        jewelry: {
-          name: 'María Díaz',
-          company: 'Joyería Díaz',
-          role: 'Director',
-          content: 'The e-commerce they developed for our jewelry store is elegant and sophisticated. It has significantly increased our online sales and our customers love the shopping experience.'
-        },
-        delivery: {
-          name: 'Carlos Ruiz',
-          company: 'App Delivery',
-          role: 'CEO',
-          content: 'The mobile application they created for our delivery service is incredible. Real-time order management and intuitive interface have revolutionized our business.'
+        alejandro: {
+          name: 'Alejandro Santanatoglia',
+          company: 'Architecture Studio',
+          role: 'Architect',
+          content: 'The landing page they developed for my architecture studio is perfect. It captures the essence of our work and has generated a notable increase in inquiries from potential clients. The minimalist and professional design reflects exactly what we were looking for.'
         }
       }
     },
@@ -704,6 +734,7 @@ const translations = {
     // Process Section
     process: {
       title: 'How we work',
+      titleHighlight: 'work',
       subtitle: 'Clear processes, no surprises. Each service has its methodology, but they all share something: total transparency.',
       cta: 'Ready to start?',
       ctaButton: 'Let\'s talk →',
@@ -808,6 +839,7 @@ const translations = {
     // About Section
     about: {
       title: 'Who we are',
+      titleHighlight: 'are',
       subtitle: 'A team that thinks differently and builds better.',
       description: 'We\'re a digital studio in Almería. We combine code, creativity and strategy to create projects that actually work. No fluff, no empty promises. Just results.',
       content: {
@@ -912,6 +944,19 @@ const translations = {
       location: 'Location',
       socialMedia: 'Social Media',
       locationValue: 'Almeria, Spain',
+      formTitle: 'Send us a message',
+      formName: 'Full name',
+      formNamePlaceholder: 'Your full name',
+      formEmail: 'Email',
+      formEmailPlaceholder: 'your@email.com',
+      formPhone: 'Phone',
+      formPhonePlaceholder: '+34 123 456 789',
+      formMessage: 'Message',
+      formMessagePlaceholder: 'Tell us about your project...',
+      formSubmit: 'Send message',
+      formSubmitting: 'Sending...',
+      formSuccess: 'Message sent successfully! We\'ll contact you soon.',
+      formError: 'Error sending message. Please try again.',
     },
     
     // Footer
@@ -944,6 +989,7 @@ const translations = {
     // FAQ Section
     faq: {
       title: 'Frequently asked questions',
+      titleHighlight: 'questions',
       subtitle: 'The answers you\'re looking for, straight to the point.',
       webdev: {
         title: 'Web Development',

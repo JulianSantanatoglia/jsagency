@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Globe, Video, Camera, Bot } from 'lucide-react';
+import { Globe, Bot } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 interface FAQItem {
   question: string;
@@ -62,62 +63,6 @@ const FAQ = () => {
       ]
     },
     {
-      id: 'design',
-      title: t('faq.design.title'),
-      icon: Video,
-      color: 'purple',
-      gradient: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      borderColor: 'border-purple-200',
-      textColor: 'text-purple-600',
-      questions: [
-        {
-          question: t('faq.design.questions.0.question'),
-          answer: t('faq.design.questions.0.answer')
-        },
-        {
-          question: t('faq.design.questions.1.question'),
-          answer: t('faq.design.questions.1.answer')
-        },
-        {
-          question: t('faq.design.questions.2.question'),
-          answer: t('faq.design.questions.2.answer')
-        },
-        {
-          question: t('faq.design.questions.3.question'),
-          answer: t('faq.design.questions.3.answer')
-        }
-      ]
-    },
-    {
-      id: 'aerial',
-      title: t('faq.aerial.title'),
-      icon: Camera,
-      color: 'orange',
-      gradient: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200',
-      textColor: 'text-orange-600',
-      questions: [
-        {
-          question: t('faq.aerial.questions.0.question'),
-          answer: t('faq.aerial.questions.0.answer')
-        },
-        {
-          question: t('faq.aerial.questions.1.question'),
-          answer: t('faq.aerial.questions.1.answer')
-        },
-        {
-          question: t('faq.aerial.questions.2.question'),
-          answer: t('faq.aerial.questions.2.answer')
-        },
-        {
-          question: t('faq.aerial.questions.3.question'),
-          answer: t('faq.aerial.questions.3.answer')
-        }
-      ]
-    },
-    {
       id: 'ai',
       title: t('faq.ai.title'),
       icon: Bot,
@@ -150,19 +95,22 @@ const FAQ = () => {
   const activeCategory = faqCategories.find(cat => cat.id === activeTab);
 
   return (
-    <section id="faq" className="py-20 px-4 md:px-8 bg-gray-50 dark:bg-gray-900">
+    <section id="faq" className="relative py-24 md:py-32 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 font-display tracking-tight">
-            {t('faq.title')}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-body font-light">
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-white mb-6 font-display tracking-tight">
+              {t('faq.title').replace(t('faq.titleHighlight'), '').trim()} <span className="text-accent-cyan">{t('faq.titleHighlight')}</span>
+            </h2>
+          <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light">
             {t('faq.subtitle')}
           </p>
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* FAQ Tabs */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-8 md:mb-12 max-w-4xl mx-auto">
+        <ScrollReveal direction="up" delay={100}>
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-8 md:mb-12 max-w-4xl mx-auto justify-center">
           {faqCategories.map((category) => {
             const isActive = activeTab === category.id;
             const IconComponent = category.icon;
@@ -177,7 +125,7 @@ const FAQ = () => {
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                   isActive
                     ? `${category.bgColor} ${category.borderColor} border-2 ${category.textColor} shadow-md`
-                    : 'bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-600 hover:bg-white hover:border-gray-300'
+                    : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-gray-300 dark:hover:border-slate-600'
                 }`}
               >
                 <IconComponent size={20} />
@@ -185,10 +133,12 @@ const FAQ = () => {
               </button>
             );
           })}
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* Active Category Questions */}
         {activeCategory && (
+          <ScrollReveal direction="up" delay={200}>
           <div className="space-y-4 max-w-4xl mx-auto">
             {activeCategory.questions.map((item, index) => (
               <div 
@@ -234,19 +184,19 @@ const FAQ = () => {
               </div>
             ))}
           </div>
+          </ScrollReveal>
         )}
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 dark:text-gray-300 mb-6 font-body">
-            {t('faq.cta')}
-          </p>
+        <ScrollReveal direction="up" delay={300}>
+          <div className="text-center mt-12">
           <a
             href="#contacto"
             className="inline-flex items-center px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/90 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-gray-50 dark:focus:ring-offset-gray-900 font-body"
           >
             {t('faq.ctaButton')}
           </a>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

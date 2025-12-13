@@ -144,6 +144,19 @@
       }
     }
     </script>
+    <!-- Dark mode initialization script - runs before React to prevent flash -->
+    <script>
+      (function() {
+        const saved = localStorage.getItem('darkMode');
+        const root = document.documentElement;
+        // Always remove dark class first
+        root.classList.remove('dark');
+        // Only add if explicitly saved as 'dark'
+        if (saved === 'dark') {
+          root.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

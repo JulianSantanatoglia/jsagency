@@ -17,9 +17,11 @@ interface ContactFormData {
 interface ContactFormProps {
   onSuccess?: () => void;
   className?: string;
+  darkMode?: boolean;
+  showAllServices?: boolean;
 }
 
-const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
+const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServices = false }: ContactFormProps) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -53,12 +55,19 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
     { value: 'flexible', label: 'Flexible' }
   ];
 
-  const serviceOptions = [
+  const allServiceOptions = [
     { value: 'web-development', label: 'Creación de Páginas Web' },
     { value: 'virtual-tours', label: 'Recorridos virtuales' },
     { value: 'automation', label: 'Automatización' },
     { value: 'aerial-content', label: 'Contenido Aéreo' }
   ];
+
+  const homeServiceOptions = [
+    { value: 'web-development', label: 'Creación de Páginas Web' },
+    { value: 'automation', label: 'Automatización' }
+  ];
+
+  const serviceOptions = showAllServices ? allServiceOptions : homeServiceOptions;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -129,12 +138,12 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
   };
 
   return (
-    <div className={`bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 ${className}`}>
+    <div className={`${darkMode ? 'bg-slate-800/50 backdrop-blur-sm border border-slate-700/50' : 'bg-white/90 backdrop-blur-sm'} rounded-2xl shadow-xl p-8 md:p-12 ${className}`}>
       <div className="mb-8">
-        <h3 className="text-2xl md:text-3xl font-bold text-primary-dark mb-4 font-display">
+        <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
           Envíanos un mensaje
         </h3>
-        <p className="text-slate-600 font-body">
+        <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
           Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
         </p>
       </div>
@@ -143,7 +152,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
         {/* Name and Email */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="name" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Nombre completo *
             </label>
             <div className="relative">
@@ -154,18 +163,22 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                    : 'border-slate-300'
+                }`}
                 placeholder="Tu nombre"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="email" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Email *
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
               <input
                 type="email"
                 id="email"
@@ -173,7 +186,11 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                    : 'border-slate-300'
+                }`}
                 placeholder="tu@email.com"
               />
             </div>
@@ -183,36 +200,44 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
         {/* Phone and Company */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="phone" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Teléfono
             </label>
             <div className="relative">
-              <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Phone className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                    : 'border-slate-300'
+                }`}
                 placeholder="+34 123 456 789"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="company" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="company" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Empresa
             </label>
             <div className="relative">
-              <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Building2 className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
               <input
                 type="text"
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                    : 'border-slate-300'
+                }`}
                 placeholder="Nombre de tu empresa"
               />
             </div>
@@ -221,7 +246,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
 
         {/* Subject */}
         <div>
-          <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+          <label htmlFor="subject" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
             Asunto *
           </label>
           <input
@@ -231,14 +256,18 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
             value={formData.subject}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+              darkMode 
+                ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                : 'border-slate-300'
+            }`}
             placeholder="¿En qué podemos ayudarte?"
           />
         </div>
 
         {/* Services */}
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-3 font-body">
+          <label className={`block text-sm font-semibold mb-3 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
             Servicios de interés
           </label>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -252,7 +281,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
                   onChange={handleInputChange}
                   className="w-4 h-4 text-accent-cyan bg-gray-100 border-gray-300 rounded focus:ring-accent-cyan focus:ring-2"
                 />
-                <span className="text-sm text-slate-700 font-body">{service.label}</span>
+                <span className={`text-sm font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>{service.label}</span>
               </label>
             ))}
           </div>
@@ -261,17 +290,21 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
         {/* Budget and Timeline */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="budget" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="budget" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Presupuesto aproximado
             </label>
             <div className="relative">
-              <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <DollarSign className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
               <select
                 id="budget"
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white' 
+                    : 'border-slate-300'
+                }`}
               >
                 <option value="">Selecciona un rango</option>
                 {budgetOptions.map((option) => (
@@ -284,17 +317,21 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
           </div>
 
           <div>
-            <label htmlFor="timeline" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+            <label htmlFor="timeline" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
               Timeline del proyecto
             </label>
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <Calendar className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
               <select
                 id="timeline"
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
+                className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+                  darkMode 
+                    ? 'bg-slate-900/50 border-slate-600 text-white' 
+                    : 'border-slate-300'
+                }`}
               >
                 <option value="">¿Cuándo lo necesitas?</option>
                 {timelineOptions.map((option) => (
@@ -309,11 +346,11 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2 font-body">
+          <label htmlFor="message" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
             Mensaje *
           </label>
           <div className="relative">
-            <MessageSquare className="absolute left-3 top-3 text-slate-400 w-5 h-5" />
+            <MessageSquare className={`absolute left-3 top-3 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
             <textarea
               id="message"
               name="message"
@@ -321,7 +358,11 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
               onChange={handleInputChange}
               required
               rows={6}
-              className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body resize-none"
+              className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body resize-none ${
+                darkMode 
+                  ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
+                  : 'border-slate-300'
+              }`}
               placeholder="Cuéntanos más detalles sobre tu proyecto..."
             />
           </div>
@@ -338,7 +379,7 @@ const ContactForm = ({ onSuccess, className = '' }: ContactFormProps) => {
             required
             className="w-5 h-5 text-accent-cyan bg-gray-100 border-gray-300 rounded focus:ring-accent-cyan focus:ring-2 mt-1"
           />
-          <label htmlFor="consent" className="text-sm text-slate-600 font-body">
+          <label htmlFor="consent" className={`text-sm font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
             Acepto la{' '}
             <a href="/legal" className="text-accent-cyan hover:underline">
               política de privacidad
