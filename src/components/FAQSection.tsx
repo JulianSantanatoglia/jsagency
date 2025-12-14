@@ -7,11 +7,6 @@ interface FAQSectionProps {
   darkMode?: boolean;
 }
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 const FAQSection = ({ serviceId, darkMode = false }: FAQSectionProps) => {
   const { t } = useLanguage();
   const [openItems, setOpenItems] = useState<number[]>([]);

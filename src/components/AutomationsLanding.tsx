@@ -1,6 +1,6 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import ContactForm from './ContactForm';
-import { Check, Bot, MessageSquare, Zap, ArrowRight } from 'lucide-react';
+import { Bot, MessageSquare, Zap, ArrowRight } from 'lucide-react';
 
 const AutomationsLanding = () => {
   const { t } = useLanguage();

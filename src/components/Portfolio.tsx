@@ -1,4 +1,4 @@
-import { Smartphone, Music, Paintbrush, BarChart3, Monitor, Video } from 'lucide-react';
+import { Smartphone, Music, Paintbrush, BarChart3, Monitor } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {

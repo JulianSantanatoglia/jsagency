@@ -2,7 +2,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 
 const DarkModeToggle = () => {
-  const { darkMode, toggleDarkMode, isDark } = useDarkMode();
+  const { toggleDarkMode, isDark } = useDarkMode();
 
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
