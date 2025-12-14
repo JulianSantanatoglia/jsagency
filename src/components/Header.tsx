@@ -51,9 +51,34 @@ const Header = () => {
           </Link>
         </div>
         
-        {/* Dark Mode Toggle centrado en mobile - entre logo y menú hamburguesa */}
-        <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2">
+        {/* Mobile Controls - Dark Mode, Language, Menu */}
+        <div className="lg:hidden flex items-center gap-3">
           <DarkModeToggle />
+          <LanguageSwitcher />
+          <button 
+            onClick={toggleMenu}
+            className="p-2 rounded-lg text-slate-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 focus:outline-none"
+            aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <div className="relative w-6 h-6">
+              <Menu 
+                size={24} 
+                aria-hidden="true" 
+                className={`absolute inset-0 transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? 'opacity-0 rotate-180 scale-0' : 'opacity-100 rotate-0 scale-100'
+                }`}
+              />
+              <X 
+                size={24} 
+                aria-hidden="true" 
+                className={`absolute inset-0 transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-180 scale-0'
+                }`}
+              />
+            </div>
+          </button>
         </div>
         
         {/* Desktop Navigation */}
@@ -179,32 +204,6 @@ const Header = () => {
             </Link>
           )}
         </nav>
-
-        {/* Mobile Menu Button */}
-        <button 
-          onClick={toggleMenu}
-          className="lg:hidden p-2 rounded-lg text-slate-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 focus:outline-none"
-          aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          <div className="relative w-6 h-6">
-            <Menu 
-              size={24} 
-              aria-hidden="true" 
-              className={`absolute inset-0 transition-all duration-300 ease-in-out ${
-                isMenuOpen ? 'opacity-0 rotate-180 scale-0' : 'opacity-100 rotate-0 scale-100'
-              }`}
-            />
-            <X 
-              size={24} 
-              aria-hidden="true" 
-              className={`absolute inset-0 transition-all duration-300 ease-in-out ${
-                isMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-180 scale-0'
-              }`}
-            />
-          </div>
-        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -339,16 +338,6 @@ const Header = () => {
               )}
             </div>
 
-            {/* Language Switcher en mobile - DarkModeToggle ya está en el header */}
-            <div className={`flex justify-center py-2 transition-all duration-300 transform ${
-              isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-            }`}
-            style={{
-              transitionDelay: isMenuOpen ? '450ms' : '0ms'
-            }}
-            >
-              <LanguageSwitcher />
-            </div>
             {isHomePage ? (
               <a 
                 href="#contacto" 

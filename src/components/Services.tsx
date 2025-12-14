@@ -21,7 +21,7 @@ const Services = () => {
       ],
       icon: Globe,
       image: '/images/proyectos/mushroommdp.jpg',
-      cta: 'Solicitar propuesta',
+      cta: 'Quiero una web',
       ctaLink: '#contacto',
       featured: true,
       color: 'blue'
@@ -40,7 +40,7 @@ const Services = () => {
       ],
       icon: Bot,
       image: '/images/proyectos/automatizacion.jpg',
-      cta: 'Ver automatizaciones',
+      cta: 'Quiero automatizaciones',
       ctaLink: '#contacto',
       featured: true,
       color: 'emerald'
