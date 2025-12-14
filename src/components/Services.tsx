@@ -9,15 +9,19 @@ const Services = () => {
   const services = [
     {
       id: 'webdev',
-      title: t('services.webdev.title'),
-      description: 'Webs rápidas, escalables y orientadas a conversión.',
+      title: 'Creación de páginas web',
+      description: 'Webs modernas que cargan rápido y convierten visitas en clientes.',
       features: [
-        'Landing pages y webs corporativas',
-        'Diseño UI moderno y minimalista',
-        'Performance / Core Web Vitals',
-        'SEO técnico + analítica',
-        'Integraciones (formularios, reservas, WhatsApp, etc.)',
-        'Mantenimiento y evolución'
+        'Webs corporativas y landing pages profesionales',
+        'Diseño moderno, claro y adaptado a tu marca',
+        'Carga rápida y buena experiencia en móvil y ordenador',
+        'Preparadas para aparecer en Google',
+        'Formularios de contacto, reservas y WhatsApp',
+        'Portfolios profesionales para mostrar tu trabajo o servicios',
+        'Correo corporativo profesional',
+        'Hosting, alojamiento y dominio incluidos',
+        'Seguridad SSL y protección de datos',
+        'Mantenimiento y mejoras continuas'
       ],
       icon: Globe,
       image: '/images/proyectos/mushroommdp.jpg',
@@ -47,7 +51,7 @@ const Services = () => {
     },
     {
       id: '360',
-      title: 'Recorridos 360',
+      title: 'Tours Virtuales',
       description: 'Tours inmersivos para vender propiedades y reservas.',
       features: [
         'Captura 360° con Insta360 X5',
@@ -66,8 +70,8 @@ const Services = () => {
     },
     {
       id: 'drone',
-      title: 'Contenido Aéreo',
-      description: 'Contenido aéreo premium para destacar tu marca.',
+      title: 'Servicios de Drone',
+      description: 'Servicios de drone premium para destacar tu marca.',
       features: [
         'Fotografía aérea inmobiliaria',
         'Videos corporativos con drones',
@@ -116,33 +120,33 @@ const Services = () => {
             {featuredServices.map((service, index) => (
                 <article 
                   key={service.id}
-                  className="group relative overflow-hidden"
+                  className="group relative overflow-hidden h-full flex flex-col"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Card moderna con gradiente y efecto glassmorphism */}
-                  <div className="relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-3 hover:border-accent-cyan/20">
+                  <div className="relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 md:hover:-translate-y-3 hover:border-accent-cyan/20 h-full flex flex-col">
                     {/* Barra superior de color */}
                     <div className={`h-2 ${service.color === 'blue' ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
                     
                     {/* Contenido principal */}
-                    <div className="p-8 md:p-10">
+                    <div className="p-6 md:p-8 lg:p-10 flex flex-col flex-1">
                       {/* Header con icono y título */}
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${service.color === 'blue' ? 'bg-blue-50 dark:bg-blue-900/30' : 'bg-emerald-50 dark:bg-emerald-900/30'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                          <service.icon size={32} className={service.color === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-emerald-600 dark:text-emerald-400'} aria-hidden="true" />
+                      <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+                        <div className={`flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${service.color === 'blue' ? 'bg-blue-50 dark:bg-blue-900/30' : 'bg-emerald-50 dark:bg-emerald-900/30'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <service.icon size={28} className={`sm:w-8 sm:h-8 ${service.color === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-emerald-600 dark:text-emerald-400'}`} aria-hidden="true" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 group-hover:text-accent-cyan transition-colors">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 group-hover:text-accent-cyan transition-colors">
                             {service.title}
                           </h3>
-                          <p className="text-slate-600 dark:text-slate-300 text-base font-body leading-relaxed">
+                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed">
                             {service.description}
                           </p>
                         </div>
                       </div>
 
                       {/* Features con diseño moderno */}
-                      <div className="mb-8 space-y-3">
+                      <div className="mb-8 space-y-3 flex-1">
                         {service.features.map((feature, i) => (
                           <div 
                             key={i} 
@@ -154,7 +158,7 @@ const Services = () => {
                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                               </svg>
                             </div>
-                            <span className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-body flex-1">
+                            <span className="text-xs sm:text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-body flex-1">
                               {feature}
                             </span>
                           </div>

@@ -96,8 +96,10 @@ const FAQ = () => {
   const activeCategory = faqCategories.find(cat => cat.id === activeTab);
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 px-4 md:px-8">
-      <PatternBackground opacity={0.04} />
+    <section id="faq" className="relative py-24 md:py-32 px-4 md:px-8 overflow-hidden">
+      <div className="absolute inset-0">
+        <PatternBackground opacity={0.04} />
+      </div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         <ScrollReveal direction="up" delay={0}>
@@ -113,8 +115,9 @@ const FAQ = () => {
 
         {/* FAQ Tabs - Diseño moderno */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16 max-w-2xl mx-auto justify-center">
-          {faqCategories.map((category) => {
+          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+            {faqCategories.map((category) => {
             const isActive = activeTab === category.id;
             const IconComponent = category.icon;
             
@@ -139,6 +142,10 @@ const FAQ = () => {
               </button>
             );
           })}
+            </div>
+            <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
+              Haz click en alguno de los dos botones
+            </p>
           </div>
         </ScrollReveal>
 
@@ -151,15 +158,36 @@ const FAQ = () => {
               return (
                 <div 
                   key={index}
-                  className={`group relative bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm rounded-2xl border-2 ${
+                  className={`group relative bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm rounded-2xl ${
                     isOpen 
-                      ? `border-${activeCategory.color}-300/60 dark:border-${activeCategory.color}-400/60 shadow-xl shadow-${activeCategory.color}-500/20`
-                      : 'border-slate-200/60 dark:border-slate-700/60 shadow-lg shadow-slate-200/20 dark:shadow-slate-900/20'
+                      ? 'shadow-xl shadow-slate-200/20 dark:shadow-slate-900/20'
+                      : 'shadow-lg shadow-slate-200/20 dark:shadow-slate-900/20'
                   } overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`}
+                  style={{ border: 'none !important', borderTop: 'none !important', borderBottom: 'none !important', borderLeft: 'none !important', borderRight: 'none !important' }}
                 >
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-start gap-4 hover:bg-gradient-to-r hover:from-white/50 hover:to-transparent dark:hover:from-slate-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                    className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-start gap-4 hover:bg-gradient-to-r hover:from-white/50 hover:to-transparent dark:hover:from-slate-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-slate-300 dark:focus:ring-slate-600 focus:ring-offset-2"
+                    style={{ 
+                      borderBottom: 'none !important', 
+                      borderTop: 'none !important', 
+                      marginBottom: 0,
+                      border: 'none !important',
+                      outline: 'none',
+                      borderLeft: 'none !important',
+                      borderRight: 'none !important',
+                      boxShadow: 'none'
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.border = 'none';
+                      e.currentTarget.style.borderBottom = 'none';
+                      e.currentTarget.style.borderTop = 'none';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.border = 'none';
+                      e.currentTarget.style.borderBottom = 'none';
+                      e.currentTarget.style.borderTop = 'none';
+                    }}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                   >
@@ -193,16 +221,30 @@ const FAQ = () => {
                   <div
                     id={`faq-answer-${index}`}
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
+                    style={{
+                      willChange: 'max-height, opacity',
+                      borderTop: 'none !important',
+                      marginTop: 0,
+                      paddingTop: 0,
+                      border: 'none !important',
+                      outline: 'none',
+                      borderBottom: 'none !important',
+                      borderLeft: 'none !important',
+                      borderRight: 'none !important',
+                      boxShadow: 'none'
+                    }}
                   >
-                    <div className="px-6 md:px-8 pb-6 pt-2">
-                      <div className="ml-12 pl-4 border-l-2 border-slate-200/60 dark:border-slate-700/60">
-                        <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
-                          {item.answer}
-                        </p>
+                    {isOpen && (
+                      <div className="px-6 md:px-8 pb-6" style={{ borderTop: 'none', borderBottom: 'none', paddingTop: 0, border: 'none', marginTop: 0, marginBottom: 0 }}>
+                        <div className="ml-12 pl-4" style={{ border: 'none', marginTop: 0, paddingTop: 0 }}>
+                          <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                            {item.answer}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               );

@@ -1,8 +1,11 @@
 import { Smartphone, Music, Paintbrush, BarChart3, Monitor } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocation, Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '';
   const projects = [
     {
       title: t('portfolio.projects.smartCard.title'),
@@ -155,12 +158,21 @@ const Portfolio = () => {
           <p className="text-slate-600 dark:text-gray-300 font-body mb-6">
             {t('portfolio.like')}
           </p>
-          <a 
-            href="#contacto" 
-            className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
-          >
-            {t('portfolio.cta')}
-          </a>
+          {isHomePage ? (
+            <a 
+              href="#contacto" 
+              className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
+            >
+              {t('portfolio.cta')}
+            </a>
+          ) : (
+            <Link 
+              to="/#contacto" 
+              className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
+            >
+              {t('portfolio.cta')}
+            </Link>
+          )}
         </div>
       </div>
     </section>

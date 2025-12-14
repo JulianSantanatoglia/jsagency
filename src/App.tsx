@@ -26,9 +26,9 @@ function App() {
             <Route path="/proyectos/fhoto" element={
               <>
                 <SEO 
-                  title="Fhoto — Recorridos 360 y Contenido Aéreo | .js agency"
-                  description="Recorridos virtuales 360° y contenido aéreo profesional para inmobiliarias, hostelería y negocios. Captura con Insta360 X5, fotografía y video con drones certificados. Soluciones visuales premium."
-                  keywords="recorridos 360, tours virtuales, Insta360, contenido aéreo, drones, fotografía aérea, inmobiliarias, hoteles, Almería"
+                  title="Fhoto — Tours Virtuales y Servicios de Drone | .js agency"
+                  description="Tours virtuales 360° y servicios de drone profesional para inmobiliarias, hostelería y negocios. Captura con Insta360 X5, fotografía y video con drones certificados. Soluciones visuales premium."
+                  keywords="tours virtuales, Insta360, servicios de drone, drones, fotografía aérea, inmobiliarias, hoteles, Almería"
                   url="https://jsagency.com/proyectos/fhoto"
                 />
                 <Header />

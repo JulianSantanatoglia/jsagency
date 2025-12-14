@@ -8,9 +8,9 @@ const Hero = () => {
   const [visibleText, setVisibleText] = useState(0);
 
   const animatedTexts = [
-    { text: 'POTENCIAMOS TU', highlight: 'MARCA' },
-    { text: 'DIGITALIZAMOS TU', highlight: 'EMPRESA' },
-    { text: 'AUTOMATIZAMOS TUS', highlight: 'PROCESOS' }
+    { text: t('hero.animatedTexts.text1'), highlight: t('hero.animatedTexts.highlight1') },
+    { text: t('hero.animatedTexts.text2'), highlight: t('hero.animatedTexts.highlight2') },
+    { text: t('hero.animatedTexts.text3'), highlight: t('hero.animatedTexts.highlight3') }
   ];
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const Hero = () => {
               className="px-8 py-3 bg-white/15 backdrop-blur-lg text-white font-semibold text-base rounded-xl hover:bg-white/25 transition-all duration-300 shadow-xl shadow-white/20 hover:shadow-2xl hover:shadow-white/30 focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-transparent border-2 border-accent-cyan/60 hover:border-accent-cyan hover:scale-105 cursor-pointer"
               aria-label="Ir a Quiénes somos"
             >
-              ¡Hola! 👋
+              {t('hero.helloButton')}
             </button>
           </div>
         </div>

@@ -1,9 +1,19 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocation, Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
 const About = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '';
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHomePage) {
+      e.preventDefault();
+      window.location.href = '/#contacto';
+    }
+  };
 
   return (
     <section id="nosotros" className="relative py-24 md:py-32 px-4 md:px-8">
@@ -57,12 +67,21 @@ const About = () => {
         {/* CTA Section */}
         <ScrollReveal direction="up" delay={200}>
           <div className="text-center mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
-            <a 
-              href="#contacto" 
-              className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
-            >
-              {t('about.content.ctaButton')}
-            </a>
+            {isHomePage ? (
+              <a 
+                href="#contacto" 
+                className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
+              >
+                {t('about.content.ctaButton')}
+              </a>
+            ) : (
+              <Link 
+                to="/#contacto" 
+                className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold text-lg rounded-xl hover-lift shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 font-body"
+              >
+                {t('about.content.ctaButton')}
+              </Link>
+            )}
           </div>
         </ScrollReveal>
       </div>

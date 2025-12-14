@@ -39,7 +39,7 @@ const ServicesPanels = () => {
     },
     {
       id: 'virtualtours',
-      title: t('servicesPanels.virtualtours.title') || 'Recorridos virtuales',
+      title: t('servicesPanels.virtualtours.title') || 'Tours virtuales',
       description: t('servicesPanels.virtualtours.description') || 'Tours 360° para inmobiliarias y hostelería con tecnología Insta360 X5.',
       items: [
         t('servicesPanels.virtualtours.item1') || 'Tours 360 (inmobiliaria / hostelería)',
@@ -55,7 +55,7 @@ const ServicesPanels = () => {
     },
     {
       id: 'aerial',
-      title: t('servicesPanels.aerial.title') || 'Contenido aéreo',
+      title: t('servicesPanels.aerial.title') || 'Servicios de Drone',
       description: t('servicesPanels.aerial.description') || 'Foto y video con dron para propiedades, hoteles, obras y eventos.',
       items: [
         t('servicesPanels.aerial.item1') || 'Foto/video con dron',

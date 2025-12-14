@@ -1,5 +1,6 @@
 import Hero from '../components/Hero'
 import Services from '../components/Services'
+import WhySection from '../components/WhySection'
 import Testimonials from '../components/Testimonials'
 import Process from '../components/Process'
 import About from '../components/About'
@@ -15,6 +16,7 @@ const Home = () => {
         <Hero />
         <About />
         <Services />
+        <WhySection />
         <Process />
         <Testimonials />
         <FAQ />

@@ -28,7 +28,7 @@ const ServiceHero = () => {
     },
     {
       id: 'virtualtours',
-      title: 'Recorridos virtuales',
+      title: 'Tours virtuales',
       microcopy: 'Tours 360 que venden propiedades y llenan reservas.',
       bullets: [
         'Captura 360 + edición profesional',
@@ -46,7 +46,7 @@ const ServiceHero = () => {
     },
     {
       id: 'aerial',
-      title: 'Contenido aéreo',
+      title: 'Servicios de Drone',
       microcopy: 'Visuales que elevan tu marca desde otra perspectiva.',
       bullets: [
         'Foto y video con dron',

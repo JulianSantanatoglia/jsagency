@@ -144,7 +144,7 @@ const VirtualToursLanding = () => {
                 <Camera size={24} className="text-amber-300" />
                 <div>
                   <p className="text-xs uppercase tracking-[0.16em] text-white/80">Matterport 360°</p>
-                  <p className="text-lg font-semibold leading-tight">Recorridos Virtuales de Alta Calidad</p>
+                  <p className="text-lg font-semibold leading-tight">Tours Virtuales de Alta Calidad</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-xs md:text-sm bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
@@ -196,7 +196,7 @@ const VirtualToursLanding = () => {
               Ejemplo de integración Matterport
             </h3>
             <p className="text-slate-600 mb-4 font-body">
-              Puedes usar este formato como referencia para integrar tus recorridos:
+              Puedes usar este formato como referencia para integrar tus tours:
             </p>
             <div className="bg-slate-900 rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-green-400 font-mono">

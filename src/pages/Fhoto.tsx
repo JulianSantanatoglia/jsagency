@@ -1,13 +1,25 @@
 import { useState, useRef, useEffect } from 'react';
 import { Video, Camera, Check, ArrowRight, Aperture, Shield } from 'lucide-react';
-import FAQSection from '../components/FAQSection';
+import { useLanguage } from '../contexts/LanguageContext';
 import Contact from '../components/Contact';
 import ScrollReveal from '../components/ScrollReveal';
 import PatternBackground from '../components/PatternBackground';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Fhoto = () => {
-  const [activeService, setActiveService] = useState<'tours' | 'drone'>('tours');
+  const { t } = useLanguage();
+  const [activeProcess, setActiveProcess] = useState<'tours' | 'drone'>('tours');
+  const [activeFAQ, setActiveFAQ] = useState<'tours' | 'drone'>('tours');
+  const [openFAQItems, setOpenFAQItems] = useState<number[]>([]);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleFAQItem = (index: number) => {
+    setOpenFAQItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
 
   useEffect(() => {
     // Scroll al inicio de la página cuando se carga el componente
@@ -19,11 +31,22 @@ const Fhoto = () => {
         console.log('Autoplay prevented:', error);
       });
     }
+
+    // Manejar scroll suave a secciones cuando se carga la página con hash
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
   }, []);
 
   const services = {
     tours: {
-      title: 'Recorridos Virtuales 360°',
+      title: 'Tours Virtuales',
       description: 'Tours inmersivos con MatterPort para inmobiliarias, salas de eventos y espacios comerciales. Tecnología de vanguardia que convierte visitas en ventas.',
       bullets: [
         'Captura 360° profesional con Insta360 X5',
@@ -40,7 +63,7 @@ const Fhoto = () => {
       color: 'purple'
     },
     drone: {
-      title: 'Contenido Aéreo Profesional',
+      title: 'Servicios de Drone',
       description: 'Fotografía y video aéreo de alta calidad para inmobiliarias, eventos, contenido y mediciones de terrenos. Operación 100% legal y certificada.',
       bullets: [
         'Fotografía aérea inmobiliaria de alta resolución',
@@ -55,11 +78,9 @@ const Fhoto = () => {
         'Múltiples formatos de entrega (4K, Full HD, optimizado para web)'
       ],
       icon: Camera,
-      color: 'orange'
+      color: 'slate'
     }
   };
-
-  const activeServiceData = services[activeService];
 
   return (
     <div className="relative min-h-screen bg-[#FAF9F7] dark:bg-slate-900 transition-colors duration-300">
@@ -89,17 +110,17 @@ const Fhoto = () => {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center max-w-5xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-white tracking-tight leading-tight drop-shadow-2xl">
-                Recorridos virtuales 360° para inmuebles, salones de fiesta y más
+                {t('fhoto.hero.title')}
               </h1>
               <p className="text-lg md:text-xl text-slate-200 max-w-4xl mx-auto mb-12 font-body leading-relaxed drop-shadow-lg">
-                Soluciones visuales profesionales para inmobiliarias, salas de eventos, hoteles, restaurantes y espacios comerciales. Recorridos virtuales con MatterPort y contenido aéreo certificado que transforma espacios en experiencias.
+                {t('fhoto.hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="#contacto"
                   className="px-8 py-4 bg-accent-cyan text-white rounded-2xl font-semibold text-lg tracking-wide hover:bg-cyan-500 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/40 hover:scale-105 font-body"
                 >
-                  Quiero un presupuesto
+                  {t('fhoto.hero.cta')}
                   <ArrowRight size={20} />
                 </a>
               </div>
@@ -141,128 +162,223 @@ const Fhoto = () => {
             </div>
           </ScrollReveal>
 
-          {/* Service Tabs */}
+          {/* Service Cards - Always Visible */}
           <ScrollReveal direction="up" delay={100}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16 max-w-2xl mx-auto justify-center">
-              <button
-                onClick={() => setActiveService('tours')}
-                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
-                  activeService === 'tours'
-                    ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-xl shadow-purple-500/30 scale-105'
-                    : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
-                }`}
-              >
-                <Video size={22} className={activeService === 'tours' ? 'text-white' : ''} />
-                <span className="text-sm md:text-base">Recorridos 360</span>
-                {activeService === 'tours' && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
-                )}
-              </button>
-              <button
-                onClick={() => setActiveService('drone')}
-                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
-                  activeService === 'drone'
-                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-xl shadow-orange-500/30 scale-105'
-                    : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
-                }`}
-              >
-                <Camera size={22} className={activeService === 'drone' ? 'text-white' : ''} />
-                <span className="text-sm md:text-base">Contenido Aéreo</span>
-                {activeService === 'drone' && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
-                )}
-              </button>
-            </div>
-          </ScrollReveal>
-
-          {/* Active Service Content */}
-          <ScrollReveal direction="up" delay={200}>
-            <div className="max-w-4xl mx-auto">
-              <div className="relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-3 hover:border-accent-cyan/20">
-                {/* Barra superior de color */}
-                <div className={`h-2 ${activeServiceData.color === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-600' : 'bg-gradient-to-r from-orange-500 to-orange-600'}`}></div>
-                
-                {/* Contenido principal */}
-                <div className="p-8 md:p-10">
-                  {/* Header con icono y título */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${
-                      activeServiceData.color === 'purple' 
-                        ? 'bg-purple-50 dark:bg-purple-900/30' 
-                        : 'bg-orange-50 dark:bg-orange-900/30'
-                    } flex items-center justify-center transition-transform duration-300`}>
-                      <activeServiceData.icon size={32} className={
-                        activeServiceData.color === 'purple' 
-                          ? 'text-purple-600 dark:text-purple-400' 
-                          : 'text-orange-600 dark:text-orange-400'
-                      } />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 transition-colors">
-                        {activeServiceData.title}
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-300 text-base font-body leading-relaxed">
-                        {activeServiceData.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Features con diseño moderno */}
-                  <div className="mb-8 space-y-3">
-                    {activeServiceData.bullets.map((bullet, i) => (
-                      <div 
-                        key={i} 
-                        className="flex items-start gap-3 group/item"
-                        role="listitem"
-                      >
-                        <div className={`flex-shrink-0 w-6 h-6 rounded-lg ${
-                          activeServiceData.color === 'purple' 
-                            ? 'bg-purple-100 dark:bg-purple-900/40' 
-                            : 'bg-orange-100 dark:bg-orange-900/40'
-                        } flex items-center justify-center mt-0.5 group-hover/item:scale-110 transition-transform`}>
-                          <svg className={`w-3 h-3 ${
-                            activeServiceData.color === 'purple' 
-                              ? 'text-purple-600 dark:text-purple-400' 
-                              : 'text-orange-600 dark:text-orange-400'
-                          }`} fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <span className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-body flex-1">
-                          {bullet}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA Button moderno */}
-                  <a 
-                    href="#contacto" 
-                    className={`group/cta relative inline-flex items-center justify-center gap-2 px-8 py-4 w-full rounded-xl font-semibold text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-hidden ${
-                      activeServiceData.color === 'purple' 
-                        ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white focus:ring-purple-500 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40' 
-                        : 'bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white focus:ring-orange-500 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40'
-                    }`}
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+              {Object.entries(services).map(([key, serviceData]) => {
+                const IconComponent = serviceData.icon;
+                return (
+                  <div 
+                    key={key}
+                    className="relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-3 hover:border-accent-cyan/20 h-full flex flex-col"
                   >
-                    <span className="relative z-10">Solicitar presupuesto</span>
-                    <span className="relative z-10 group-hover/cta:translate-x-1 transition-transform">→</span>
-                    <div className={`absolute inset-0 ${
-                      activeServiceData.color === 'purple' 
-                        ? 'bg-gradient-to-r from-purple-700 to-purple-800' 
-                        : 'bg-gradient-to-r from-orange-700 to-orange-800'
-                    } opacity-0 group-hover/cta:opacity-100 transition-opacity`}></div>
-                  </a>
-                </div>
+                    {/* Barra superior de color */}
+                    <div className={`h-2 ${serviceData.color === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-600' : 'bg-gradient-to-r from-slate-600 to-slate-700'}`}></div>
+                    
+                    {/* Contenido principal */}
+                    <div className="p-6 md:p-8 lg:p-10 flex flex-col flex-1">
+                      {/* Header con icono y título */}
+                      <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+                        <div className={`flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${
+                      serviceData.color === 'purple' 
+                        ? 'bg-purple-50 dark:bg-purple-900/30' 
+                        : 'bg-slate-50 dark:bg-slate-800/50'
+                        } flex items-center justify-center transition-transform duration-300`}>
+                          <IconComponent size={28} className={`sm:w-8 sm:h-8 ${
+                            serviceData.color === 'purple' 
+                              ? 'text-purple-600 dark:text-purple-400' 
+                              : 'text-slate-700 dark:text-slate-300'
+                          }`} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 transition-colors">
+                            {serviceData.title}
+                          </h3>
+                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed">
+                            {serviceData.description}
+                          </p>
+                        </div>
+                      </div>
 
-                {/* Efecto de brillo sutil en hover */}
-                <div className={`absolute inset-0 ${
-                  activeServiceData.color === 'purple' 
-                    ? 'bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/5' 
-                    : 'bg-gradient-to-br from-orange-500/0 via-orange-500/0 to-orange-500/5'
-                } opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
-              </div>
+                      {/* Features con diseño moderno */}
+                      <div className="mb-8 space-y-3 flex-1">
+                        {serviceData.bullets.map((bullet, i) => (
+                          <div 
+                            key={i} 
+                            className="flex items-start gap-3 group/item"
+                            role="listitem"
+                          >
+                            <div className={`flex-shrink-0 w-6 h-6 rounded-lg ${
+                          serviceData.color === 'purple' 
+                            ? 'bg-purple-100 dark:bg-purple-900/40' 
+                            : 'bg-slate-100 dark:bg-slate-700/40'
+                            } flex items-center justify-center mt-0.5 group-hover/item:scale-110 transition-transform`}>
+                              <svg className={`w-3 h-3 ${
+                                serviceData.color === 'purple' 
+                                  ? 'text-purple-600 dark:text-purple-400' 
+                                  : 'text-slate-700 dark:text-slate-300'
+                              }`} fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                            <span className="text-xs sm:text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-body flex-1">
+                              {bullet}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* CTA Button moderno */}
+                      <a 
+                        href="#contacto" 
+                        className={`group/cta relative inline-flex items-center justify-center gap-2 px-8 py-4 w-full rounded-xl font-semibold text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-hidden ${
+                          serviceData.color === 'purple' 
+                            ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white focus:ring-purple-500 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40' 
+                            : 'bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white focus:ring-slate-500 shadow-lg shadow-slate-500/30 hover:shadow-xl hover:shadow-slate-500/40'
+                        }`}
+                      >
+                        <span className="relative z-10">Solicitar presupuesto</span>
+                        <span className="relative z-10 group-hover/cta:translate-x-1 transition-transform">→</span>
+                        <div className={`absolute inset-0 ${
+                          serviceData.color === 'purple' 
+                            ? 'bg-gradient-to-r from-purple-700 to-purple-800' 
+                            : 'bg-gradient-to-r from-slate-800 to-slate-900'
+                        } opacity-0 group-hover/cta:opacity-100 transition-opacity`}></div>
+                      </a>
+                    </div>
+
+                    {/* Efecto de brillo sutil en hover */}
+                    <div className={`absolute inset-0 ${
+                        serviceData.color === 'purple' 
+                          ? 'bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/5' 
+                          : 'bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/5'
+                    } opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
+                  </div>
+                );
+              })}
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Why Section - Marketing Creative Style */}
+      <section className="relative py-24 md:py-32 px-4 md:px-8 overflow-hidden">
+        <PatternBackground opacity={0.02} />
+        
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {[
+            {
+              id: 'tours',
+              title: t('why.tours.title'),
+              content: t('why.tours.content'),
+              color: 'purple',
+              image: '/images/proyectos/360.jpg',
+              stat: t('why.tours.stat'),
+              statLabel: t('why.tours.statLabel'),
+              cta: t('why.tours.cta')
+            },
+            {
+              id: 'drone',
+              title: t('why.drone.title'),
+              content: t('why.drone.content'),
+              color: 'slate',
+              image: '/images/proyectos/inmobiliaria.jpg',
+              stat: t('why.drone.stat'),
+              statLabel: t('why.drone.statLabel'),
+              cta: t('why.drone.cta')
+            }
+          ].map((item, index) => (
+            <ScrollReveal key={item.id} direction="up" delay={index * 150}>
+              <div className={`mb-20 md:mb-32 last:mb-0 ${
+                index % 2 === 0 ? '' : 'md:flex-row-reverse'
+              }`}>
+                <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
+                  index % 2 === 0 ? '' : 'md:flex-row-reverse'
+                }`}>
+                  {/* Imagen con diseño creativo */}
+                  <div className={`relative w-full md:w-1/2 ${
+                    index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                  }`}>
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg md:rounded-2xl">
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Overlay con gradiente */}
+                      <div className={`absolute inset-0 ${
+                        item.color === 'purple' 
+                          ? 'bg-gradient-to-br from-purple-600/20 via-transparent to-transparent' 
+                          : 'bg-gradient-to-br from-slate-600/20 via-transparent to-transparent'
+                      }`}></div>
+                      
+                      {/* Stat destacado flotante */}
+                      <div className={`absolute ${
+                        index % 2 === 0 ? 'top-6 right-6' : 'top-6 left-6'
+                      } bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 py-4 rounded-xl shadow-xl border ${
+                        item.color === 'purple' 
+                          ? 'border-purple-200 dark:border-purple-800' 
+                          : 'border-slate-200 dark:border-slate-700'
+                      }`}>
+                        <div className={`text-3xl md:text-4xl font-bold ${
+                          item.color === 'purple' 
+                            ? 'text-purple-600 dark:text-purple-400' 
+                            : 'text-slate-700 dark:text-slate-300'
+                        }`}>
+                          {item.stat}
+                        </div>
+                        <div className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-medium mt-1">
+                          {item.statLabel}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contenido de texto */}
+                  <div className={`w-full md:w-1/2 ${
+                    index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'
+                  }`}>
+                    <div className="space-y-6">
+                      {/* Título con estilo marketing */}
+                      <h3 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-display leading-tight ${
+                        item.color === 'purple' 
+                          ? 'text-purple-900 dark:text-purple-100' 
+                          : 'text-slate-900 dark:text-slate-100'
+                      }`}>
+                        {item.title}
+                      </h3>
+                      
+                      {/* Línea decorativa */}
+                      <div className={`w-20 h-1 rounded-full ${
+                        item.color === 'purple' 
+                          ? 'bg-gradient-to-r from-purple-500 to-purple-600' 
+                          : 'bg-gradient-to-r from-slate-600 to-slate-700'
+                      }`}></div>
+
+                      {/* Texto del contenido */}
+                      <p className={`text-lg md:text-xl leading-relaxed font-body ${
+                        item.color === 'purple' 
+                          ? 'text-slate-700 dark:text-slate-300' 
+                          : 'text-slate-700 dark:text-slate-300'
+                      }`}>
+                        {item.content}
+                      </p>
+
+                      {/* CTA sutil */}
+                      <div className={`inline-flex items-center gap-2 text-sm font-semibold ${
+                        item.color === 'purple' 
+                          ? 'text-purple-600 dark:text-purple-400' 
+                          : 'text-slate-700 dark:text-slate-300'
+                      } group/cta cursor-pointer`}>
+                        <span>{item.cta}</span>
+                        <span className="group-hover/cta:translate-x-1 transition-transform">→</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
@@ -282,102 +398,119 @@ const Fhoto = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            <ScrollReveal direction="up" delay={100}>
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-6 md:p-8 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <Video className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+            {/* Left side - Devices */}
+            <div className="flex flex-col gap-3 md:gap-4">
+              <ScrollReveal direction="up" delay={100}>
+                <div className="group relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-lg hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-accent-cyan/20 flex flex-col">
+                  <div className="h-0.5 bg-gradient-to-r from-purple-500 to-purple-600"></div>
+                  <div className="p-3 md:p-4 flex flex-col">
+                    <div className="w-8 h-8 bg-purple-50 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Video className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
+                      Insta360 X5
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
+                      Cámara 360° profesional para tours virtuales inmersivos. Captura de alta resolución que permite crear experiencias MatterPort de nivel profesional.
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white">
-                  Insta360 X5
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-base">
-                  Cámara 360° profesional para recorridos virtuales inmersivos. Captura de alta resolución que permite crear experiencias MatterPort de nivel profesional.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={200}>
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-6 md:p-8 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-12 h-12 bg-orange-50 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <Camera className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <ScrollReveal direction="up" delay={200}>
+                <div className="group relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-lg hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-accent-cyan/20 flex flex-col">
+                  <div className="h-0.5 bg-gradient-to-r from-slate-600 to-slate-700"></div>
+                  <div className="p-3 md:p-4 flex flex-col">
+                    <div className="w-8 h-8 bg-slate-50 dark:bg-slate-800/50 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Camera className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
+                      DJI Mini 4 Pro
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
+                      Drone profesional para contenido aéreo de alta calidad. Ideal para fotografía inmobiliaria, eventos y mediciones topográficas con precisión milimétrica.
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white">
-                  DJI Mini 4 Pro
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-base">
-                  Drone profesional para contenido aéreo de alta calidad. Ideal para fotografía inmobiliaria, eventos y mediciones topográficas con precisión milimétrica.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={300}>
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-6 md:p-8 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-12 h-12 bg-cyan-50 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <Aperture className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+              <ScrollReveal direction="up" delay={300}>
+                <div className="group relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-lg hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-1 hover:border-accent-cyan/20 flex flex-col">
+                  <div className="h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-600"></div>
+                  <div className="p-3 md:p-4 flex flex-col">
+                    <div className="w-8 h-8 bg-cyan-50 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Aperture className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
+                      Fuji Film XT50
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
+                      Fotografía profesional de productos e inmuebles. Captura de alta resolución para catálogos, portales inmobiliarios y contenido comercial de calidad premium.
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white">
-                  Fuji Film XT50
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-base">
-                  Fotografía profesional de productos e inmuebles. Captura de alta resolución para catálogos, portales inmobiliarios y contenido comercial de calidad premium.
-                </p>
+              </ScrollReveal>
+            </div>
+
+            {/* Right side - Certifications */}
+            <ScrollReveal direction="up" delay={400}>
+              <div className="flex flex-col">
+                <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-4 md:p-5 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 flex flex-col">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div className="flex-1 flex flex-col">
+                      <h3 className="text-base md:text-lg font-bold font-display mb-2 text-primary-dark dark:text-white">
+                        Operación Legal y Certificada
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-3 text-xs md:text-sm">
+                        Trabajamos con todas las certificaciones y permisos necesarios para operar de forma legal y segura:
+                      </p>
+                      <ul className="space-y-2">
+                        <li className="flex items-start gap-2">
+                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
+                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                          </div>
+                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Certificación A1/A3 para operación de drones</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
+                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                          </div>
+                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Registro de operador vigente y actualizado</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
+                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                          </div>
+                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Seguro de responsabilidad civil para todas las operaciones</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
+                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                          </div>
+                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Cumplimiento total de normativas aeronáuticas</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
-
-          {/* Certifications */}
-          <ScrollReveal direction="up" delay={400}>
-            <div className="mt-16 max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-8 md:p-10 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30">
-                <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold font-display mb-4 text-primary-dark dark:text-white">
-                      Operación Legal y Certificada
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-6 text-base md:text-lg">
-                      Trabajamos con todas las certificaciones y permisos necesarios para operar de forma legal y segura:
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed">Certificación A1/A3 para operación de drones</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed">Registro de operador vigente y actualizado</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed">Seguro de responsabilidad civil para todas las operaciones</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed">Cumplimiento total de normativas aeronáuticas</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="relative py-24 md:py-32 px-4 md:px-8 -mt-12">
-        <PatternBackground opacity={0.04} />
+      <section id="proceso" className="relative py-24 md:py-32 px-4 md:px-8 -mt-12 overflow-hidden">
+        <div className="absolute inset-0">
+          <PatternBackground opacity={0.04} />
+        </div>
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal direction="up" delay={0}>
@@ -386,121 +519,151 @@ const Fhoto = () => {
                 Cómo <span className="text-accent-cyan">Trabajamos</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Procesos claros para recorridos 360 y contenido aéreo
+                Procesos claros para tours virtuales y servicios de drone
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-            {/* Recorridos 360 Process */}
-            <ScrollReveal direction="up" delay={100}>
-              <div className="relative">
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-8 text-primary-dark dark:text-white text-center md:text-left">
-                  Proceso: Recorridos 360
-                </h3>
-                <div className="relative max-w-full">
-                  {/* Línea vertical decorativa */}
-                  <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
-                  
-                  <div className="flex flex-col gap-6 md:gap-8">
-                    {[
-                      { number: '01', title: 'Consulta inicial', description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.' },
-                      { number: '02', title: 'Captura 360°', description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.' },
-                      { number: '03', title: 'Procesamiento', description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.' },
-                      { number: '04', title: 'Integración', description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.' },
-                      { number: '05', title: 'Entrega', description: 'Te entregamos todo listo para compartir y generar leads desde los tours.' }
-                    ].map((step, index) => (
-                      <div 
-                        key={index} 
-                        className="relative group"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        {/* Punto en la línea del timeline */}
-                        <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-purple-400 to-purple-500 shadow-lg shadow-purple-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
-                        
-                        <div className="ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
-                          <div className="flex items-start gap-6">
-                            {/* Número grande sin fondo */}
-                            <div className="flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white">
-                                {step.number}
-                              </span>
-                            </div>
-                            
-                            <div className="flex-1 pt-1">
-                              <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
-                                {step.title}
-                              </h3>
-                              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
-                                {step.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          {/* Process Tabs */}
+          <ScrollReveal direction="up" delay={100}>
+            <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+                <button
+                  onClick={() => setActiveProcess('tours')}
+                  className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                    activeProcess === 'tours'
+                      ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-xl shadow-purple-500/30 scale-105'
+                      : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
+                  }`}
+                >
+                  <Video size={22} className={activeProcess === 'tours' ? 'text-white' : ''} />
+                  <span className="text-sm md:text-base">Tours Virtuales</span>
+                  {activeProcess === 'tours' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                  )}
+                </button>
+                <button
+                  onClick={() => setActiveProcess('drone')}
+                  className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                    activeProcess === 'drone'
+                      ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-white shadow-xl shadow-slate-500/30 scale-105'
+                      : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
+                  }`}
+                >
+                  <Camera size={22} className={activeProcess === 'drone' ? 'text-white' : ''} />
+                  <span className="text-sm md:text-base">Servicios de Drone</span>
+                  {activeProcess === 'drone' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                  )}
+                </button>
               </div>
-            </ScrollReveal>
+              <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
+                Haz click en alguno de los dos botones
+              </p>
+            </div>
+          </ScrollReveal>
 
-            {/* Contenido Aéreo Process */}
+          {/* Active Process Content */}
+          {activeProcess === 'tours' ? (
             <ScrollReveal direction="up" delay={200}>
-              <div className="relative">
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-8 text-primary-dark dark:text-white text-center md:text-left">
-                  Proceso: Contenido Aéreo
-                </h3>
-                <div className="relative max-w-full">
-                  {/* Línea vertical decorativa */}
-                  <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
-                  
-                  <div className="flex flex-col gap-6 md:gap-8">
-                    {[
-                      { number: '01', title: 'Planificación', description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.' },
-                      { number: '02', title: 'Captura aérea', description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.' },
-                      { number: '03', title: 'Edición', description: 'Procesamos y editamos el material para obtener el mejor resultado.' },
-                      { number: '04', title: 'Entrega', description: 'Te entregamos el contenido en múltiples formatos listo para usar.' }
-                    ].map((step, index) => (
-                      <div 
-                        key={index} 
-                        className="relative group"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        {/* Punto en la línea del timeline */}
-                        <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 shadow-lg shadow-orange-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
-                        
-                        <div className="ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
-                          <div className="flex items-start gap-6">
-                            {/* Número grande sin fondo */}
-                            <div className="flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white">
-                                {step.number}
-                              </span>
-                            </div>
-                            
-                            <div className="flex-1 pt-1">
-                              <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
-                                {step.title}
-                              </h3>
-                              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
-                                {step.description}
-                              </p>
-                            </div>
+              <div className="relative max-w-5xl mx-auto">
+                {/* Línea vertical decorativa */}
+                <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
+                
+                <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-12">
+                  {[
+                    { number: '01', title: 'Consulta inicial', description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.' },
+                    { number: '02', title: 'Captura 360°', description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.' },
+                    { number: '03', title: 'Procesamiento', description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.' },
+                    { number: '04', title: 'Integración', description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.' },
+                    { number: '05', title: 'Entrega', description: 'Te entregamos todo listo para compartir y generar leads desde los tours.' }
+                  ].map((step, index) => (
+                    <div 
+                      key={index} 
+                      className="relative group"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Punto en la línea del timeline */}
+                      <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-purple-400 to-purple-500 shadow-lg shadow-purple-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                      
+                      <div className="ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
+                        <div className="flex items-start gap-6">
+                          {/* Número grande sin fondo */}
+                          <div className="flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white">
+                              {step.number}
+                            </span>
+                          </div>
+                          
+                          <div className="flex-1 pt-1">
+                            <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
+                              {step.title}
+                            </h3>
+                            <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                              {step.description}
+                            </p>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollReveal>
-          </div>
+          ) : (
+            <ScrollReveal direction="up" delay={200}>
+              <div className="relative max-w-5xl mx-auto">
+                {/* Línea vertical decorativa */}
+                <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
+                
+                <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-12">
+                  {[
+                    { number: '01', title: 'Planificación', description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.' },
+                    { number: '02', title: 'Captura aérea', description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.' },
+                    { number: '03', title: 'Edición', description: 'Procesamos y editamos el material para obtener el mejor resultado.' },
+                    { number: '04', title: 'Entrega', description: 'Te entregamos el contenido en múltiples formatos listo para usar.' }
+                  ].map((step, index) => (
+                    <div 
+                      key={index} 
+                      className="relative group"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Punto en la línea del timeline */}
+                      <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-slate-500 to-slate-600 shadow-lg shadow-slate-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                      
+                      <div className="ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
+                        <div className="flex items-start gap-6">
+                          {/* Número grande sin fondo */}
+                          <div className="flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white">
+                              {step.number}
+                            </span>
+                          </div>
+                          
+                          <div className="flex-1 pt-1">
+                            <h3 className="text-xl md:text-2xl font-bold font-display mb-3 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
+                              {step.title}
+                            </h3>
+                            <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-24 md:py-32 px-4 md:px-8 -mt-12">
-        <PatternBackground opacity={0.04} />
+      <section id="faq" className="relative py-24 md:py-32 px-4 md:px-8 -mt-12 overflow-hidden">
+        <div className="absolute inset-0">
+          <PatternBackground opacity={0.04} />
+        </div>
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal direction="up" delay={0}>
@@ -509,29 +672,246 @@ const Fhoto = () => {
                 Dudas <span className="text-accent-cyan">Frecuentes</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Resolvemos tus dudas sobre recorridos 360 y contenido aéreo
+                Resolvemos tus dudas sobre tours virtuales y servicios de drone
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <ScrollReveal direction="up" delay={100}>
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-6 md:p-8 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30">
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-6 text-primary-dark dark:text-white">
-                  Recorridos 360
-                </h3>
-                <FAQSection serviceId="design" darkMode={false} />
+          {/* FAQ Tabs */}
+          <ScrollReveal direction="up" delay={100}>
+            <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+                <button
+                  onClick={() => {
+                    setActiveFAQ('tours');
+                    setOpenFAQItems([]);
+                  }}
+                  className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                    activeFAQ === 'tours'
+                      ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-xl shadow-purple-500/30 scale-105'
+                      : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
+                  }`}
+                >
+                  <Video size={22} className={activeFAQ === 'tours' ? 'text-white' : ''} />
+                  <span className="text-sm md:text-base">Tours Virtuales</span>
+                  {activeFAQ === 'tours' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                  )}
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveFAQ('drone');
+                    setOpenFAQItems([]);
+                  }}
+                  className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                    activeFAQ === 'drone'
+                      ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-white shadow-xl shadow-slate-500/30 scale-105'
+                      : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
+                  }`}
+                >
+                  <Camera size={22} className={activeFAQ === 'drone' ? 'text-white' : ''} />
+                  <span className="text-sm md:text-base">Servicios de Drone</span>
+                  {activeFAQ === 'drone' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                  )}
+                </button>
               </div>
-            </ScrollReveal>
+              <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
+                Haz click en alguno de los dos botones
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Active FAQ Content - Same design as Home */}
+          {activeFAQ === 'tours' ? (
             <ScrollReveal direction="up" delay={200}>
-              <div className="bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm p-6 md:p-8 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30">
-                <h3 className="text-xl md:text-2xl font-bold font-display mb-6 text-primary-dark dark:text-white">
-                  Contenido Aéreo
-                </h3>
-                <FAQSection serviceId="aerial" darkMode={false} />
+              <div className="space-y-4 max-w-4xl mx-auto">
+                {[0, 1, 2, 3].map((index) => {
+                  const isOpen = openFAQItems.includes(index);
+                  return (
+                    <div 
+                      key={index}
+                      className={`group relative bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm rounded-2xl ${
+                        isOpen 
+                          ? 'shadow-xl shadow-slate-200/20 dark:shadow-slate-900/20'
+                          : 'shadow-lg shadow-slate-200/20 dark:shadow-slate-900/20'
+                      } overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`}
+                      style={{ border: 'none !important', borderTop: 'none !important', borderBottom: 'none !important', borderLeft: 'none !important', borderRight: 'none !important' }}
+                    >
+                      <button
+                        onClick={() => toggleFAQItem(index)}
+                        className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-start gap-4 hover:bg-gradient-to-r hover:from-white/50 hover:to-transparent dark:hover:from-slate-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-slate-300 dark:focus:ring-slate-600 focus:ring-offset-2"
+                        style={{ 
+                          borderBottom: 'none !important', 
+                          borderTop: 'none !important', 
+                          marginBottom: 0,
+                          border: 'none !important',
+                          outline: 'none',
+                          borderLeft: 'none !important',
+                          borderRight: 'none !important',
+                          boxShadow: 'none'
+                        }}
+                        onMouseDown={(e) => {
+                          e.currentTarget.style.border = 'none';
+                          e.currentTarget.style.borderBottom = 'none';
+                          e.currentTarget.style.borderTop = 'none';
+                        }}
+                        onMouseUp={(e) => {
+                          e.currentTarget.style.border = 'none';
+                          e.currentTarget.style.borderBottom = 'none';
+                          e.currentTarget.style.borderTop = 'none';
+                        }}
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-${index}`}
+                      >
+                        <div className="flex-1">
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center font-bold text-sm mt-1 text-slate-500 dark:text-slate-400">
+                              {index + 1}
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold text-primary-dark dark:text-white font-body pr-4 leading-tight">
+                              {t(`faq.design.questions.${index}.question`)}
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 mt-1">
+                          <div className={`w-10 h-10 flex items-center justify-center transition-transform duration-300 text-slate-600 dark:text-slate-400 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}>
+                            <svg
+                              className="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                      
+                      <div
+                        id={`faq-answer-${index}`}
+                        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                        style={{
+                          willChange: 'max-height, opacity',
+                          borderTop: 'none !important',
+                          marginTop: 0,
+                          paddingTop: 0,
+                          border: 'none !important',
+                          outline: 'none',
+                          borderBottom: 'none !important',
+                          borderLeft: 'none !important',
+                          borderRight: 'none !important',
+                          boxShadow: 'none'
+                        }}
+                      >
+                        {isOpen && (
+                          <div className="px-6 md:px-8 pb-6" style={{ borderTop: 'none', borderBottom: 'none', paddingTop: 0, border: 'none', marginTop: 0, marginBottom: 0 }}>
+                            <div className="ml-12 pl-4" style={{ border: 'none', marginTop: 0, paddingTop: 0 }}>
+                              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                                {t(`faq.design.questions.${index}.answer`)}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </ScrollReveal>
-          </div>
+          ) : (
+            <ScrollReveal direction="up" delay={200}>
+              <div className="space-y-4 max-w-4xl mx-auto">
+                {[0, 1, 2, 3].map((index) => {
+                  const isOpen = openFAQItems.includes(index);
+                  return (
+                    <div 
+                      key={index}
+                      className={`group relative bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm rounded-2xl ${
+                        isOpen 
+                          ? 'shadow-xl shadow-slate-200/20 dark:shadow-slate-900/20'
+                          : 'shadow-lg shadow-slate-200/20 dark:shadow-slate-900/20'
+                      } overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`}
+                      style={{ border: 'none !important', borderTop: 'none !important', borderBottom: 'none !important', borderLeft: 'none !important', borderRight: 'none !important' }}
+                    >
+                      <button
+                        onClick={() => toggleFAQItem(index)}
+                        className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-start gap-4 hover:bg-gradient-to-r hover:from-white/50 hover:to-transparent dark:hover:from-slate-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-slate-300 dark:focus:ring-slate-600 focus:ring-offset-2"
+                        style={{ 
+                          borderBottom: 'none', 
+                          borderTop: 'none', 
+                          marginBottom: 0,
+                          border: 'none',
+                          outline: 'none'
+                        }}
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-drone-${index}`}
+                      >
+                        <div className="flex-1">
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center font-bold text-sm mt-1 text-slate-500 dark:text-slate-400">
+                              {index + 1}
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold text-primary-dark dark:text-white font-body pr-4 leading-tight">
+                              {t(`faq.aerial.questions.${index}.question`)}
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 mt-1">
+                          <div className={`w-10 h-10 flex items-center justify-center transition-transform duration-300 text-slate-600 dark:text-slate-400 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}>
+                            <svg
+                              className="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                      
+                      <div
+                        id={`faq-answer-drone-${index}`}
+                        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                        style={{
+                          willChange: 'max-height, opacity',
+                          borderTop: 'none',
+                          marginTop: 0,
+                          paddingTop: 0,
+                          border: 'none',
+                          outline: 'none',
+                          borderBottom: 'none',
+                          borderLeft: 'none',
+                          borderRight: 'none'
+                        }}
+                      >
+                        {isOpen && (
+                          <div className="px-6 md:px-8 pb-6" style={{ borderTop: 'none', borderBottom: 'none', paddingTop: 0, border: 'none', marginTop: 0, marginBottom: 0 }}>
+                            <div className="ml-12 pl-4" style={{ border: 'none', marginTop: 0, paddingTop: 0 }}>
+                              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                                {t(`faq.aerial.questions.${index}.answer`)}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 

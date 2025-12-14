@@ -22,7 +22,7 @@ const translations = {
       process: 'Procesos',
       faq: 'Dudas',
       projects: 'Nuestros proyectos',
-      contact: 'Hablemos',
+      contact: '¡Hablemos!',
     },
     
     // Hero Section
@@ -30,6 +30,15 @@ const translations = {
       title: 'Soluciones digitales con otra perspectiva.',
       subtitle: 'En <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> creamos <strong>páginas web</strong> y <strong>automatizaciones con IA</strong>. Soluciones digitales que transforman tu negocio.',
       cta: 'Hablemos de tu proyecto',
+      helloButton: '¡Hola! 👋',
+      animatedTexts: {
+        text1: 'POTENCIAMOS TU',
+        highlight1: 'MARCA',
+        text2: 'DIGITALIZAMOS TU',
+        highlight2: 'EMPRESA',
+        text3: 'AUTOMATIZAMOS TUS',
+        highlight3: 'PROCESOS',
+      },
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
       feature3: 'Entregas a tiempo',
@@ -39,15 +48,15 @@ const translations = {
           description: '• Landing pages de alta conversión\n• Sitios web corporativos\n• E-commerce y tiendas online\n• Aplicaciones web personalizadas'
         },
         design: {
-          title: 'Recorridos virtuales',
-          description: '• Recorridos 360° para inmobiliarias\n• Tours virtuales para hoteles y hostelería\n• Experiencias inmersivas con Insta360 X5\n• Integración en webs y plataformas'
+          title: 'Tours virtuales',
+          description: '• Tours virtuales para inmobiliarias\n• Tours virtuales para hoteles y hostelería\n• Experiencias inmersivas con Insta360 X5\n• Integración en webs y plataformas'
         },
         ai: {
           title: 'Automatizaciones IA',
           description: '• Chatbots conversacionales\n• Agentes de atención al cliente\n• Automatización de procesos\n• Integración de herramientas IA'
         },
         aerial: {
-          title: 'Contenido Aéreo',
+          title: 'Servicios de Drone',
           description: '• Fotografía aérea inmobiliaria\n• Videos corporativos con drones\n• Mapeo y medición de terrenos\n• Contenido publicitario aéreo'
         }
       }
@@ -65,9 +74,9 @@ const translations = {
         feature2: 'SEO técnico base y buenas prácticas de performance.',
       },
       design: {
-        title: 'Recorridos virtuales',
+        title: 'Tours virtuales',
         description: 'Tours virtuales 360° con tecnología Insta360 X5.',
-        feature1: 'Recorridos inmersivos para inmobiliarias, hoteles y hostelería.',
+        feature1: 'Tours inmersivos para inmobiliarias, hoteles y hostelería.',
         feature2: 'Integración en webs y plataformas para aumentar conversiones.',
       },
       ai: {
@@ -83,6 +92,38 @@ const translations = {
         feature2: 'Operación certificada A1/A3 y registro de operador.',
         link: 'Fly by .js agency',
       },
+    },
+    
+    // Why Section
+    why: {
+      webdev: {
+        title: '¿Por qué necesitas tener una página web?',
+        content: 'En un mundo donde el 97% de los consumidores buscan productos y servicios online, no tener una página web profesional es perder oportunidades de negocio. Tu competencia ya está ahí, y cada día que pasa sin presencia digital es un día de ventas perdidas. Una web bien diseñada no solo te da credibilidad, sino que funciona 24/7 como tu mejor vendedor, generando leads incluso mientras duermes.',
+        stat: '97%',
+        statLabel: 'buscan online',
+        cta: 'Descubre más'
+      },
+      ai: {
+        title: '¿Por qué necesitas automatizaciones?',
+        content: 'Las tareas repetitivas consumen hasta el 40% del tiempo de tu equipo. Con automatizaciones inteligentes, liberas ese tiempo para enfocarte en lo que realmente importa: vender y crecer. Los sistemas automatizados no se cansan, no cometen errores humanos y trabajan las 24 horas, multiplicando tu capacidad de respuesta y mejorando la experiencia de tus clientes de forma exponencial.',
+        stat: '40%',
+        statLabel: 'del tiempo',
+        cta: 'Descubre más'
+      },
+      tours: {
+        title: '¿Por qué necesitas tours virtuales?',
+        content: 'El 73% de los compradores de propiedades toman decisiones basadas en tours virtuales. Sin esta herramienta, estás perdiendo clientes potenciales que buscan información inmediata y visual. Los tours virtuales no solo aumentan el tiempo de permanencia en tu web, sino que generan un 40% más de leads calificados y reducen las visitas presenciales innecesarias, ahorrando tiempo tanto a ti como a tus clientes.',
+        stat: '73%',
+        statLabel: 'toman decisiones',
+        cta: 'Descubre más'
+      },
+      drone: {
+        title: '¿Por qué necesitas servicios de drone?',
+        content: 'Los servicios de drone aumentan el engagement en redes sociales hasta un 150% y mejoran la percepción de calidad de tu marca. En el sector inmobiliario, las propiedades con videos aéreos se venden un 68% más rápido. Para eventos y hoteles, los servicios de drone son tu mejor herramienta de marketing visual, mostrando espacios desde una perspectiva única que genera emociones y decisiones de compra más rápidas.',
+        stat: '68%',
+        statLabel: 'más rápido',
+        cta: 'Descubre más'
+      }
     },
     
     // Clients Section
@@ -149,8 +190,8 @@ const translations = {
         },
         brandIdentity: {
           title: 'Tour Virtual Inmobiliaria',
-          category: 'Recorridos Virtuales',
-          description: 'Recorrido virtual 360° para inmobiliaria con integración web y experiencia inmersiva para potenciales compradores.'
+          category: 'Tours Virtuales',
+          description: 'Tour virtual 360° para inmobiliaria con integración web y experiencia inmersiva para potenciales compradores.'
         }
       }
     },
@@ -240,7 +281,7 @@ const translations = {
         }
       },
       design: {
-        title: 'Recorridos virtuales',
+        title: 'Tours virtuales',
         steps: {
           consultation: {
             title: 'Consulta y Planificación',
@@ -294,9 +335,9 @@ const translations = {
       subtitle: 'Un equipo que piensa diferente y construye mejor.',
       description: 'Somos un estudio digital en Almería. Combinamos código, creatividad y estrategia para crear proyectos que realmente funcionan. Sin humo, sin promesas vacías. Solo resultados.',
       content: {
-        paragraph1: 'Somos una startup creativa en Almería que ayuda a negocios a digitalizarse con soluciones simples y efectivas.',
-        paragraph2: 'Desarrollamos webs modernas, automatizaciones con IA y contenido visual (drone y 360) para potenciar tu presencia digital y convertirla en resultados. Trabajamos con procesos claros, comunicación directa y foco en la calidad: diseño con intención, código limpio y una base preparada para crecer contigo.',
-        paragraph3: '¿Tienes un proyecto en mente? Hablemos.',
+        paragraph1: 'Somos una startup creativa en Almería: un equipo joven que transforma negocios en experiencias digitales modernas y efectivas.',
+        paragraph2: 'Creamos tu web a medida, desde cero y sin plantillas, para que se vea profesional, cargue rápido y esté lista para aparecer mejor en Google y convertir visitas en clientes.',
+        paragraph3: 'Y vamos más allá: integramos automatizaciones con IA, tours virtuales 360 y contenido con dron para mostrar tu negocio con otra perspectiva, generar confianza desde el primer vistazo y hacer que la gente decida más rápido.',
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',
         ctaButton: 'Hablemos de tu proyecto →'
@@ -308,7 +349,7 @@ const translations = {
           description: 'Supervisión integral y arquitectura web.'
         },
         design: {
-          role: 'Recorridos virtuales',
+          role: 'Tours virtuales',
           name: 'Equipo de producción 360°',
           description: 'Tours virtuales inmersivos con Insta360 X5.'
         },
@@ -386,6 +427,13 @@ const translations = {
     },
     
     // Contact Section
+    fhoto: {
+      hero: {
+        title: 'Tours virtuales 360° para inmuebles, salones de fiesta y más',
+        subtitle: 'Soluciones visuales profesionales para inmobiliarias, salas de eventos, hoteles, restaurantes y espacios comerciales. Tours virtuales con MatterPort y servicios de drone certificados que transforman espacios en experiencias.',
+        cta: 'Quiero un presupuesto',
+      },
+    },
     contact: {
       title: 'Hablemos',
       subtitle: 'Cuéntanos tu idea en pocas palabras. Te respondemos rápido y claro.',
@@ -415,6 +463,7 @@ const translations = {
       description: 'Soluciones digitales con otra perspectiva.',
       services: 'Servicios',
       company: 'Empresa',
+      projects: 'Proyectos',
       about: 'Sobre nosotros',
       process: 'Proceso',
       testimonials: 'Testimonios',
@@ -464,36 +513,36 @@ const translations = {
         ]
       },
       design: {
-        title: 'Recorridos virtuales',
+        title: 'Tours virtuales',
         questions: [
           {
-            question: '¿Qué incluye un recorrido virtual 360°?',
+            question: '¿Qué incluye un tour virtual 360°?',
             answer: 'Incluye la captura de imágenes 360° con Insta360 X5 en todos los espacios relevantes, procesamiento y stitching de las imágenes, corrección de color, creación de puntos de navegación, y la integración completa en tu sitio web o plataforma.'
           },
           {
-            question: '¿Cuánto tiempo toma crear un recorrido virtual?',
+            question: '¿Cuánto tiempo toma crear un tour virtual?',
             answer: 'El tiempo depende del tamaño del espacio. Para una propiedad pequeña (2-3 habitaciones) puede tomar 1-2 semanas. Para hoteles o establecimientos grandes puede requerir 3-4 semanas incluyendo captura, procesamiento e integración.'
           },
           {
-            question: '¿Puedo actualizar el recorrido virtual después?',
-            answer: 'Sí, ofrecemos actualizaciones del recorrido virtual. Puedes agregar nuevos espacios o modificar los existentes. Te proporcionamos capacitación para que puedas hacer actualizaciones básicas o podemos hacerlas por ti.'
+            question: '¿Puedo actualizar el tour virtual después?',
+            answer: 'Sí, ofrecemos actualizaciones del tour virtual. Puedes agregar nuevos espacios o modificar los existentes. Te proporcionamos capacitación para que puedas hacer actualizaciones básicas o podemos hacerlas por ti.'
           },
           {
             question: '¿Funciona en dispositivos móviles?',
-            answer: 'Sí, nuestros recorridos virtuales son completamente responsive y funcionan perfectamente en smartphones, tablets y computadoras. La experiencia es inmersiva en todos los dispositivos.'
+            answer: 'Sí, nuestros tours virtuales son completamente responsive y funcionan perfectamente en smartphones, tablets y computadoras. La experiencia es inmersiva en todos los dispositivos.'
           }
         ]
       },
       aerial: {
-        title: 'Contenido Aéreo',
+        title: 'Servicios de Drone',
         questions: [
           {
             question: '¿Qué servicios de drones ofrecen?',
             answer: 'Ofrecemos fotografía aérea inmobiliaria, videos corporativos con drones, mapeo y medición de terrenos, y contenido publicitario aéreo. Todos nuestros operadores están certificados A1/A3 y registrados.'
           },
           {
-            question: '¿Cuánto tiempo toma la entrega del contenido aéreo?',
-            answer: 'Después de la captura, el contenido aéreo típicamente se entrega en 5-7 días hábiles. Esto incluye edición, corrección de color, estabilización y entrega en los formatos solicitados.'
+            question: '¿Cuánto tiempo toma la entrega de los servicios de drone?',
+            answer: 'Después de la captura, los servicios de drone típicamente se entregan en 5-7 días hábiles. Esto incluye edición, corrección de color, estabilización y entrega en los formatos solicitados.'
           },
           {
             question: '¿Necesitan permisos especiales para volar?',
@@ -579,6 +628,15 @@ const translations = {
       title: 'Digital solutions with a different perspective.',
       subtitle: 'At <span class="font-bold text-slate-900">.js</span><span class="font-semibold text-accent-cyan">agency</span> we create <strong>web pages</strong> and <strong>AI automation</strong>. Digital solutions that transform your business.',
       cta: 'Let\'s talk about your project',
+      helloButton: 'Hello! 👋',
+      animatedTexts: {
+        text1: 'WE BOOST YOUR',
+        highlight1: 'BRAND',
+        text2: 'WE DIGITIZE YOUR',
+        highlight2: 'BUSINESS',
+        text3: 'WE AUTOMATE YOUR',
+        highlight3: 'PROCESSES',
+      },
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
       feature3: 'On-time delivery',
@@ -596,7 +654,7 @@ const translations = {
           description: '• Conversational chatbots\n• Customer service agents\n• Process automation\n• AI tools integration'
         },
         aerial: {
-          title: 'Aerial Content',
+          title: 'Drone Services',
           description: '• Real estate aerial photography\n• Corporate drone videos\n• Land mapping and measurement\n• Aerial advertising content'
         }
       }
@@ -626,12 +684,44 @@ const translations = {
         feature2: 'Process automation and tool integration.',
       },
       aerial: {
-        title: 'Aerial Photography and Video',
+        title: 'Drone Services',
         description: 'For brands, real estate, tourism and events.',
         feature1: 'Visual content that elevates your digital presence and campaigns.',
         feature2: 'A1/A3 certified operation and operator registration.',
         link: 'Fly by .js agency',
       },
+    },
+    
+    // Why Section
+    why: {
+      webdev: {
+        title: 'Why do you need a website?',
+        content: 'In a world where 97% of consumers search for products and services online, not having a professional website is losing business opportunities. Your competition is already there, and every day without a digital presence is a day of lost sales. A well-designed website not only gives you credibility, but works 24/7 as your best salesperson, generating leads even while you sleep.',
+        stat: '97%',
+        statLabel: 'search online',
+        cta: 'Discover more'
+      },
+      ai: {
+        title: 'Why do you need automations?',
+        content: 'Repetitive tasks consume up to 40% of your team\'s time. With intelligent automations, you free up that time to focus on what really matters: selling and growing. Automated systems don\'t get tired, don\'t make human errors, and work 24 hours a day, multiplying your response capacity and exponentially improving your customers\' experience.',
+        stat: '40%',
+        statLabel: 'of time',
+        cta: 'Discover more'
+      },
+      tours: {
+        title: 'Why do you need virtual tours?',
+        content: '73% of property buyers make decisions based on virtual tours. Without this tool, you\'re losing potential customers who seek immediate and visual information. Virtual tours not only increase time spent on your website, but generate 40% more qualified leads and reduce unnecessary in-person visits, saving time for both you and your clients.',
+        stat: '73%',
+        statLabel: 'make decisions',
+        cta: 'Discover more'
+      },
+      drone: {
+        title: 'Why do you need drone services?',
+        content: 'Drone services increase social media engagement by up to 150% and improve the perception of your brand\'s quality. In the real estate sector, properties with aerial videos sell 68% faster. For events and hotels, drone services are your best visual marketing tool, showing spaces from a unique perspective that generates emotions and faster purchasing decisions.',
+        stat: '68%',
+        statLabel: 'faster',
+        cta: 'Discover more'
+      }
     },
     
     // Clients Section
@@ -843,9 +933,9 @@ const translations = {
       subtitle: 'A team that thinks differently and builds better.',
       description: 'We\'re a digital studio in Almería. We combine code, creativity and strategy to create projects that actually work. No fluff, no empty promises. Just results.',
       content: {
-        paragraph1: 'We create digital solutions that work. No complications, no unnecessary technical jargon. Just clean code, thoughtful design and measurable results.',
-        paragraph2: 'We work with clear processes and direct communication. Every project is unique, but they all share something: they\'re built to last and grow with you.',
-        paragraph3: 'Got a project in mind? Let\'s talk.',
+        paragraph1: 'We are a creative startup in Almería: a young team that transforms businesses into modern and effective digital experiences.',
+        paragraph2: 'We create your custom website, from scratch and without templates, so it looks professional, loads fast and is ready to appear better on Google and convert visits into clients.',
+        paragraph3: 'And we go further: we integrate AI automations, 360 virtual tours and drone content to show your business from a different perspective, generate trust from the first glance and make people decide faster.',
         teamTitle: 'Our team',
         cta: 'Want to be the next satisfied client?',
         ctaButton: 'Let\'s talk about your project →'
@@ -935,6 +1025,13 @@ const translations = {
     },
     
     // Contact Section
+    fhoto: {
+      hero: {
+        title: '360° virtual tours for properties, event venues and more',
+        subtitle: 'Professional visual solutions for real estate, event halls, hotels, restaurants and commercial spaces. MatterPort virtual tours and certified drone services that transform spaces into experiences.',
+        cta: 'I want a quote',
+      },
+    },
     contact: {
       title: 'Let\'s talk',
       subtitle: 'Tell us your idea in a few words. We\'ll respond quickly and clearly.',
@@ -964,6 +1061,7 @@ const translations = {
       description: 'Digital solutions with a different perspective.',
       services: 'Services',
       company: 'Company',
+      projects: 'Projects',
       about: 'About us',
       process: 'Process',
       testimonials: 'Testimonials',
@@ -1034,15 +1132,15 @@ const translations = {
         ]
       },
       aerial: {
-        title: 'Aerial Content',
+        title: 'Drone Services',
         questions: [
           {
             question: 'What drone services do you offer?',
             answer: 'We offer real estate aerial photography, corporate drone videos, land mapping and measurement, and aerial advertising content. All our operators are A1/A3 certified and registered.'
           },
           {
-            question: 'How long does it take to deliver aerial content?',
-            answer: 'After capture, aerial content is typically delivered in 5-7 business days. This includes editing, color correction, stabilization and delivery in requested formats.'
+            question: 'How long does it take to deliver drone services?',
+            answer: 'After capture, drone services are typically delivered in 5-7 business days. This includes editing, color correction, stabilization and delivery in requested formats.'
           },
           {
             question: 'Do you need special permits to fly?',

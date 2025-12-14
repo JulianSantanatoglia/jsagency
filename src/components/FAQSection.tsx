@@ -148,11 +148,12 @@ const FAQSection = ({ serviceId, darkMode = false }: FAQSectionProps) => {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className={`w-full px-4 py-4 text-left flex justify-between items-center transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 ${
+                className={`w-full px-4 py-4 text-left flex justify-between items-center transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 dark:focus:ring-slate-600 focus:ring-offset-2 border-0 border-b-0 active:border-0 ${
                   darkMode 
                     ? 'hover:bg-slate-800/50 focus:ring-offset-slate-900' 
                     : 'hover:bg-gray-50 dark:hover:bg-gray-700 focus:ring-offset-white dark:focus:ring-offset-gray-800'
                 }`}
+                style={{ borderBottom: 'none', borderTop: 'none' }}
                 aria-expanded={openItems.includes(index)}
                 aria-controls={`faq-answer-${index}`}
               >
@@ -179,10 +180,16 @@ const FAQSection = ({ serviceId, darkMode = false }: FAQSectionProps) => {
               <div
                 id={`faq-answer-${index}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  openItems.includes(index) ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
+                style={{
+                  willChange: 'max-height, opacity',
+                  borderTop: 'none',
+                  marginTop: 0,
+                  paddingTop: 0
+                }}
               >
-                <div className="px-4 pt-3 pb-4">
+                <div className="px-4 pt-0 pb-4" style={{ borderTop: 'none', borderBottom: 'none', paddingTop: 0 }}>
                   <p className={`leading-relaxed font-body ${
                     darkMode ? 'text-slate-300' : 'text-gray-600 dark:text-gray-300'
                   }`}>

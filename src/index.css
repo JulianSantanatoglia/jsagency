@@ -93,6 +93,32 @@
     outline-offset: 2px;
   }
   
+  /* Remove borders from FAQ buttons and answer containers */
+  button[aria-expanded] {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  
+  button[aria-expanded]:active,
+  button[aria-expanded]:focus,
+  button[aria-expanded]:hover {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  
+  /* Remove borders from FAQ answer containers */
+  [id^="faq-answer"] {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+  
   /* Skip link styles */
   .skip-link {
     position: absolute;

@@ -57,9 +57,9 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
 
   const allServiceOptions = [
     { value: 'web-development', label: 'Creación de Páginas Web' },
-    { value: 'virtual-tours', label: 'Recorridos virtuales' },
+    { value: 'virtual-tours', label: 'Tours virtuales' },
     { value: 'automation', label: 'Automatización' },
-    { value: 'aerial-content', label: 'Contenido Aéreo' }
+    { value: 'aerial-content', label: 'Servicios de Drone' }
   ];
 
   const homeServiceOptions = [
@@ -140,14 +140,14 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
   return (
     <div className={`${darkMode ? '' : 'bg-white/90 backdrop-blur-sm'} rounded-2xl ${darkMode ? '' : 'shadow-xl'} ${darkMode ? '' : 'p-8 md:p-12'} ${className}`}>
       {!darkMode && (
-        <div className="mb-8">
-          <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
-            Envíanos un mensaje
-          </h3>
-          <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-            Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
-          </p>
-        </div>
+      <div className="mb-8">
+        <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
+          Envíanos un mensaje
+        </h3>
+        <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+          Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
+        </p>
+      </div>
       )}
 
       <form onSubmit={handleSubmit} className={`space-y-6 ${darkMode ? '' : ''}`}>

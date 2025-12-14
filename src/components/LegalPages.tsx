@@ -48,7 +48,7 @@ const TermsAndConditions = ({ onBack }: LegalPageProps) => {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Desarrollo web y aplicaciones</li>
-              <li>Recorridos virtuales 360°</li>
+              <li>Tours virtuales 360°</li>
               <li>Automatizaciones con inteligencia artificial</li>
               <li>Fotografía y video aéreo</li>
             </ul>

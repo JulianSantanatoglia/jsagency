@@ -1,8 +1,11 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocation, Link } from 'react-router-dom';
 import Newsletter from './Newsletter';
 
 const Footer = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '';
 
   return (
     <>
@@ -21,7 +24,7 @@ const Footer = () => {
               {t('footer.description')}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <nav aria-labelledby="services-nav">
               <h4 id="services-nav" className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-4 font-body">
                 {t('footer.services')}
@@ -75,12 +78,46 @@ const Footer = () => {
                   </a>
                 </li>
                 <li role="listitem">
+                  {isHomePage ? (
+                    <a 
+                      href="#contacto" 
+                      className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
+                    >
+                      {t('nav.contact')}
+                    </a>
+                  ) : (
+                    <Link 
+                      to="/#contacto" 
+                      className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
+                    >
+                      {t('nav.contact')}
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+            <nav aria-labelledby="projects-nav">
+              <h4 id="projects-nav" className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-4 font-body">
+                {t('footer.projects')}
+              </h4>
+              <ul className="flex flex-col gap-3" role="list">
+                <li role="listitem">
                   <a 
-                    href="#contacto" 
+                    href="https://bar-de-tapas.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
                   >
-                    {t('nav.contact')}
+                    Divly
                   </a>
+                </li>
+                <li role="listitem">
+                  <Link 
+                    to="/proyectos/fhoto"
+                    className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
+                  >
+                    Fhoto
+                  </Link>
                 </li>
               </ul>
             </nav>

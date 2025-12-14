@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useLocation, Link } from 'react-router-dom';
 import { Monitor, Zap } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
 const Process = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '';
   const [activeProcess, setActiveProcess] = useState('webdev');
 
   const processes = [
@@ -105,8 +108,9 @@ const Process = () => {
 
         {/* Process Tabs - Diseño moderno */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16 max-w-2xl mx-auto justify-center">
-          {processes.map((process) => {
+          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+            {processes.map((process) => {
             const isActive = activeProcess === process.id;
             const IconComponent = process.icon;
             
@@ -128,6 +132,10 @@ const Process = () => {
               </button>
             );
           })}
+            </div>
+            <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
+              Haz click en alguno de los dos botones
+            </p>
           </div>
         </ScrollReveal>
 
@@ -186,13 +194,23 @@ const Process = () => {
                 <p className="text-xl md:text-2xl font-bold font-body mb-6">
                   {t('process.cta')}
                 </p>
-                <a 
-                  href="#contacto" 
-                  className="inline-flex items-center gap-2 bg-white text-accent-cyan px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl"
-                >
-                  {t('process.ctaButton')}
-                  <span className="text-xl">→</span>
-                </a>
+                {isHomePage ? (
+                  <a 
+                    href="#contacto" 
+                    className="inline-flex items-center gap-2 bg-white text-accent-cyan px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl"
+                  >
+                    {t('process.ctaButton')}
+                    <span className="text-xl">→</span>
+                  </a>
+                ) : (
+                  <Link 
+                    to="/#contacto" 
+                    className="inline-flex items-center gap-2 bg-white text-accent-cyan px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl"
+                  >
+                    {t('process.ctaButton')}
+                    <span className="text-xl">→</span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -9,7 +9,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useLanguage();
 
   const toggleMenu = () => {
@@ -20,17 +22,29 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (desktop only)
   useEffect(() => {
+    if (!isProjectsOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      
+      // Only handle desktop dropdown - mobile is handled by link clicks and route changes
+      if (dropdownRef.current && !dropdownRef.current.contains(target)) {
         setIsProjectsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    // Use a small delay to allow onClick handlers to execute first
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 10);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isProjectsOpen]);
 
   // Close dropdown on route change
   useEffect(() => {
@@ -39,6 +53,7 @@ const Header = () => {
   }, [location.pathname]);
 
   const isHomePage = location.pathname === '/' || location.pathname === '';
+  const isFhotoPage = location.pathname === '/proyectos/fhoto';
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-gray-100 dark:border-slate-800 z-50" role="banner">
@@ -89,7 +104,7 @@ const Header = () => {
                 href="#home" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
               >
-                Inicio
+                {t('nav.home')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
               <a 
@@ -121,12 +136,64 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
             </>
+          ) : isFhotoPage ? (
+            <>
+              <Link 
+                to="/" 
+                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+              >
+                {t('nav.home')}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+              </Link>
+              <a 
+                href="#servicios" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('servicios');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+              >
+                Lo que hacemos
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+              <a 
+                href="#proceso" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('proceso');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+              >
+                Procesos
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+              <a 
+                href="#faq" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('faq');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+              >
+                Dudas
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+            </>
           ) : (
             <Link 
               to="/" 
               className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
             >
-              Inicio
+              {t('nav.home')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
           )}
@@ -195,6 +262,20 @@ const Header = () => {
             >
               {t('nav.contact')}
             </a>
+          ) : isFhotoPage ? (
+            <a 
+              href="#contacto" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('contacto');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-sm tracking-wide hover:bg-cyan-500 hover-lift shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 focus:outline-none transition-all duration-300"
+            >
+              {t('nav.contact')}
+            </a>
           ) : (
             <Link 
               to="/#contacto" 
@@ -232,7 +313,7 @@ const Header = () => {
                   }}
                   onClick={closeMenu}
                 >
-                  Inicio
+                  {t('nav.home')}
                 </a>
                 <a 
                   href="#nosotros" 
@@ -283,6 +364,78 @@ const Header = () => {
                   {t('nav.faq')}
                 </a>
               </>
+            ) : isFhotoPage ? (
+              <>
+                <Link 
+                  to="/" 
+                  className={`text-base font-medium text-slate-700 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? '150ms' : '0ms'
+                  }}
+                  onClick={closeMenu}
+                >
+                  {t('nav.home')}
+                </Link>
+                <a 
+                  href="#servicios" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    const element = document.getElementById('servicios');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? '200ms' : '0ms'
+                  }}
+                >
+                  Lo que hacemos
+                </a>
+                <a 
+                  href="#proceso" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    const element = document.getElementById('proceso');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? '250ms' : '0ms'
+                  }}
+                >
+                  Procesos
+                </a>
+                <a 
+                  href="#faq" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    const element = document.getElementById('faq');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? '300ms' : '0ms'
+                  }}
+                >
+                  Dudas
+                </a>
+              </>
             ) : (
               <Link 
                 to="/" 
@@ -294,21 +447,28 @@ const Header = () => {
                 }}
                 onClick={closeMenu}
               >
-                Inicio
+                {t('nav.home')}
               </Link>
             )}
             
             {/* Mobile Projects Dropdown */}
-            <div className={`transform ${
-              isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-            }`}
-            style={{
-              transitionDelay: isMenuOpen ? '400ms' : '0ms'
-            }}>
+            <div 
+              ref={mobileDropdownRef}
+              className={`transform relative z-10 ${
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '400ms' : '0ms'
+              }}
+            >
               <button
-                onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-                className="text-base font-semibold text-accent-cyan bg-accent-cyan/10 dark:bg-accent-cyan/20 hover:bg-accent-cyan/20 dark:hover:bg-accent-cyan/30 transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 w-full text-left flex items-center justify-between border border-accent-cyan/20 dark:border-accent-cyan/30"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsProjectsOpen(!isProjectsOpen);
+                }}
+                className="text-base font-semibold text-accent-cyan bg-accent-cyan/10 dark:bg-accent-cyan/20 hover:bg-accent-cyan/20 dark:hover:bg-accent-cyan/30 transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 w-full text-left flex items-center justify-between border border-accent-cyan/20 dark:border-accent-cyan/30 relative z-10 pointer-events-auto"
                 aria-expanded={isProjectsOpen}
+                type="button"
               >
                 {t('nav.projects')}
                 <ChevronDown 
@@ -317,20 +477,30 @@ const Header = () => {
                 />
               </button>
               {isProjectsOpen && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div className="pl-4 mt-2 space-y-2 relative z-20">
                   <a
                     href="https://bar-de-tapas.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-1"
-                    onClick={closeMenu}
+                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-2 px-2 cursor-pointer rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 relative z-20 touch-manipulation"
+                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsProjectsOpen(false);
+                      closeMenu();
+                    }}
                   >
                     Divly
                   </a>
                   <Link
                     to="/proyectos/fhoto"
-                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-1"
-                    onClick={closeMenu}
+                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-2 px-2 cursor-pointer text-left w-full rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 relative z-20 touch-manipulation"
+                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsProjectsOpen(false);
+                      closeMenu();
+                    }}
                   >
                     Fhoto
                   </Link>
@@ -338,33 +508,53 @@ const Header = () => {
               )}
             </div>
 
-            {isHomePage ? (
-              <a 
-                href="#contacto" 
-                className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
-                  isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
-                }`}
-                style={{
-                  transitionDelay: isMenuOpen ? '500ms' : '0ms'
-                }}
-                onClick={closeMenu}
-              >
-                {t('nav.contact')}
-              </a>
-            ) : (
-              <Link 
-                to="/#contacto" 
-                className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
-                  isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
-                }`}
-                style={{
-                  transitionDelay: isMenuOpen ? '500ms' : '0ms'
-                }}
-                onClick={closeMenu}
-              >
-                {t('nav.contact')}
-              </Link>
-            )}
+          {isHomePage ? (
+            <a 
+              href="#contacto" 
+              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '500ms' : '0ms'
+              }}
+              onClick={closeMenu}
+            >
+              {t('nav.contact')}
+            </a>
+          ) : isFhotoPage ? (
+            <a 
+              href="#contacto" 
+              onClick={(e) => {
+                e.preventDefault();
+                closeMenu();
+                const element = document.getElementById('contacto');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '500ms' : '0ms'
+              }}
+            >
+              {t('nav.contact')}
+            </a>
+          ) : (
+            <Link 
+              to="/#contacto" 
+              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
+                isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? '500ms' : '0ms'
+              }}
+              onClick={closeMenu}
+            >
+              {t('nav.contact')}
+            </Link>
+          )}
         </nav>
       </div>
     </header>
