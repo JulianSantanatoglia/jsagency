@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { Video, Camera, Check, ArrowRight, Aperture, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import ProcessSection from '../components/ProcessSection';
 import FAQSection from '../components/FAQSection';
 import ContactForm from '../components/ContactForm';

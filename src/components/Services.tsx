@@ -1,6 +1,5 @@
 import { Globe, Bot, Video, Camera } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import OptimizedImage from './OptimizedImage';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 

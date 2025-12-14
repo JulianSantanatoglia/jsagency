@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ContactForm from './ContactForm';
 import { Check, Video, Home, Building2, Camera, Globe, Smartphone, ArrowRight } from 'lucide-react';

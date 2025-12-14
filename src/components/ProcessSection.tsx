@@ -162,12 +162,12 @@ const ProcessSection = ({ serviceId, darkMode = false }: ProcessSectionProps) =>
             key={index} 
             className={`flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-center sm:items-start ${
               darkMode 
-                ? `bg-slate-800/30 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-slate-700/50` 
-                : `bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border-2 ${processData.borderColor} hover-lift hover:shadow-lg`
+                ? `bg-slate-800/30 backdrop-blur-sm p-4 md:p-6 rounded-xl` 
+                : `bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl hover-lift hover:shadow-lg`
             } transition-all duration-300 animate-fade-in-up`}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className={`text-2xl md:text-3xl font-extrabold font-display ${processData.textColor} opacity-30 flex-shrink-0`}>
+            <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white flex-shrink-0">
               {step.number}
             </div>
             <div className="flex-1 text-center sm:text-left">

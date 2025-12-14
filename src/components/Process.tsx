@@ -148,11 +148,11 @@ const Process = () => {
                   {/* Punto en la línea del timeline */}
                   <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-accent-cyan to-cyan-500 shadow-lg shadow-cyan-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
                   
-                  <div className={`ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border-2 ${activeProcessData.borderColor}/40 dark:border-slate-700/40 hover:border-${activeProcessData.color}-400/60 dark:hover:border-${activeProcessData.color}-400/60 shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl hover:shadow-${activeProcessData.color}-500/20 dark:hover:shadow-${activeProcessData.color}-500/20 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]`}>
+                  <div className={`ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]`}>
                     <div className="flex items-start gap-6">
-                      {/* Número grande con gradiente */}
-                      <div className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${activeProcessData.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-2xl md:text-3xl font-extrabold font-display text-white">
+                      {/* Número grande sin fondo */}
+                      <div className="flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-primary-dark dark:text-white">
                           {step.number}
                         </span>
                       </div>

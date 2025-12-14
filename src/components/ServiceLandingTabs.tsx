@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import type { ReactElement } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import WebDevelopmentLanding from './WebDevelopmentLanding';
 import VirtualToursLanding from './VirtualToursLanding';
@@ -13,7 +14,7 @@ interface TabConfig {
   eyebrow: string;
   gradient: string;
   description: string;
-  component: JSX.Element;
+  component: ReactElement;
 }
 
 const ServiceLandingTabs = () => {

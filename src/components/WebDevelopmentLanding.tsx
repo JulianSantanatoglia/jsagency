@@ -1,7 +1,7 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import ContactForm from './ContactForm';
 import OptimizedImage from './OptimizedImage';
-import { Check, Globe, Smartphone, Zap, Shield, Search, ArrowRight } from 'lucide-react';
+import { Smartphone, Zap, Shield, Search, ArrowRight } from 'lucide-react';
 
 const WebDevelopmentLanding = () => {
   const { t } = useLanguage();

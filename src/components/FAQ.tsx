@@ -210,21 +210,6 @@ const FAQ = () => {
           </div>
           </ScrollReveal>
         )}
-
-        <ScrollReveal direction="up" delay={300}>
-          <div className="text-center mt-16">
-            <div className="inline-block relative group">
-              <a
-                href="#contacto"
-                className="relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-accent-cyan to-cyan-500 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-500/60 transition-all duration-300 hover:scale-105 font-body overflow-hidden"
-              >
-                <span className="relative z-10">{t('faq.ctaButton')}</span>
-                <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-accent-cyan opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </a>
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
