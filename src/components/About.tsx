@@ -1,13 +1,16 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import ScrollReveal from './ScrollReveal';
+import PatternBackground from './PatternBackground';
 
 const About = () => {
   const { t } = useLanguage();
 
   return (
     <section id="nosotros" className="relative py-24 md:py-32 px-4 md:px-8">
+      <PatternBackground opacity={0.04} />
+      
       {/* Ondulación superior para transición suave desde Hero */}
-      <div className="absolute top-0 left-0 w-full -mt-1" style={{ transform: 'translateY(-100%)' }}>
+      <div className="absolute top-0 left-0 w-full -mt-1 z-0" style={{ transform: 'translateY(-100%)' }}>
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -22,26 +25,32 @@ const About = () => {
           />
         </svg>
       </div>
-      <div className="max-w-7xl mx-auto">
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
         <ScrollReveal direction="up" delay={0}>
-          <div className="mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-10 text-primary-dark dark:text-white tracking-tight">
+          <div className="mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight leading-tight">
               {t('about.title').replace(t('about.titleHighlight'), '').trim()} <span className="text-accent-cyan">{t('about.titleHighlight')}</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-8 max-w-3xl font-body font-light">
+            <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-transparent mb-6"></div>
+            <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-body font-light leading-relaxed max-w-3xl">
               {t('about.subtitle')}
             </p>
-            <div className="max-w-4xl text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed space-y-6 font-body">
-              <p>
-                {t('about.content.paragraph1')}
-              </p>
-              <p>
-                {t('about.content.paragraph2')}
-              </p>
-              <p className="text-accent-cyan font-semibold text-xl mt-2">
-                {t('about.content.paragraph3')}
-              </p>
-            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Contenido con texto suelto */}
+        <ScrollReveal direction="up" delay={100}>
+          <div className="max-w-4xl text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed space-y-6 font-body">
+            <p>
+              {t('about.content.paragraph1')}
+            </p>
+            <p>
+              {t('about.content.paragraph2')}
+            </p>
+            <p className="text-accent-cyan font-semibold text-xl mt-2">
+              {t('about.content.paragraph3')}
+            </p>
           </div>
         </ScrollReveal>
         

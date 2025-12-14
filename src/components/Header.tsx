@@ -42,12 +42,18 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-gray-100 dark:border-slate-800 z-50" role="banner">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center relative">
+        {/* Logo */}
         <div className="flex items-baseline gap-2 font-display">
           <Link to="/" className="focus:outline-none rounded-lg">
             <span className="text-2xl font-bold text-slate-900 dark:text-white">.js</span>
             <span className="text-2xl font-semibold text-accent-cyan">agency</span>
           </Link>
+        </div>
+        
+        {/* Dark Mode Toggle centrado en mobile - entre logo y menú hamburguesa */}
+        <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2">
+          <DarkModeToggle />
         </div>
         
         {/* Desktop Navigation */}
@@ -177,7 +183,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden p-2 rounded-lg text-slate-900 hover:bg-gray-100 transition-all duration-300 focus:outline-none"
+          className="lg:hidden p-2 rounded-lg text-slate-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 focus:outline-none"
           aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
@@ -204,7 +210,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div 
         id="mobile-menu"
-        className={`lg:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg border-b border-gray-100 shadow-xl transition-all duration-300 ease-out overflow-hidden ${
+        className={`lg:hidden absolute top-full left-0 right-0 bg-white/98 dark:bg-slate-900/98 backdrop-blur-lg border-b border-gray-100 dark:border-slate-800 shadow-xl transition-all duration-300 ease-out overflow-hidden ${
           isMenuOpen 
             ? 'opacity-100 translate-y-0 max-h-screen' 
             : 'opacity-0 -translate-y-4 max-h-0 pointer-events-none'
@@ -333,6 +339,7 @@ const Header = () => {
               )}
             </div>
 
+            {/* Language Switcher en mobile - DarkModeToggle ya está en el header */}
             <div className={`flex justify-center py-2 transition-all duration-300 transform ${
               isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
             }`}
@@ -340,10 +347,7 @@ const Header = () => {
               transitionDelay: isMenuOpen ? '450ms' : '0ms'
             }}
             >
-              <div className="flex items-center gap-3">
-                <DarkModeToggle />
-                <LanguageSwitcher />
-              </div>
+              <LanguageSwitcher />
             </div>
             {isHomePage ? (
               <a 

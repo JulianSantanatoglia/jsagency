@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Globe, Bot } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import PatternBackground from './PatternBackground';
 
 interface FAQItem {
   question: string;
@@ -96,7 +97,9 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="relative py-24 md:py-32 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
+      <PatternBackground opacity={0.04} />
+      
+      <div className="relative z-10 max-w-6xl mx-auto">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-16 md:mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-dark dark:text-white mb-6 font-display tracking-tight">
@@ -108,9 +111,9 @@ const FAQ = () => {
           </div>
         </ScrollReveal>
 
-        {/* FAQ Tabs */}
+        {/* FAQ Tabs - Diseño moderno */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-8 md:mb-12 max-w-4xl mx-auto justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-16 max-w-2xl mx-auto justify-center">
           {faqCategories.map((category) => {
             const isActive = activeTab === category.id;
             const IconComponent = category.icon;
@@ -122,79 +125,104 @@ const FAQ = () => {
                   setActiveTab(category.id);
                   setOpenItems([]);
                 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
+                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
                   isActive
-                    ? `${category.bgColor} ${category.borderColor} border-2 ${category.textColor} shadow-md`
-                    : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-gray-300 dark:hover:border-slate-600'
+                    ? `bg-gradient-to-r ${category.gradient} text-white shadow-xl shadow-${category.color}-500/30 scale-105`
+                    : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
                 }`}
               >
-                <IconComponent size={20} />
+                <IconComponent size={22} className={isActive ? 'text-white' : ''} />
                 <span className="text-sm md:text-base">{category.title}</span>
+                {isActive && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                )}
               </button>
             );
           })}
           </div>
         </ScrollReveal>
 
-        {/* Active Category Questions */}
+        {/* Active Category Questions - Diseño creativo */}
         {activeCategory && (
           <ScrollReveal direction="up" delay={200}>
           <div className="space-y-4 max-w-4xl mx-auto">
-            {activeCategory.questions.map((item, index) => (
-              <div 
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
-                  aria-expanded={openItems.includes(index)}
-                  aria-controls={`faq-answer-${index}`}
+            {activeCategory.questions.map((item, index) => {
+              const isOpen = openItems.includes(index);
+              return (
+                <div 
+                  key={index}
+                  className={`group relative bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm rounded-2xl border-2 ${
+                    isOpen 
+                      ? `border-${activeCategory.color}-300/60 dark:border-${activeCategory.color}-400/60 shadow-xl shadow-${activeCategory.color}-500/20`
+                      : 'border-slate-200/60 dark:border-slate-700/60 shadow-lg shadow-slate-200/20 dark:shadow-slate-900/20'
+                  } overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`}
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white font-body pr-4">
-                    {item.question}
-                  </h3>
-                  <div className="flex-shrink-0">
-                    <svg
-                      className={`w-5 h-5 ${activeCategory.textColor} transition-transform duration-200 ${
-                        openItems.includes(index) ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </button>
-                
-                <div
-                  id={`faq-answer-${index}`}
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <div className="px-6 pt-4 pb-5">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-body">
-                      {item.answer}
-                    </p>
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-start gap-4 hover:bg-gradient-to-r hover:from-white/50 hover:to-transparent dark:hover:from-slate-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                  >
+                    <div className="flex-1">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center font-bold text-sm mt-1 text-slate-500 dark:text-slate-400">
+                          {index + 1}
+                        </div>
+                        <h3 className="text-lg md:text-xl font-bold text-primary-dark dark:text-white font-body pr-4 leading-tight">
+                          {item.question}
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 mt-1">
+                      <div className={`w-10 h-10 flex items-center justify-center transition-transform duration-300 text-slate-600 dark:text-slate-400 ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}>
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  
+                  <div
+                    id={`faq-answer-${index}`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 md:px-8 pb-6 pt-2">
+                      <div className="ml-12 pl-4 border-l-2 border-slate-200/60 dark:border-slate-700/60">
+                        <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-body">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           </ScrollReveal>
         )}
 
         <ScrollReveal direction="up" delay={300}>
-          <div className="text-center mt-12">
-          <a
-            href="#contacto"
-            className="inline-flex items-center px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/90 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-gray-50 dark:focus:ring-offset-gray-900 font-body"
-          >
-            {t('faq.ctaButton')}
-          </a>
+          <div className="text-center mt-16">
+            <div className="inline-block relative group">
+              <a
+                href="#contacto"
+                className="relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-accent-cyan to-cyan-500 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-500/60 transition-all duration-300 hover:scale-105 font-body overflow-hidden"
+              >
+                <span className="relative z-10">{t('faq.ctaButton')}</span>
+                <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-accent-cyan opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </div>
