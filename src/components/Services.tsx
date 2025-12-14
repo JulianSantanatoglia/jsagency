@@ -40,7 +40,7 @@ const Services = () => {
       ],
       icon: Bot,
       image: '/images/proyectos/automatizacion.jpg',
-      cta: 'Quiero automatizaciones',
+      cta: 'Quiero automatizar mi negocio',
       ctaLink: '#contacto',
       featured: true,
       color: 'emerald'
