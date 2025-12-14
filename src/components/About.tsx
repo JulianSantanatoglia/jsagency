@@ -8,13 +8,6 @@ const About = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/' || location.pathname === '';
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!isHomePage) {
-      e.preventDefault();
-      window.location.href = '/#contacto';
-    }
-  };
-
   return (
     <section id="nosotros" className="relative py-24 md:py-32 px-4 md:px-8">
       <PatternBackground opacity={0.04} />
