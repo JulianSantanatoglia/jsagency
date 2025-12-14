@@ -365,14 +365,17 @@ const Fhoto = () => {
                       </p>
 
                       {/* CTA sutil */}
-                      <div className={`inline-flex items-center gap-2 text-sm font-semibold ${
-                        item.color === 'purple' 
-                          ? 'text-purple-600 dark:text-purple-400' 
-                          : 'text-slate-700 dark:text-slate-300'
-                      } group/cta cursor-pointer`}>
+                      <a 
+                        href="#proceso"
+                        className={`inline-flex items-center gap-2 text-sm font-semibold ${
+                          item.color === 'purple' 
+                            ? 'text-purple-600 dark:text-purple-400' 
+                            : 'text-slate-700 dark:text-slate-300'
+                        } group/cta cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 rounded`}
+                      >
                         <span>{item.cta}</span>
                         <span className="group-hover/cta:translate-x-1 transition-transform">→</span>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
