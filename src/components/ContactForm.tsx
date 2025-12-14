@@ -138,17 +138,19 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
   };
 
   return (
-    <div className={`${darkMode ? 'bg-slate-800/50 backdrop-blur-sm border border-slate-700/50' : 'bg-white/90 backdrop-blur-sm'} rounded-2xl shadow-xl p-8 md:p-12 ${className}`}>
-      <div className="mb-8">
-        <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
-          Envíanos un mensaje
-        </h3>
-        <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-          Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
-        </p>
-      </div>
+    <div className={`${darkMode ? '' : 'bg-white/90 backdrop-blur-sm'} rounded-2xl ${darkMode ? '' : 'shadow-xl'} ${darkMode ? '' : 'p-8 md:p-12'} ${className}`}>
+      {!darkMode && (
+        <div className="mb-8">
+          <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
+            Envíanos un mensaje
+          </h3>
+          <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+            Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
+          </p>
+        </div>
+      )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className={`space-y-6 ${darkMode ? '' : ''}`}>
         {/* Name and Email */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
