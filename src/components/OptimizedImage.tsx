@@ -6,6 +6,7 @@ interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
+  style?: React.CSSProperties;
   loading?: 'lazy' | 'eager';
   onError?: () => void;
   fallback?: string;
@@ -15,6 +16,7 @@ const OptimizedImage = ({
   src, 
   alt, 
   className = '', 
+  style,
   loading = 'lazy',
   onError,
   fallback = placeholder
@@ -45,6 +47,7 @@ const OptimizedImage = ({
       src={imageSrc}
       alt={alt}
       className={className}
+      style={style}
       loading={loading}
       onError={handleError}
       onLoad={handleLoad}

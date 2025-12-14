@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Globe, Video, Camera, Bot, ArrowRight } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
-import ScrollReveal from './ScrollReveal';
 
 const ServiceHero = () => {
-  const { t } = useLanguage();
   const [hoveredPanel, setHoveredPanel] = useState<string | null>(null);
   const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
 
