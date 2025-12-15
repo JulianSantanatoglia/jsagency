@@ -134,7 +134,7 @@ const Process = () => {
           })}
             </div>
             <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
-              Click either button to explore
+              {t('process.helper')}
             </p>
           </div>
         </ScrollReveal>

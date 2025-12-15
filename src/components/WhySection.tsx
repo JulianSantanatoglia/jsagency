@@ -14,8 +14,7 @@ const WhySection = () => {
       color: 'blue',
       image: '/images/proyectos/mushroommdp.jpg',
       stat: t('why.webdev.stat'),
-      statLabel: t('why.webdev.statLabel'),
-      cta: t('why.webdev.cta')
+      statLabel: t('why.webdev.statLabel')
     },
     {
       id: 'ai',
@@ -24,8 +23,7 @@ const WhySection = () => {
       color: 'emerald',
       image: '/images/proyectos/automatizacion.jpg',
       stat: t('why.ai.stat'),
-      statLabel: t('why.ai.statLabel'),
-      cta: t('why.ai.cta')
+      statLabel: t('why.ai.statLabel')
     }
   ];
 
@@ -112,19 +110,6 @@ const WhySection = () => {
                     }`}>
                       {item.content}
                     </p>
-
-                    {/* CTA sutil */}
-                    <a 
-                      href="#proceso"
-                      className={`inline-flex items-center gap-2 text-sm font-semibold ${
-                        item.color === 'blue' 
-                          ? 'text-blue-600 dark:text-blue-400' 
-                          : 'text-emerald-600 dark:text-emerald-400'
-                      } group/cta cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 rounded`}
-                    >
-                      <span>{item.cta}</span>
-                      <span className="group-hover/cta:translate-x-1 transition-transform">→</span>
-                    </a>
                   </div>
                 </div>
               </div>

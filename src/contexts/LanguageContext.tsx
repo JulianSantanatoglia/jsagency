@@ -228,6 +228,7 @@ const translations = {
       title: 'Cómo trabajamos',
       titleHighlight: 'trabajamos',
       subtitle: 'Procesos claros, sin sorpresas. Cada servicio tiene su metodología, pero todos comparten algo: transparencia total.',
+      helper: 'Haz click en alguno de los dos botones',
       cta: '¿Listo para empezar?',
       ctaButton: 'Hablemos →',
       webdev: {
@@ -491,6 +492,7 @@ const translations = {
       title: 'Dudas frecuentes',
       titleHighlight: 'frecuentes',
       subtitle: 'Las respuestas que buscas, sin rodeos.',
+      helper: 'Haz click en alguno de los dos botones',
       webdev: {
         title: 'Creación de Páginas Web',
         questions: [
@@ -826,6 +828,7 @@ const translations = {
       title: 'How we work',
       titleHighlight: 'work',
       subtitle: 'Clear processes, no surprises. Each service has its methodology, but they all share something: total transparency.',
+      helper: 'Click either button to explore',
       cta: 'Ready to start?',
       ctaButton: 'Let\'s talk →',
       webdev: {
@@ -1089,6 +1092,7 @@ const translations = {
       title: 'Frequently asked questions',
       titleHighlight: 'questions',
       subtitle: 'The answers you\'re looking for, straight to the point.',
+      helper: 'Click either button to explore',
       webdev: {
         title: 'Web Development',
         questions: [

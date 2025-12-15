@@ -443,8 +443,7 @@ const Fhoto = () => {
               color: 'purple',
               image: '/images/proyectos/360.jpg',
               stat: t('why.tours.stat'),
-              statLabel: t('why.tours.statLabel'),
-              cta: t('why.tours.cta')
+              statLabel: t('why.tours.statLabel')
             },
             {
               id: 'drone',
@@ -453,8 +452,7 @@ const Fhoto = () => {
               color: 'slate',
               image: '/images/proyectos/inmobiliaria.jpg',
               stat: t('why.drone.stat'),
-              statLabel: t('why.drone.statLabel'),
-              cta: t('why.drone.cta')
+              statLabel: t('why.drone.statLabel')
             }
           ].map((item, index) => (
             <ScrollReveal key={item.id} direction="up" delay={index * 150}>
@@ -532,19 +530,6 @@ const Fhoto = () => {
                       }`}>
                         {item.content}
                       </p>
-
-                      {/* CTA sutil */}
-                      <a 
-                        href="#proceso"
-                        className={`inline-flex items-center gap-2 text-sm font-semibold ${
-                          item.color === 'purple' 
-                            ? 'text-purple-600 dark:text-purple-400' 
-                            : 'text-slate-700 dark:text-slate-300'
-                        } group/cta cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 rounded`}
-                      >
-                        <span>{item.cta}</span>
-                        <span className="group-hover/cta:translate-x-1 transition-transform">→</span>
-                      </a>
                     </div>
                   </div>
                 </div>
