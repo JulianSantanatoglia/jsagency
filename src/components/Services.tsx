@@ -4,85 +4,174 @@ import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const servicesContent = {
+    es: {
+      webdev: {
+        title: 'Creación de páginas web',
+        description: 'Webs modernas que cargan rápido y convierten visitas en clientes.',
+        features: [
+          'Webs corporativas y landing pages profesionales',
+          'Diseño moderno, claro y adaptado a tu marca',
+          'Carga rápida y buena experiencia en móvil y ordenador',
+          'Preparadas para aparecer en Google',
+          'Formularios de contacto, reservas y WhatsApp',
+          'Portfolios profesionales para mostrar tu trabajo o servicios',
+          'Correo corporativo profesional',
+          'Hosting, alojamiento y dominio incluidos',
+          'Seguridad SSL y protección de datos',
+          'Mantenimiento y mejoras continuas'
+        ],
+        cta: 'Quiero una web'
+      },
+      ai: {
+        title: t('services.ai.title'),
+        description: 'Automatizaciones que ahorran tiempo y aumentan ventas.',
+        features: [
+          'Chatbots/asistentes virtuales',
+          'Automatización de leads y seguimiento',
+          'Integraciones con herramientas internas',
+          'Flujos y optimización de procesos',
+          'Sistemas inteligentes de gestión',
+          'Capacitación y soporte continuo'
+        ],
+        cta: 'Quiero automatizar mi negocio'
+      },
+      tours: {
+        title: 'Tours Virtuales',
+        description: 'Tours inmersivos para vender propiedades y reservas.',
+        features: [
+          'Captura 360° con Insta360 X5',
+          'Edición y procesamiento profesional',
+          'Publicación en plataformas',
+          'Integración en web y redes sociales',
+          'QR codes para acceso directo',
+          'CTAs optimizados para generar leads'
+        ],
+        cta: 'Ver Fhoto'
+      },
+      drone: {
+        title: 'Servicios de Drone',
+        description: 'Servicios de drone premium para destacar tu marca.',
+        features: [
+          'Fotografía aérea inmobiliaria',
+          'Videos corporativos con drones',
+          'Reels y contenido para redes sociales',
+          'Cobertura de propiedades, hoteles, obras y eventos',
+          'Edición lista para publicar',
+          'Operación certificada A1/A3'
+        ],
+        cta: 'Ver Fhoto'
+      }
+    },
+    en: {
+      webdev: {
+        title: 'Website creation',
+        description: 'Modern sites that load fast and turn visitors into customers.',
+        features: [
+          'Corporate sites and professional landing pages',
+          'Modern, clear design tailored to your brand',
+          'Fast loading and great experience on mobile and desktop',
+          'Built to appear on Google',
+          'Contact forms, bookings, and WhatsApp',
+          'Professional portfolios to showcase work or services',
+          'Professional corporate email',
+          'Hosting, storage, and domain included',
+          'SSL security and data protection',
+          'Ongoing maintenance and improvements'
+        ],
+        cta: 'I want a website'
+      },
+      ai: {
+        title: t('services.ai.title'),
+        description: 'Automations that save time and increase sales.',
+        features: [
+          'Chatbots/virtual assistants',
+          'Lead automation and follow-up',
+          'Integrations with internal tools',
+          'Workflows and process optimization',
+          'Intelligent management systems',
+          'Training and ongoing support'
+        ],
+        cta: 'I want to automate my business'
+      },
+      tours: {
+        title: 'Virtual Tours',
+        description: 'Immersive tours to sell properties and bookings.',
+        features: [
+          '360° capture with Insta360 X5',
+          'Professional editing and processing',
+          'Publishing on platforms',
+          'Web and social media integration',
+          'QR codes for direct access',
+          'CTAs optimized to generate leads'
+        ],
+        cta: 'See Fhoto'
+      },
+      drone: {
+        title: 'Drone Services',
+        description: 'Premium drone services to make your brand stand out.',
+        features: [
+          'Aerial real estate photography',
+          'Corporate drone videos',
+          'Reels and social media content',
+          'Coverage for properties, hotels, construction sites, and events',
+          'Editing ready to publish',
+          'A1/A3 certified operation'
+        ],
+        cta: 'See Fhoto'
+      }
+    }
+  } as const;
+
+  const copy = servicesContent[language];
 
   const services = [
     {
       id: 'webdev',
-      title: 'Creación de páginas web',
-      description: 'Webs modernas que cargan rápido y convierten visitas en clientes.',
-      features: [
-        'Webs corporativas y landing pages profesionales',
-        'Diseño moderno, claro y adaptado a tu marca',
-        'Carga rápida y buena experiencia en móvil y ordenador',
-        'Preparadas para aparecer en Google',
-        'Formularios de contacto, reservas y WhatsApp',
-        'Portfolios profesionales para mostrar tu trabajo o servicios',
-        'Correo corporativo profesional',
-        'Hosting, alojamiento y dominio incluidos',
-        'Seguridad SSL y protección de datos',
-        'Mantenimiento y mejoras continuas'
-      ],
+      title: copy.webdev.title,
+      description: copy.webdev.description,
+      features: copy.webdev.features,
       icon: Globe,
       image: '/images/proyectos/mushroommdp.jpg',
-      cta: 'Quiero una web',
+      cta: copy.webdev.cta,
       ctaLink: '#contacto',
       featured: true,
       color: 'blue'
     },
     {
       id: 'ai',
-      title: t('services.ai.title'),
-      description: 'Automatizaciones que ahorran tiempo y aumentan ventas.',
-      features: [
-        'Chatbots/asistentes virtuales',
-        'Automatización de leads y seguimiento',
-        'Integraciones con herramientas internas',
-        'Flujos y optimización de procesos',
-        'Sistemas inteligentes de gestión',
-        'Capacitación y soporte continuo'
-      ],
+      title: copy.ai.title,
+      description: copy.ai.description,
+      features: copy.ai.features,
       icon: Bot,
       image: '/images/proyectos/automatizacion.jpg',
-      cta: 'Quiero automatizar mi negocio',
+      cta: copy.ai.cta,
       ctaLink: '#contacto',
       featured: true,
       color: 'emerald'
     },
     {
       id: '360',
-      title: 'Tours Virtuales',
-      description: 'Tours inmersivos para vender propiedades y reservas.',
-      features: [
-        'Captura 360° con Insta360 X5',
-        'Edición y procesamiento profesional',
-        'Publicación en plataformas',
-        'Integración en web y redes sociales',
-        'QR codes para acceso directo',
-        'CTAs optimizados para generar leads'
-      ],
+      title: copy.tours.title,
+      description: copy.tours.description,
+      features: copy.tours.features,
       icon: Video,
       image: '/images/proyectos/360.jpg',
-      cta: 'Ver Fhoto',
+      cta: copy.tours.cta,
       ctaLink: '/proyectos/fhoto',
       featured: false,
       color: 'purple'
     },
     {
       id: 'drone',
-      title: 'Servicios de Drone',
-      description: 'Servicios de drone premium para destacar tu marca.',
-      features: [
-        'Fotografía aérea inmobiliaria',
-        'Videos corporativos con drones',
-        'Reels y contenido para redes sociales',
-        'Cobertura de propiedades, hoteles, obras y eventos',
-        'Edición lista para publicar',
-        'Operación certificada A1/A3'
-      ],
+      title: copy.drone.title,
+      description: copy.drone.description,
+      features: copy.drone.features,
       icon: Camera,
       image: '/images/proyectos/inmobiliaria.jpg',
-      cta: 'Ver Fhoto',
+      cta: copy.drone.cta,
       ctaLink: '/proyectos/fhoto',
       featured: false,
       color: 'orange'

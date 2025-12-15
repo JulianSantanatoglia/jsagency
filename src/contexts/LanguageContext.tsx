@@ -336,7 +336,7 @@ const translations = {
       description: 'Somos un estudio digital en Almería. Combinamos código, creatividad y estrategia para crear proyectos que realmente funcionan. Sin humo, sin promesas vacías. Solo resultados.',
       content: {
         paragraph1: 'Somos una startup creativa en Almería: un equipo joven que transforma negocios en experiencias digitales modernas y efectivas.',
-        paragraph2: 'Creamos tu web a medida, desde cero y sin plantillas, para que se vea profesional, cargue rápido y esté lista para aparecer mejor en Google y convertir visitas en clientes.',
+        paragraph2: 'Creamos tu web a medida, desde cero y sin plantillas, para que se vea profesional, sea segura, rapida, accecible para todos y posicionarse en Google para que tus clientes te encuentren.',
         paragraph3: 'Y vamos más allá: integramos automatizaciones con IA, tours virtuales 360 y contenido con dron para mostrar tu negocio con otra perspectiva, generar confianza desde el primer vistazo y hacer que la gente decida más rápido.',
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',

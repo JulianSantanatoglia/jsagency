@@ -7,7 +7,7 @@ import PatternBackground from '../components/PatternBackground';
 import OptimizedImage from '../components/OptimizedImage';
 
 const Fhoto = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeProcess, setActiveProcess] = useState<'tours' | 'drone'>('tours');
   const [activeFAQ, setActiveFAQ] = useState<'tours' | 'drone'>('tours');
   const [openFAQItems, setOpenFAQItems] = useState<number[]>([]);
@@ -44,43 +44,210 @@ const Fhoto = () => {
     }
   }, []);
 
-  const services = {
-    tours: {
-      title: 'Tours Virtuales',
-      description: 'Tours inmersivos con MatterPort para inmobiliarias, salas de eventos y espacios comerciales. Tecnología de vanguardia que convierte visitas en ventas.',
-      bullets: [
-        'Captura 360° profesional con Insta360 X5',
-        'Integración con MatterPort para experiencias inmersivas',
-        'Ideal para inmobiliarias, salas de eventos y espacios comerciales',
-        'Edición y procesamiento de alta calidad',
-        'Publicación en plataformas líderes (MatterPort, Insta360)',
-        'Integración web y redes sociales',
-        'QR codes para acceso directo y compartir fácilmente',
-        'CTAs optimizados para convertir visitas en leads',
-        'Experiencia responsive en todos los dispositivos'
-      ],
-      icon: Video,
-      color: 'purple'
+  const content = {
+    es: {
+      services: {
+        title: 'Nuestros Servicios',
+        subtitle: 'Tecnología profesional y certificaciones que garantizan resultados de calidad',
+        helper: 'Haz click en alguno de los dos botones',
+        tours: {
+          title: 'Tours Virtuales',
+          description: 'Tours inmersivos con MatterPort para inmobiliarias, salas de eventos y espacios comerciales. Tecnología de vanguardia que convierte visitas en ventas.',
+          bullets: [
+            'Captura 360° profesional con Insta360 X5',
+            'Integración con MatterPort para experiencias inmersivas',
+            'Ideal para inmobiliarias, salas de eventos y espacios comerciales',
+            'Edición y procesamiento de alta calidad',
+            'Publicación en plataformas líderes (MatterPort, Insta360)',
+            'Integración web y redes sociales',
+            'QR codes para acceso directo y compartir fácilmente',
+            'CTAs optimizados para convertir visitas en leads',
+            'Experiencia responsive en todos los dispositivos'
+          ]
+        },
+        drone: {
+          title: 'Servicios de Drone',
+          description: 'Fotografía y video aéreo de alta calidad para inmobiliarias, eventos, contenido y mediciones de terrenos. Operación 100% legal y certificada.',
+          bullets: [
+            'Fotografía aérea inmobiliaria de alta resolución',
+            'Videos corporativos y contenido para redes sociales',
+            'Cobertura de propiedades, hoteles, obras y eventos',
+            'Mediciones de terrenos y levantamientos topográficos',
+            'Reels y contenido optimizado para Instagram y TikTok',
+            'Edición profesional lista para publicar',
+            'Certificación A1/A3 y registro de operador vigente',
+            'Seguro de responsabilidad civil y operación legal',
+            'Equipamiento profesional: DJI Mini 4 Pro',
+            'Múltiples formatos de entrega (4K, Full HD, optimizado para web)'
+          ]
+        }
+      },
+      equipment: {
+        title: 'Equipamiento',
+        highlight: 'Profesional',
+        subtitle: 'Tecnología de última generación y certificaciones que garantizan resultados excepcionales',
+        devices: [
+          {
+            name: 'Insta360 X5',
+            description: 'Cámara 360° profesional para tours virtuales inmersivos. Captura de alta resolución que permite crear experiencias MatterPort de nivel profesional.'
+          },
+          {
+            name: 'DJI Mini 4 Pro',
+            description: 'Drone profesional para contenido aéreo de alta calidad. Ideal para fotografía inmobiliaria, eventos y mediciones topográficas con precisión milimétrica.'
+          },
+          {
+            name: 'Fuji Film XT50',
+            description: 'Fotografía profesional de productos e inmuebles. Captura de alta resolución para catálogos, portales inmobiliarios y contenido comercial de calidad premium.'
+          }
+        ],
+        certifications: {
+          title: 'Operación Legal y Certificada',
+          intro: 'Trabajamos con todas las certificaciones y permisos necesarios para operar de forma legal y segura:',
+          bullets: [
+            'Piloto A1/A3 certificado',
+            'Registro de operador vigente',
+            'Seguro de responsabilidad civil',
+            'Permisos de vuelo y zonas controladas'
+          ]
+        }
+      },
+      process: {
+        title: 'Cómo',
+        highlight: 'Trabajamos',
+        subtitle: 'Procesos claros para tours virtuales y servicios de drone',
+        helper: 'Haz click en alguno de los dos botones',
+        tabs: {
+          tours: 'Tours Virtuales',
+          drone: 'Servicios de Drone'
+        },
+        stepsTours: [
+          { number: '01', title: 'Consulta inicial', description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.' },
+          { number: '02', title: 'Captura 360°', description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.' },
+          { number: '03', title: 'Procesamiento', description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.' },
+          { number: '04', title: 'Integración', description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.' },
+          { number: '05', title: 'Entrega', description: 'Te entregamos todo listo para compartir y generar leads desde los tours.' }
+        ],
+        stepsDrone: [
+          { number: '01', title: 'Planificación', description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.' },
+          { number: '02', title: 'Captura aérea', description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.' },
+          { number: '03', title: 'Edición', description: 'Procesamos y editamos el material para obtener el mejor resultado.' },
+          { number: '04', title: 'Entrega', description: 'Te entregamos el contenido en múltiples formatos listo para usar.' }
+        ]
+      },
+      faq: {
+        title: 'Dudas',
+        highlight: 'Frecuentes',
+        subtitle: 'Resolvemos tus dudas sobre tours virtuales y servicios de drone',
+        helper: 'Haz click en alguno de los dos botones',
+        tabs: {
+          tours: 'Tours Virtuales',
+          drone: 'Servicios de Drone'
+        }
+      }
     },
-    drone: {
-      title: 'Servicios de Drone',
-      description: 'Fotografía y video aéreo de alta calidad para inmobiliarias, eventos, contenido y mediciones de terrenos. Operación 100% legal y certificada.',
-      bullets: [
-        'Fotografía aérea inmobiliaria de alta resolución',
-        'Videos corporativos y contenido para redes sociales',
-        'Cobertura de propiedades, hoteles, obras y eventos',
-        'Mediciones de terrenos y levantamientos topográficos',
-        'Reels y contenido optimizado para Instagram y TikTok',
-        'Edición profesional lista para publicar',
-        'Certificación A1/A3 y registro de operador vigente',
-        'Seguro de responsabilidad civil y operación legal',
-        'Equipamiento profesional: DJI Mini 4 Pro',
-        'Múltiples formatos de entrega (4K, Full HD, optimizado para web)'
-      ],
-      icon: Camera,
-      color: 'slate'
+    en: {
+      services: {
+        title: 'Our Services',
+        subtitle: 'Professional technology and certifications that guarantee quality results',
+        helper: 'Click either button to explore',
+        tours: {
+          title: 'Virtual Tours',
+          description: 'Immersive Matterport tours for real estate, event venues, and commercial spaces. Cutting-edge tech that turns visits into sales.',
+          bullets: [
+            'Professional 360° capture with Insta360 X5',
+            'Matterport integration for immersive experiences',
+            'Ideal for real estate, event venues, and commercial spaces',
+            'High-quality editing and processing',
+            'Publishing on leading platforms (Matterport, Insta360)',
+            'Web and social media integration',
+            'QR codes for direct access and easy sharing',
+            'CTAs optimized to convert visits into leads',
+            'Responsive experience across all devices'
+          ]
+        },
+        drone: {
+          title: 'Drone Services',
+          description: 'High-quality aerial photo and video for real estate, events, content, and land measurements. 100% legal and certified operations.',
+          bullets: [
+            'High-resolution aerial real estate photography',
+            'Corporate videos and social media content',
+            'Coverage for properties, hotels, construction sites, and events',
+            'Land measurements and topographic surveys',
+            'Reels and content optimized for Instagram and TikTok',
+            'Professional editing ready to publish',
+            'A1/A3 certification and active operator registration',
+            'Liability insurance and fully legal operation',
+            'Professional gear: DJI Mini 4 Pro',
+            'Multiple delivery formats (4K, Full HD, web-optimized)'
+          ]
+        }
+      },
+      equipment: {
+        title: 'Professional',
+        highlight: 'Equipment',
+        subtitle: 'Cutting-edge technology and certifications that guarantee outstanding results',
+        devices: [
+          {
+            name: 'Insta360 X5',
+            description: 'Professional 360° camera for immersive virtual tours. High-resolution capture that enables Matterport-grade experiences.'
+          },
+          {
+            name: 'DJI Mini 4 Pro',
+            description: 'Professional drone for high-quality aerial content. Perfect for real estate photography, events, and topographic measurements with precision.'
+          },
+          {
+            name: 'Fuji Film XT50',
+            description: 'Professional photography for products and properties. High-resolution capture for catalogs, listings, and premium commercial content.'
+          }
+        ],
+        certifications: {
+          title: 'Legal and Certified Operation',
+          intro: 'We work with every required certification and permit to operate safely and legally:',
+          bullets: [
+            'Certified A1/A3 pilot',
+            'Active operator registration',
+            'Liability insurance',
+            'Flight permits and controlled areas'
+          ]
+        }
+      },
+      process: {
+        title: 'How',
+        highlight: 'We Work',
+        subtitle: 'Clear processes for virtual tours and drone services',
+        helper: 'Click either button to explore',
+        tabs: {
+          tours: 'Virtual Tours',
+          drone: 'Drone Services'
+        },
+        stepsTours: [
+          { number: '01', title: 'Initial consultation', description: 'We analyze your needs and the space to capture to define the best approach.' },
+          { number: '02', title: '360° capture', description: 'We capture professionally with the Insta360 X5 in every relevant space.' },
+          { number: '03', title: 'Processing', description: 'We edit and process the images to build the immersive experience.' },
+          { number: '04', title: 'Integration', description: 'We publish on Matterport and integrate it into your site with QR codes and CTAs.' },
+          { number: '05', title: 'Delivery', description: 'We deliver everything ready to share and generate leads from the tours.' }
+        ],
+        stepsDrone: [
+          { number: '01', title: 'Planning', description: 'We define locations, schedules, and required permits for the operation.' },
+          { number: '02', title: 'Aerial capture', description: 'We shoot professional aerial photos and video with the DJI Mini 4 Pro.' },
+          { number: '03', title: 'Editing', description: 'We process and edit the material to achieve the best result.' },
+          { number: '04', title: 'Delivery', description: 'We deliver the content in multiple formats ready to use.' }
+        ]
+      },
+      faq: {
+        title: 'Frequently',
+        highlight: 'Asked Questions',
+        subtitle: 'We answer your questions about virtual tours and drone services',
+        helper: 'Click either button to explore',
+        tabs: {
+          tours: 'Virtual Tours',
+          drone: 'Drone Services'
+        }
+      }
     }
-  };
+  } as const;
+
+  const copy = content[language];
 
   return (
     <div className="relative min-h-screen bg-[#FAF9F7] dark:bg-slate-900 transition-colors duration-300">
@@ -154,10 +321,10 @@ const Fhoto = () => {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight">
-                Nuestros <span className="text-accent-cyan">Servicios</span>
+                {copy.services.title.split(' ').slice(0, -1).join(' ')} <span className="text-accent-cyan">{copy.services.title.split(' ').slice(-1)}</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Tecnología profesional y certificaciones que garantizan resultados de calidad
+                {copy.services.subtitle}
               </p>
             </div>
           </ScrollReveal>
@@ -165,27 +332,29 @@ const Fhoto = () => {
           {/* Service Cards - Always Visible */}
           <ScrollReveal direction="up" delay={100}>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-              {Object.entries(services).map(([key, serviceData]) => {
-                const IconComponent = serviceData.icon;
+              {(['tours', 'drone'] as const).map((key) => {
+                const serviceData = copy.services[key];
+                const IconComponent = key === 'tours' ? Video : Camera;
+                const color = key === 'tours' ? 'purple' : 'slate';
                 return (
                   <div 
                     key={key}
                     className="relative bg-gradient-to-br from-white via-white to-slate-50/50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900/50 rounded-3xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-sm overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-slate-300/30 dark:hover:shadow-slate-900/50 hover:-translate-y-3 hover:border-accent-cyan/20 h-full flex flex-col"
                   >
                     {/* Barra superior de color */}
-                    <div className={`h-2 ${serviceData.color === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-600' : 'bg-gradient-to-r from-slate-600 to-slate-700'}`}></div>
+                    <div className={`h-2 ${color === 'purple' ? 'bg-gradient-to-r from-purple-500 to-purple-600' : 'bg-gradient-to-r from-slate-600 to-slate-700'}`}></div>
                     
                     {/* Contenido principal */}
                     <div className="p-6 md:p-8 lg:p-10 flex flex-col flex-1">
                       {/* Header con icono y título */}
                       <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
                         <div className={`flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${
-                      serviceData.color === 'purple' 
+                      color === 'purple' 
                         ? 'bg-purple-50 dark:bg-purple-900/30' 
                         : 'bg-slate-50 dark:bg-slate-800/50'
                         } flex items-center justify-center transition-transform duration-300`}>
                           <IconComponent size={28} className={`sm:w-8 sm:h-8 ${
-                            serviceData.color === 'purple' 
+                            color === 'purple' 
                               ? 'text-purple-600 dark:text-purple-400' 
                               : 'text-slate-700 dark:text-slate-300'
                           }`} />
@@ -209,12 +378,12 @@ const Fhoto = () => {
                             role="listitem"
                           >
                             <div className={`flex-shrink-0 w-6 h-6 rounded-lg ${
-                          serviceData.color === 'purple' 
+                          color === 'purple' 
                             ? 'bg-purple-100 dark:bg-purple-900/40' 
                             : 'bg-slate-100 dark:bg-slate-700/40'
                             } flex items-center justify-center mt-0.5 group-hover/item:scale-110 transition-transform`}>
                               <svg className={`w-3 h-3 ${
-                                serviceData.color === 'purple' 
+                                color === 'purple' 
                                   ? 'text-purple-600 dark:text-purple-400' 
                                   : 'text-slate-700 dark:text-slate-300'
                               }`} fill="currentColor" viewBox="0 0 20 20">
@@ -232,15 +401,15 @@ const Fhoto = () => {
                       <a 
                         href="#contacto" 
                         className={`group/cta relative inline-flex items-center justify-center gap-2 px-8 py-4 w-full rounded-xl font-semibold text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-hidden ${
-                          serviceData.color === 'purple' 
+                          color === 'purple' 
                             ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white focus:ring-purple-500 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40' 
                             : 'bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white focus:ring-slate-500 shadow-lg shadow-slate-500/30 hover:shadow-xl hover:shadow-slate-500/40'
                         }`}
                       >
-                        <span className="relative z-10">Solicitar presupuesto</span>
+                        <span className="relative z-10">{t('fhoto.hero.cta')}</span>
                         <span className="relative z-10 group-hover/cta:translate-x-1 transition-transform">→</span>
                         <div className={`absolute inset-0 ${
-                          serviceData.color === 'purple' 
+                          color === 'purple' 
                             ? 'bg-gradient-to-r from-purple-700 to-purple-800' 
                             : 'bg-gradient-to-r from-slate-800 to-slate-900'
                         } opacity-0 group-hover/cta:opacity-100 transition-opacity`}></div>
@@ -249,7 +418,7 @@ const Fhoto = () => {
 
                     {/* Efecto de brillo sutil en hover */}
                     <div className={`absolute inset-0 ${
-                        serviceData.color === 'purple' 
+                        color === 'purple' 
                           ? 'bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/5' 
                           : 'bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/5'
                     } opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
@@ -393,10 +562,10 @@ const Fhoto = () => {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight">
-                Equipamiento <span className="text-accent-cyan">Profesional</span>
+                {copy.equipment.title} <span className="text-accent-cyan">{copy.equipment.highlight}</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Tecnología de última generación y certificaciones que garantizan resultados excepcionales
+                {copy.equipment.subtitle}
               </p>
             </div>
           </ScrollReveal>
@@ -412,10 +581,10 @@ const Fhoto = () => {
                       <Video className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                     </div>
                     <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
-                      Insta360 X5
+                      {copy.equipment.devices[0].name}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
-                      Cámara 360° profesional para tours virtuales inmersivos. Captura de alta resolución que permite crear experiencias MatterPort de nivel profesional.
+                      {copy.equipment.devices[0].description}
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -430,10 +599,10 @@ const Fhoto = () => {
                       <Camera className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                     </div>
                     <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
-                      DJI Mini 4 Pro
+                      {copy.equipment.devices[1].name}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
-                      Drone profesional para contenido aéreo de alta calidad. Ideal para fotografía inmobiliaria, eventos y mediciones topográficas con precisión milimétrica.
+                      {copy.equipment.devices[1].description}
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -448,10 +617,10 @@ const Fhoto = () => {
                       <Aperture className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                     </div>
                     <h3 className="text-base md:text-lg font-bold font-display mb-1.5 text-primary-dark dark:text-white group-hover:text-accent-cyan transition-colors">
-                      Fuji Film XT50
+                      {copy.equipment.devices[2].name}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">
-                      Fotografía profesional de productos e inmuebles. Captura de alta resolución para catálogos, portales inmobiliarios y contenido comercial de calidad premium.
+                      {copy.equipment.devices[2].description}
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -469,36 +638,20 @@ const Fhoto = () => {
                     </div>
                     <div className="flex-1 flex flex-col">
                       <h3 className="text-base md:text-lg font-bold font-display mb-2 text-primary-dark dark:text-white">
-                        Operación Legal y Certificada
+                      {copy.equipment.certifications.title}
                       </h3>
                       <p className="text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-3 text-xs md:text-sm">
-                        Trabajamos con todas las certificaciones y permisos necesarios para operar de forma legal y segura:
+                      {copy.equipment.certifications.intro}
                       </p>
                       <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                      {copy.equipment.certifications.bullets.map((item, index) => (
+                        <li key={index} className="flex items-start gap-2">
                           <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
                             <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
                           </div>
-                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Certificación A1/A3 para operación de drones</span>
+                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">{item}</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                          </div>
-                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Registro de operador vigente y actualizado</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                          </div>
-                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Seguro de responsabilidad civil para todas las operaciones</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <div className="flex-shrink-0 w-4 h-4 rounded bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mt-0.5">
-                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                          </div>
-                          <span className="text-slate-700 dark:text-slate-300 font-body leading-relaxed text-xs md:text-sm">Cumplimiento total de normativas aeronáuticas</span>
-                        </li>
+                      ))}
                       </ul>
                     </div>
                   </div>
@@ -519,10 +672,10 @@ const Fhoto = () => {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight">
-                Cómo <span className="text-accent-cyan">Trabajamos</span>
+                {copy.process.title} <span className="text-accent-cyan">{copy.process.highlight}</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Procesos claros para tours virtuales y servicios de drone
+                {copy.process.subtitle}
               </p>
             </div>
           </ScrollReveal>
@@ -540,7 +693,7 @@ const Fhoto = () => {
                   }`}
                 >
                   <Video size={22} className={activeProcess === 'tours' ? 'text-white' : ''} />
-                  <span className="text-sm md:text-base">Tours Virtuales</span>
+                  <span className="text-sm md:text-base">{copy.process.tabs.tours}</span>
                   {activeProcess === 'tours' && (
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                   )}
@@ -554,14 +707,14 @@ const Fhoto = () => {
                   }`}
                 >
                   <Camera size={22} className={activeProcess === 'drone' ? 'text-white' : ''} />
-                  <span className="text-sm md:text-base">Servicios de Drone</span>
+                  <span className="text-sm md:text-base">{copy.process.tabs.drone}</span>
                   {activeProcess === 'drone' && (
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                   )}
                 </button>
               </div>
               <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
-                Haz click en alguno de los dos botones
+                {copy.process.helper}
               </p>
             </div>
           </ScrollReveal>
@@ -574,13 +727,7 @@ const Fhoto = () => {
                 <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
                 
                 <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-12">
-                  {[
-                    { number: '01', title: 'Consulta inicial', description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.' },
-                    { number: '02', title: 'Captura 360°', description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.' },
-                    { number: '03', title: 'Procesamiento', description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.' },
-                    { number: '04', title: 'Integración', description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.' },
-                    { number: '05', title: 'Entrega', description: 'Te entregamos todo listo para compartir y generar leads desde los tours.' }
-                  ].map((step, index) => (
+                  {copy.process.stepsTours.map((step, index) => (
                     <div 
                       key={index} 
                       className="relative group"
@@ -620,12 +767,7 @@ const Fhoto = () => {
                 <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
                 
                 <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-12">
-                  {[
-                    { number: '01', title: 'Planificación', description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.' },
-                    { number: '02', title: 'Captura aérea', description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.' },
-                    { number: '03', title: 'Edición', description: 'Procesamos y editamos el material para obtener el mejor resultado.' },
-                    { number: '04', title: 'Entrega', description: 'Te entregamos el contenido en múltiples formatos listo para usar.' }
-                  ].map((step, index) => (
+                  {copy.process.stepsDrone.map((step, index) => (
                     <div 
                       key={index} 
                       className="relative group"
@@ -672,10 +814,10 @@ const Fhoto = () => {
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight">
-                Dudas <span className="text-accent-cyan">Frecuentes</span>
+                {copy.faq.title} <span className="text-accent-cyan">{copy.faq.highlight}</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-body font-light leading-relaxed">
-                Resolvemos tus dudas sobre tours virtuales y servicios de drone
+                {copy.faq.subtitle}
               </p>
             </div>
           </ScrollReveal>
@@ -696,7 +838,7 @@ const Fhoto = () => {
                   }`}
                 >
                   <Video size={22} className={activeFAQ === 'tours' ? 'text-white' : ''} />
-                  <span className="text-sm md:text-base">Tours Virtuales</span>
+                  <span className="text-sm md:text-base">{copy.faq.tabs.tours}</span>
                   {activeFAQ === 'tours' && (
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                   )}
@@ -713,14 +855,14 @@ const Fhoto = () => {
                   }`}
                 >
                   <Camera size={22} className={activeFAQ === 'drone' ? 'text-white' : ''} />
-                  <span className="text-sm md:text-base">Servicios de Drone</span>
+                  <span className="text-sm md:text-base">{copy.faq.tabs.drone}</span>
                   {activeFAQ === 'drone' && (
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                   )}
                 </button>
               </div>
               <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
-                Haz click en alguno de los dos botones
+                {copy.faq.helper}
               </p>
             </div>
           </ScrollReveal>

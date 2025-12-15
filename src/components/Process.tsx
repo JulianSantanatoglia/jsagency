@@ -134,7 +134,7 @@ const Process = () => {
           })}
             </div>
             <p className="text-xs text-slate-400 dark:text-slate-500 font-body italic mt-2">
-              Haz click en alguno de los dos botones
+              Click either button to explore
             </p>
           </div>
         </ScrollReveal>
