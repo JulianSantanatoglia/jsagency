@@ -6,6 +6,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  getTranslation: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -337,8 +338,15 @@ const translations = {
       description: 'Somos un estudio digital en Almería. Combinamos código, creatividad y estrategia para crear proyectos que realmente funcionan. Sin humo, sin promesas vacías. Solo resultados.',
       content: {
         paragraph1: 'Somos una startup creativa en Almería: un equipo joven que transforma negocios en experiencias digitales modernas y efectivas.',
-        paragraph2: 'Creamos tu web a medida, desde cero y sin plantillas, para que se vea profesional, sea segura, rapida, accecible para todos y posicionarse en Google para que tus clientes te encuentren.',
-        paragraph3: 'Y vamos más allá: integramos automatizaciones con IA, tours virtuales 360 y contenido con dron para mostrar tu negocio con otra perspectiva, generar confianza desde el primer vistazo y hacer que la gente decida más rápido.',
+        paragraph2: 'Programamos tu web a medida, desde cero y sin plantillas, para que sea única, segura, rapida, accecible para todos y se posicione en Google para que tus clientes te encuentren.',
+        paragraph3: {
+          bullets: [
+            'Integramos automatizaciones con IA lo que agiliza conversiones en tu negocio.',
+            'Desarrollamos Tours Virtuales 360 para la experiencia digital inmersiva de tus clientes.',
+            'Creamos contenido de alta calidad con dron para mostrar locales, oficinas y paisajes.'
+          ],
+          conclusion: 'Mostramos tu marca desde otra perspectiva.'
+        },
         teamTitle: 'Nuestro equipo',
         cta: '¿Querés ser el próximo cliente satisfecho?',
         ctaButton: 'Hablemos de tu proyecto →'
@@ -938,7 +946,14 @@ const translations = {
       content: {
         paragraph1: 'We are a creative startup in Almería: a young team that transforms businesses into modern and effective digital experiences.',
         paragraph2: 'We create your custom website, from scratch and without templates, so it looks professional, loads fast and is ready to appear better on Google and convert visits into clients.',
-        paragraph3: 'And we go further: we integrate AI automations, 360 virtual tours and drone content to show your business from a different perspective, generate trust from the first glance and make people decide faster.',
+        paragraph3: {
+          bullets: [
+            'We integrate AI automations that speed up conversions in your business.',
+            'We develop 360 Virtual Tours for your clients\' immersive digital experience.',
+            'We create high-quality drone content to showcase locations, offices, and landscapes.'
+          ],
+          conclusion: 'We show your brand from a different perspective.'
+        },
         teamTitle: 'Our team',
         cta: 'Want to be the next satisfied client?',
         ctaButton: 'Let\'s talk about your project →'
@@ -1261,8 +1276,24 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return typeof value === 'string' ? value : key;
   };
 
+  const getTranslation = (key: string): any => {
+    const keys = key.split('.');
+    let value: any = translations[language];
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        console.warn(`Translation key "${key}" not found for language "${language}"`);
+        return null;
+      }
+    }
+    
+    return value;
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, getTranslation }}>
       {children}
     </LanguageContext.Provider>
   );

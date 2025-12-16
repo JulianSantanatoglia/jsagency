@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, Building2, MessageSquare, DollarSign, Calendar, CheckSquare, AlertCircle } from 'lucide-react';
+import { useReCaptcha } from '../hooks/useReCaptcha';
 
 interface ContactFormData {
   name: string;
@@ -22,6 +23,7 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServices = false }: ContactFormProps) => {
+  const { executeRecaptcha } = useReCaptcha();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -97,6 +99,16 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
     setErrorMessage('');
 
     try {
+      // Ejecutar reCAPTCHA
+      const recaptchaToken = await executeRecaptcha('contact_form');
+      
+      if (!recaptchaToken) {
+        setSubmitStatus('error');
+        setErrorMessage('Error de verificación. Por favor, recarga la página e inténtalo de nuevo.');
+        setIsSubmitting(false);
+        return;
+      }
+
       const response = await fetch('/api/contact/submit', {
         method: 'POST',
         headers: {
@@ -104,7 +116,8 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
         },
         body: JSON.stringify({
           ...formData,
-          consent: formData.consent.toString()
+          consent: formData.consent.toString(),
+          recaptchaToken
         }),
       });
 

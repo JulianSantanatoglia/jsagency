@@ -4,9 +4,15 @@ import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, getTranslation } = useLanguage();
   const location = useLocation();
   const isHomePage = location.pathname === '/' || location.pathname === '';
+  
+  // Obtener el contenido de paragraph3 que incluye bullets y conclusion
+  const paragraph3Content = getTranslation('about.content.paragraph3') || {
+    bullets: [],
+    conclusion: ''
+  };
 
   return (
     <section id="nosotros" className="relative py-24 md:py-32 px-4 md:px-8">
@@ -51,9 +57,21 @@ const About = () => {
             <p>
               {t('about.content.paragraph2')}
             </p>
-            <p className="text-accent-cyan font-semibold text-xl mt-2">
-              {t('about.content.paragraph3')}
-            </p>
+            <div className="mt-6">
+              <ul className="space-y-3">
+                {paragraph3Content.bullets.map((bullet, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-accent-cyan font-bold text-xl mt-1">●</span>
+                    <span className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {bullet}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-accent-cyan font-semibold text-xl mt-4">
+                {paragraph3Content.conclusion}
+              </p>
+            </div>
           </div>
         </ScrollReveal>
         

@@ -3,9 +3,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Instagram, Mail, Phone, MessageSquare, User } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
+import { useReCaptcha } from '../hooks/useReCaptcha';
 
 const Contact = () => {
   const { t } = useLanguage();
+  const { executeRecaptcha } = useReCaptcha();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,11 +28,34 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
+      // Ejecutar reCAPTCHA
+      const recaptchaToken = await executeRecaptcha('contact_form');
+      
+      if (!recaptchaToken) {
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+        return;
+      }
+
       // Aquí iría la lógica de envío del formulario
-      // Por ahora simulamos un envío exitoso
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      // Incluir el token de reCAPTCHA en el payload
+      const response = await fetch('/api/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
       setSubmitStatus('error');
     } finally {
