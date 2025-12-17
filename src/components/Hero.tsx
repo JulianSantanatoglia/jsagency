@@ -96,7 +96,7 @@ const Hero = () => {
                 }}
               >
                 <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium font-display text-white tracking-wider drop-shadow-lg">
-                  {item.text} <span className="text-accent-cyan font-bold">{item.highlight}</span>
+                  {item.text} {item.highlight.includes(' ') && <br className="md:hidden" />}<span className={`text-accent-cyan font-bold ${item.highlight.includes(' ') ? 'block md:inline' : ''}`}>{item.highlight}</span>
                 </h2>
               </div>
             ))}

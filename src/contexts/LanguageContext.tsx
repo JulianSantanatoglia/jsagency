@@ -640,8 +640,8 @@ const translations = {
       cta: 'Let\'s talk about your project',
       helloButton: 'Hello! 👋',
       animatedTexts: {
-        text1: 'WE BOOST YOUR',
-        highlight1: 'BRAND',
+        text1: 'WE BOOST',
+        highlight1: 'YOUR BRAND',
         text2: 'WE DIGITIZE YOUR',
         highlight2: 'BUSINESS',
         text3: 'WE AUTOMATE YOUR',
