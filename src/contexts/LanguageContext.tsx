@@ -197,6 +197,25 @@ const translations = {
       }
     },
     
+    // Success Cases Section
+    successCases: {
+      title: 'Casos de',
+      titleHighlight: 'éxito',
+      subtitle: 'Algunos de los proyectos que hemos desarrollado y que están funcionando en producción.',
+      viewDemo: 'Ver demo',
+      cases: {
+        mushroom: {
+          description: 'Alquiler de equipos de sonido y cabinas para dj.',
+        },
+        joyeriadiaz: {
+          description: 'E-commerce',
+        },
+        micaeladiaz: {
+          description: 'Portfolio de fotografía profesional',
+        },
+      },
+    },
+    
     // Testimonials Section
     testimonials: {
       title: 'Lo que dicen',
@@ -802,6 +821,25 @@ const translations = {
           description: '360° virtual tour for real estate with web integration and immersive experience for potential buyers.'
         }
       }
+    },
+    
+    // Success Cases Section
+    successCases: {
+      title: 'Success',
+      titleHighlight: 'cases',
+      subtitle: 'Some of the projects we\'ve developed that are running in production.',
+      viewDemo: 'View demo',
+      cases: {
+        mushroom: {
+          description: 'Sound equipment and DJ booth rental.',
+        },
+        joyeriadiaz: {
+          description: 'E-commerce',
+        },
+        micaeladiaz: {
+          description: 'Professional photography portfolio',
+        },
+      },
     },
     
     // Testimonials Section
