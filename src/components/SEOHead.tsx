@@ -85,10 +85,6 @@ const SEOHead = ({
     canonical.setAttribute('href', currentUrl);
 
     // Alternate language links (hreflang)
-    const alternateEs = document.querySelector('link[rel="alternate"][hreflang="es"]') as HTMLLinkElement;
-    const alternateEn = document.querySelector('link[rel="alternate"][hreflang="en"]') as HTMLLinkElement;
-    const alternateXDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]') as HTMLLinkElement;
-
     const createAlternate = (lang: string, href: string) => {
       let link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`) as HTMLLinkElement;
       if (!link) {

@@ -59,7 +59,7 @@ const About = () => {
             </p>
             <div className="mt-6">
               <ul className="space-y-3">
-                {paragraph3Content.bullets.map((bullet, index) => (
+                {paragraph3Content.bullets.map((bullet: string, index: number) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-accent-cyan font-bold text-xl mt-1">●</span>
                     <span className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
