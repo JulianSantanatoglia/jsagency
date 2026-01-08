@@ -12,12 +12,13 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
+    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -52,7 +53,7 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
@@ -219,6 +220,34 @@ const Contact = () => {
                       className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body"
                       placeholder={t('contact.formPhonePlaceholder')}
                     />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-white/90 font-body">
+                    Asunto *
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body appearance-none cursor-pointer pr-10"
+                    >
+                      <option value="" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Selecciona un asunto</option>
+                      <option value="Páginas web" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Páginas web</option>
+                      <option value="Automatizaciones IA" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Automatizaciones IA</option>
+                      <option value="Tours Virtuales 360°" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Tours Virtuales 360°</option>
+                      <option value="Servicios de Drone" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Servicios de Drone</option>
+                      <option value="Otro asunto" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Otro asunto</option>
+                    </select>
+                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                      <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
 

@@ -59,17 +59,12 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
 
   const allServiceOptions = [
     { value: 'web-development', label: 'Creación de Páginas Web' },
-    { value: 'virtual-tours', label: 'Tours virtuales' },
-    { value: 'automation', label: 'Automatización' },
+    { value: 'automation', label: 'Automatizaciones IA' },
+    { value: 'virtual-tours', label: 'Tours Virtuales' },
     { value: 'aerial-content', label: 'Servicios de Drone' }
   ];
 
-  const homeServiceOptions = [
-    { value: 'web-development', label: 'Creación de Páginas Web' },
-    { value: 'automation', label: 'Automatización' }
-  ];
-
-  const serviceOptions = showAllServices ? allServiceOptions : homeServiceOptions;
+  const serviceOptions = allServiceOptions;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -259,49 +254,6 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
           </div>
         </div>
 
-        {/* Subject */}
-        <div>
-          <label htmlFor="subject" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-            Asunto *
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleInputChange}
-            required
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
-              darkMode 
-                ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
-                : 'border-slate-300'
-            }`}
-            placeholder="¿En qué podemos ayudarte?"
-          />
-        </div>
-
-        {/* Services */}
-        <div>
-          <label className={`block text-sm font-semibold mb-3 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-            Servicios de interés
-          </label>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {serviceOptions.map((service) => (
-              <label key={service.value} className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value={service.value}
-                  checked={formData.services.includes(service.value)}
-                  onChange={handleInputChange}
-                  className="w-4 h-4 text-accent-cyan bg-gray-100 border-gray-300 rounded focus:ring-accent-cyan focus:ring-2"
-                />
-                <span className={`text-sm font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>{service.label}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
         {/* Budget and Timeline */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
@@ -357,6 +309,32 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
               </select>
             </div>
           </div>
+        </div>
+
+        {/* Asunto/Servicio */}
+        <div>
+          <label htmlFor="subject" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+            Asunto *
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleInputChange}
+            required
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body ${
+              darkMode 
+                ? 'bg-slate-900/50 border-slate-600 text-white' 
+                : 'border-slate-300'
+            }`}
+          >
+            <option value="">Selecciona un asunto</option>
+            <option value="Páginas web">Páginas web</option>
+            <option value="Automatizaciones IA">Automatizaciones IA</option>
+            <option value="Tours Virtuales 360°">Tours Virtuales 360°</option>
+            <option value="Servicios de Drone">Servicios de Drone</option>
+            <option value="Otro asunto">Otro asunto</option>
+          </select>
         </div>
 
         {/* Message */}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useLocation, Link } from 'react-router-dom';
-import { Monitor, Zap } from 'lucide-react';
+import { Monitor, Zap, Video, Camera } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
@@ -85,6 +85,75 @@ const Process = () => {
           description: t('process.automation.steps.optimization.description')
         }
       ]
+    },
+    {
+      id: 'tours',
+      title: t('faq.design.title'),
+      icon: Video,
+      color: 'purple',
+      gradient: 'from-purple-500 to-purple-600',
+      bgColor: 'bg-purple-50',
+      borderColor: 'border-purple-200',
+      textColor: 'text-purple-600',
+      steps: [
+        {
+          number: '01',
+          title: 'Consulta inicial',
+          description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.'
+        },
+        {
+          number: '02',
+          title: 'Captura 360°',
+          description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.'
+        },
+        {
+          number: '03',
+          title: 'Procesamiento',
+          description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.'
+        },
+        {
+          number: '04',
+          title: 'Integración',
+          description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.'
+        },
+        {
+          number: '05',
+          title: 'Entrega',
+          description: 'Te entregamos todo listo para compartir y generar leads desde los tours.'
+        }
+      ]
+    },
+    {
+      id: 'drone',
+      title: t('faq.aerial.title'),
+      icon: Camera,
+      color: 'slate',
+      gradient: 'from-slate-600 to-slate-700',
+      bgColor: 'bg-slate-50',
+      borderColor: 'border-slate-200',
+      textColor: 'text-slate-600',
+      steps: [
+        {
+          number: '01',
+          title: 'Planificación',
+          description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.'
+        },
+        {
+          number: '02',
+          title: 'Captura aérea',
+          description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.'
+        },
+        {
+          number: '03',
+          title: 'Edición',
+          description: 'Procesamos y editamos el material para obtener el mejor resultado.'
+        },
+        {
+          number: '04',
+          title: 'Entrega',
+          description: 'Te entregamos el contenido en múltiples formatos listo para usar.'
+        }
+      ]
     }
   ];
 
@@ -108,8 +177,8 @@ const Process = () => {
 
         {/* Process Tabs - Diseño moderno */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 justify-center w-full">
             {processes.map((process) => {
             const isActive = activeProcess === process.id;
             const IconComponent = process.icon;
@@ -118,14 +187,14 @@ const Process = () => {
               <button
                 key={process.id}
                 onClick={() => setActiveProcess(process.id)}
-                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                className={`group relative flex flex-col items-center gap-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold overflow-hidden ${
                   isActive
                     ? `bg-gradient-to-r ${process.gradient} text-white shadow-xl shadow-${process.color}-500/30 scale-105`
                     : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
                 }`}
               >
-                <IconComponent size={22} className={isActive ? 'text-white' : ''} />
-                <span className="text-sm md:text-base">{process.title}</span>
+                <IconComponent size={20} className={isActive ? 'text-white' : ''} />
+                <span className="text-xs md:text-sm text-center leading-tight">{process.title}</span>
                 {isActive && (
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                 )}
@@ -144,7 +213,15 @@ const Process = () => {
           <ScrollReveal direction="up" delay={200}>
           <div className="relative max-w-5xl mx-auto">
             {/* Línea vertical decorativa */}
-            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent-cyan/30 via-slate-300/20 dark:via-slate-600/20 to-transparent"></div>
+            <div className={`hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b ${
+              activeProcessData.color === 'blue' 
+                ? 'from-blue-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent'
+                : activeProcessData.color === 'emerald'
+                ? 'from-emerald-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent'
+                : activeProcessData.color === 'purple'
+                ? 'from-purple-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent'
+                : 'from-slate-400/30 via-slate-300/20 dark:via-slate-600/20 to-transparent'
+            }`}></div>
             
             <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-12">
               {activeProcessData.steps.map((step, index) => (
@@ -154,7 +231,15 @@ const Process = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Punto en la línea del timeline */}
-                  <div className="hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-accent-cyan to-cyan-500 shadow-lg shadow-cyan-500/50 z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                  <div className={`hidden md:block absolute left-6 top-8 w-4 h-4 rounded-full bg-gradient-to-br ${
+                    activeProcessData.color === 'blue' 
+                      ? 'from-blue-400 to-blue-500 shadow-lg shadow-blue-500/50'
+                      : activeProcessData.color === 'emerald'
+                      ? 'from-emerald-400 to-emerald-500 shadow-lg shadow-emerald-500/50'
+                      : activeProcessData.color === 'purple'
+                      ? 'from-purple-400 to-purple-500 shadow-lg shadow-purple-500/50'
+                      : 'from-slate-500 to-slate-600 shadow-lg shadow-slate-500/50'
+                  } z-10 group-hover:scale-150 transition-transform duration-300`}></div>
                   
                   <div className={`ml-0 md:ml-16 bg-gradient-to-br from-white/90 via-white/70 to-white/50 dark:from-slate-800/90 dark:via-slate-800/70 dark:to-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/30 dark:shadow-slate-900/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]`}>
                     <div className="flex items-start gap-6">

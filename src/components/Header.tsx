@@ -60,7 +60,9 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-baseline gap-2 font-display">
           <Link to="/" className="focus:outline-none rounded-lg">
-            <span className="text-2xl font-bold text-slate-900 dark:text-white">.js</span>
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">
+              <span className="text-accent-cyan">.</span>js
+            </span>
             <span className="text-2xl font-semibold text-accent-cyan">agency</span>
           </Link>
         </div>
@@ -196,59 +198,6 @@ const Header = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
           )}
-          
-          {/* Projects Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setIsProjectsOpen(!isProjectsOpen);
-                } else if (e.key === 'Escape') {
-                  setIsProjectsOpen(false);
-                }
-              }}
-              className="relative text-sm font-semibold text-accent-cyan bg-accent-cyan/10 hover:bg-accent-cyan/20 transition-all focus:outline-none rounded-lg px-3 py-1.5 group flex items-center gap-1 border border-accent-cyan/20 hover:border-accent-cyan/40"
-              aria-expanded={isProjectsOpen}
-              aria-haspopup="true"
-              aria-label={t('nav.projects')}
-            >
-              {t('nav.projects')}
-              <ChevronDown 
-                size={16} 
-                className={`transition-transform duration-200 ${isProjectsOpen ? 'rotate-180' : ''}`}
-                aria-hidden="true"
-              />
-            </button>
-            
-            {isProjectsOpen && (
-              <div 
-                className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 z-50"
-                role="menu"
-                aria-orientation="vertical"
-              >
-                <a
-                  href="https://bar-de-tapas.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 hover:text-accent-cyan transition-colors focus:outline-none focus:bg-gray-50 dark:focus:bg-slate-700 focus:text-accent-cyan"
-                  role="menuitem"
-                  onClick={() => setIsProjectsOpen(false)}
-                >
-                  Divly
-                </a>
-                <Link
-                  to="/proyectos/fhoto"
-                  className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 hover:text-accent-cyan transition-colors focus:outline-none focus:bg-gray-50 dark:focus:bg-slate-700 focus:text-accent-cyan"
-                  role="menuitem"
-                  onClick={() => setIsProjectsOpen(false)}
-                >
-                  Fhoto
-                </Link>
-              </div>
-            )}
-          </div>
 
           <div className="flex items-center gap-3">
             <DarkModeToggle />
@@ -449,63 +398,6 @@ const Header = () => {
                 {t('nav.home')}
               </Link>
             )}
-            
-            {/* Mobile Projects Dropdown */}
-            <div 
-              ref={mobileDropdownRef}
-              className={`transform relative z-10 ${
-                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-              }`}
-              style={{
-                transitionDelay: isMenuOpen ? '400ms' : '0ms'
-              }}
-            >
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsProjectsOpen(!isProjectsOpen);
-                }}
-                className="text-base font-semibold text-accent-cyan bg-accent-cyan/10 dark:bg-accent-cyan/20 hover:bg-accent-cyan/20 dark:hover:bg-accent-cyan/30 transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 w-full text-left flex items-center justify-between border border-accent-cyan/20 dark:border-accent-cyan/30 relative z-10 pointer-events-auto"
-                aria-expanded={isProjectsOpen}
-                type="button"
-              >
-                {t('nav.projects')}
-                <ChevronDown 
-                  size={16} 
-                  className={`transition-transform duration-200 ${isProjectsOpen ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {isProjectsOpen && (
-                <div className="pl-4 mt-2 space-y-2 relative z-20">
-                  <a
-                    href="https://bar-de-tapas.netlify.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-2 px-2 cursor-pointer rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 relative z-20 touch-manipulation"
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsProjectsOpen(false);
-                      closeMenu();
-                    }}
-                  >
-                    Divly
-                  </a>
-                  <Link
-                    to="/proyectos/fhoto"
-                    className="block text-sm text-slate-600 dark:text-slate-300 hover:text-accent-cyan transition-colors py-2 px-2 cursor-pointer text-left w-full rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 relative z-20 touch-manipulation"
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsProjectsOpen(false);
-                      closeMenu();
-                    }}
-                  >
-                    Fhoto
-                  </Link>
-                </div>
-              )}
-            </div>
 
           {isHomePage ? (
             <a 

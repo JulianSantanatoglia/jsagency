@@ -8,9 +8,10 @@ const Hero = () => {
   const [visibleText, setVisibleText] = useState(0);
 
   const animatedTexts = [
-    { text: t('hero.animatedTexts.text1'), highlight: t('hero.animatedTexts.highlight1') },
-    { text: t('hero.animatedTexts.text2'), highlight: t('hero.animatedTexts.highlight2') },
-    { text: t('hero.animatedTexts.text3'), highlight: t('hero.animatedTexts.highlight3') }
+    { text: 'DIGITALIZAMOS TU', highlight: 'EMPRESA' },
+    { text: 'AUTOMATIZAMOS TUS', highlight: 'PROCESOS' },
+    { text: 'CREAMOS RECORRIDOS', highlight: 'VIRTUALES 360' },
+    { text: 'SERVICIOS DE', highlight: 'DRON' }
   ];
 
   useEffect(() => {
@@ -82,7 +83,7 @@ const Hero = () => {
         {/* Contenido centrado */}
         <div className="relative z-20 flex flex-col items-center justify-center min-h-screen w-full">
           {/* Textos animados */}
-          <div className="mb-12 md:mb-16 h-20 md:h-24 flex items-center justify-center">
+          <div className="mb-12 md:mb-16 h-20 md:h-24 lg:h-28 flex items-center justify-center">
             {animatedTexts.map((item, index) => (
               <div
                 key={index}

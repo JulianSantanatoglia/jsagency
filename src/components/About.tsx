@@ -15,7 +15,7 @@ const About = () => {
   };
 
   return (
-    <section id="nosotros" className="relative py-24 md:py-32 px-4 md:px-8">
+    <section id="nosotros" className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8">
       <PatternBackground opacity={0.04} />
       
       {/* Ondulación superior para transición suave desde Hero */}
@@ -77,7 +77,7 @@ const About = () => {
         
         {/* CTA Section */}
         <ScrollReveal direction="up" delay={200}>
-          <div className="text-center mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
+          <div className="text-center mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
             {isHomePage ? (
               <a 
                 href="#contacto" 

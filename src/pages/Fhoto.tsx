@@ -373,7 +373,7 @@ const Fhoto = () => {
                           )}
                           {key === 'drone' && (
                             <p className={`text-lg sm:text-xl font-bold ${color === 'purple' ? 'text-purple-600 dark:text-purple-400' : 'text-slate-600 dark:text-slate-300'}`}>
-                              {language === 'es' ? 'Desde 120€ la hora' : 'From €120/hour'}
+                              {language === 'es' ? 'Desde 120€/hora' : 'From €120/hour'}
                             </p>
                           )}
                         </div>

@@ -16,7 +16,9 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <div className="flex items-baseline gap-2 font-display">
               <a href="#home" className="focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded-lg">
-                <span className="text-3xl font-extrabold text-white">.js</span>
+                <span className="text-3xl font-extrabold text-white">
+                  <span className="text-accent-cyan">.</span>js
+                </span>
                 <span className="text-3xl font-semibold text-accent-cyan">agency</span>
               </a>
             </div>
@@ -101,16 +103,6 @@ const Footer = () => {
                 {t('footer.projects')}
               </h4>
               <ul className="flex flex-col gap-3" role="list">
-                <li role="listitem">
-                  <a 
-                    href="https://bar-de-tapas.netlify.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
-                  >
-                    Divly
-                  </a>
-                </li>
                 <li role="listitem">
                   <Link 
                     to="/proyectos/fhoto"

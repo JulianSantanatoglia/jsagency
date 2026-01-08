@@ -33,6 +33,13 @@ const SuccessCases = () => {
       demoUrl: '#',
       name: 'Micaela Díaz',
       descriptionKey: 'micaeladiaz'
+    },
+    {
+      id: 'asantanatoglia',
+      image: '/images/casosdeexito/asantanatoglia.png',
+      demoUrl: '#',
+      name: 'Arq. A. E. Santanatoglia',
+      descriptionKey: 'asantanatoglia'
     }
   ];
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Globe, Bot } from 'lucide-react';
+import { Globe, Bot, Video, Camera } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
 
@@ -90,6 +90,62 @@ const FAQ = () => {
           answer: t('faq.ai.questions.3.answer')
         }
       ]
+    },
+    {
+      id: 'tours',
+      title: t('faq.design.title'),
+      icon: Video,
+      color: 'purple',
+      gradient: 'from-purple-500 to-purple-600',
+      bgColor: 'bg-purple-50',
+      borderColor: 'border-purple-200',
+      textColor: 'text-purple-600',
+      questions: [
+        {
+          question: t('faq.design.questions.0.question'),
+          answer: t('faq.design.questions.0.answer')
+        },
+        {
+          question: t('faq.design.questions.1.question'),
+          answer: t('faq.design.questions.1.answer')
+        },
+        {
+          question: t('faq.design.questions.2.question'),
+          answer: t('faq.design.questions.2.answer')
+        },
+        {
+          question: t('faq.design.questions.3.question'),
+          answer: t('faq.design.questions.3.answer')
+        }
+      ]
+    },
+    {
+      id: 'drone',
+      title: t('faq.aerial.title'),
+      icon: Camera,
+      color: 'slate',
+      gradient: 'from-slate-600 to-slate-700',
+      bgColor: 'bg-slate-50',
+      borderColor: 'border-slate-200',
+      textColor: 'text-slate-600',
+      questions: [
+        {
+          question: t('faq.aerial.questions.0.question'),
+          answer: t('faq.aerial.questions.0.answer')
+        },
+        {
+          question: t('faq.aerial.questions.1.question'),
+          answer: t('faq.aerial.questions.1.answer')
+        },
+        {
+          question: t('faq.aerial.questions.2.question'),
+          answer: t('faq.aerial.questions.2.answer')
+        },
+        {
+          question: t('faq.aerial.questions.3.question'),
+          answer: t('faq.aerial.questions.3.answer')
+        }
+      ]
     }
   ];
 
@@ -115,8 +171,8 @@ const FAQ = () => {
 
         {/* FAQ Tabs - Diseño moderno */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
+          <div className="flex flex-col items-center gap-3 mb-12 md:mb-16 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 justify-center w-full">
             {faqCategories.map((category) => {
             const isActive = activeTab === category.id;
             const IconComponent = category.icon;
@@ -128,14 +184,14 @@ const FAQ = () => {
                   setActiveTab(category.id);
                   setOpenItems([]);
                 }}
-                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 font-semibold overflow-hidden ${
+                className={`group relative flex flex-col items-center gap-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold overflow-hidden ${
                   isActive
                     ? `bg-gradient-to-r ${category.gradient} text-white shadow-xl shadow-${category.color}-500/30 scale-105`
                     : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border-2 border-slate-200/60 dark:border-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:border-accent-cyan/40 hover:scale-105'
                 }`}
               >
-                <IconComponent size={22} className={isActive ? 'text-white' : ''} />
-                <span className="text-sm md:text-base">{category.title}</span>
+                <IconComponent size={20} className={isActive ? 'text-white' : ''} />
+                <span className="text-xs md:text-sm text-center leading-tight">{category.title}</span>
                 {isActive && (
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
                 )}

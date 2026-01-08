@@ -505,4 +505,26 @@
       background-position: 0% 50%;
     }
   }
+
+  /* Estilos para select en formularios de contacto */
+  select {
+    color: white !important;
+  }
+
+  select option {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    padding: 0.5rem;
+  }
+
+  select:focus option:checked,
+  select option:checked {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+  }
+
+  /* Para el dropdown del select */
+  select:focus {
+    color: white !important;
+  }
 }
