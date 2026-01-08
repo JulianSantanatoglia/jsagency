@@ -363,9 +363,19 @@ const Fhoto = () => {
                           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 transition-colors">
                             {serviceData.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed">
+                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-2">
                             {serviceData.description}
                           </p>
+                          {key === 'tours' && (
+                            <p className={`text-lg sm:text-xl font-bold ${color === 'purple' ? 'text-purple-600 dark:text-purple-400' : 'text-slate-600 dark:text-slate-300'}`}>
+                              {language === 'es' ? 'Desde 100€' : 'From €100'}
+                            </p>
+                          )}
+                          {key === 'drone' && (
+                            <p className={`text-lg sm:text-xl font-bold ${color === 'purple' ? 'text-purple-600 dark:text-purple-400' : 'text-slate-600 dark:text-slate-300'}`}>
+                              {language === 'es' ? 'Desde 120€ la hora' : 'From €120/hour'}
+                            </p>
+                          )}
                         </div>
                       </div>
 

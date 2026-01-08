@@ -138,7 +138,8 @@ const Services = () => {
       cta: copy.webdev.cta,
       ctaLink: '#contacto',
       featured: true,
-      color: 'blue'
+      color: 'blue',
+      price: language === 'es' ? 'Desde 50€ al mes' : 'From €50/month'
     },
     {
       id: 'ai',
@@ -150,7 +151,8 @@ const Services = () => {
       cta: copy.ai.cta,
       ctaLink: '#contacto',
       featured: true,
-      color: 'emerald'
+      color: 'emerald',
+      price: language === 'es' ? 'Desde 200€' : 'From €200'
     },
     {
       id: '360',
@@ -162,7 +164,8 @@ const Services = () => {
       cta: copy.tours.cta,
       ctaLink: '/proyectos/fhoto',
       featured: false,
-      color: 'purple'
+      color: 'purple',
+      price: language === 'es' ? 'Desde 100€' : 'From €100'
     },
     {
       id: 'drone',
@@ -174,7 +177,8 @@ const Services = () => {
       cta: copy.drone.cta,
       ctaLink: '/proyectos/fhoto',
       featured: false,
-      color: 'orange'
+      color: 'orange',
+      price: language === 'es' ? 'Desde 120€ la hora' : 'From €120/hour'
     }
   ];
 
@@ -228,9 +232,14 @@ const Services = () => {
                           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-display text-primary-dark dark:text-white mb-2 group-hover:text-accent-cyan transition-colors">
                             {service.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed">
+                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-2">
                             {service.description}
                           </p>
+                          {service.price && (
+                            <p className={`text-lg sm:text-xl font-bold ${service.color === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                              {service.price}
+                            </p>
+                          )}
                         </div>
                       </div>
 
