@@ -1,15 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const mobileDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t } = useLanguage();
 
@@ -21,33 +18,8 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  // Close dropdown when clicking outside (desktop only)
+  // Close menu on route change
   useEffect(() => {
-    if (!isProjectsOpen) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
-      
-      // Only handle desktop dropdown - mobile is handled by link clicks and route changes
-      if (dropdownRef.current && !dropdownRef.current.contains(target)) {
-        setIsProjectsOpen(false);
-      }
-    };
-
-    // Use a small delay to allow onClick handlers to execute first
-    const timeoutId = setTimeout(() => {
-      document.addEventListener('click', handleClickOutside);
-    }, 10);
-    
-    return () => {
-      clearTimeout(timeoutId);
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isProjectsOpen]);
-
-  // Close dropdown on route change
-  useEffect(() => {
-    setIsProjectsOpen(false);
     setIsMenuOpen(false);
   }, [location.pathname]);
 

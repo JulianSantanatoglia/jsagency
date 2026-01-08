@@ -19,10 +19,9 @@ interface ContactFormProps {
   onSuccess?: () => void;
   className?: string;
   darkMode?: boolean;
-  showAllServices?: boolean;
 }
 
-const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServices = false }: ContactFormProps) => {
+const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFormProps) => {
   const { executeRecaptcha } = useReCaptcha();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -57,14 +56,6 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false, showAllServi
     { value: 'flexible', label: 'Flexible' }
   ];
 
-  const allServiceOptions = [
-    { value: 'web-development', label: 'Creación de Páginas Web' },
-    { value: 'automation', label: 'Automatizaciones IA' },
-    { value: 'virtual-tours', label: 'Tours Virtuales' },
-    { value: 'aerial-content', label: 'Servicios de Drone' }
-  ];
-
-  const serviceOptions = allServiceOptions;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
