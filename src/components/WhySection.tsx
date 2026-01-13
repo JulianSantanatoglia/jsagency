@@ -12,7 +12,7 @@ const WhySection = () => {
       title: t('why.webdev.title'),
       content: t('why.webdev.content'),
       color: 'blue',
-      image: '/images/proyectos/mushroommdp.jpg',
+      image: '/images/why/webdev.jpg',
       stat: t('why.webdev.stat'),
       statLabel: t('why.webdev.statLabel')
     },
@@ -21,7 +21,7 @@ const WhySection = () => {
       title: t('why.ai.title'),
       content: t('why.ai.content'),
       color: 'emerald',
-      image: '/images/proyectos/automatizacion.jpg',
+      image: '/images/why/automatizacion.jpg',
       stat: t('why.ai.stat'),
       statLabel: t('why.ai.statLabel')
     },
@@ -30,7 +30,7 @@ const WhySection = () => {
       title: t('why.tours.title'),
       content: t('why.tours.content'),
       color: 'purple',
-      image: '/images/proyectos/360.jpg',
+      image: '/images/why/visitavirtual.jpg',
       stat: t('why.tours.stat'),
       statLabel: t('why.tours.statLabel')
     },
@@ -39,7 +39,7 @@ const WhySection = () => {
       title: t('why.drone.title'),
       content: t('why.drone.content'),
       color: 'slate',
-      image: '/images/proyectos/inmobiliaria.jpg',
+      image: '/images/why/drone.jpg',
       stat: t('why.drone.stat'),
       statLabel: t('why.drone.statLabel')
     }
@@ -70,11 +70,11 @@ const WhySection = () => {
                 className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
               >
                 {/* Imagen más pequeña */}
-                <div className="relative aspect-[3/2] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <OptimizedImage
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Overlay con gradiente sutil */}
                   <div className={`absolute inset-0 ${
