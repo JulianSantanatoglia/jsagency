@@ -101,6 +101,8 @@ const translations = {
     
     // Why Section
     why: {
+      title: '¿Por qué necesitas',
+      titleHighlight: 'nuestros servicios?',
       webdev: {
         title: '¿Por qué necesitas tener una página web?',
         content: 'En un mundo donde el 97% de los consumidores buscan productos y servicios online, no tener una página web profesional es perder oportunidades de negocio. Tu competencia ya está ahí, y cada día que pasa sin presencia digital es un día de ventas perdidas. Una web bien diseñada no solo te da credibilidad, sino que funciona 24/7 como tu mejor vendedor, generando leads incluso mientras duermes.',
@@ -887,6 +889,8 @@ const translations = {
     
     // Why Section
     why: {
+      title: 'Why do you need these services?',
+      titleHighlight: 'services',
       webdev: {
         title: 'Why do you need a website?',
         content: 'In a world where 97% of consumers search for products and services online, not having a professional website is losing business opportunities. Your competition is already there, and every day without a digital presence is a day of lost sales. A well-designed website not only gives you credibility, but works 24/7 as your best salesperson, generating leads even while you sleep.',

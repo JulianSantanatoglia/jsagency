@@ -47,18 +47,27 @@ const WhySection = () => {
 
   return (
     <section 
-      className="relative py-16 md:py-20 px-4 md:px-8 overflow-hidden"
+      className="relative pt-8 md:pt-12 pb-16 md:pb-20 px-4 md:px-8 overflow-hidden"
     >
       <PatternBackground opacity={0.02} />
       
       <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Header con título */}
+        <ScrollReveal direction="up" delay={0}>
+          <header className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-primary-dark dark:text-white tracking-tight">
+              {t('why.title').replace(t('why.titleHighlight'), '').trim()} <span className="text-accent-cyan">{t('why.titleHighlight')}</span>
+            </h2>
+          </header>
+        </ScrollReveal>
+
         {/* Blog-style layout - 4 sections in a grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {whyContent.map((item, index) => (
             <ScrollReveal key={item.id} direction="up" delay={index * 100}>
               <article 
                 id={`why-${item.id}`}
-                className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
               >
                 {/* Imagen más pequeña */}
                 <div className="relative aspect-[3/2] overflow-hidden">
@@ -106,8 +115,8 @@ const WhySection = () => {
                 </div>
 
                 {/* Contenido de texto completo */}
-                <div className="p-6 md:p-7">
-                  <div className="space-y-4">
+                <div className="p-6 md:p-7 flex flex-col flex-1">
+                  <div className="space-y-4 flex flex-col flex-1">
                     {/* Título */}
                     <h3 className={`text-xl md:text-2xl font-bold font-display leading-tight ${
                       item.color === 'blue' 
@@ -133,7 +142,7 @@ const WhySection = () => {
                     }`}></div>
 
                     {/* Texto completo sin truncar */}
-                    <p className="text-sm md:text-base leading-relaxed font-body text-slate-700 dark:text-slate-300">
+                    <p className="text-sm md:text-base leading-relaxed font-body text-slate-700 dark:text-slate-300 flex-1">
                       {item.content}
                     </p>
                   </div>

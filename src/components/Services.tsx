@@ -17,7 +17,7 @@ const Services = () => {
           'Carga rápida y experiencia en móvil y ordenador',
           'Preparadas para aparecer en Google',
           'Formularios de contacto, reservas y WhatsApp',
-          'Hosting, dominio y correo corporativo incluidos'
+          'Hosting, dominio y correo corporativo incluidos '
         ],
         cta: 'Quiero una web'
       },
@@ -172,7 +172,7 @@ const Services = () => {
       ctaLink: '#contacto',
       featured: true,
       color: 'orange',
-      price: language === 'es' ? 'Desde 149€' : 'From €149'
+      price: language === 'es' ? 'Desde 99€' : 'From €99'
     }
   ];
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Cookie, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const CookieBanner = () => {
@@ -41,12 +42,12 @@ const CookieBanner = () => {
             </h3>
             <p className="text-sm text-slate-600 font-body">
               {t('cookies.message')} 
-              <a 
-                href="/legal" 
+              <Link 
+                to="/legal/cookies" 
                 className="text-accent-cyan hover:text-cyan-600 underline focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 rounded"
               >
                 {t('cookies.moreInfo')}
-              </a>
+              </Link>
             </p>
           </div>
         </div>
