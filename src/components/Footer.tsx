@@ -26,7 +26,7 @@ const Footer = () => {
               {t('footer.description')}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 gap-8">
             <nav aria-labelledby="services-nav">
               <h4 id="services-nav" className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-4 font-body">
                 {t('footer.services')}
@@ -98,21 +98,6 @@ const Footer = () => {
                 </li>
               </ul>
             </nav>
-            <nav aria-labelledby="projects-nav">
-              <h4 id="projects-nav" className="text-xs font-semibold uppercase tracking-wider text-accent-cyan mb-4 font-body">
-                {t('footer.projects')}
-              </h4>
-              <ul className="flex flex-col gap-3" role="list">
-                <li role="listitem">
-                  <Link 
-                    to="/proyectos/fhoto"
-                    className="text-white/70 hover:text-accent-cyan transition-colors text-sm font-body focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
-                  >
-                    Fhoto
-                  </Link>
-                </li>
-              </ul>
-            </nav>
           </div>
         </div>
         <div className="pt-8 border-t border-white/20">
@@ -121,24 +106,24 @@ const Footer = () => {
               &copy; 2025 .js agency. {t('footer.copyright')}
             </p>
             <nav className="flex flex-wrap gap-4 text-sm" aria-label={t('a11y.legalLinks')}>
-              <a 
-                href="/legal" 
+              <Link 
+                to="/legal/terms"
                 className="text-white/60 hover:text-accent-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
               >
                 {t('legal.terms')}
-              </a>
-              <a 
-                href="/legal" 
+              </Link>
+              <Link 
+                to="/legal/privacy"
                 className="text-white/60 hover:text-accent-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
               >
                 {t('legal.privacy')}
-              </a>
-              <a 
-                href="/legal" 
+              </Link>
+              <Link 
+                to="/legal/cookies"
                 className="text-white/60 hover:text-accent-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-accent-cyan focus:ring-offset-2 focus:ring-offset-primary-dark rounded"
               >
                 {t('legal.cookies')}
-              </a>
+              </Link>
             </nav>
           </div>
         </div>

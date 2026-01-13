@@ -8,7 +8,9 @@ import FloatingButtons from './components/FloatingButtons'
 import LegalPages from './components/LegalPages'
 import SEO from './components/SEO'
 import Home from './pages/Home'
-import Fhoto from './pages/Fhoto'
+import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CookiePolicy from './pages/CookiePolicy'
 
 function App() {
   return (
@@ -19,21 +21,66 @@ function App() {
           <Routes>
             <Route path="/legal" element={
               <>
-                <LegalPages />
-                <FloatingButtons />
-              </>
-            } />
-            <Route path="/proyectos/fhoto" element={
-              <>
                 <SEO 
-                  title="Fhoto — Tours Virtuales y Servicios de Drone | .js agency"
-                  description="Tours virtuales 360° y servicios de drone profesional para inmobiliarias, hostelería y negocios. Captura con Insta360 X5, fotografía y video con drones certificados. Soluciones visuales premium."
-                  keywords="tours virtuales, Insta360, servicios de drone, drones, fotografía aérea, inmobiliarias, hoteles, Almería"
-                  url="https://jsagency.com/proyectos/fhoto"
+                  title="Información Legal | .js agency"
+                  description="Términos y condiciones, política de privacidad y política de cookies de .js agency"
+                  keywords="términos y condiciones, política de privacidad, política de cookies, legal"
+                  url="https://jsagency.com/legal"
                 />
                 <Header />
                 <main id="main-content" role="main">
-                  <Fhoto />
+                  <LegalPages />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/legal/terms" element={
+              <>
+                <SEO 
+                  title="Términos y Condiciones | .js agency"
+                  description="Términos y condiciones de uso del sitio web y servicios de .js agency"
+                  keywords="términos y condiciones, condiciones de uso, legal"
+                  url="https://jsagency.com/legal/terms"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <TermsAndConditions />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/legal/privacy" element={
+              <>
+                <SEO 
+                  title="Política de Privacidad | .js agency"
+                  description="Política de privacidad de .js agency. Cómo recopilamos, usamos y protegemos su información personal"
+                  keywords="política de privacidad, privacidad, protección de datos, RGPD"
+                  url="https://jsagency.com/legal/privacy"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <PrivacyPolicy />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/legal/cookies" element={
+              <>
+                <SEO 
+                  title="Política de Cookies | .js agency"
+                  description="Política de cookies de .js agency. Información sobre el uso de cookies en nuestro sitio web"
+                  keywords="política de cookies, cookies, privacidad"
+                  url="https://jsagency.com/legal/cookies"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <CookiePolicy />
                 </main>
                 <Footer />
                 <CookieBanner />

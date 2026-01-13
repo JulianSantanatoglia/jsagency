@@ -98,28 +98,28 @@ const Process = () => {
       steps: [
         {
           number: '01',
-          title: 'Consulta inicial',
-          description: 'Analizamos tus necesidades y el espacio a capturar para definir el mejor enfoque.'
+          title: t('process.design.steps.consultation.title'),
+          description: t('process.design.steps.consultation.description')
         },
         {
           number: '02',
-          title: 'Captura 360°',
-          description: 'Realizamos la captura profesional con Insta360 X5 en todos los espacios relevantes.'
+          title: t('process.design.steps.capture.title'),
+          description: t('process.design.steps.capture.description')
         },
         {
           number: '03',
-          title: 'Procesamiento',
-          description: 'Editamos y procesamos las imágenes para crear la experiencia inmersiva.'
+          title: t('process.design.steps.processing.title'),
+          description: t('process.design.steps.processing.description')
         },
         {
           number: '04',
-          title: 'Integración',
-          description: 'Publicamos en MatterPort y lo integramos en tu web con QR codes y CTAs.'
+          title: t('process.design.steps.integration.title'),
+          description: t('process.design.steps.integration.description')
         },
         {
           number: '05',
-          title: 'Entrega',
-          description: 'Te entregamos todo listo para compartir y generar leads desde los tours.'
+          title: t('process.design.steps.delivery.title'),
+          description: t('process.design.steps.delivery.description')
         }
       ]
     },
@@ -135,23 +135,23 @@ const Process = () => {
       steps: [
         {
           number: '01',
-          title: 'Planificación',
-          description: 'Definimos ubicaciones, horarios y permisos necesarios para la operación.'
+          title: t('process.aerial.steps.planning.title'),
+          description: t('process.aerial.steps.planning.description')
         },
         {
           number: '02',
-          title: 'Captura aérea',
-          description: 'Realizamos fotografía y video aéreo profesional con DJI Mini 4 Pro.'
+          title: t('process.aerial.steps.shooting.title'),
+          description: t('process.aerial.steps.shooting.description')
         },
         {
           number: '03',
-          title: 'Edición',
-          description: 'Procesamos y editamos el material para obtener el mejor resultado.'
+          title: t('process.aerial.steps.editing.title'),
+          description: t('process.aerial.steps.editing.description')
         },
         {
           number: '04',
-          title: 'Entrega',
-          description: 'Te entregamos el contenido en múltiples formatos listo para usar.'
+          title: t('process.aerial.steps.delivery.title'),
+          description: t('process.aerial.steps.delivery.description')
         }
       ]
     }

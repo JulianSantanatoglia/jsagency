@@ -8,10 +8,11 @@ const Hero = () => {
   const [visibleText, setVisibleText] = useState(0);
 
   const animatedTexts = [
-    { text: 'DIGITALIZAMOS TU', highlight: 'EMPRESA' },
-    { text: 'AUTOMATIZAMOS TUS', highlight: 'PROCESOS' },
-    { text: 'CREAMOS RECORRIDOS', highlight: 'VIRTUALES 360' },
-    { text: 'SERVICIOS DE', highlight: 'DRON' }
+    { text: t('hero.animatedTexts.text1'), highlight: t('hero.animatedTexts.highlight1') },
+    { text: t('hero.animatedTexts.text2'), highlight: t('hero.animatedTexts.highlight2') },
+    { text: t('hero.animatedTexts.text3'), highlight: t('hero.animatedTexts.highlight3') },
+    { text: t('hero.animatedTexts.text4'), highlight: t('hero.animatedTexts.highlight4') },
+    { text: t('hero.animatedTexts.text5'), highlight: t('hero.animatedTexts.highlight5') },
   ];
 
   useEffect(() => {

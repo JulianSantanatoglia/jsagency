@@ -24,7 +24,7 @@ const Header = () => {
   }, [location.pathname]);
 
   const isHomePage = location.pathname === '/' || location.pathname === '';
-  const isFhotoPage = location.pathname === '/proyectos/fhoto';
+  const isLegalPage = location.pathname.startsWith('/legal');
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-gray-100 dark:border-slate-800 z-50" role="banner">
@@ -109,57 +109,43 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
             </>
-          ) : isFhotoPage ? (
+          ) : isLegalPage ? (
             <>
               <Link 
-                to="/" 
+                to="/#home" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
               >
                 {t('nav.home')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
-              <a 
-                href="#servicios" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('servicios');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
+              <Link 
+                to="/#nosotros" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
               >
-                Lo que hacemos
+                {t('nav.about')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#proceso" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('proceso');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
+              </Link>
+              <Link 
+                to="/#servicios" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
               >
-                Procesos
+                {t('nav.services')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#faq" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('faq');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
+              </Link>
+              <Link 
+                to="/#proceso" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
               >
-                Dudas
+                {t('nav.process')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
+              </Link>
+              <Link 
+                to="/#faq" 
+                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
+              >
+                {t('nav.faq')}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
+              </Link>
             </>
           ) : (
             <Link 
@@ -178,20 +164,6 @@ const Header = () => {
           {isHomePage ? (
             <a 
               href="#contacto" 
-              className="px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-sm tracking-wide hover:bg-cyan-500 hover-lift shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 focus:outline-none transition-all duration-300"
-            >
-              {t('nav.contact')}
-            </a>
-          ) : isFhotoPage ? (
-            <a 
-              href="#contacto" 
-              onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById('contacto');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
               className="px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-sm tracking-wide hover:bg-cyan-500 hover-lift shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 focus:outline-none transition-all duration-300"
             >
               {t('nav.contact')}
@@ -284,11 +256,11 @@ const Header = () => {
                   {t('nav.faq')}
                 </a>
               </>
-            ) : isFhotoPage ? (
+            ) : isLegalPage ? (
               <>
                 <Link 
-                  to="/" 
-                  className={`text-base font-medium text-slate-700 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                  to="/#home" 
+                  className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
@@ -298,63 +270,54 @@ const Header = () => {
                 >
                   {t('nav.home')}
                 </Link>
-                <a 
-                  href="#servicios" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('servicios');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
+                <Link 
+                  to="/#nosotros" 
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '200ms' : '0ms'
                   }}
+                  onClick={closeMenu}
                 >
-                  Lo que hacemos
-                </a>
-                <a 
-                  href="#proceso" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('proceso');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
+                  {t('nav.about')}
+                </Link>
+                <Link 
+                  to="/#servicios" 
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '250ms' : '0ms'
                   }}
+                  onClick={closeMenu}
                 >
-                  Procesos
-                </a>
-                <a 
-                  href="#faq" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('faq');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
+                  {t('nav.services')}
+                </Link>
+                <Link 
+                  to="/#proceso" 
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '300ms' : '0ms'
                   }}
+                  onClick={closeMenu}
                 >
-                  Dudas
-                </a>
+                  {t('nav.process')}
+                </Link>
+                <Link 
+                  to="/#faq" 
+                  className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? '350ms' : '0ms'
+                  }}
+                  onClick={closeMenu}
+                >
+                  {t('nav.faq')}
+                </Link>
               </>
             ) : (
               <Link 
@@ -381,26 +344,6 @@ const Header = () => {
                 transitionDelay: isMenuOpen ? '500ms' : '0ms'
               }}
               onClick={closeMenu}
-            >
-              {t('nav.contact')}
-            </a>
-          ) : isFhotoPage ? (
-            <a 
-              href="#contacto" 
-              onClick={(e) => {
-                e.preventDefault();
-                closeMenu();
-                const element = document.getElementById('contacto');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className={`px-6 py-2.5 bg-accent-cyan text-white rounded-2xl font-semibold text-base tracking-wide hover:bg-cyan-500 transition-all duration-300 text-center focus:outline-none transform ${
-                isMenuOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-4 opacity-0 scale-95'
-              }`}
-              style={{
-                transitionDelay: isMenuOpen ? '500ms' : '0ms'
-              }}
             >
               {t('nav.contact')}
             </a>

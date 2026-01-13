@@ -39,6 +39,10 @@ const translations = {
         highlight2: 'EMPRESA',
         text3: 'AUTOMATIZAMOS TUS',
         highlight3: 'PROCESOS',
+        text4: 'CREAMOS VISITAS',
+        highlight4: 'VIRTUALES 360',
+        text5: 'SERVICIOS DE',
+        highlight5: 'DRON',
       },
       feature1: 'Equipo multidisciplinario',
       feature2: 'Procesos claros',
@@ -49,8 +53,8 @@ const translations = {
           description: '• Landing pages de alta conversión\n• Sitios web corporativos\n• E-commerce y tiendas online\n• Aplicaciones web personalizadas'
         },
         design: {
-          title: 'Tours virtuales',
-          description: '• Tours virtuales para inmobiliarias\n• Tours virtuales para hoteles y hostelería\n• Experiencias inmersivas con Insta360 X5\n• Integración en webs y plataformas'
+          title: 'Visitas virtuales',
+          description: '• Visitas virtuales para inmobiliarias\n• Visitas virtuales para eventos, bares y restaurantes\n• Experiencias inmersivas con Insta360 X5\n• Integración en webs y plataformas'
         },
         ai: {
           title: 'Automatizaciones IA',
@@ -58,7 +62,7 @@ const translations = {
         },
         aerial: {
           title: 'Servicios de Drone',
-          description: '• Fotografía aérea inmobiliaria\n• Videos corporativos con drones\n• Mapeo y medición de terrenos\n• Contenido publicitario aéreo'
+          description: '• Fotografía y video para inmobiliarias\n• Cobertura de eventos y celebraciones\n• Captura de paisajes y entornos naturales\n• Contenido publicitario y promocional'
         }
       }
     },
@@ -75,9 +79,9 @@ const translations = {
         feature2: 'SEO técnico base y buenas prácticas de performance.',
       },
       design: {
-        title: 'Tours virtuales',
-        description: 'Tours virtuales 360° con tecnología Insta360 X5.',
-        feature1: 'Tours inmersivos para inmobiliarias, hoteles y hostelería.',
+        title: 'Visitas virtuales',
+        description: 'Visitas virtuales 360° especialmente para inmobiliarias, eventos, bares y restaurantes.',
+        feature1: 'Visitas inmersivas con tecnología Insta360 X5.',
         feature2: 'Integración en webs y plataformas para aumentar conversiones.',
       },
       ai: {
@@ -88,8 +92,8 @@ const translations = {
       },
       aerial: {
         title: 'Fotografía y Video aéreo',
-        description: 'Para marcas, inmuebles, turismo y eventos.',
-        feature1: 'Contenido visual que eleva tu presencia digital y tus campañas.',
+        description: 'Especializado para inmobiliarias, eventos, paisajes y publicidad.',
+        feature1: 'Contenido visual profesional que eleva tu presencia digital y tus campañas.',
         feature2: 'Operación certificada A1/A3 y registro de operador.',
         link: 'Fly by .js agency',
       },
@@ -112,15 +116,15 @@ const translations = {
         cta: 'Descubre más'
       },
       tours: {
-        title: '¿Por qué necesitas tours virtuales?',
-        content: 'El 73% de los compradores de propiedades toman decisiones basadas en tours virtuales. Sin esta herramienta, estás perdiendo clientes potenciales que buscan información inmediata y visual. Los tours virtuales no solo aumentan el tiempo de permanencia en tu web, sino que generan un 40% más de leads calificados y reducen las visitas presenciales innecesarias, ahorrando tiempo tanto a ti como a tus clientes.',
+        title: '¿Por qué necesitas visitas virtuales?',
+        content: 'El 73% de los compradores de propiedades toman decisiones basadas en visitas virtuales. Sin esta herramienta, estás perdiendo clientes potenciales que buscan información inmediata y visual. Las visitas virtuales no solo aumentan el tiempo de permanencia en tu web, sino que generan un 40% más de leads calificados y reducen las visitas presenciales innecesarias, ahorrando tiempo tanto a ti como a tus clientes.',
         stat: '73%',
         statLabel: 'toman decisiones',
         cta: 'Descubre más'
       },
       drone: {
         title: '¿Por qué necesitas servicios de drone?',
-        content: 'Los servicios de drone aumentan el engagement en redes sociales hasta un 150% y mejoran la percepción de calidad de tu marca. En el sector inmobiliario, las propiedades con videos aéreos se venden un 68% más rápido. Para eventos y hoteles, los servicios de drone son tu mejor herramienta de marketing visual, mostrando espacios desde una perspectiva única que genera emociones y decisiones de compra más rápidas.',
+        content: 'Los servicios de drone aumentan el engagement en redes sociales hasta un 150% y mejoran la percepción de calidad de tu marca. En el sector inmobiliario, las propiedades con videos aéreos se venden un 68% más rápido. Para eventos, paisajes y publicidad, los servicios de drone son tu mejor herramienta de marketing visual, mostrando espacios desde una perspectiva única que genera emociones y decisiones de compra más rápidas.',
         stat: '68%',
         statLabel: 'más rápido',
         cta: 'Descubre más'
@@ -190,9 +194,9 @@ const translations = {
           description: 'Aplicación móvil para restaurante con menú digital, reservas online y sistema de pedidos.'
         },
         brandIdentity: {
-          title: 'Tour Virtual Inmobiliaria',
-          category: 'Tours Virtuales',
-          description: 'Tour virtual 360° para inmobiliaria con integración web y experiencia inmersiva para potenciales compradores.'
+          title: 'Visita Virtual Inmobiliaria',
+          category: 'Visitas Virtuales',
+          description: 'Visita virtual 360° para inmobiliaria con integración web y experiencia inmersiva para potenciales compradores.'
         }
       }
     },
@@ -248,11 +252,11 @@ const translations = {
       title: 'Cómo trabajamos',
       titleHighlight: 'trabajamos',
       subtitle: 'Procesos claros, sin sorpresas. Cada servicio tiene su metodología, pero todos comparten algo: transparencia total.',
-      helper: 'Haz click en alguno de los dos botones',
+      helper: 'Haz click en alguno de los botones',
       cta: '¿Listo para empezar?',
       ctaButton: 'Hablemos →',
       webdev: {
-        title: 'Creación de Páginas Web',
+        title: 'Páginas web',
         steps: {
           discovery: {
             title: 'Descubrimiento',
@@ -302,15 +306,15 @@ const translations = {
         }
       },
       design: {
-        title: 'Tours virtuales',
+        title: 'Visitas virtuales',
         steps: {
           consultation: {
             title: 'Consulta y Planificación',
-            description: 'Análisis de necesidades, espacios a capturar y definición de objetivos del tour virtual.'
+            description: 'Análisis de necesidades, espacios a capturar y definición de objetivos de la visita virtual.'
           },
           capture: {
             title: 'Captura 360°',
-            description: 'Fotografía y video 360° con Insta360 X5 en todos los espacios relevantes del inmueble o establecimiento.'
+            description: 'Fotografía y video 360° con Insta360 X5 en todos los espacios relevantes del inmueble, evento o establecimiento.'
           },
           processing: {
             title: 'Procesamiento y Edición',
@@ -318,32 +322,32 @@ const translations = {
           },
           integration: {
             title: 'Integración Web',
-            description: 'Integración del tour virtual en tu sitio web o plataforma, con navegación intuitiva y responsive.'
+            description: 'Integración de la visita virtual en tu sitio web o plataforma, con navegación intuitiva y responsive.'
           },
           delivery: {
             title: 'Entrega y Capacitación',
-            description: 'Entrega del tour completo, documentación de uso y capacitación para actualizaciones futuras.'
+            description: 'Entrega de la visita virtual completa, documentación de uso y capacitación para actualizaciones futuras.'
           }
         }
       },
       aerial: {
-        title: 'Fotografía Aérea',
+        title: 'Fotografía y Video Aéreo',
         steps: {
           planning: {
             title: 'Planificación',
-            description: 'Análisis del sitio, permisos necesarios, condiciones climáticas y plan de vuelo.'
+            description: 'Análisis del sitio, permisos necesarios, condiciones climáticas y plan de vuelo según el tipo de proyecto (inmobiliario, evento, paisaje o publicidad).'
           },
           shooting: {
             title: 'Rodaje Aéreo',
-            description: 'Captura de imágenes y video con drones profesionales, múltiples ángulos y resoluciones.'
+            description: 'Captura profesional de imágenes y video con drones para inmobiliarias, eventos, paisajes o contenido publicitario.'
           },
           editing: {
             title: 'Post-Producción',
-            description: 'Edición de video, corrección de color, estabilización y creación de contenido final.'
+            description: 'Edición profesional de video, corrección de color, estabilización y creación de contenido final optimizado.'
           },
           delivery: {
             title: 'Entrega',
-            description: 'Archivos en diferentes formatos, plataformas de entrega y derechos de uso clarificados.'
+            description: 'Archivos en diferentes formatos según el uso (web, redes sociales, impresión), plataformas de entrega y derechos de uso clarificados.'
           }
         }
       }
@@ -361,8 +365,8 @@ const translations = {
         paragraph3: {
           bullets: [
             'Integramos automatizaciones con IA lo que agiliza conversiones en tu negocio.',
-            'Desarrollamos Tours Virtuales 360 para la experiencia digital inmersiva de tus clientes.',
-            'Creamos contenido de alta calidad con dron para mostrar locales, oficinas y paisajes.'
+            'Desarrollamos Visitas Virtuales 360° especialmente para inmobiliarias, eventos, bares y restaurantes.',
+            'Creamos contenido de alta calidad con dron para inmobiliarias, eventos, paisajes y publicidad.'
           ],
           conclusion: 'Mostramos tu marca desde otra perspectiva.'
         },
@@ -377,9 +381,9 @@ const translations = {
           description: 'Supervisión integral y arquitectura web.'
         },
         design: {
-          role: 'Tours virtuales',
+          role: 'Visitas virtuales',
           name: 'Equipo de producción 360°',
-          description: 'Tours virtuales inmersivos con Insta360 X5.'
+          description: 'Visitas virtuales inmersivas especialmente para inmobiliarias, eventos, bares y restaurantes.'
         },
         strategy: {
           role: 'Estrategia & Automatización',
@@ -455,13 +459,6 @@ const translations = {
     },
     
     // Contact Section
-    fhoto: {
-      hero: {
-        title: 'Tours virtuales 360° para inmuebles, salones de fiesta y más',
-        subtitle: 'Soluciones visuales profesionales para inmobiliarias, salas de eventos, hoteles, restaurantes y espacios comerciales. Tours virtuales con MatterPort y servicios de drone certificados que transforman espacios en experiencias.',
-        cta: 'Quiero un presupuesto',
-      },
-    },
     contact: {
       title: 'Hablemos',
       subtitle: 'Cuéntanos tu idea en pocas palabras. Te respondemos rápido y claro.',
@@ -503,6 +500,169 @@ const translations = {
       terms: 'Términos y Condiciones',
       privacy: 'Política de Privacidad',
       cookies: 'Política de Cookies',
+      backToHome: 'Volver al inicio',
+      lastUpdated: 'Última actualización: 27 de enero de 2025',
+      termsContent: {
+        section1: {
+          title: '1. Información General',
+          p1: 'Los presentes términos y condiciones regulan el uso del sitio web jsagency.com (en adelante, "el Sitio Web") propiedad de .js agency (en adelante, "la Empresa"), con domicilio en Almería, España.',
+          p2: 'Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestro sitio web.'
+        },
+        section2: {
+          title: '2. Servicios Ofrecidos',
+          p1: '.js agency ofrece los siguientes servicios:',
+          items: [
+            'Desarrollo web y aplicaciones',
+            'Visitas virtuales 360°',
+            'Automatizaciones con inteligencia artificial',
+            'Fotografía y video aéreo'
+          ]
+        },
+        section3: {
+          title: '3. Uso del Sitio Web',
+          p1: 'Usted se compromete a utilizar el sitio web de manera responsable y conforme a la legislación aplicable. Está prohibido:',
+          items: [
+            'Utilizar el sitio para fines ilegales o no autorizados',
+            'Transmitir virus, malware o cualquier código malicioso',
+            'Intentar acceder a áreas restringidas del sitio',
+            'Reproducir, distribuir o modificar el contenido sin autorización'
+          ]
+        },
+        section4: {
+          title: '4. Propiedad Intelectual',
+          p1: 'Todo el contenido del sitio web, incluyendo textos, imágenes, logotipos, diseños y código fuente, es propiedad de .js agency y está protegido por las leyes de propiedad intelectual.'
+        },
+        section5: {
+          title: '5. Limitación de Responsabilidad',
+          p1: '.js agency no se hace responsable de los daños que puedan derivarse del uso del sitio web o de la imposibilidad de acceder al mismo. El sitio se proporciona "tal como está" sin garantías de ningún tipo.'
+        },
+        section6: {
+          title: '6. Modificaciones',
+          p1: 'Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web.'
+        },
+        section7: {
+          title: '7. Contacto',
+          p1: 'Para cualquier consulta relacionada con estos términos y condiciones, puede contactarnos en:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Ubicación: Almería, España'
+        }
+      },
+      privacyContent: {
+        section1: {
+          title: '1. Información que Recopilamos',
+          p1: 'Recopilamos información que usted nos proporciona directamente, como:',
+          items: [
+            'Nombre y datos de contacto cuando nos envía un mensaje',
+            'Información de navegación a través de cookies',
+            'Datos de uso del sitio web'
+          ]
+        },
+        section2: {
+          title: '2. Cómo Utilizamos su Información',
+          p1: 'Utilizamos la información recopilada para:',
+          items: [
+            'Responder a sus consultas y solicitudes',
+            'Mejorar nuestros servicios y sitio web',
+            'Enviar comunicaciones relacionadas con nuestros servicios',
+            'Cumplir con obligaciones legales'
+          ]
+        },
+        section3: {
+          title: '3. Compartir Información',
+          p1: 'No vendemos, alquilamos ni compartimos su información personal con terceros, excepto:',
+          items: [
+            'Cuando sea necesario para proporcionar nuestros servicios',
+            'Para cumplir con obligaciones legales',
+            'Con su consentimiento explícito'
+          ]
+        },
+        section4: {
+          title: '4. Seguridad de los Datos',
+          p1: 'Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.'
+        },
+        section5: {
+          title: '5. Sus Derechos',
+          p1: 'De acuerdo con el RGPD, usted tiene derecho a:',
+          items: [
+            'Acceder a sus datos personales',
+            'Rectificar datos inexactos',
+            'Solicitar la eliminación de sus datos',
+            'Limitar el procesamiento de sus datos',
+            'Portabilidad de datos',
+            'Oponerse al procesamiento'
+          ]
+        },
+        section6: {
+          title: '6. Cookies',
+          p1: 'Utilizamos cookies para mejorar su experiencia en nuestro sitio web. Para más información, consulte nuestra',
+          linkText: 'Política de Cookies'
+        },
+        section7: {
+          title: '7. Contacto',
+          p1: 'Para ejercer sus derechos o realizar consultas sobre esta política de privacidad:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Ubicación: Almería, España'
+        }
+      },
+      cookiesContent: {
+        section1: {
+          title: '1. ¿Qué son las Cookies?',
+          p1: 'Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio web. Nos ayudan a mejorar su experiencia de navegación y a entender cómo utiliza nuestro sitio.'
+        },
+        section2: {
+          title: '2. Tipos de Cookies que Utilizamos',
+          technical: {
+            title: 'Cookies Técnicas (Necesarias)',
+            p1: 'Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar:',
+            items: [
+              'Cookies de sesión para mantener su navegación',
+              'Cookies de seguridad para proteger contra ataques',
+              'Cookies de preferencias de idioma'
+            ]
+          },
+          analytics: {
+            title: 'Cookies de Análisis',
+            p1: 'Nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web:',
+            items: [
+              'Google Analytics (si se implementa)',
+              'Métricas de rendimiento del sitio',
+              'Estadísticas de uso'
+            ]
+          }
+        },
+        section3: {
+          title: '3. Gestión de Cookies',
+          p1: 'Puede controlar y gestionar las cookies de varias maneras:',
+          items: [
+            'Configuración de su navegador web',
+            'Herramientas de gestión de cookies',
+            'Configuración de privacidad del navegador'
+          ]
+        },
+        section4: {
+          title: '4. Cookies de Terceros',
+          p1: 'Nuestro sitio puede contener cookies de terceros, como:',
+          items: [
+            'Google Fonts (para tipografías)',
+            'Servicios de análisis web',
+            'Redes sociales (si se integran)'
+          ]
+        },
+        section5: {
+          title: '5. Duración de las Cookies',
+          p1: 'Las cookies pueden ser:',
+          session: 'Cookies de sesión:',
+          sessionDesc: 'Se eliminan al cerrar el navegador',
+          persistent: 'Cookies persistentes:',
+          persistentDesc: 'Permanecen durante un tiempo determinado'
+        },
+        section6: {
+          title: '6. Contacto',
+          p1: 'Si tiene preguntas sobre nuestra política de cookies:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Ubicación: Almería, España'
+        }
+      }
     },
     
     // Cookie Banner
@@ -519,9 +679,9 @@ const translations = {
       title: 'Dudas frecuentes',
       titleHighlight: 'frecuentes',
       subtitle: 'Las respuestas que buscas, sin rodeos.',
-      helper: 'Haz click en alguno de los dos botones',
+      helper: 'Haz click en alguno de los botones',
       webdev: {
-        title: 'Creación de Páginas Web',
+        title: 'Páginas web',
         questions: [
           {
             question: '¿Cuánto tiempo toma desarrollar un proyecto web?',
@@ -542,23 +702,23 @@ const translations = {
         ]
       },
       design: {
-        title: 'Tours virtuales',
+        title: 'Visitas virtuales',
         questions: [
           {
-            question: '¿Qué incluye un tour virtual 360°?',
-            answer: 'Incluye la captura de imágenes 360° con Insta360 X5 en todos los espacios relevantes, procesamiento y stitching de las imágenes, corrección de color, creación de puntos de navegación, y la integración completa en tu sitio web o plataforma.'
+            question: '¿Qué incluye una visita virtual 360°?',
+            answer: 'Incluye la captura de imágenes 360° con Insta360 X5 en todos los espacios relevantes, procesamiento y stitching de las imágenes, corrección de color, creación de puntos de navegación, y la integración completa en tu sitio web o plataforma. Especialmente diseñado para inmobiliarias, eventos, bares y restaurantes.'
           },
           {
-            question: '¿Cuánto tiempo toma crear un tour virtual?',
-            answer: 'El tiempo depende del tamaño del espacio. Para una propiedad pequeña (2-3 habitaciones) puede tomar 1-2 semanas. Para hoteles o establecimientos grandes puede requerir 3-4 semanas incluyendo captura, procesamiento e integración.'
+            question: '¿Cuánto tiempo toma crear una visita virtual?',
+            answer: 'El tiempo depende del tamaño del espacio. Para una propiedad pequeña (2-3 habitaciones) o un local pequeño puede tomar 1-2 semanas. Para establecimientos grandes, eventos o múltiples espacios puede requerir 3-4 semanas incluyendo captura, procesamiento e integración.'
           },
           {
-            question: '¿Puedo actualizar el tour virtual después?',
-            answer: 'Sí, ofrecemos actualizaciones del tour virtual. Puedes agregar nuevos espacios o modificar los existentes. Te proporcionamos capacitación para que puedas hacer actualizaciones básicas o podemos hacerlas por ti.'
+            question: '¿Puedo actualizar la visita virtual después?',
+            answer: 'Sí, ofrecemos actualizaciones de la visita virtual. Puedes agregar nuevos espacios o modificar los existentes. Te proporcionamos capacitación para que puedas hacer actualizaciones básicas o podemos hacerlas por ti.'
           },
           {
             question: '¿Funciona en dispositivos móviles?',
-            answer: 'Sí, nuestros tours virtuales son completamente responsive y funcionan perfectamente en smartphones, tablets y computadoras. La experiencia es inmersiva en todos los dispositivos.'
+            answer: 'Sí, nuestras visitas virtuales son completamente responsive y funcionan perfectamente en smartphones, tablets y computadoras. La experiencia es inmersiva en todos los dispositivos.'
           }
         ]
       },
@@ -567,11 +727,11 @@ const translations = {
         questions: [
           {
             question: '¿Qué servicios de drones ofrecen?',
-            answer: 'Ofrecemos fotografía aérea inmobiliaria, videos corporativos con drones, mapeo y medición de terrenos, y contenido publicitario aéreo. Todos nuestros operadores están certificados A1/A3 y registrados.'
+            answer: 'Ofrecemos fotografía y video aéreo especializado para inmobiliarias, eventos, paisajes y publicidad. Todos nuestros operadores están certificados A1/A3 y registrados. Cubrimos desde propiedades inmobiliarias hasta eventos, captura de paisajes naturales y contenido publicitario.'
           },
           {
             question: '¿Cuánto tiempo toma la entrega de los servicios de drone?',
-            answer: 'Después de la captura, los servicios de drone típicamente se entregan en 5-7 días hábiles. Esto incluye edición, corrección de color, estabilización y entrega en los formatos solicitados.'
+            answer: 'Después de la captura, los servicios de drone típicamente se entregan en 5-7 días hábiles. Esto incluye edición profesional, corrección de color, estabilización y entrega en los formatos solicitados según el uso (inmobiliario, evento, paisaje o publicidad).'
           },
           {
             question: '¿Necesitan permisos especiales para volar?',
@@ -579,7 +739,7 @@ const translations = {
           },
           {
             question: '¿Qué formatos de entrega ofrecen?',
-            answer: 'Entregamos el contenido en diferentes formatos según tus necesidades: imágenes en alta resolución (RAW y JPG), videos en 4K, formatos optimizados para web, y archivos listos para impresión o redes sociales.'
+            answer: 'Entregamos el contenido en diferentes formatos según tus necesidades: imágenes en alta resolución (RAW y JPG), videos en 4K, formatos optimizados para web, redes sociales, y archivos listos para impresión o publicidad.'
           }
         ]
       },
@@ -665,6 +825,10 @@ const translations = {
         highlight2: 'BUSINESS',
         text3: 'WE AUTOMATE YOUR',
         highlight3: 'PROCESSES',
+        text4: 'WE CREATE',
+        highlight4: 'VIRTUAL TOURS 360',
+        text5: 'DRONE',
+        highlight5: 'SERVICES',
       },
       feature1: 'Multidisciplinary team',
       feature2: 'Clear processes',
@@ -953,7 +1117,7 @@ const translations = {
         }
       },
       aerial: {
-        title: 'Aerial Photography',
+        title: 'Drone Services',
         steps: {
           planning: {
             title: 'Planning',
@@ -1081,13 +1245,6 @@ const translations = {
     },
     
     // Contact Section
-    fhoto: {
-      hero: {
-        title: '360° virtual tours for properties, event venues and more',
-        subtitle: 'Professional visual solutions for real estate, event halls, hotels, restaurants and commercial spaces. MatterPort virtual tours and certified drone services that transform spaces into experiences.',
-        cta: 'I want a quote',
-      },
-    },
     contact: {
       title: 'Let\'s talk',
       subtitle: 'Tell us your idea in a few words. We\'ll respond quickly and clearly.',
@@ -1129,6 +1286,169 @@ const translations = {
       terms: 'Terms and Conditions',
       privacy: 'Privacy Policy',
       cookies: 'Cookie Policy',
+      backToHome: 'Back to home',
+      lastUpdated: 'Last updated: January 27, 2025',
+      termsContent: {
+        section1: {
+          title: '1. General Information',
+          p1: 'These terms and conditions govern the use of the website jsagency.com (hereinafter, "the Website") owned by .js agency (hereinafter, "the Company"), with registered office in Almería, Spain.',
+          p2: 'By accessing and using this website, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you must not use our website.'
+        },
+        section2: {
+          title: '2. Services Offered',
+          p1: '.js agency offers the following services:',
+          items: [
+            'Web development and applications',
+            '360° Virtual Visits',
+            'Artificial intelligence automations',
+            'Aerial photography and video'
+          ]
+        },
+        section3: {
+          title: '3. Website Use',
+          p1: 'You agree to use the website responsibly and in accordance with applicable legislation. It is prohibited to:',
+          items: [
+            'Use the site for illegal or unauthorized purposes',
+            'Transmit viruses, malware or any malicious code',
+            'Attempt to access restricted areas of the site',
+            'Reproduce, distribute or modify content without authorization'
+          ]
+        },
+        section4: {
+          title: '4. Intellectual Property',
+          p1: 'All content on the website, including texts, images, logos, designs and source code, is the property of .js agency and is protected by intellectual property laws.'
+        },
+        section5: {
+          title: '5. Limitation of Liability',
+          p1: '.js agency is not responsible for any damages that may arise from the use of the website or the inability to access it. The site is provided "as is" without warranties of any kind.'
+        },
+        section6: {
+          title: '6. Modifications',
+          p1: 'We reserve the right to modify these terms and conditions at any time. Modifications will take effect immediately after their publication on the website.'
+        },
+        section7: {
+          title: '7. Contact',
+          p1: 'For any queries related to these terms and conditions, you can contact us at:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Location: Almería, Spain'
+        }
+      },
+      privacyContent: {
+        section1: {
+          title: '1. Information We Collect',
+          p1: 'We collect information that you provide directly to us, such as:',
+          items: [
+            'Name and contact information when you send us a message',
+            'Browsing information through cookies',
+            'Website usage data'
+          ]
+        },
+        section2: {
+          title: '2. How We Use Your Information',
+          p1: 'We use the information collected to:',
+          items: [
+            'Respond to your inquiries and requests',
+            'Improve our services and website',
+            'Send communications related to our services',
+            'Comply with legal obligations'
+          ]
+        },
+        section3: {
+          title: '3. Sharing Information',
+          p1: 'We do not sell, rent or share your personal information with third parties, except:',
+          items: [
+            'When necessary to provide our services',
+            'To comply with legal obligations',
+            'With your explicit consent'
+          ]
+        },
+        section4: {
+          title: '4. Data Security',
+          p1: 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure or destruction.'
+        },
+        section5: {
+          title: '5. Your Rights',
+          p1: 'In accordance with GDPR, you have the right to:',
+          items: [
+            'Access your personal data',
+            'Rectify inaccurate data',
+            'Request deletion of your data',
+            'Limit the processing of your data',
+            'Data portability',
+            'Object to processing'
+          ]
+        },
+        section6: {
+          title: '6. Cookies',
+          p1: 'We use cookies to improve your experience on our website. For more information, see our',
+          linkText: 'Cookie Policy'
+        },
+        section7: {
+          title: '7. Contact',
+          p1: 'To exercise your rights or make inquiries about this privacy policy:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Location: Almería, Spain'
+        }
+      },
+      cookiesContent: {
+        section1: {
+          title: '1. What are Cookies?',
+          p1: 'Cookies are small text files that are stored on your device when you visit our website. They help us improve your browsing experience and understand how you use our site.'
+        },
+        section2: {
+          title: '2. Types of Cookies We Use',
+          technical: {
+            title: 'Technical Cookies (Necessary)',
+            p1: 'These cookies are essential for the website to function and cannot be disabled:',
+            items: [
+              'Session cookies to maintain your navigation',
+              'Security cookies to protect against attacks',
+              'Language preference cookies'
+            ]
+          },
+          analytics: {
+            title: 'Analytics Cookies',
+            p1: 'They help us understand how visitors interact with our website:',
+            items: [
+              'Google Analytics (if implemented)',
+              'Site performance metrics',
+              'Usage statistics'
+            ]
+          }
+        },
+        section3: {
+          title: '3. Cookie Management',
+          p1: 'You can control and manage cookies in several ways:',
+          items: [
+            'Your web browser settings',
+            'Cookie management tools',
+            'Browser privacy settings'
+          ]
+        },
+        section4: {
+          title: '4. Third-Party Cookies',
+          p1: 'Our site may contain third-party cookies, such as:',
+          items: [
+            'Google Fonts (for typography)',
+            'Web analytics services',
+            'Social networks (if integrated)'
+          ]
+        },
+        section5: {
+          title: '5. Cookie Duration',
+          p1: 'Cookies can be:',
+          session: 'Session cookies:',
+          sessionDesc: 'Deleted when you close the browser',
+          persistent: 'Persistent cookies:',
+          persistentDesc: 'Remain for a specified period'
+        },
+        section6: {
+          title: '6. Contact',
+          p1: 'If you have questions about our cookie policy:',
+          email: 'Email: hola@jsagency.com',
+          location: 'Location: Almería, Spain'
+        }
+      }
     },
     
     // Cookie Banner
