@@ -1,4 +1,5 @@
 import { Globe, Bot, Video, Camera } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ScrollReveal from './ScrollReveal';
 import PatternBackground from './PatternBackground';
@@ -130,7 +131,7 @@ const Services = () => {
       icon: Globe,
       image: '/images/proyectos/mushroommdp.jpg',
       cta: copy.webdev.cta,
-      ctaLink: '#contacto',
+      ctaLink: '/servicios/paginas-web#top',
       featured: true,
       color: 'blue',
       price: language === 'es' ? 'Desde 299€' : 'From €299'
@@ -143,7 +144,7 @@ const Services = () => {
       icon: Bot,
       image: '/images/proyectos/automatizacion.jpg',
       cta: copy.ai.cta,
-      ctaLink: '#contacto',
+      ctaLink: '/servicios/automatizaciones#top',
       featured: true,
       color: 'emerald',
       price: language === 'es' ? 'Desde 199€' : 'From €199'
@@ -156,7 +157,7 @@ const Services = () => {
       icon: Video,
       image: '/images/proyectos/360.jpg',
       cta: copy.tours.cta,
-      ctaLink: '#contacto',
+      ctaLink: '/servicios/visitas-virtuales#top',
       featured: true,
       color: 'purple',
       price: language === 'es' ? 'Desde 99€' : 'From €99'
@@ -169,7 +170,7 @@ const Services = () => {
       icon: Camera,
       image: '/images/proyectos/inmobiliaria.jpg',
       cta: copy.drone.cta,
-      ctaLink: '#contacto',
+      ctaLink: '/servicios/servicios-de-dron#top',
       featured: true,
       color: 'orange',
       price: language === 'es' ? 'Desde 99€' : 'From €99'
@@ -292,8 +293,8 @@ const Services = () => {
 
                   {/* Botones: CTA y Ver más - mt-auto para alinearlos al final */}
                   <div className="flex flex-col gap-2 mt-auto">
-                    <a 
-                      href={service.ctaLink} 
+                    <Link 
+                      to={service.ctaLink} 
                       className={`group/cta relative inline-flex items-center justify-center gap-1.5 px-4 py-2.5 w-full rounded-lg font-medium text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-hidden ${
                         service.color === 'blue' 
                           ? 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white focus:ring-blue-500 shadow-sm shadow-blue-500/10 hover:shadow-md hover:shadow-blue-500/20' 
@@ -312,7 +313,7 @@ const Services = () => {
                         service.color === 'purple' ? 'bg-gradient-to-r from-purple-700 to-purple-800' :
                         'bg-gradient-to-r from-orange-700 to-orange-800'
                       } opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300`}></div>
-                    </a>
+                    </Link>
                     <a 
                       href={`#why-${service.id}`}
                       onClick={(e) => {
@@ -427,8 +428,8 @@ const Services = () => {
 
                   {/* Botones: CTA y Ver más */}
                   <div className="flex flex-col gap-2 mt-auto">
-                    <a 
-                      href={service.ctaLink} 
+                    <Link 
+                      to={service.ctaLink} 
                       className={`group/cta relative inline-flex items-center justify-center gap-1.5 px-4 py-2.5 w-full rounded-lg font-medium text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 overflow-hidden ${
                         service.color === 'blue' 
                           ? 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white focus:ring-blue-500 shadow-sm shadow-blue-500/10 hover:shadow-md hover:shadow-blue-500/20' 
@@ -447,7 +448,7 @@ const Services = () => {
                         service.color === 'purple' ? 'bg-gradient-to-r from-purple-700 to-purple-800' :
                         'bg-gradient-to-r from-orange-700 to-orange-800'
                       } opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300`}></div>
-                    </a>
+                    </Link>
                     <a 
                       href={`#why-${service.id}`}
                       onClick={(e) => {

@@ -38,7 +38,7 @@ const SuccessCases = () => {
       id: 'asantanatoglia',
       image: '/images/casosdeexito/asantanatoglia.png',
       demoUrl: '#',
-      name: 'Arq. A. E. Santanatoglia',
+      name: 'Alejandro Santanatoglia',
       descriptionKey: 'asantanatoglia'
     }
   ];

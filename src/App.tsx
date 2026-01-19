@@ -8,6 +8,10 @@ import FloatingButtons from './components/FloatingButtons'
 import LegalPages from './components/LegalPages'
 import SEO from './components/SEO'
 import Home from './pages/Home'
+import WebPages from './pages/WebPages'
+import Automations from './pages/Automations'
+import VirtualVisits from './pages/VirtualVisits'
+import DroneServices from './pages/DroneServices'
 import TermsAndConditions from './pages/TermsAndConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import CookiePolicy from './pages/CookiePolicy'
@@ -81,6 +85,74 @@ function App() {
                 <Header />
                 <main id="main-content" role="main">
                   <CookiePolicy />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/servicios/paginas-web" element={
+              <>
+                <SEO
+                  title="Páginas web que convierten | .js agency"
+                  description="Diseñamos y desarrollamos páginas web rápidas, con SEO técnico y mensajes claros para convertir visitas en clientes."
+                  keywords="páginas web, desarrollo web, landing page, SEO técnico, Core Web Vitals"
+                  url="https://jsagency.com/servicios/paginas-web"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <WebPages />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/servicios/automatizaciones" element={
+              <>
+                <SEO
+                  title="Automatizaciones y bots | .js agency"
+                  description="Automatizamos captación y seguimiento con n8n, APIs y WhatsApp para ahorrar tiempo y cerrar más ventas."
+                  keywords="automatizaciones, n8n, bots, whatsapp, integraciones, api"
+                  url="https://jsagency.com/servicios/automatizaciones"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <Automations />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/servicios/visitas-virtuales" element={
+              <>
+                <SEO
+                  title="Visitas virtuales 360 | .js agency"
+                  description="Tours 360 con Insta360 y Matterport listos para web, Google Street View y campañas que generan leads."
+                  keywords="visitas virtuales, matterport, insta360, tour 360, google street view"
+                  url="https://jsagency.com/servicios/visitas-virtuales"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <VirtualVisits />
+                </main>
+                <Footer />
+                <CookieBanner />
+                <FloatingButtons />
+              </>
+            } />
+            <Route path="/servicios/servicios-de-dron" element={
+              <>
+                <SEO
+                  title="Servicios de dron | .js agency"
+                  description="Foto y vídeo con drones DJI, edición en Premiere y After Effects, entregables listos para redes y campañas."
+                  keywords="dron, dji, video aéreo, fotografía aérea, after effects, premiere"
+                  url="https://jsagency.com/servicios/servicios-de-dron"
+                />
+                <Header />
+                <main id="main-content" role="main">
+                  <DroneServices />
                 </main>
                 <Footer />
                 <CookieBanner />
