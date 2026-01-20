@@ -7,8 +7,9 @@ const Automations = () => {
   const content = getTranslation('servicePages.ai') || {};
   const benefitIcons = [Bot, Workflow, MessageSquare, TimerReset];
 
+  type BenefitContent = { title: string; description: string };
   const benefits =
-    content.benefits?.map((b, i) => ({
+    (content.benefits as BenefitContent[] | undefined)?.map((b, i: number) => ({
       ...b,
       icon: benefitIcons[i] ?? Bot,
     })) ?? [

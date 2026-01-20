@@ -7,8 +7,9 @@ const DroneServices = () => {
   const content = getTranslation('servicePages.drone') || {};
   const benefitIcons = [Film, Camera, Shield, Wind];
 
+  type BenefitContent = { title: string; description: string };
   const benefits =
-    content.benefits?.map((b, i) => ({
+    (content.benefits as BenefitContent[] | undefined)?.map((b, i: number) => ({
       ...b,
       icon: benefitIcons[i] ?? Film,
     })) ?? [

@@ -3,7 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, Check } from 'lucide-react';
 import Contact from './Contact';
 import PatternBackground from './PatternBackground';
-import iPhoneMockup from './iPhoneMockup';
+import IPhoneMockup from './iPhoneMockup';
 
 type Benefit = {
   title: string;
@@ -128,7 +128,7 @@ const ServicePageTemplate = ({
                   />
                 </div>
               ) : (
-                <iPhoneMockup 
+                <IPhoneMockup 
                   image={mockupImage}
                   alt={`${subtitle} en móvil`}
                   className="transform hover:scale-105 transition-transform duration-300 max-w-[200px] md:max-w-[240px] lg:max-w-[280px]"

@@ -7,8 +7,9 @@ const WebPages = () => {
   const content = getTranslation('servicePages.webdev') || {};
   const benefitIcons = [Rocket, Search, MonitorSmartphone, Shield];
 
+  type BenefitContent = { title: string; description: string };
   const benefits =
-    content.benefits?.map((b, i) => ({
+    (content.benefits as BenefitContent[] | undefined)?.map((b, i: number) => ({
       ...b,
       icon: benefitIcons[i] ?? Rocket,
     })) ?? [

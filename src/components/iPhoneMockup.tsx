@@ -7,7 +7,7 @@ type iPhoneMockupProps = {
   className?: string;
 };
 
-const iPhoneMockup = ({ image, alt, className = '' }: iPhoneMockupProps): ReactElement => {
+const IPhoneMockup = ({ image, alt, className = '' }: iPhoneMockupProps): ReactElement => {
   return (
     <div className={`relative ${className}`}>
       {/* iPhone Frame - Using a more realistic mockup design */}
@@ -52,4 +52,4 @@ const iPhoneMockup = ({ image, alt, className = '' }: iPhoneMockupProps): ReactE
   );
 };
 
-export default iPhoneMockup;
+export default IPhoneMockup;

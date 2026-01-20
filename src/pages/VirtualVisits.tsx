@@ -7,8 +7,9 @@ const VirtualVisits = () => {
   const content = getTranslation('servicePages.tours') || {};
   const benefitIcons = [Camera, Share2, Smartphone, MapPin];
 
+  type BenefitContent = { title: string; description: string };
   const benefits =
-    content.benefits?.map((b, i) => ({
+    (content.benefits as BenefitContent[] | undefined)?.map((b, i: number) => ({
       ...b,
       icon: benefitIcons[i] ?? Camera,
     })) ?? [
