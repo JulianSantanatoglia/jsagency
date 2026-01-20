@@ -4,7 +4,6 @@ import { ArrowRight, Check } from 'lucide-react';
 import Contact from './Contact';
 import PatternBackground from './PatternBackground';
 import iPhoneMockup from './iPhoneMockup';
-import OptimizedImage from './OptimizedImage';
 
 type Benefit = {
   title: string;
@@ -25,7 +24,6 @@ type ServicePageTemplateProps = {
   whyTitle: string;
   whyContent: string;
   subtitle: string;
-  heroGradient: string;
   tools: string[];
   benefits: Benefit[];
   pricing: PricingPlan[];
@@ -40,7 +38,6 @@ const ServicePageTemplate = ({
   whyTitle,
   whyContent,
   subtitle,
-  heroGradient,
   tools,
   benefits,
   pricing,

@@ -77,7 +77,6 @@ const WebPages = () => {
       whyTitle={t('why.webdev.title')}
       whyContent={t('why.webdev.content')}
       subtitle={content.subtitle ?? 'Páginas web'}
-      heroGradient="from-blue-600 via-cyan-500 to-blue-700"
       tools={content.tools ?? ['HTML', 'CSS', 'React', 'JavaScript']}
       benefits={benefits}
       pricing={pricing}

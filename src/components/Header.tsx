@@ -8,7 +8,7 @@ import DarkModeToggle from './DarkModeToggle';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
-  const [servicesMenuTimeout, setServicesMenuTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [servicesMenuTimeout, setServicesMenuTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
   const { t } = useLanguage();
 

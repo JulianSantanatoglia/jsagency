@@ -77,7 +77,6 @@ const DroneServices = () => {
       whyTitle={t('why.drone.title')}
       whyContent={t('why.drone.content')}
       subtitle={content.subtitle ?? 'Servicios de drone'}
-      heroGradient="from-orange-500 via-amber-500 to-orange-600"
       tools={content.tools ?? ['DJI', 'Adobe Premiere', 'After Effects', 'Licencias y permisos']}
       benefits={benefits}
       pricing={pricing}

@@ -77,7 +77,6 @@ const VirtualVisits = () => {
       whyTitle={t('why.tours.title')}
       whyContent={t('why.tours.content')}
       subtitle={content.subtitle ?? 'Visitas virtuales'}
-      heroGradient="from-purple-600 via-indigo-600 to-purple-700"
       tools={content.tools ?? ['Insta 360', 'Matterport', 'Google Street View', 'CTA & QR']}
       benefits={benefits}
       pricing={pricing}

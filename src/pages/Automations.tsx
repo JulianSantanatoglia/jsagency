@@ -77,7 +77,6 @@ const Automations = () => {
       whyTitle={t('why.ai.title')}
       whyContent={t('why.ai.content')}
       subtitle={content.subtitle ?? 'Automatizaciones'}
-      heroGradient="from-emerald-600 via-emerald-500 to-teal-600"
       tools={content.tools ?? ['n8n', 'API', 'WhatsApp', 'Sheets']}
       benefits={benefits}
       pricing={pricing}
