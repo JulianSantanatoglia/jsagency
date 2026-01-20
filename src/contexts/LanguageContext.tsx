@@ -18,7 +18,7 @@ const translations = {
     nav: {
       home: 'Inicio',
       latestProject: 'Destacado',
-      services: 'Lo que hacemos',
+      services: 'Servicios',
       about: 'Quiénes somos',
       process: 'Procesos',
       faq: 'Dudas',
@@ -65,6 +65,266 @@ const translations = {
           description: '• Fotografía y video para inmobiliarias\n• Cobertura de eventos y celebraciones\n• Captura de paisajes y entornos naturales\n• Contenido publicitario y promocional'
         }
       }
+    },
+    
+    // Service pages content
+    servicePages: {
+      webdev: {
+        subtitle: 'Páginas web',
+        highlights: [
+          'Core Web Vitals optimizadas',
+          'Copy y UX orientados a conversión',
+          'Listo para campañas y analítica',
+        ],
+        tools: ['HTML', 'CSS', 'React', 'JavaScript'],
+        benefits: [
+          {
+            title: 'Sitios rápidos y seguros',
+            description: 'Buenas prácticas de performance, seguridad y accesibilidad para maximizar conversiones y confianza.',
+          },
+          {
+            title: 'SEO técnico listo',
+            description: 'Estructura optimizada, metadatos y Core Web Vitals para aparecer antes en Google y captar más leads.',
+          },
+          {
+            title: 'Diseño responsive',
+            description: 'Experiencia fluida en móvil, tablet y escritorio con diseño alineado a tu marca y CTA claros.',
+          },
+          {
+            title: 'Soporte y evolutivos',
+            description: 'Acompañamiento posterior para mejoras, analítica y nuevas secciones cuando las necesites.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Lanzamiento',
+            price: '€499',
+            description: 'Landing o sitio one-page optimizado para captar leads.',
+            features: [
+              '1-3 secciones clave + blog opcional',
+              'Copy y estructura orientada a conversión',
+              'Integración de formularios y WhatsApp',
+              'Entrega en 10-12 días',
+            ],
+          },
+          {
+            name: 'Crecimiento',
+            price: '€899',
+            description: 'Sitio corporativo completo con SEO técnico y analítica.',
+            recommended: true,
+            features: [
+              'Hasta 6 páginas (servicios, equipo, blog, contacto)',
+              'Animaciones ligeras y componentes reutilizables',
+              'Optimización Core Web Vitals y schema',
+              'Dashboard de analítica y heatmaps',
+            ],
+          },
+          {
+            name: 'Performance Plus',
+            price: '€1,400',
+            description: 'Proyecto a medida con integraciones y soporte extendido.',
+            features: [
+              'Arquitectura escalable + tests básicos',
+              'Integraciones (CRM, booking, pagos, API)',
+              '12 semanas de soporte y mejoras',
+              'Entrenamiento para tu equipo',
+            ],
+          },
+        ],
+        ctaLabel: 'Quiero mi nueva web',
+      },
+      ai: {
+        subtitle: 'Automatizaciones',
+        highlights: [
+          'Bots y flujos multicanal',
+          'Integraciones con tus sistemas',
+          'Métricas y alertas en tiempo real',
+        ],
+        tools: ['n8n', 'API', 'WhatsApp', 'Sheets'],
+        benefits: [
+          {
+            title: 'Más ventas sin más trabajo',
+            description: 'Automatizamos captación, scoring y seguimiento de leads con flujos claros y trazables.',
+          },
+          {
+            title: 'Integraciones reales',
+            description: 'Conectamos APIs, WhatsApp, Sheets y tus sistemas internos para que todo hable entre sí.',
+          },
+          {
+            title: 'Respuesta inmediata',
+            description: 'Bots y mensajes programados que contestan al momento y evitan perder oportunidades.',
+          },
+          {
+            title: 'Ahorro de horas',
+            description: 'Eliminamos tareas repetitivas con flujos n8n y dashboards sencillos para tu equipo.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Starter',
+            price: '€350',
+            description: 'Automatización puntual para un proceso clave.',
+            features: [
+              '1 flujo n8n (ej. lead → CRM → notificación)',
+              'Plantilla de mensajes/WhatsApp',
+              'Checklist de operación',
+              'Entrega en 7-10 días',
+            ],
+          },
+          {
+            name: 'Growth',
+            price: '€650',
+            description: 'Automatización completa de captación y seguimiento.',
+            recommended: true,
+            features: [
+              '3-4 flujos (captura, scoring, reminders, CRM)',
+              'Bots/plantillas para WhatsApp o email',
+              'Panel en Sheets con métricas clave',
+              '2 semanas de soporte y ajustes',
+            ],
+          },
+          {
+            name: 'Ops Suite',
+            price: '€1,100',
+            description: 'Stack operativo a medida con integraciones avanzadas.',
+            features: [
+              'Flujos ilimitados (según alcance acordado)',
+              'APIs personalizadas y webhooks',
+              'Entrenamiento de equipo + manuales',
+              'Soporte 30 días y mejoras',
+            ],
+          },
+        ],
+        ctaLabel: 'Automatizar mi proceso',
+      },
+      tours: {
+        subtitle: 'Visitas virtuales',
+        highlights: [
+          'Captura y edición profesional',
+          'Listo para web, QR y Street View',
+          'CTA para reservas y leads',
+        ],
+        tools: ['Insta 360', 'Matterport', 'Google Street View', 'CTA & QR'],
+        benefits: [
+          {
+            title: 'Experiencias inmersivas',
+            description: 'Captura 360° profesional con Insta360 y edición lista para compartir en web y redes.',
+          },
+          {
+            title: 'Publicación y difusión',
+            description: 'Entregamos versiones optimizadas para Google Street View, Matterport y tu sitio web.',
+          },
+          {
+            title: 'Listo para vender',
+            description: 'CTAs, links y códigos QR para que los usuarios contacten o reserven en un click.',
+          },
+          {
+            title: 'Cobertura de espacios',
+            description: 'Ideal para inmobiliarias, hoteles, restaurantes, eventos y espacios corporativos.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Esencial',
+            price: '€250',
+            description: 'Sesión 360° para un espacio pequeño o vivienda.',
+            features: [
+              '1 localización hasta 150 m²',
+              'Entrega en 3-5 días',
+              'Exportación para web y QR',
+              'Asesoría de publicación',
+            ],
+          },
+          {
+            name: 'Destacado',
+            price: '€420',
+            description: 'Tour completo para propiedades o negocios que necesitan destacar.',
+            recommended: true,
+            features: [
+              'Hasta 400 m² + 2 escenas exteriores',
+              'Versión Matterport / Street View',
+              'Inserción en tu web y redes',
+              'CTA y links de contacto',
+            ],
+          },
+          {
+            name: 'Enterprise',
+            price: '€720',
+            description: 'Coberturas amplias o por franjas horarias, ideal para hoteles o eventos.',
+            features: [
+              'Zonas ilimitadas en una misma sede',
+              'Entrega prioritaria en 48h',
+              'Material adicional (stills + clips)',
+              'Paquete de QR y anuncios listos',
+            ],
+          },
+        ],
+        ctaLabel: 'Quiero mi visita virtual',
+      },
+      drone: {
+        subtitle: 'Servicios de drone',
+        highlights: [
+          'Piloto certificado y registro vigente',
+          'Entrega optimizada para redes y web',
+          'Planificación y permisos incluidos',
+        ],
+        tools: ['DJI', 'Adobe Premiere', 'After Effects', 'Licencias y permisos'],
+        benefits: [
+          {
+            title: 'Tomas aéreas cinematográficas',
+            description: 'Planificamos vuelos para planos fluidos, seguros y listos para tus campañas.',
+          },
+          {
+            title: 'Edición profesional',
+            description: 'Color, música y gráficos ligeros en Premiere y After Effects para piezas finales.',
+          },
+          {
+            title: 'Cumplimiento y seguridad',
+            description: 'Piloto certificado A1/A3, registro vigente y gestión de permisos cuando es necesario.',
+          },
+          {
+            title: 'Versátil para múltiples usos',
+            description: 'Inmobiliaria, turismo, eventos, inspecciones ligeras y contenido para redes sociales.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Clip Social',
+            price: '€220',
+            description: 'Grabación corta para redes y anuncios.',
+            features: [
+              'Vuelo de hasta 1h en una localización',
+              '2 clips verticales y 1 horizontal',
+              'Color básico y música con licencia',
+              'Entrega en 3 días',
+            ],
+          },
+          {
+            name: 'Proyecto Pro',
+            price: '€420',
+            description: 'Producción completa para propiedades o eventos.',
+            recommended: true,
+            features: [
+              'Hasta 2h de vuelo + tomas en tierra',
+              'Edición final 60-90s + 3 cortes sociales',
+              'Corrección de color y gráficos ligeros',
+              'Entrega en 4-6 días',
+            ],
+          },
+          {
+            name: 'Producción Plus',
+            price: '€720',
+            description: 'Cobertura avanzada o multi-ubicación con storytelling.',
+            features: [
+              'Media jornada de rodaje (o 2 localizaciones)',
+              'Storyboard y plan de rodaje',
+              'After Effects para títulos/overlays',
+              'Entrega prioritaria y 2 rondas de cambios',
+            ],
+          },
+        ],
+        ctaLabel: 'Quiero contenido aéreo',
+      },
     },
     
     // Services Section
@@ -806,7 +1066,7 @@ const translations = {
     nav: {
       home: 'Home',
       latestProject: 'Featured',
-      services: 'What we do',
+      services: 'Services',
       about: 'Who we are',
       process: 'Process',
       faq: 'Questions',
@@ -853,6 +1113,266 @@ const translations = {
           description: '• Real estate aerial photography\n• Corporate drone videos\n• Land mapping and measurement\n• Aerial advertising content'
         }
       }
+    },
+    
+    // Service pages content
+    servicePages: {
+      webdev: {
+        subtitle: 'Web pages',
+        highlights: [
+          'Optimized Core Web Vitals',
+          'Conversion-focused copy & UX',
+          'Ready for campaigns and analytics',
+        ],
+        tools: ['HTML', 'CSS', 'React', 'JavaScript'],
+        benefits: [
+          {
+            title: 'Fast and secure sites',
+            description: 'Performance, security and accessibility best practices to maximize conversions and trust.',
+          },
+          {
+            title: 'Technical SEO ready',
+            description: 'Optimized structure, metadata and Core Web Vitals to rank higher and capture more leads.',
+          },
+          {
+            title: 'Responsive design',
+            description: 'Smooth experience on mobile, tablet and desktop with brand-aligned design and clear CTAs.',
+          },
+          {
+            title: 'Support and evolution',
+            description: 'Ongoing support for improvements, analytics and new sections when you need them.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Launch',
+            price: '€499',
+            description: 'One-page or landing optimized to capture leads.',
+            features: [
+              '1-3 key sections + optional blog',
+              'Conversion-focused copy and structure',
+              'Forms and WhatsApp integration',
+              'Delivery in 10-12 days',
+            ],
+          },
+          {
+            name: 'Growth',
+            price: '€899',
+            description: 'Full corporate site with technical SEO and analytics.',
+            recommended: true,
+            features: [
+              'Up to 6 pages (services, team, blog, contact)',
+              'Light animations and reusable components',
+              'Core Web Vitals and schema optimization',
+              'Analytics dashboard and heatmaps',
+            ],
+          },
+          {
+            name: 'Performance Plus',
+            price: '€1,400',
+            description: 'Custom project with integrations and extended support.',
+            features: [
+              'Scalable architecture + basic tests',
+              'Integrations (CRM, booking, payments, API)',
+              '12 weeks of support and improvements',
+              'Team training',
+            ],
+          },
+        ],
+        ctaLabel: 'I want my new website',
+      },
+      ai: {
+        subtitle: 'Automations',
+        highlights: [
+          'Bots and multichannel flows',
+          'Integrations with your systems',
+          'Real-time metrics and alerts',
+        ],
+        tools: ['n8n', 'API', 'WhatsApp', 'Sheets'],
+        benefits: [
+          {
+            title: 'More sales without more work',
+            description: 'We automate capture, scoring and lead follow-up with clear, traceable flows.',
+          },
+          {
+            title: 'Real integrations',
+            description: 'We connect APIs, WhatsApp, Sheets and your internal systems so everything talks to each other.',
+          },
+          {
+            title: 'Instant response',
+            description: 'Bots and scheduled messages that reply immediately and prevent lost opportunities.',
+          },
+          {
+            title: 'Hours saved',
+            description: 'We remove repetitive tasks with n8n flows and simple dashboards for your team.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Starter',
+            price: '€350',
+            description: 'Single automation for a key process.',
+            features: [
+              '1 n8n flow (e.g. lead → CRM → notification)',
+              'Message/WhatsApp template',
+              'Operations checklist',
+              'Delivery in 7-10 days',
+            ],
+          },
+          {
+            name: 'Growth',
+            price: '€650',
+            description: 'Full capture and follow-up automation.',
+            recommended: true,
+            features: [
+              '3-4 flows (capture, scoring, reminders, CRM)',
+              'Bots/templates for WhatsApp or email',
+              'Sheets dashboard with key metrics',
+              '2 weeks of support and tweaks',
+            ],
+          },
+          {
+            name: 'Ops Suite',
+            price: '€1,100',
+            description: 'Custom ops stack with advanced integrations.',
+            features: [
+              'Unlimited flows (per agreed scope)',
+              'Custom APIs and webhooks',
+              'Team training + manuals',
+              '30 days of support and improvements',
+            ],
+          },
+        ],
+        ctaLabel: 'Automate my process',
+      },
+      tours: {
+        subtitle: 'Virtual visits',
+        highlights: [
+          'Pro capture and editing',
+          'Ready for web, QR and Street View',
+          'CTA for bookings and leads',
+        ],
+        tools: ['Insta 360', 'Matterport', 'Google Street View', 'CTA & QR'],
+        benefits: [
+          {
+            title: 'Immersive experiences',
+            description: 'Pro 360° capture with Insta360 and editing ready to share on web and social.',
+          },
+          {
+            title: 'Publishing & distribution',
+            description: 'Optimized versions for Google Street View, Matterport and your website.',
+          },
+          {
+            title: 'Ready to sell',
+            description: 'CTAs, links and QR codes so users can contact or book in one tap.',
+          },
+          {
+            title: 'Space coverage',
+            description: 'Ideal for real estate, hotels, restaurants, events and corporate spaces.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Essential',
+            price: '€250',
+            description: '360 session for a small space or home.',
+            features: [
+              '1 location up to 150 m²',
+              'Delivery in 3-5 days',
+              'Export for web and QR',
+              'Publishing advisory',
+            ],
+          },
+          {
+            name: 'Featured',
+            price: '€420',
+            description: 'Full tour for properties or businesses that need to stand out.',
+            recommended: true,
+            features: [
+              'Up to 400 m² + 2 outdoor scenes',
+              'Matterport / Street View version',
+              'Embed in your site and social',
+              'CTA and contact links',
+            ],
+          },
+          {
+            name: 'Enterprise',
+            price: '€720',
+            description: 'Large coverages or hourly blocks, ideal for hotels or events.',
+            features: [
+              'Unlimited zones in one venue',
+              'Priority delivery in 48h',
+              'Extra material (stills + clips)',
+              'QR pack and ready-to-run ads',
+            ],
+          },
+        ],
+        ctaLabel: 'I want my virtual tour',
+      },
+      drone: {
+        subtitle: 'Drone services',
+        highlights: [
+          'Certified pilot and active registry',
+          'Delivery optimized for web and social',
+          'Planning and permits included',
+        ],
+        tools: ['DJI', 'Adobe Premiere', 'After Effects', 'Licenses and permits'],
+        benefits: [
+          {
+            title: 'Cinematic aerial shots',
+            description: 'We plan flights for smooth, safe shots ready for your campaigns.',
+          },
+          {
+            title: 'Pro editing',
+            description: 'Color, music and light graphics in Premiere and After Effects for final pieces.',
+          },
+          {
+            title: 'Compliance and safety',
+            description: 'Certified A1/A3 pilot, active registry and permits management when needed.',
+          },
+          {
+            title: 'Versatile for many uses',
+            description: 'Real estate, tourism, events, light inspections and social content.',
+          },
+        ],
+        pricing: [
+          {
+            name: 'Social Clip',
+            price: '€220',
+            description: 'Short shoot for social and ads.',
+            features: [
+              'Up to 1h flight in one location',
+              '2 vertical clips and 1 horizontal',
+              'Basic color and licensed music',
+              'Delivery in 3 days',
+            ],
+          },
+          {
+            name: 'Pro Project',
+            price: '€420',
+            description: 'Full production for properties or events.',
+            recommended: true,
+            features: [
+              'Up to 2h flight + ground shots',
+              'Final 60-90s edit + 3 social cuts',
+              'Color correction and light graphics',
+              'Delivery in 4-6 days',
+            ],
+          },
+          {
+            name: 'Production Plus',
+            price: '€720',
+            description: 'Advanced or multi-location coverage with storytelling.',
+            features: [
+              'Half-day shoot (or 2 locations)',
+              'Storyboard and shot list',
+              'After Effects for titles/overlays',
+              'Priority delivery and 2 rounds of changes',
+            ],
+          },
+        ],
+        ctaLabel: 'I want aerial content',
+      },
     },
     
     // Services Section

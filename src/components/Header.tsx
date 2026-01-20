@@ -318,7 +318,7 @@ const Header = () => {
             onMouseLeave={handleServicesMenuLeave}
           >
             <button
-              className="inline-flex items-center gap-1 px-2 py-1 text-sm font-semibold text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm font-semibold text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/30 rounded-lg hover:bg-accent-cyan/15 hover:text-accent-cyan transition-colors focus:outline-none"
               aria-haspopup="true"
               aria-expanded={isServicesMenuOpen}
               onClick={() => setIsServicesMenuOpen((prev) => !prev)}
@@ -634,14 +634,14 @@ const Header = () => {
 
           {/* Dropdown de servicios - móvil */}
           <div className="border-t border-slate-200 dark:border-slate-800 pt-3 mt-1">
-            <button
-              onClick={() => setIsServicesMenuOpen((prev) => !prev)}
-              className="flex items-center justify-between w-full text-base font-semibold text-slate-700 dark:text-slate-200 py-2 focus:outline-none"
-              aria-expanded={isServicesMenuOpen}
-            >
-              Servicios
-              <ChevronDown size={18} className={`transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
-            </button>
+          <button
+            onClick={() => setIsServicesMenuOpen((prev) => !prev)}
+            className="flex items-center justify-between w-full text-base font-semibold text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/30 rounded-lg px-3 py-2 focus:outline-none hover:bg-accent-cyan/15"
+            aria-expanded={isServicesMenuOpen}
+          >
+            Servicios
+            <ChevronDown size={18} className={`transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
+          </button>
             <div
               className={`overflow-hidden transition-all duration-200 ${
                 isServicesMenuOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'

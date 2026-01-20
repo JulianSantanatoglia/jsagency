@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, Check } from 'lucide-react';
 import Contact from './Contact';
@@ -49,6 +49,19 @@ const ServicePageTemplate = ({
   mockupImage,
   heroImage,
 }: ServicePageTemplateProps): ReactElement => {
+  // Al montar la página de servicio, forzamos scroll al inicio
+  useEffect(() => {
+    const scrollToTop = () => {
+      const topEl = document.getElementById('top');
+      if (topEl) {
+        topEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    // Espera un frame para asegurar que el DOM está listo
+    requestAnimationFrame(scrollToTop);
+  }, []);
   return (
     <div className="relative bg-[#FAF9F7] dark:bg-slate-900 min-h-screen">
       <PatternBackground opacity={0.04} />
@@ -60,7 +73,7 @@ const ServicePageTemplate = ({
       <section className="relative pt-28 pb-16 md:pt-32 md:pb-24 px-4 md:px-8 bg-[#FAF9F7] dark:bg-slate-900">
         <PatternBackground opacity={0.04} />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-8 items-center">
             {/* Text Content */}
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-cyan/10 text-accent-cyan text-sm font-semibold mb-6">
@@ -103,9 +116,9 @@ const ServicePageTemplate = ({
             </div>
             
             {/* Hero Image or iPhone Mockup */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="hidden sm:flex justify-center lg:justify-center lg:self-center">
               {heroImage ? (
-                <div className="relative w-full max-w-xs md:max-w-sm">
+                <div className="relative w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px]">
                   <img
                     src={heroImage}
                     alt={subtitle}
@@ -121,7 +134,7 @@ const ServicePageTemplate = ({
                 <iPhoneMockup 
                   image={mockupImage}
                   alt={`${subtitle} en móvil`}
-                  className="transform hover:scale-105 transition-transform duration-300"
+                  className="transform hover:scale-105 transition-transform duration-300 max-w-[200px] md:max-w-[240px] lg:max-w-[280px]"
                 />
               )}
             </div>

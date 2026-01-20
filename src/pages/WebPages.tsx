@@ -3,8 +3,15 @@ import { MonitorSmartphone, Rocket, Search, Shield } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const WebPages = () => {
-  const { t } = useLanguage();
-  const benefits = [
+  const { t, getTranslation } = useLanguage();
+  const content = getTranslation('servicePages.webdev') || {};
+  const benefitIcons = [Rocket, Search, MonitorSmartphone, Shield];
+
+  const benefits =
+    content.benefits?.map((b, i) => ({
+      ...b,
+      icon: benefitIcons[i] ?? Rocket,
+    })) ?? [
     {
       title: 'Sitios rápidos y seguros',
       description: 'Construimos con buenas prácticas de performance, seguridad y accesibilidad para maximizar conversiones y confianza.',
@@ -27,7 +34,7 @@ const WebPages = () => {
     },
   ];
 
-  const pricing = [
+  const pricing = content.pricing ?? [
     {
       name: 'Lanzamiento',
       price: '€499',
@@ -69,19 +76,19 @@ const WebPages = () => {
       id="web-pages"
       whyTitle={t('why.webdev.title')}
       whyContent={t('why.webdev.content')}
-      subtitle="Páginas web"
+      subtitle={content.subtitle ?? 'Páginas web'}
       heroGradient="from-blue-600 via-cyan-500 to-blue-700"
-      tools={['HTML', 'CSS', 'React', 'JavaScript']}
+      tools={content.tools ?? ['HTML', 'CSS', 'React', 'JavaScript']}
       benefits={benefits}
       pricing={pricing}
-      highlights={[
+      highlights={content.highlights ?? [
         'Core Web Vitals optimizadas',
         'Copy y UX orientados a conversión',
         'Listo para campañas y analítica',
       ]}
-      ctaLabel="Quiero mi nueva web"
+      ctaLabel={content.ctaLabel ?? 'Quiero mi nueva web'}
       mockupImage="/images/proyectos/mushroommdp.jpg"
-      heroImage="/images/mobile/mobile.png"
+      heroImage="/images/mobile/paginasweb.png"
     />
   );
 };

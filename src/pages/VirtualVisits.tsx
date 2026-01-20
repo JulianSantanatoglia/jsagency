@@ -3,8 +3,15 @@ import { Camera, MapPin, Share2, Smartphone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const VirtualVisits = () => {
-  const { t } = useLanguage();
-  const benefits = [
+  const { t, getTranslation } = useLanguage();
+  const content = getTranslation('servicePages.tours') || {};
+  const benefitIcons = [Camera, Share2, Smartphone, MapPin];
+
+  const benefits =
+    content.benefits?.map((b, i) => ({
+      ...b,
+      icon: benefitIcons[i] ?? Camera,
+    })) ?? [
     {
       title: 'Experiencias inmersivas',
       description: 'Captura 360° profesional con Insta360 y edición lista para compartir en web y redes.',
@@ -27,7 +34,7 @@ const VirtualVisits = () => {
     },
   ];
 
-  const pricing = [
+  const pricing = content.pricing ?? [
     {
       name: 'Esencial',
       price: '€250',
@@ -69,17 +76,17 @@ const VirtualVisits = () => {
       id="virtual-visits"
       whyTitle={t('why.tours.title')}
       whyContent={t('why.tours.content')}
-      subtitle="Visitas virtuales"
+      subtitle={content.subtitle ?? 'Visitas virtuales'}
       heroGradient="from-purple-600 via-indigo-600 to-purple-700"
-      tools={['Insta 360', 'Matterport', 'Google Street View', 'CTA & QR']}
+      tools={content.tools ?? ['Insta 360', 'Matterport', 'Google Street View', 'CTA & QR']}
       benefits={benefits}
       pricing={pricing}
-      highlights={[
+      highlights={content.highlights ?? [
         'Captura y edición profesional',
         'Listo para web, QR y Street View',
         'CTA para reservas y leads',
       ]}
-      ctaLabel="Quiero mi visita virtual"
+      ctaLabel={content.ctaLabel ?? 'Quiero mi visita virtual'}
       mockupImage="/images/proyectos/360.jpg"
       heroImage="/images/mobile/matterport.png"
     />

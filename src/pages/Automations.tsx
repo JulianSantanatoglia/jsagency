@@ -3,8 +3,15 @@ import { Bot, MessageSquare, TimerReset, Workflow } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Automations = () => {
-  const { t } = useLanguage();
-  const benefits = [
+  const { t, getTranslation } = useLanguage();
+  const content = getTranslation('servicePages.ai') || {};
+  const benefitIcons = [Bot, Workflow, MessageSquare, TimerReset];
+
+  const benefits =
+    content.benefits?.map((b, i) => ({
+      ...b,
+      icon: benefitIcons[i] ?? Bot,
+    })) ?? [
     {
       title: 'Más ventas sin más trabajo',
       description: 'Automatizamos captación, scoring y seguimiento de leads con flujos claros y trazables.',
@@ -27,7 +34,7 @@ const Automations = () => {
     },
   ];
 
-  const pricing = [
+  const pricing = content.pricing ?? [
     {
       name: 'Starter',
       price: '€350',
@@ -69,18 +76,19 @@ const Automations = () => {
       id="automations"
       whyTitle={t('why.ai.title')}
       whyContent={t('why.ai.content')}
-      subtitle="Automatizaciones"
+      subtitle={content.subtitle ?? 'Automatizaciones'}
       heroGradient="from-emerald-600 via-emerald-500 to-teal-600"
-      tools={['n8n', 'API', 'WhatsApp', 'Sheets']}
+      tools={content.tools ?? ['n8n', 'API', 'WhatsApp', 'Sheets']}
       benefits={benefits}
       pricing={pricing}
-      highlights={[
+      highlights={content.highlights ?? [
         'Bots y flujos multicanal',
         'Integraciones con tus sistemas',
         'Métricas y alertas en tiempo real',
       ]}
-      ctaLabel="Automatizar mi proceso"
+      ctaLabel={content.ctaLabel ?? 'Automatizar mi proceso'}
       mockupImage="/images/proyectos/automatizacion.jpg"
+      heroImage="/images/mobile/automatizacion.png"
     />
   );
 };

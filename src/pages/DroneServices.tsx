@@ -3,8 +3,15 @@ import { Camera, Film, Shield, Wind } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const DroneServices = () => {
-  const { t } = useLanguage();
-  const benefits = [
+  const { t, getTranslation } = useLanguage();
+  const content = getTranslation('servicePages.drone') || {};
+  const benefitIcons = [Film, Camera, Shield, Wind];
+
+  const benefits =
+    content.benefits?.map((b, i) => ({
+      ...b,
+      icon: benefitIcons[i] ?? Film,
+    })) ?? [
     {
       title: 'Tomas aéreas cinematográficas',
       description: 'Planificamos vuelos para conseguir planos fluidos, seguros y listos para tus campañas.',
@@ -27,7 +34,7 @@ const DroneServices = () => {
     },
   ];
 
-  const pricing = [
+  const pricing = content.pricing ?? [
     {
       name: 'Clip Social',
       price: '€220',
@@ -69,18 +76,19 @@ const DroneServices = () => {
       id="drone-services"
       whyTitle={t('why.drone.title')}
       whyContent={t('why.drone.content')}
-      subtitle="Servicios de drone"
+      subtitle={content.subtitle ?? 'Servicios de drone'}
       heroGradient="from-orange-500 via-amber-500 to-orange-600"
-      tools={['DJI', 'Adobe Premiere', 'After Effects', 'Licencias y permisos']}
+      tools={content.tools ?? ['DJI', 'Adobe Premiere', 'After Effects', 'Licencias y permisos']}
       benefits={benefits}
       pricing={pricing}
-      highlights={[
+      highlights={content.highlights ?? [
         'Piloto certificado y registro vigente',
         'Entrega optimizada para redes y web',
         'Planificación y permisos incluidos',
       ]}
-      ctaLabel="Quiero contenido aéreo"
+      ctaLabel={content.ctaLabel ?? 'Quiero contenido aéreo'}
       mockupImage="/images/proyectos/inmobiliaria.jpg"
+      heroImage="/images/mobile/serviciosdedrone.png"
     />
   );
 };
