@@ -224,7 +224,7 @@ const ServicePageTemplate = ({
             {pricing.map((plan) => (
               <article
                 key={plan.name}
-                className={`relative rounded-2xl border p-6 bg-white dark:bg-slate-800/70 shadow-sm hover:shadow-xl transition-shadow ${
+                className={`relative rounded-2xl border p-6 bg-white dark:bg-slate-800/70 shadow-sm hover:shadow-xl transition-shadow flex flex-col ${
                   plan.recommended
                     ? 'border-accent-cyan shadow-cyan-200/50 dark:shadow-cyan-900/40'
                     : 'border-slate-200 dark:border-slate-700'
@@ -238,7 +238,7 @@ const ServicePageTemplate = ({
                 <h3 className="text-2xl font-bold text-primary-dark dark:text-white mb-2">{plan.name}</h3>
                 <p className="text-slate-500 dark:text-slate-300 mb-4">{plan.description}</p>
                 <p className="text-3xl font-bold text-primary-dark dark:text-white mb-6">{plan.price}</p>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6 flex-grow">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-slate-700 dark:text-slate-200">
                       <Check className="mt-0.5 h-5 w-5 text-accent-cyan" />
@@ -248,7 +248,7 @@ const ServicePageTemplate = ({
                 </ul>
                 <a
                   href="#contacto"
-                  className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold transition-colors ${
+                  className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold transition-colors mt-auto ${
                     plan.recommended
                       ? 'bg-accent-cyan text-white hover:bg-cyan-500'
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-600'
