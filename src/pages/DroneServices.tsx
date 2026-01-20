@@ -38,7 +38,7 @@ const DroneServices = () => {
   const pricing = content.pricing ?? [
     {
       name: 'Clip Social',
-      price: '€220',
+      price: '€99',
       description: 'Grabación corta para redes y anuncios.',
       features: [
         'Vuelo de hasta 1h en una localización',
@@ -49,7 +49,7 @@ const DroneServices = () => {
     },
     {
       name: 'Proyecto Pro',
-      price: '€420',
+      price: '€249',
       description: 'Producción completa para propiedades o eventos.',
       features: [
         'Hasta 2h de vuelo + tomas en tierra',
@@ -61,7 +61,7 @@ const DroneServices = () => {
     },
     {
       name: 'Producción Plus',
-      price: '€720',
+      price: '€399',
       description: 'Cobertura avanzada o multi-ubicación con storytelling.',
       features: [
         'Media jornada de rodaje (o 2 localizaciones)',

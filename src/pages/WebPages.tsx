@@ -38,7 +38,7 @@ const WebPages = () => {
   const pricing = content.pricing ?? [
     {
       name: 'Lanzamiento',
-      price: '€499',
+      price: '€299',
       description: 'Landing o sitio one-page optimizado para captar leads.',
       features: [
         '1-3 secciones clave + blog opcional',
@@ -49,7 +49,7 @@ const WebPages = () => {
     },
     {
       name: 'Crecimiento',
-      price: '€899',
+      price: '€599',
       description: 'Sitio corporativo completo con SEO técnico y analítica.',
       features: [
         'Hasta 6 páginas (servicios, equipo, blog, contacto)',
@@ -61,7 +61,7 @@ const WebPages = () => {
     },
     {
       name: 'Performance Plus',
-      price: '€1,400',
+      price: '€999',
       description: 'Proyecto a medida con integraciones y soporte extendido.',
       features: [
         'Arquitectura escalable + tests básicos',

@@ -38,7 +38,7 @@ const Automations = () => {
   const pricing = content.pricing ?? [
     {
       name: 'Starter',
-      price: '€350',
+      price: '€199',
       description: 'Automatización puntual para un proceso clave.',
       features: [
         '1 flujo n8n (ej. lead → CRM → notificación)',
@@ -49,7 +49,7 @@ const Automations = () => {
     },
     {
       name: 'Growth',
-      price: '€650',
+      price: '€449',
       description: 'Automatización completa de captación y seguimiento.',
       features: [
         '3-4 flujos (captura, scoring, reminders, CRM)',
@@ -61,7 +61,7 @@ const Automations = () => {
     },
     {
       name: 'Ops Suite',
-      price: '€1,100',
+      price: '€799',
       description: 'Stack operativo a medida con integraciones avanzadas.',
       features: [
         'Flujos ilimitados (según alcance acordado)',

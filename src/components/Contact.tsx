@@ -225,7 +225,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-white/90 font-body">
-                    Asunto *
+                    {t('contactForm.subject')} *
                   </label>
                   <div className="relative">
                     <select
@@ -236,12 +236,12 @@ const Contact = () => {
                       required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:ring-2 focus:ring-accent-cyan focus:border-transparent transition-all font-body appearance-none cursor-pointer pr-10"
                     >
-                      <option value="" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Selecciona un asunto</option>
-                      <option value="Páginas web" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Páginas web</option>
-                      <option value="Automatizaciones IA" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Automatizaciones IA</option>
-                      <option value="Tours Virtuales 360°" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Tours Virtuales 360°</option>
-                      <option value="Servicios de Drone" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Servicios de Drone</option>
-                      <option value="Otro asunto" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>Otro asunto</option>
+                      <option value="" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectPlaceholder')}</option>
+                      <option value="webPages" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectOptions.webPages')}</option>
+                      <option value="automations" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectOptions.automations')}</option>
+                      <option value="virtualTours" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectOptions.virtualTours')}</option>
+                      <option value="droneServices" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectOptions.droneServices')}</option>
+                      <option value="other" style={{ backgroundColor: '#1e293b', color: '#ffffff' }}>{t('contactForm.subjectOptions.other')}</option>
                     </select>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
                       <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -4,6 +4,7 @@ import { ArrowRight, Check } from 'lucide-react';
 import Contact from './Contact';
 import PatternBackground from './PatternBackground';
 import IPhoneMockup from './iPhoneMockup';
+import { useLanguage } from '../contexts/LanguageContext';
 
 type Benefit = {
   title: string;
@@ -46,6 +47,8 @@ const ServicePageTemplate = ({
   mockupImage,
   heroImage,
 }: ServicePageTemplateProps): ReactElement => {
+  const { t } = useLanguage();
+  
   // Al montar la página de servicio, forzamos scroll al inicio
   useEffect(() => {
     const scrollToTop = () => {
@@ -107,7 +110,7 @@ const ServicePageTemplate = ({
                   href="#planes"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                 >
-                  Ver planes
+                  {t('servicePage.viewPlans')}
                 </a>
               </div>
             </div>
@@ -144,16 +147,16 @@ const ServicePageTemplate = ({
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-2">Resultados</p>
+              <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-2">{t('servicePage.results')}</p>
               <h2 className="text-3xl md:text-4xl font-bold font-display text-primary-dark dark:text-white leading-tight">
-                ¿Qué obtienes con este servicio?
+                {t('servicePage.whatYouGet')}
               </h2>
             </div>
             <a
               href="#planes"
               className="inline-flex items-center gap-2 text-accent-cyan font-semibold hover:text-cyan-500"
             >
-              Ir a precios
+              {t('servicePage.goToPricing')}
               <ArrowRight size={16} />
             </a>
           </div>
@@ -186,9 +189,9 @@ const ServicePageTemplate = ({
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div>
-              <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-1">Herramientas</p>
+              <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-1">{t('servicePage.tools')}</p>
               <h3 className="text-2xl font-bold font-display text-primary-dark dark:text-white">
-                Stack que usamos para entregar calidad
+                {t('servicePage.toolsSubtitle')}
               </h3>
             </div>
           </div>
@@ -209,12 +212,12 @@ const ServicePageTemplate = ({
       <section id="planes" className="py-16 md:py-24 px-4 md:px-8 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-2">Precios claros</p>
+            <p className="text-sm font-semibold text-accent-cyan uppercase tracking-[0.18em] mb-2">{t('servicePage.pricing')}</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-primary-dark dark:text-white mb-3">
-              Elige el plan que mejor encaje
+              {t('servicePage.pricingSubtitle')}
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Planes con todo lo necesario para lanzar y optimizar este servicio. Siempre puedes escalar o personalizar.
+              {t('servicePage.pricingDescription')}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -229,7 +232,7 @@ const ServicePageTemplate = ({
               >
                 {plan.recommended && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-cyan text-white px-4 py-1 rounded-full text-xs font-semibold">
-                    Recomendado
+                    {t('servicePage.recommended')}
                   </div>
                 )}
                 <h3 className="text-2xl font-bold text-primary-dark dark:text-white mb-2">{plan.name}</h3>
@@ -251,7 +254,7 @@ const ServicePageTemplate = ({
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-600'
                   }`}
                 >
-                  Hablar de este plan
+                  {t('servicePage.talkAboutPlan')}
                   <ArrowRight size={16} />
                 </a>
               </article>

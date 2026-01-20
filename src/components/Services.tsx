@@ -330,7 +330,7 @@ const Services = () => {
                         'hover:text-orange-600 dark:hover:text-orange-400'
                       }`}
                     >
-                      ¿Por qué {service.title.toLowerCase()}? ↓
+                      {t('services.whyLink')} {service.title.toLowerCase()}? ↓
                     </a>
                   </div>
                   </div>
@@ -465,7 +465,7 @@ const Services = () => {
                         'hover:text-orange-600 dark:hover:text-orange-400'
                       }`}
                     >
-                      ¿Por qué {service.title.toLowerCase()}? ↓
+                      {t('services.whyLink')} {service.title.toLowerCase()}? ↓
                     </a>
                   </div>
                 </div>

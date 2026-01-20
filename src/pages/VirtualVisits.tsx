@@ -38,7 +38,7 @@ const VirtualVisits = () => {
   const pricing = content.pricing ?? [
     {
       name: 'Esencial',
-      price: '€250',
+      price: '€99',
       description: 'Sesión 360° para un espacio pequeño o vivienda.',
       features: [
         '1 localización hasta 150 m²',
@@ -49,7 +49,7 @@ const VirtualVisits = () => {
     },
     {
       name: 'Destacado',
-      price: '€420',
+      price: '€249',
       description: 'Tour completo para propiedades o negocios que necesitan destacar.',
       features: [
         'Hasta 400 m² + 2 escenas exteriores',
@@ -61,7 +61,7 @@ const VirtualVisits = () => {
     },
     {
       name: 'Enterprise',
-      price: '€720',
+      price: '€399',
       description: 'Coberturas amplias o por franjas horarias, ideal para hoteles o eventos.',
       features: [
         'Zonas ilimitadas en una misma sede',

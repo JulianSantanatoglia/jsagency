@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Mail, Phone, Building2, MessageSquare, DollarSign, Calendar, CheckSquare, AlertCircle } from 'lucide-react';
 import { useReCaptcha } from '../hooks/useReCaptcha';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface ContactFormData {
   name: string;
@@ -23,6 +24,7 @@ interface ContactFormProps {
 
 const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFormProps) => {
   const { executeRecaptcha } = useReCaptcha();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -40,22 +42,41 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const budgetOptions = [
-    { value: 'under-5k', label: 'Menos de 5.000€' },
-    { value: '5k-10k', label: '5.000€ - 10.000€' },
-    { value: '10k-25k', label: '10.000€ - 25.000€' },
-    { value: '25k-50k', label: '25.000€ - 50.000€' },
-    { value: '50k-plus', label: 'Más de 50.000€' }
-  ];
+  const budgetOptions = useMemo(() => [
+    { value: 'under-5k', label: t('contactForm.budgetOptions.under5k') },
+    { value: '5k-10k', label: t('contactForm.budgetOptions.5k-10k') },
+    { value: '10k-25k', label: t('contactForm.budgetOptions.10k-25k') },
+    { value: '25k-50k', label: t('contactForm.budgetOptions.25k-50k') },
+    { value: '50k-plus', label: t('contactForm.budgetOptions.50k-plus') }
+  ], [t, language]);
 
-  const timelineOptions = [
-    { value: 'asap', label: 'Lo antes posible' },
-    { value: '1-month', label: 'En 1 mes' },
-    { value: '2-3-months', label: 'En 2-3 meses' },
-    { value: '3-6-months', label: 'En 3-6 meses' },
-    { value: 'flexible', label: 'Flexible' }
-  ];
+  const timelineOptions = useMemo(() => [
+    { value: 'asap', label: t('contactForm.timelineOptions.asap') },
+    { value: '1-month', label: t('contactForm.timelineOptions.1-month') },
+    { value: '2-3-months', label: t('contactForm.timelineOptions.2-3-months') },
+    { value: '3-6-months', label: t('contactForm.timelineOptions.3-6-months') },
+    { value: 'flexible', label: t('contactForm.timelineOptions.flexible') }
+  ], [t, language]);
 
+  const subjectOptions = useMemo(() => {
+    const options = [
+      { value: 'webPages', label: t('contactForm.subjectOptions.webPages') },
+      { value: 'automations', label: t('contactForm.subjectOptions.automations') },
+      { value: 'virtualTours', label: t('contactForm.subjectOptions.virtualTours') },
+      { value: 'droneServices', label: t('contactForm.subjectOptions.droneServices') },
+      { value: 'other', label: t('contactForm.subjectOptions.other') },
+    ];
+    return options;
+  }, [t, language]);
+
+  // Reset subject when language changes if it was a translated value
+  useEffect(() => {
+    // If subject is not one of the new keys, reset it
+    const validValues = ['webPages', 'automations', 'virtualTours', 'droneServices', 'other'];
+    if (formData.subject && !validValues.includes(formData.subject)) {
+      setFormData(prev => ({ ...prev, subject: '' }));
+    }
+  }, [language, formData.subject]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -90,7 +111,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
       
       if (!recaptchaToken) {
         setSubmitStatus('error');
-        setErrorMessage('Error de verificación. Por favor, recarga la página e inténtalo de nuevo.');
+        setErrorMessage(t('contactForm.errorVerification'));
         setIsSubmitting(false);
         return;
       }
@@ -126,11 +147,11 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
         onSuccess?.();
       } else {
         setSubmitStatus('error');
-        setErrorMessage(data.error?.message || 'Error al enviar el mensaje');
+        setErrorMessage(data.error?.message || t('contactForm.error'));
       }
     } catch (error) {
       setSubmitStatus('error');
-      setErrorMessage('Error de conexión. Por favor, inténtalo de nuevo.');
+      setErrorMessage(t('contactForm.errorConnection'));
     } finally {
       setIsSubmitting(false);
     }
@@ -141,10 +162,10 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
       {!darkMode && (
       <div className="mb-8">
         <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-display ${darkMode ? 'text-white' : 'text-primary-dark'}`}>
-          Envíanos un mensaje
+          {t('contact.formTitle')}
         </h3>
         <p className={`font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-          Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
+          {t('contact.subtitle')}
         </p>
       </div>
       )}
@@ -154,7 +175,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Nombre completo *
+              {t('contactForm.name')} *
             </label>
             <div className="relative">
               <input
@@ -169,14 +190,14 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
                     : 'border-slate-300'
                 }`}
-                placeholder="Tu nombre"
+                placeholder={t('contactForm.namePlaceholder')}
               />
             </div>
           </div>
 
           <div>
             <label htmlFor="email" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Email *
+              {t('contactForm.email')} *
             </label>
             <div className="relative">
               <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -192,7 +213,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
                     : 'border-slate-300'
                 }`}
-                placeholder="tu@email.com"
+                placeholder={t('contactForm.emailPlaceholder')}
               />
             </div>
           </div>
@@ -202,7 +223,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="phone" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Teléfono
+              {t('contactForm.phone')}
             </label>
             <div className="relative">
               <Phone className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -217,14 +238,14 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
                     : 'border-slate-300'
                 }`}
-                placeholder="+34 123 456 789"
+                placeholder={t('contactForm.phonePlaceholder')}
               />
             </div>
           </div>
 
           <div>
             <label htmlFor="company" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Empresa
+              {t('contactForm.company')}
             </label>
             <div className="relative">
               <Building2 className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -239,7 +260,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
                     : 'border-slate-300'
                 }`}
-                placeholder="Nombre de tu empresa"
+                placeholder={t('contactForm.companyPlaceholder')}
               />
             </div>
           </div>
@@ -249,7 +270,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="budget" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Presupuesto aproximado
+              {t('contactForm.budget')}
             </label>
             <div className="relative">
               <DollarSign className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -264,7 +285,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     : 'border-slate-300'
                 }`}
               >
-                <option value="">Selecciona un rango</option>
+                <option value="">{t('contactForm.budgetPlaceholder')}</option>
                 {budgetOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -276,7 +297,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
 
           <div>
             <label htmlFor="timeline" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-              Timeline del proyecto
+              {t('contactForm.timeline')}
             </label>
             <div className="relative">
               <Calendar className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -291,7 +312,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                     : 'border-slate-300'
                 }`}
               >
-                <option value="">¿Cuándo lo necesitas?</option>
+                <option value="">{t('contactForm.timelinePlaceholder')}</option>
                 {timelineOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -303,12 +324,13 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
         </div>
 
         {/* Asunto/Servicio */}
-        <div>
-          <label htmlFor="subject" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-            Asunto *
+        <div key={`subject-wrapper-${language}`}>
+          <label htmlFor={`subject-${language}`} className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+            {t('contactForm.subject')} *
           </label>
           <select
-            id="subject"
+            key={`subject-${language}`}
+            id={`subject-${language}`}
             name="subject"
             value={formData.subject}
             onChange={handleInputChange}
@@ -319,19 +341,19 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                 : 'border-slate-300'
             }`}
           >
-            <option value="">Selecciona un asunto</option>
-            <option value="Páginas web">Páginas web</option>
-            <option value="Automatizaciones IA">Automatizaciones IA</option>
-            <option value="Tours Virtuales 360°">Tours Virtuales 360°</option>
-            <option value="Servicios de Drone">Servicios de Drone</option>
-            <option value="Otro asunto">Otro asunto</option>
+            <option value="">{t('contactForm.subjectPlaceholder')}</option>
+            {subjectOptions.map((option) => (
+              <option key={`${option.value}-${language}`} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
 
         {/* Message */}
         <div>
           <label htmlFor="message" className={`block text-sm font-semibold mb-2 font-body ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
-            Mensaje *
+            {t('contactForm.message')} *
           </label>
           <div className="relative">
             <MessageSquare className={`absolute left-3 top-3 w-5 h-5 ${darkMode ? 'text-slate-400' : 'text-slate-400'}`} />
@@ -347,7 +369,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
                   ? 'bg-slate-900/50 border-slate-600 text-white placeholder-slate-400' 
                   : 'border-slate-300'
               }`}
-              placeholder="Cuéntanos más detalles sobre tu proyecto..."
+              placeholder={t('contactForm.messagePlaceholder')}
             />
           </div>
         </div>
@@ -364,11 +386,11 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
             className="w-5 h-5 text-accent-cyan bg-gray-100 border-gray-300 rounded focus:ring-accent-cyan focus:ring-2 mt-1"
           />
           <label htmlFor="consent" className={`text-sm font-body ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-            Acepto la{' '}
+            {t('contactForm.consent')}{' '}
             <a href="/legal" className="text-accent-cyan hover:underline">
-              política de privacidad
+              {t('contactForm.privacyPolicy')}
             </a>{' '}
-            y consiento el tratamiento de mis datos personales. *
+            {t('contactForm.consentText')} *
           </label>
         </div>
 
@@ -377,7 +399,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
           <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-center space-x-3">
             <CheckSquare className="w-5 h-5 text-green-600" />
             <p className="text-green-800 font-body">
-              ¡Mensaje enviado correctamente! Te contactaremos pronto.
+              {t('contactForm.success')}
             </p>
           </div>
         )}
@@ -386,7 +408,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-center space-x-3">
             <AlertCircle className="w-5 h-5 text-red-600" />
             <p className="text-red-800 font-body">
-              {errorMessage || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.'}
+              {errorMessage || t('contactForm.error')}
             </p>
           </div>
         )}
@@ -397,7 +419,7 @@ const ContactForm = ({ onSuccess, className = '', darkMode = false }: ContactFor
           disabled={isSubmitting || !formData.consent}
           className="w-full bg-accent-cyan text-white font-semibold py-4 px-6 rounded-xl hover:bg-cyan-600 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-body text-lg"
         >
-          {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
+          {isSubmitting ? t('contactForm.submitting') : t('contactForm.submit')}
         </button>
       </form>
     </div>

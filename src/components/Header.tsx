@@ -13,10 +13,10 @@ const Header = () => {
   const { t } = useLanguage();
 
   const servicesLinks = [
-    { label: 'Páginas web', to: '/servicios/paginas-web#top' },
-    { label: 'Automatizaciones', to: '/servicios/automatizaciones#top' },
-    { label: 'Visitas virtuales', to: '/servicios/visitas-virtuales#top' },
-    { label: 'Servicios de dron', to: '/servicios/servicios-de-dron#top' },
+    { label: t('nav.serviceWebPages'), to: '/servicios/paginas-web#top' },
+    { label: t('nav.serviceAutomations'), to: '/servicios/automatizaciones#top' },
+    { label: t('nav.serviceVirtualTours'), to: '/servicios/visitas-virtuales#top' },
+    { label: t('nav.serviceDrone'), to: '/servicios/servicios-de-dron#top' },
   ];
 
   const toggleMenu = () => {
@@ -56,6 +56,14 @@ const Header = () => {
       setServicesMenuTimeout(null);
     }
   }, [location.pathname]);
+
+  // Handle navigation to home sections from service pages
+  const handleNavToSection = (sectionId: string) => {
+    if (isServicePage) {
+      // If we're on a service page, navigate to home first, then scroll to section
+      window.location.href = `/#${sectionId}`;
+    }
+  };
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -162,107 +170,27 @@ const Header = () => {
                 {t('nav.home')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
-              <a 
-                href="#top" 
+              <Link 
+                to="/#nosotros" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('top');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
               >
                 {t('nav.about')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#planes" 
+              </Link>
+              <Link 
+                to="/#servicios" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('planes');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
               >
                 {t('nav.services')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#contacto" 
+              </Link>
+              <Link 
+                to="/#proceso" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('contacto');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
               >
                 {t('nav.process')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <Link 
-                to="/#faq" 
-                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-              >
-                {t('nav.faq')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
-            </>
-          ) : isServicePage ? (
-            <>
-              <Link 
-                to="/#home" 
-                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-              >
-                {t('nav.home')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </Link>
-              <a 
-                href="#top" 
-                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('top');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
-              >
-                {t('nav.about')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#planes" 
-                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('planes');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
-              >
-                {t('nav.services')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
-              <a 
-                href="#contacto" 
-                className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('contacto');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
-              >
-                {t('nav.process')}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 ease-out group-hover:w-full"></span>
-              </a>
               <Link 
                 to="/#faq" 
                 className="relative text-sm font-medium text-slate-900 dark:text-slate-200 hover:text-accent-cyan transition-colors focus:outline-none rounded-lg px-2 py-1 group"
@@ -323,7 +251,7 @@ const Header = () => {
               aria-expanded={isServicesMenuOpen}
               onClick={() => setIsServicesMenuOpen((prev) => !prev)}
             >
-              Servicios
+              {t('nav.servicesDropdown')}
               <ChevronDown size={16} className={`transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
             </button>
             <div
@@ -474,82 +402,101 @@ const Header = () => {
               <>
                 <Link 
                   to="/#home" 
+                  onClick={(e) => {
+                    if (isServicePage) {
+                      e.preventDefault();
+                      closeMenu();
+                      window.location.href = '/#home';
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '150ms' : '0ms'
                   }}
-                  onClick={closeMenu}
                 >
                   {t('nav.home')}
                 </Link>
-                <a 
-                  href="#top" 
+                <Link 
+                  to="/#nosotros" 
+                  onClick={(e) => {
+                    if (isServicePage) {
+                      e.preventDefault();
+                      closeMenu();
+                      handleNavToSection('nosotros');
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '200ms' : '0ms'
                   }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('top');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
                 >
                   {t('nav.about')}
-                </a>
-                <a 
-                  href="#planes" 
+                </Link>
+                <Link 
+                  to="/#servicios" 
+                  onClick={(e) => {
+                    if (isServicePage) {
+                      e.preventDefault();
+                      closeMenu();
+                      handleNavToSection('servicios');
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '250ms' : '0ms'
                   }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('planes');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
                 >
                   {t('nav.services')}
-                </a>
-                <a 
-                  href="#contacto" 
+                </Link>
+                <Link 
+                  to="/#proceso" 
+                  onClick={(e) => {
+                    if (isServicePage) {
+                      e.preventDefault();
+                      closeMenu();
+                      handleNavToSection('proceso');
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '300ms' : '0ms'
                   }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    closeMenu();
-                    const element = document.getElementById('contacto');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
                 >
                   {t('nav.process')}
-                </a>
+                </Link>
                 <Link 
                   to="/#faq" 
+                  onClick={(e) => {
+                    if (isServicePage) {
+                      e.preventDefault();
+                      closeMenu();
+                      handleNavToSection('faq');
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className={`text-base font-medium text-slate-700 dark:text-slate-200 hover:text-accent-cyan transition-all duration-300 py-2 focus:outline-none rounded-lg px-2 transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                   }`}
                   style={{
                     transitionDelay: isMenuOpen ? '350ms' : '0ms'
                   }}
-                  onClick={closeMenu}
                 >
                   {t('nav.faq')}
                 </Link>
@@ -639,7 +586,7 @@ const Header = () => {
             className="flex items-center justify-between w-full text-base font-semibold text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/30 rounded-lg px-3 py-2 focus:outline-none hover:bg-accent-cyan/15"
             aria-expanded={isServicesMenuOpen}
           >
-            Servicios
+            {t('nav.servicesDropdown')}
             <ChevronDown size={18} className={`transition-transform ${isServicesMenuOpen ? 'rotate-180' : ''}`} />
           </button>
             <div
